@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81d3990c008c11b47b06c09680bbc230
+guid: 53630fbe44b5fa441984e585da225cc2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,12 +69,25 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -119,30 +132,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: One_Cannon
+      name: cannon_base_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 16
-        width: 99
-        height: 223
+        x: 43
+        y: 413
+        width: 940
+        height: 568
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34684c9fa83a78a48b22835cd86d7921
-      internalID: 485647856
+      spriteID: 20b0d4af54830544ba1a23d6f5f5da7d
+      internalID: 789633991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Two_Cannon
+      name: bullet_red
       rect:
         serializedVersion: 2
-        x: 124
-        y: 15
-        width: 197
-        height: 223
+        x: 61
+        y: 97
+        width: 116
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0057eff2acd2a5b45b42ca24466c8d26
-      internalID: -1358689681
+      spriteID: 1047b039a514ae047b54fd2e82b4277d
+      internalID: -970415612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Three_Canon
+      name: bullet_pink
       rect:
         serializedVersion: 2
-        x: 339
-        y: 15
-        width: 294
-        height: 223
+        x: 227
+        y: 97
+        width: 114
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8cf0540e55fa0944b69304b5fdd281e
-      internalID: 144502556
+      spriteID: 5836b34d7c3628e4abb2fe7842b205ca
+      internalID: -1325528384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Four_Cannon
+      name: bullet_yellow
       rect:
         serializedVersion: 2
-        x: 654
-        y: 10
-        width: 358
-        height: 231
+        x: 381
+        y: 97
+        width: 116
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2f9d5452e2cd4d4eacdcd1f58e79b72
-      internalID: -967317939
+      spriteID: 587d043f15a73144d96ce534b88a5023
+      internalID: 905671906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_green
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 97
+        width: 116
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f819af786be0745995e6092024c5f8
+      internalID: 687019147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_blue
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 97
+        width: 116
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceeb2dd7d08e0d54985e34e7e3891c9b
+      internalID: -1857718886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bullet_cyan
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 97
+        width: 114
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a933deb610452742a39bb1096b15c7c
+      internalID: 1316723567
       vertices: []
       indices: 
       edges: []
@@ -222,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 738ca61ed5800db4d803fe3fc7ace1f7
     internalID: 0
     vertices: []
     indices: 
@@ -230,10 +293,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Four_Cannon: -967317939
-      One_Cannon: 485647856
-      Three_Canon: 144502556
-      Two_Cannon: -1358689681
+      bullet_blue: -1857718886
+      bullet_cyan: 1316723567
+      bullet_green: 687019147
+      bullet_pink: -1325528384
+      bullet_red: -970415612
+      bullet_yellow: 905671906
+      cannon_base_0: 789633991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

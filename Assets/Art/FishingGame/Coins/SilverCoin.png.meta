@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: f97f0e54df67490459232cb7780099d8
+guid: 84fc27d2f126fd64da81695f79a80f19
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,15 +37,15 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
+    wrapU: 0
+    wrapV: 0
     wrapW: 0
-  nPOTScale: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -73,8 +73,21 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 60
     crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -119,144 +132,173 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: net_sheet_0
+      name: 0001
       rect:
         serializedVersion: 2
-        x: 25
-        y: 89
-        width: 327
-        height: 332
+        x: 0
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 345e541cf4e3c1d4b9da2fcf1fd24b4c
-      internalID: -150213242
+      spriteID: 39a46e6f7d7a8b04c97d9ffb75807e8d
+      internalID: -91733669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: net_sheet_1
+      name: 0002
       rect:
         serializedVersion: 2
-        x: 361
-        y: 89
-        width: 327
-        height: 332
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a887231dae7e614487e22c0d555ddbe
-      internalID: 422482981
+      spriteID: b6117a7e0fc45e44695a44d114d5f389
+      internalID: -974084096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: net_sheet_2
+      name: 0003
       rect:
         serializedVersion: 2
-        x: 695
-        y: 89
-        width: 326
-        height: 332
+        x: 512
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cf6025eede6baf458ef153dad16e337
-      internalID: -904881497
+      spriteID: cac89d087bd0e5a4b9db64b421b76be5
+      internalID: -629029482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: net_sheet_3
+      name: 0004
       rect:
         serializedVersion: 2
-        x: 1031
-        y: 89
-        width: 329
-        height: 332
+        x: 768
+        y: 256
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a31f77182bd39d4d9d0ab50b84bc814
-      internalID: 695001005
+      spriteID: 04371a16d5763d64a859d0af71e20030
+      internalID: 497110080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: net_sheet_4
+      name: 0005
       rect:
         serializedVersion: 2
-        x: 1365
-        y: 89
-        width: 324
-        height: 332
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a1ddcbe5a18c1b44a2ec30a3b2b16f6
-      internalID: 83671625
+      spriteID: 3f92f4e732c44d747a54fd1eea8bfc4b
+      internalID: -292097847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: net_sheet_5
+      name: 0006
       rect:
         serializedVersion: 2
-        x: 1696
-        y: 89
-        width: 336
-        height: 332
+        x: 256
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b401c08ed22f29448b3c5c3ba2962488
-      internalID: 611380592
+      spriteID: 3d868a022f6f4f547b15be6dd8597902
+      internalID: -1380893901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0007
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910e74ac2d3d20e438819f598c3f28d5
+      internalID: 1576454592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0008
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec818c67b80153498ebe32b05f8bd6f
+      internalID: 1038182750
       vertices: []
       indices: 
       edges: []
@@ -264,7 +306,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a271f919003755f4c834f68404f4fe3b
     internalID: 0
     vertices: []
     indices: 
@@ -272,12 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      net_sheet_0: -150213242
-      net_sheet_1: 422482981
-      net_sheet_2: -904881497
-      net_sheet_3: 695001005
-      net_sheet_4: 83671625
-      net_sheet_5: 611380592
+      0001: -91733669
+      0002: -974084096
+      0003: -629029482
+      0004: 497110080
+      0005: -292097847
+      0006: -1380893901
+      0007: 1576454592
+      0008: 1038182750
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

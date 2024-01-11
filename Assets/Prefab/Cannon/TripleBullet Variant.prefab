@@ -75,6 +75,111 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5749806029916787393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6815655588658397108}
+  m_Layer: 6
+  m_Name: NetSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6815655588658397108
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749806029916787393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7733067783535464810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 90}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &5858713710022110145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7046027782719344261}
+  m_Layer: 6
+  m_Name: NetSpawnPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7046027782719344261
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858713710022110145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7733067783535464810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 70, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6232259458988775087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3410161880885395884}
+  m_Layer: 6
+  m_Name: NetSpawnPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3410161880885395884
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232259458988775087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7733067783535464810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -70, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8645131900812846198
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +263,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3752075665903564997, guid: a200047c0db1f42488c8950757d96436, type: 3}
+      propertyPath: _netSpawnPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752075665903564997, guid: a200047c0db1f42488c8950757d96436, type: 3}
+      propertyPath: _netSpawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 6815655588658397108}
+    - target: {fileID: 3752075665903564997, guid: a200047c0db1f42488c8950757d96436, type: 3}
+      propertyPath: _netSpawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 3410161880885395884}
+    - target: {fileID: 3752075665903564997, guid: a200047c0db1f42488c8950757d96436, type: 3}
+      propertyPath: _netSpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 7046027782719344261}
     - target: {fileID: 6015228984462601164, guid: a200047c0db1f42488c8950757d96436, type: 3}
       propertyPath: m_Name
       value: TripleBullet Variant
@@ -259,6 +380,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6798869288699988082, guid: a200047c0db1f42488c8950757d96436, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7866814128182493582}
+    - targetCorrespondingSourceObject: {fileID: 6798869288699988082, guid: a200047c0db1f42488c8950757d96436, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6815655588658397108}
+    - targetCorrespondingSourceObject: {fileID: 6798869288699988082, guid: a200047c0db1f42488c8950757d96436, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3410161880885395884}
+    - targetCorrespondingSourceObject: {fileID: 6798869288699988082, guid: a200047c0db1f42488c8950757d96436, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7046027782719344261}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a200047c0db1f42488c8950757d96436, type: 3}
 --- !u!224 &7733067783535464810 stripped

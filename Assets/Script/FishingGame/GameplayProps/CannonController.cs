@@ -8,7 +8,7 @@ public class CannonController : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private RectTransform _transform;
-    [SerializeField] private Canvas canvas;
+    [SerializeField] private RectTransform _shootRect;
 
     [Header("Settings")]
     [SerializeField] private float _shootSpeed;
@@ -22,6 +22,11 @@ public class CannonController : MonoBehaviour
 
     private void HandleInputs()
     {
+        if (!_shootRect.rect.Contains(Input.mousePosition))
+        {
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
             SyncRotation();
@@ -38,8 +43,9 @@ public class CannonController : MonoBehaviour
     {
         Vector2 mousePosition = Input.mousePosition;
 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, mousePosition, canvas.worldCamera, out Vector2 localMousePosition);
-        Debug.Log("Mouse X: " + localMousePosition.x + ", Mouse Y: " + localMousePosition.y);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(CanvasInstance.Instance.GetMainCanvas().transform as RectTransform, 
+            mousePosition, CanvasInstance.Instance.GetMainCanvas().worldCamera, out Vector2 localMousePosition);
+
         Vector2 direction = new Vector2(mousePosition.x - _transform.position.x, mousePosition.y - _transform.position.y);
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -59,7 +65,7 @@ public class CannonController : MonoBehaviour
 
     IEnumerator ShootHandle()
     {
-        Instantiate(_bulletPrefab, _shootPoint.position, _shootPoint.rotation, canvas.transform);
+        Instantiate(_bulletPrefab, _shootPoint.position, _shootPoint.rotation, CanvasInstance.Instance.GetMainCanvas().transform);
         _animator.SetTrigger("Shoot");
         _canShoot = false;
 

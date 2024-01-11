@@ -8,7 +8,6 @@ public class CannonController : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private RectTransform _transform;
-    [SerializeField] private RectTransform _shootRect;
 
     [Header("Settings")]
     [SerializeField] private float _shootSpeed;
@@ -22,11 +21,6 @@ public class CannonController : MonoBehaviour
 
     private void HandleInputs()
     {
-        if (!_shootRect.rect.Contains(Input.mousePosition))
-        {
-            return;
-        }
-
         if (Input.GetMouseButton(0))
         {
             SyncRotation();

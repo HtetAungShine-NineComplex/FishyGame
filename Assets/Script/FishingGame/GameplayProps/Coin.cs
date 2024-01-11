@@ -11,10 +11,10 @@ public class Coin : MonoBehaviour
 
     IEnumerator CoinToPlayer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         float elapsedTime = 0f;
-        float duration = 2f; // Adjust the duration as needed
+        float duration = 1f;
 
         Vector3 initialPosition = transform.position;
         Vector3 targetPosition = CoinManager.Instance.PlayerTransform.position;
@@ -29,7 +29,7 @@ public class Coin : MonoBehaviour
 
         transform.position = targetPosition;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         Destroy(gameObject);
     }

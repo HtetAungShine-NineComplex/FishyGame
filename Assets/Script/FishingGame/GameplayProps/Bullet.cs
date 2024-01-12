@@ -8,9 +8,16 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Transform[] _netSpawnPoints;
     [SerializeField] private GameObject _netPrefab;
 
+    private int _damageAmount;
+
     void Update()
     {
         MoveBullet();
+    }
+
+    public void SetDamageAmount(int amount)
+    {
+        _damageAmount = amount;
     }
 
     void MoveBullet()
@@ -22,19 +29,27 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Fish"))
         {
-            OnCaughtFish();
-            Destroy(collision.gameObject);
+            if(collision.GetComponent<IDamageable>().Damage(_damageAmount))
+            {
+                OnCaughtFish();
+            }
+
+            OnHitFish();
+
             Destroy(gameObject);
+        }
+    }
+
+    private void OnHitFish()
+    {
+        foreach (Transform t in _netSpawnPoints)
+        {
+            Instantiate(_netPrefab, t.position, Quaternion.identity, CanvasInstance.Instance.GetMainCanvas().transform);
         }
     }
 
     private void OnCaughtFish()
     {
         CoinManager.Instance.ShowSilverCoin(transform.position, 5);
-
-        foreach(Transform t in _netSpawnPoints)
-        {
-            Instantiate(_netPrefab, t.position, Quaternion.identity, CanvasInstance.Instance.GetMainCanvas().transform);
-        }
     }
 }

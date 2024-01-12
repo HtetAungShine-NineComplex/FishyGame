@@ -2,10 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FishHealth : MonoBehaviour
+public class FishHealth : MonoBehaviour,IDamageable
 {
     public FishHealthConfig Config;
 
-    public int CurrentHealth;
+    [Header("Settings")]
+    [SerializeField] private int _maxHealth;
 
+    private int _currentHealth;
+    private bool _isDead = false;
+
+    private void Awake()
+    {
+        _currentHealth = _maxHealth;
+    }
+
+    public bool Damage(int damage)
+    {
+        if(_isDead) return true;
+
+        _currentHealth -= damage;
+
+        if(_currentHealth <= 0)
+        {
+            Die();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void Die()
+    {
+        _isDead = true;
+        Destroy(gameObject);
+    }
 }

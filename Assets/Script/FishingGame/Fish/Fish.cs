@@ -7,8 +7,8 @@ public class Fish : MonoBehaviour
 {
     [SerializeField] private Image fish_2D;
     [SerializeField] private Sprite[] fish_frames;
+    [SerializeField] private float frameRate = 0.1f;
 
-    private float frameRate = 0.2f;
     private int currentFrame;
     private float timer;
 

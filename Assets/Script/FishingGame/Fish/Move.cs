@@ -1,13 +1,20 @@
 using UnityEngine;
 public class Move : MonoBehaviour
 {
+    [SerializeField] private FishSO fishSO;
     [SerializeField] private Transform destoryPoint_T;
     [SerializeField] private Transform startPoint_T;
-    [SerializeField] [Range(1, 10)] private float speed;
-    [SerializeField] private AnimationCurve curve;
+    
+    private float speed;
+    private AnimationCurve curve;
 
     float elapsedTime;
     float desiredDuration = 7f;
+    private void Start()
+    {
+        speed = fishSO.speed;
+        curve = fishSO.SpeedCurve;
+    }
     private void Update()
     {
         elapsedTime += Time.deltaTime;

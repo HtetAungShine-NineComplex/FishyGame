@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6d2971eb8923b744a8f769b3dda48ff9
+guid: 36c88e0745519a14e9e6ce17d808ca18
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,12 +69,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 0
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1
+      name: SharkAnimatedTitleScreen.png0000
       rect:
         serializedVersion: 2
         x: 0
-        y: 564
-        width: 200
-        height: 460
+        y: 653
+        width: 252
+        height: 371
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a693950e94b1a074181cfc50b5cff4cb
-      internalID: 983378957
+      spriteID: 4cb4d83ef10d8144ca618ea3af8598ab
+      internalID: -910349667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2
+      name: SharkAnimatedTitleScreen.png0001
       rect:
         serializedVersion: 2
-        x: 400
-        y: 564
-        width: 200
-        height: 460
+        x: 252
+        y: 653
+        width: 252
+        height: 371
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4d5546a4c7e3034194bd3ed88c38586
-      internalID: -1465857445
+      spriteID: edcb569f4a5a1e64997bd55dc863d045
+      internalID: 1369668235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2.2
+      name: SharkAnimatedTitleScreen.png0002
       rect:
         serializedVersion: 2
-        x: 200
-        y: 564
-        width: 200
-        height: 460
+        x: 504
+        y: 653
+        width: 252
+        height: 371
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efb0b37a96767f948bcae447d926e93e
-      internalID: 1786112034
+      spriteID: 9a7f8eef482aff34185fbb2218f8bc4d
+      internalID: -1969772755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3
+      name: SharkAnimatedTitleScreen.png0003
       rect:
         serializedVersion: 2
-        x: 600
-        y: 564
-        width: 200
-        height: 460
+        x: 756
+        y: 653
+        width: 252
+        height: 371
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,41 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e5284fc3bc4e92489572ac8861e01b8
-      internalID: 1069802913
+      spriteID: b1d2ce2535a6b8f4683a0200c9a45a6f
+      internalID: 27341390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 564
-        width: 200
-        height: 460
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19a942bba725b8f4d8a9dc526cd67f6a
-      internalID: 1405166392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 5
+      name: SharkAnimatedTitleScreen.png0004
       rect:
         serializedVersion: 2
         x: 0
-        y: 104
-        width: 200
-        height: 460
+        y: 282
+        width: 252
+        height: 371
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5488337af502ff442b1e12d1275e0411
-      internalID: -884453994
+      spriteID: 0ebc2814cf3cfdc42a56117b51d6a9af
+      internalID: -994651421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 6
+      name: SharkAnimatedTitleScreen.png0005
       rect:
         serializedVersion: 2
-        x: 200
-        y: 104
-        width: 200
-        height: 460
+        x: 252
+        y: 282
+        width: 252
+        height: 371
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +242,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ed9324004f1c54898238b168a4eaa1
-      internalID: 781381438
+      spriteID: 769b9299e31ac534c872fe25bf5eae58
+      internalID: -964935662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SharkAnimatedTitleScreen.png0006
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 282
+        width: 252
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249f63f3f26d1ec4cbfb617b628d7bd0
+      internalID: -979762481
       vertices: []
       indices: 
       edges: []
@@ -272,7 +272,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 753ef5b6cbc526840afe05e6f8fd74fc
+    spriteID: bcbe3464c1854844899e5203d2f5901e
     internalID: 0
     vertices: []
     indices: 
@@ -280,13 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      1: 983378957
-      2: -1465857445
-      2.2: 1786112034
-      3: 1069802913
-      4: 1405166392
-      5: -884453994
-      6: 781381438
+      SharkAnimatedTitleScreen.png0000: -910349667
+      SharkAnimatedTitleScreen.png0001: 1369668235
+      SharkAnimatedTitleScreen.png0002: -1969772755
+      SharkAnimatedTitleScreen.png0003: 27341390
+      SharkAnimatedTitleScreen.png0004: -994651421
+      SharkAnimatedTitleScreen.png0005: -964935662
+      SharkAnimatedTitleScreen.png0006: -979762481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

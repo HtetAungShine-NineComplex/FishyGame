@@ -5,20 +5,23 @@ using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
-    [SerializeField] private Image fish_2D;
-    [SerializeField] private Sprite[] fish_frames;
-    [SerializeField] private float frameRate = 0.1f;
+    [SerializeField] private FishSO fishSO;
+
+    private Image fish_2D;
+    private Sprite[] fish_frames;
+    private float frameRate = 0.05f;
 
     private int currentFrame;
     private float timer;
 
-    public FishSO FishConfig;
-
     private void Start()
     {
-        
-    }
+        fish_2D = GetComponent<Image>();
 
+        fish_2D.sprite = fishSO.FishDefaultFrame;
+        fish_frames = fishSO.FishFrames;
+        frameRate = fishSO.FishFrameRate;
+    }
     private void Update()
     {
         timer += Time.deltaTime;

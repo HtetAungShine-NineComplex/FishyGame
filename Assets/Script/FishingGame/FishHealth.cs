@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class FishHealth : MonoBehaviour,IDamageable
 {
-    public FishHealthConfig Config;
+    public FishHealth Config;
 
-    [Header("Settings")]
-    [SerializeField] private int _maxHealth;
+    [SerializeField] private FishSO fishSO;
+    private int _maxHealth;
 
     private int _currentHealth;
     private bool _isDead = false;
-
+    private void Start()
+    {
+        _maxHealth = fishSO.MaxHealth;
+    }
     private void Awake()
     {
         _currentHealth = _maxHealth;

@@ -7,14 +7,9 @@ public class LoadingBar: MonoBehaviour
 {
     [SerializeField] private Slider loadingSlider;
     [SerializeField] private TextMeshProUGUI loadingTxt;
-    [SerializeField] private float duration;
 
-    private void Start()
-    {
-        StartCoroutine(StartLoading());
-    }
 
-    private IEnumerator StartLoading()
+    /*private IEnumerator StartLoading()
     {
         float elapsedTime = 0f;
 
@@ -31,5 +26,23 @@ public class LoadingBar: MonoBehaviour
 
         // Loading completed, do any necessary actions here
         Debug.Log("Loading completed!");
+    }*/
+
+    public void SetLoadingValue(float progress)
+    {
+        if(loadingSlider.value >= loadingSlider.maxValue)
+        {
+            return;
+        }
+
+        loadingSlider.value = progress / 100;
+        loadingTxt.text = (int)(progress) + "%";
+
+    }
+
+    public void ResetLoadingBar()
+    {
+        loadingSlider.value = 0;
+        loadingTxt.text = "0%";
     }
 }

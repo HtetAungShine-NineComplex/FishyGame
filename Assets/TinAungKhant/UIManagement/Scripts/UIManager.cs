@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace TinAungKhant.UIManagement
 {
-	public class UIManager : MonoBehaviour
+	public class UIManager : Singleton<UIManager>
 	{
-		public static UIManager Instance;
+		//public static UIManager Instance;
 
 		public event System.Action EventSelectableChanged;
 
@@ -20,16 +21,6 @@ namespace TinAungKhant.UIManagement
 		private static List<UIBase> m_OpeningUI = new List<UIBase>();
 		private static UIBase m_CatchUI;
 
-		public void Awake()
-		{
-			if (Instance != null)
-			{
-				Destroy(this.gameObject);
-				return;
-			}
-			Instance = this;
-			DontDestroyOnLoad(this.gameObject);
-		}
 
 		private void SortUI()
 		{
@@ -46,6 +37,11 @@ namespace TinAungKhant.UIManagement
 			{
 				m_OpeningUI[m_OpeningUI.Count - 1].Focus();
 			}		
+		}
+
+		public void SetUIRoot(Transform UIRoot)
+		{
+			this.UIRoot = UIRoot;
 		}
 
 		public void ShowUI(string UIName,UIBaseData Data = null)

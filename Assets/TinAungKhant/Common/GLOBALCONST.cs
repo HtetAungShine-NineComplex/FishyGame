@@ -8,6 +8,9 @@ public class GLOBALCONST
 
 	#region UINames
 	public const string LOADING_OBJECT = "LoadingObject";
+	public const string UI_MAIN_MENU = "UI_MainMenu";
+	public const string UI_FISHING_GAME = "UI_FishingGame";
+	public const string UI_LOADING = "UI_Loading";
 	#endregion
 
 }

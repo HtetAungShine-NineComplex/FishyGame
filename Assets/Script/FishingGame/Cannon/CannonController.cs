@@ -113,7 +113,6 @@ public class CannonController : MonoBehaviour
 
     private void OnEnable()
     {
-        _animators[_currentLevel].ResetTrigger("Shoot");
         _canShoot = true;
     }
 

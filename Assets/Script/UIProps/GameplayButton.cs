@@ -15,7 +15,7 @@ public class GameplayButton : MonoBehaviour
 
     private void GoToGameplay()
     {
-        UIManager.Instance.ShowUI(GLOBALCONST.UI_LOADING);
-        SceneLoader.Instance.LoadSceneAsync((int)SceneIndex.FISHING_GAME_SCENE, false);
+        UIManager.Instance.ShowUI(GLOBALCONST.UI_ROOM_SELECT);
+        UIManager.Instance.CloseUI(GLOBALCONST.UI_FISHING_GAME);
     }
 }

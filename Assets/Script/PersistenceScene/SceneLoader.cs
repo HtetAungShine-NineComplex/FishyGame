@@ -21,8 +21,9 @@ public class SceneLoader : Singleton<SceneLoader>
 
         private set
         {
+            ProgressChanged?.Invoke(value);
             _progress = value;
-            ProgressChanged?.Invoke(_progress);
+            
         }
     }
 

@@ -14,15 +14,24 @@ public class FishManager : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(SpawnFishCoroutine());
+        StartCoroutine(SpawnFishCoroutine());
     }
 
-   /* IEnumerator SpawnFishCoroutine()
+    IEnumerator SpawnFishCoroutine()
     {
-        while(fishSpawned < maxFish)
+        while (fishSpawned < maxFish)
         {
             Vector3 spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPoint();
+            Vector3 endpoint = SpawnpointManager.Instance.GetRandomSpawnPoint
 
+
+            GameObject fish = Instantiate(fishPrefab, spawnPoint, Quaternion.identity);
+            //fish.GetComponent<FishController>().SetEndPoint(endPoint);
+
+            fishSpawned++;
+            fishAlive++;
+
+            yield return new WaitForSeconds(spawnInterval);
         }
-    }*/
+    }
 }

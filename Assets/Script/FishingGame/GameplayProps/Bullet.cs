@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private Transform[] _netSpawnPoints;
     [SerializeField] private GameObject _netPrefab;
+    [SerializeField] private RectTransform _rectTransform;
 
     private int _damageAmount;
 
@@ -22,7 +23,13 @@ public class Bullet : MonoBehaviour
 
     void MoveBullet()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime * 100);
+        //transform.Translate(Vector3.up * speed * Time.deltaTime * 100);
+
+        Vector2 movementDirection = _rectTransform.rotation * Vector2.up;
+
+        // Move the bullet using anchoredPosition
+        _rectTransform.anchoredPosition += movementDirection * speed * Time.deltaTime * 100;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

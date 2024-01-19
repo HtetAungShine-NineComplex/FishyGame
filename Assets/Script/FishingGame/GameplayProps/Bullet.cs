@@ -57,6 +57,6 @@ public class Bullet : MonoBehaviour
 
     private void OnCaughtFish()
     {
-        CoinManager.Instance.ShowSilverCoin(transform.position, 5);
+        CoinManager.Instance.ShowSilverCoin(_rectTransform.anchoredPosition, 5);
     }
 }

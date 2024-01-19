@@ -37,7 +37,8 @@ public class CoinManager : MonoBehaviour
                 Random.Range(spawnPos.y - 200, spawnPos.y + 200), spawnPos.z);
 
 
-            Instantiate(_silverCoinPrefab, randomPos, Quaternion.identity, CanvasInstance.Instance.GetMainCanvas().transform);
+            GameObject coinObj = Instantiate(_silverCoinPrefab, CanvasInstance.Instance.GetMainCanvas().transform);
+            coinObj.GetComponent<RectTransform>().anchoredPosition = randomPos;
 
             yield return new WaitForSeconds(_coinInterval);
         }

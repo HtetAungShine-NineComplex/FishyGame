@@ -50,5 +50,11 @@ public class SpawnpointManager : MonoBehaviour
 
         Vector3 spawnPoint = Camera.main.ScreenToWorldPoint(new Vector3(randomX, randomY, 10f));
         return spawnPoint;
+
+         
+    }
+    public Vector3 GetRandomEndPoint(Vector3 spawnPoint)
+    {
+        return spawnPoint - new Vector3(2000f, 0f, 0f);
     }
 }

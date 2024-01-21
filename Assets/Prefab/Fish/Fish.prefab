@@ -91,23 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cc7bc659334fb4794498a5e4d94910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fish_2D: {fileID: 7948068399954265977}
-  fish_frames:
-  - {fileID: -559176106, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 413546361, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 495732395, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 1495786355, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 1660658319, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: -1989432804, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 72178061, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: -1989432804, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 1660658319, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 1495786355, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 495732395, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: 413546361, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  - {fileID: -559176106, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
-  frameRate: 0.1
-  FishConfig: {fileID: 0}
+  fishSO: {fileID: 0}
 --- !u!114 &5284785134040080776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,33 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022dc8622a578c449b490d1adf64324c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destoryPoint_T: {fileID: 0}
-  startPoint_T: {fileID: 0}
-  speed: 0.2
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  fishSO: {fileID: 0}
+  _health: {fileID: 2514663280800129051}
 --- !u!61 &8474039234513201458
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,5 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370bc6ccc049f754f9e555c8d52ef60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Config: {fileID: 11400000, guid: 2b9bc0429aa4b314e9143eca37b700b3, type: 2}
-  _maxHealth: 300
+  Config: {fileID: 0}
+  fishSO: {fileID: 0}
+  _isDead: 0

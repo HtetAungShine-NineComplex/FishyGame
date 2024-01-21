@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shark
   m_EditorClassIdentifier: 
   fishType: 2
-  MaxHealth: 1200
+  MaxHealth: 5000
   FishFrames:
   - {fileID: -910349667, guid: 36c88e0745519a14e9e6ce17d808ca18, type: 3}
   - {fileID: 1369668235, guid: 36c88e0745519a14e9e6ce17d808ca18, type: 3}
@@ -30,7 +30,7 @@ MonoBehaviour:
   - {fileID: -910349667, guid: 36c88e0745519a14e9e6ce17d808ca18, type: 3}
   FishDefaultFrame: {fileID: -910349667, guid: 36c88e0745519a14e9e6ce17d808ca18, type: 3}
   FishFrameRate: 0.1
-  speed: 0.01
+  speed: 0.4
   SpeedCurve:
     serializedVersion: 2
     m_Curve:

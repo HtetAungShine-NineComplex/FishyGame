@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
   m_Name: StinGray
   m_EditorClassIdentifier: 
-  fishType: 1
-  MaxHealth: 600
+  fishType: 2
+  MaxHealth: 3000
   FishFrames:
   - {fileID: -559176106, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
   - {fileID: 413546361, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
@@ -30,7 +30,7 @@ MonoBehaviour:
   - {fileID: -559176106, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
   FishDefaultFrame: {fileID: -559176106, guid: 30a66924163cd5b4faeb9a37b18de955, type: 3}
   FishFrameRate: 0.1
-  speed: 0.1
+  speed: 0.2
   SpeedCurve:
     serializedVersion: 2
     m_Curve:

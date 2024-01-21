@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nemo
   m_EditorClassIdentifier: 
   fishType: 0
-  MaxHealth: 200
+  MaxHealth: 600
   FishFrames:
   - {fileID: -452619049, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
   - {fileID: 485485277, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
@@ -30,7 +30,7 @@ MonoBehaviour:
   - {fileID: -452619049, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
   FishDefaultFrame: {fileID: -452619049, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
   FishFrameRate: 0.15
-  speed: 0.3
+  speed: 0.5
   SpeedCurve:
     serializedVersion: 2
     m_Curve:

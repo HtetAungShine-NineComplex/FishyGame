@@ -6,6 +6,6 @@ public class FishNet : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 0.7f);
     }
 }

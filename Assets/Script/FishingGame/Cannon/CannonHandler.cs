@@ -13,6 +13,7 @@ public class CannonHandler : MonoBehaviour
     [SerializeField] private GameObject[] _cannonObjs;
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private CannonController _cannonController;
+    [SerializeField] private AudioSource _audioSource;
 
     public event Action<int> AmountChanged;
 
@@ -71,6 +72,9 @@ public class CannonHandler : MonoBehaviour
     private void OnShoot()
     {
         _playerManager.UseCoin(Amount);
+
+        _audioSource.Stop();
+        _audioSource.Play();
     }
 
     private void OnAmountChange()

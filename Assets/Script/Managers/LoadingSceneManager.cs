@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class LoadingSceneManager : GameSceneManager
     protected override void Awake()
     {
         base.Awake();
+        Application.targetFrameRate = 60;
 
         _loadingBar.ResetLoadingBar();
 
@@ -73,5 +75,7 @@ public class LoadingSceneManager : GameSceneManager
     {
         _progress += progress * 0.3f;
         Debug.Log($"Progress: {progress * 0.3f} and {_progress}. ");
+
+        _loadingBar.SetLoadingValue(_progress);
     }
 }

@@ -63,6 +63,7 @@ public class SceneLoader : Singleton<SceneLoader>
                 }
 
                 Progress = Progress / _sceneLoadingOperation.Count * 100f;
+                Debug.Log(Progress);
 
                 if (_sceneLoadingOperation[i].isDone)
                 {

@@ -17,6 +17,7 @@ public class LoadingSceneManager : GameSceneManager
     protected override void Awake()
     {
         base.Awake();
+        Application.targetFrameRate = 60;
 
         _loadingBar.ResetLoadingBar();
 

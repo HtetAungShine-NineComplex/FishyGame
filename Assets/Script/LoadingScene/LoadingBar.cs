@@ -37,7 +37,10 @@ public class LoadingBar: MonoBehaviour
 
         loadingSlider.value = progress / 100;
         loadingTxt.text = (int)(progress) + "%";
-
+        if(progress > 100)
+        {
+            loadingTxt.text = 100 + "%";
+        }
     }
 
     public void ResetLoadingBar()

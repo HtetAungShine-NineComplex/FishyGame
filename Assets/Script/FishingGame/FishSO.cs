@@ -16,7 +16,7 @@ public class FishSO : ScriptableObject
     public FishType fishType;
 
     //For Health
-    [Range(100f, 5000f)] public int MaxHealth;
+    [Range(100f, 10000f)] public int MaxHealth;
 
     //For Animation
     public Sprite[] FishFrames;

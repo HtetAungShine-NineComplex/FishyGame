@@ -10,14 +10,15 @@ public class FishHealth : MonoBehaviour,IDamageable
     private int _maxHealth;
 
     private int _currentHealth;
-    private bool _isDead = false;
+    public bool _isDead = false;
     private void Start()
     {
         _maxHealth = fishSO.MaxHealth;
+        _currentHealth = _maxHealth;
     }
     private void Awake()
     {
-        _currentHealth = _maxHealth;
+        
     }
 
     public bool Damage(int damage)
@@ -40,6 +41,7 @@ public class FishHealth : MonoBehaviour,IDamageable
     public void Die()
     {
         _isDead = true;
-        Destroy(gameObject);
+        GetComponent<Fish>().OnDead();
+        Destroy(gameObject, 1f);
     }
 }

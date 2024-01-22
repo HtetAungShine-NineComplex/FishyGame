@@ -22,6 +22,7 @@ public class Fish : MonoBehaviour
         fish_frames = fishSO.FishFrames;
         frameRate = fishSO.FishFrameRate;
     }
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -33,5 +34,26 @@ public class Fish : MonoBehaviour
             fish_2D.sprite = fish_frames[currentFrame];
         }
             
+    }
+
+    public void OnDead()
+    {
+        frameRate /= 4;
+        StartCoroutine(FadeFish());
+    }
+
+    IEnumerator FadeFish()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        //fish_2D.color = Color.Lerp(fish_2D.color, new Color(255, 255, 255, 0), 1f * Time.deltaTime);
+        Color curColor = fish_2D.color;
+        while (curColor.a > 0)
+        {
+            curColor.a = Mathf.Lerp(curColor.a, 0, 2f * Time.deltaTime);
+            fish_2D.color = curColor;
+            yield return new WaitForEndOfFrame();
+        }
+        
     }
 }

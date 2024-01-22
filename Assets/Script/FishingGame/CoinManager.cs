@@ -5,8 +5,10 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     [SerializeField] private GameObject _silverCoinPrefab;
+    [SerializeField] private Transform _root;
     [SerializeField] private float _coinInterval;
     [SerializeField] private Transform _playerTransform; //temporary use only
+    [SerializeField] private AudioSource _audioSource;
 
     public Transform PlayerTransform { get { return _playerTransform; } }
 
@@ -31,14 +33,16 @@ public class CoinManager : MonoBehaviour
 
     IEnumerator SilverCoinSpawn(Vector3 spawnPos, int coinAmount)
     {
+        _audioSource.Stop();
+        _audioSource.Play();
         for (int i = 0; i < coinAmount; i++)
         {
+            
             Vector3 randomPos = new Vector3(Random.Range(spawnPos.x - 200, spawnPos.x + 200), 
                 Random.Range(spawnPos.y - 200, spawnPos.y + 200), spawnPos.z);
 
 
-            GameObject coinObj = Instantiate(_silverCoinPrefab, CanvasInstance.Instance.GetMainCanvas().transform);
-            coinObj.GetComponent<RectTransform>().anchoredPosition = randomPos;
+            Instantiate(_silverCoinPrefab, randomPos, Quaternion.identity, _root);
 
             yield return new WaitForSeconds(_coinInterval);
         }

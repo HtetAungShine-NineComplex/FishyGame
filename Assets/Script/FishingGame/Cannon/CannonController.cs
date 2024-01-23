@@ -5,7 +5,8 @@ using UnityEngine;
 public class CannonController : MonoBehaviour
 {
     [Header("Ref")]
-    [SerializeField] private Animator[] _animators;
+    [SerializeField] private Animator[] _animators; // use this when cannon has levels
+    [SerializeField] private Animator _animator; // use this when cannon has only one levels
     [SerializeField] private GameObject[] _bulletPrefabs;
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private RectTransform _transform;
@@ -103,7 +104,14 @@ public class CannonController : MonoBehaviour
         GameObject bulletObj = Instantiate(_bulletPrefabs[_currentLevel], _shootPoint.position, _shootPoint.rotation, 
             CanvasInstance.Instance.GetMainCanvas().transform);
         bulletObj.GetComponent<Bullet>().SetDamageAmount(_damageAmount);
-        _animators[_currentLevel].SetTrigger("Shoot");
+        if(_animators.Length > 0)
+        {
+            _animators[_currentLevel].SetTrigger("Shoot");
+        }
+        else
+        {
+            _animator.SetTrigger("Shoot");
+        }
         _canShoot = false;
         CannonShoot?.Invoke();
 

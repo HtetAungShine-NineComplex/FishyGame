@@ -81,20 +81,52 @@ public class SpawnpointManager : MonoBehaviour
     }
     public Vector3 GetRandomEndPoint(Vector3 spawnPoint)
     {
+        float endY = 0;
+        float endX = 0;
+        float lastY = 0;
+        float lastX = 0;
+        Vector3 endPoint = Vector3.zero;
+
+        float randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+        float randomY = Random.Range(0f + (screenY * 0.1f), screenY - (screenY * 0.1f));
+
+
 
         switch (spawnPosition)
         {
             case SpawnPosition.Top:
-                return spawnPoint - new Vector3(0f, screenY + (_offsetY * 2), 0f);
+                endY = screenY + (_offsetY * 2);
+                lastY = spawnPoint.y - endY;
+                endPoint = new Vector3(randomX, lastY, 0f);
+
+                return endPoint;
 
             case SpawnPosition.Bottom:
-                return spawnPoint - new Vector3(0f, -screenY - (_offsetY * 2), 0f);
+                endY = -screenY - (_offsetY * 2);
+                lastY = spawnPoint.y - endY;
+                endPoint = new Vector3(randomX, lastY, 0f);
+
+                return endPoint;
+
+                //return spawnPoint - new Vector3(0f, -screenY - (_offsetY * 2), 0f);
 
             case SpawnPosition.Left:
-                return spawnPoint - new Vector3(-screenX - (_offsetX * 2), 0f, 0f);
+                endX = -screenX - (_offsetX * 2);
+                lastX = spawnPoint.x - endX;
+                endPoint = new Vector3(lastX, randomY, 0f);
+
+                return endPoint;
+
+                //return spawnPoint - new Vector3(-screenX - (_offsetX * 2), 0f, 0f);
 
             case SpawnPosition.Right:
-                return spawnPoint - new Vector3(screenX + (_offsetX * 2), 0f, 0f);
+                endX = screenX + (_offsetX * 2);
+                lastX = spawnPoint.x - endX;
+                endPoint = new Vector3(lastX, randomY, 0f);
+
+                return endPoint;
+
+                //return spawnPoint - new Vector3(screenX + (_offsetX * 2), 0f, 0f);
 
             default:
                 return spawnPoint - new Vector3(0f, 0f, 0f);

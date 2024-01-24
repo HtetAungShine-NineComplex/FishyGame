@@ -8,11 +8,18 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Transform[] _netSpawnPoints;
     [SerializeField] private GameObject _netPrefab;
 
+    private PlayerManager _playerManager;
+
     private int _damageAmount;
 
     void Update()
     {
         MoveBullet();
+    }
+
+    public void SetPlayerManager(PlayerManager playerManager)
+    {
+        _playerManager = playerManager;
     }
 
     public void SetDamageAmount(int amount)
@@ -31,7 +38,7 @@ public class Bullet : MonoBehaviour
         {
             if(collision.GetComponent<IDamageable>().Damage(_damageAmount))
             {
-                OnCaughtFish();
+                OnCaughtFish(collision.GetComponent<Fish>());
             }
 
             OnHitFish();
@@ -48,8 +55,12 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnCaughtFish()
+    private void OnCaughtFish(Fish caughtFish)
     {
-        CoinManager.Instance.ShowSilverCoin(transform.position, Random.Range(1, 3));
+        //CoinManager.Instance.ShowCoin(transform.position, Random.Range(1, 3));
+        if(_playerManager != null)
+        {
+            _playerManager.AddCoin(caughtFish.Score);
+        }
     }
 }

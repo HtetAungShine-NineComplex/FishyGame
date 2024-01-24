@@ -17,6 +17,8 @@ public class FishSO : ScriptableObject
 
     //For Health
     [Range(100f, 10000f)] public int MaxHealth;
+    public int Score;
+    public int CoinSpawnAmount; //for fishes that spawn coin when killed
 
     //For Animation
     public Sprite[] FishFrames;

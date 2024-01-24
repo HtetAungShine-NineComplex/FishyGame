@@ -23,10 +23,17 @@ public class CannonController : MonoBehaviour
 
     public event Action CannonShoot;
 
+    private PlayerManager _playerManager;
+
     void Update()
     {
         CheckCursorOverButton();
         HandleInputs();
+    }
+
+    public void SetPlayerManager(PlayerManager playerManager)
+    {
+        _playerManager = playerManager;
     }
 
     public void SetDamageAmount(int amount)
@@ -103,8 +110,12 @@ public class CannonController : MonoBehaviour
     {
         GameObject bulletObj = Instantiate(_bulletPrefabs[_currentLevel], _shootPoint.position, _shootPoint.rotation, 
             CanvasInstance.Instance.GetMainCanvas().transform);
-        bulletObj.GetComponent<Bullet>().SetDamageAmount(_damageAmount);
-        if(_animators.Length > 0)
+
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+        bullet.SetDamageAmount(_damageAmount);
+        bullet.SetPlayerManager(_playerManager);
+
+        if (_animators.Length > 0)
         {
             _animators[_currentLevel].SetTrigger("Shoot");
         }

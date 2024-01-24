@@ -7,6 +7,7 @@ public class FishHealth : MonoBehaviour,IDamageable
     public FishHealth Config;
 
     [SerializeField] private FishSO fishSO;
+    [SerializeField] private Fish _fish;
     private int _maxHealth;
 
     private int _currentHealth;
@@ -41,7 +42,7 @@ public class FishHealth : MonoBehaviour,IDamageable
     public void Die()
     {
         _isDead = true;
-        GetComponent<Fish>().OnDead();
+        _fish.OnDead();
         Destroy(gameObject, 1f);
     }
 }

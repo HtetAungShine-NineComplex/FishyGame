@@ -6,6 +6,7 @@ using UnityEngine;
 public class CannonHandler : MonoBehaviour
 {
     [Header("Settings")]
+    [SerializeField] private bool _withLevel = false;
     [SerializeField] private int _increaseStep = 50; //adjust based on match type
     [SerializeField] private int _maxAmount = 600; //adjust based on match type
 
@@ -47,6 +48,8 @@ public class CannonHandler : MonoBehaviour
     private void Start()
     {
         Amount = _increaseStep;
+
+        _cannonController.SetPlayerManager(_playerManager);
     }
 
     private void OnEnable()
@@ -79,22 +82,26 @@ public class CannonHandler : MonoBehaviour
 
     private void OnAmountChange()
     {
-        if( Amount < 200 ) 
+        if(_withLevel)
         {
-            SetCannonLevel(0);
+            if (Amount < 200)
+            {
+                SetCannonLevel(0);
+            }
+            else if (Amount < 300)
+            {
+                SetCannonLevel(1);
+            }
+            else if (Amount < 500)
+            {
+                SetCannonLevel(2);
+            }
+            else
+            {
+                SetCannonLevel(3);
+            }
         }
-        else if( Amount < 300 )
-        {
-            SetCannonLevel(1);
-        }
-        else if(Amount < 500) 
-        {
-            SetCannonLevel(2);
-        }
-        else
-        {
-            SetCannonLevel(3);
-        }
+        
 
         _cannonController.SetDamageAmount(Amount);
     }

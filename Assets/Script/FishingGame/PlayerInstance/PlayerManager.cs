@@ -34,4 +34,9 @@ public class PlayerManager : MonoBehaviour
     {
         PlayerCoin -= useAmount;
     }
+
+    public void AddCoin(int addAmount)
+    {
+        PlayerCoin += addAmount;
+    }
 }

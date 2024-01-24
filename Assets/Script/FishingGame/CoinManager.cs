@@ -26,7 +26,7 @@ public class CoinManager : MonoBehaviour
         }
     }
 
-    public void ShowSilverCoin(Vector3 spawnPos, int coinAmount)
+    public void ShowCoin(Vector3 spawnPos, int coinAmount)
     {
         StartCoroutine(SilverCoinSpawn(spawnPos, coinAmount));
     }
@@ -42,7 +42,8 @@ public class CoinManager : MonoBehaviour
                 Random.Range(spawnPos.y - 200, spawnPos.y + 200), spawnPos.z);
 
 
-            Instantiate(_silverCoinPrefab, randomPos, Quaternion.identity, _root);
+            GameObject coinObj = Instantiate(_silverCoinPrefab, _root);
+            coinObj.GetComponent<RectTransform>().anchoredPosition = randomPos;
 
             yield return new WaitForSeconds(_coinInterval);
         }

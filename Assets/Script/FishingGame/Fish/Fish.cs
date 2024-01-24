@@ -14,6 +14,9 @@ public class Fish : MonoBehaviour
     private int currentFrame;
     private float timer;
 
+    public int Score { get; private set; }
+    public int CoinSpawnAmount { get; private set; }
+
     private void Start()
     {
         fish_2D = GetComponent<Image>();
@@ -21,6 +24,8 @@ public class Fish : MonoBehaviour
         fish_2D.sprite = fishSO.FishDefaultFrame;
         fish_frames = fishSO.FishFrames;
         frameRate = fishSO.FishFrameRate;
+        Score = fishSO.Score;
+        CoinSpawnAmount = fishSO.CoinSpawnAmount;
     }
 
     private void Update()
@@ -40,6 +45,7 @@ public class Fish : MonoBehaviour
     {
         frameRate /= 4;
         StartCoroutine(FadeFish());
+        CoinManager.Instance.ShowCoin(GetComponent<RectTransform>().anchoredPosition, CoinSpawnAmount);
     }
 
     IEnumerator FadeFish()

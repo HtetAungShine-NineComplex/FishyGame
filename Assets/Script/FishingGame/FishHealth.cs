@@ -45,4 +45,9 @@ public class FishHealth : MonoBehaviour,IDamageable
         _fish.OnDead();
         Destroy(gameObject, 1f);
     }
+
+    public Fish GetFish()
+    {
+        return _fish;
+    }
 }

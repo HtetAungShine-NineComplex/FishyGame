@@ -42,7 +42,6 @@ public class CannonHandler : MonoBehaviour
     {
         AmountChanged += n => OnAmountChange();
 
-        
     }
 
     private void Start()
@@ -54,6 +53,10 @@ public class CannonHandler : MonoBehaviour
 
     private void OnEnable()
     {
+        Amount = _increaseStep;
+
+        _cannonController.SetPlayerManager(_playerManager);
+
         _cannonController.CannonShoot += OnShoot;
     }
 

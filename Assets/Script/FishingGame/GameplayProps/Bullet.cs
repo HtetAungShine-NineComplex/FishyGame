@@ -38,7 +38,16 @@ public class Bullet : MonoBehaviour
         {
             if(collision.GetComponent<IDamageable>().Damage(_damageAmount))
             {
-                OnCaughtFish(collision.GetComponent<Fish>());
+                
+
+                if(collision.TryGetComponent<Fish>(out Fish fish))
+                {
+                    OnCaughtFish(fish);
+                }
+                else
+                {
+                    OnCaughtFish(collision.GetComponentInChildren<Fish>());
+                }
             }
 
             OnHitFish();

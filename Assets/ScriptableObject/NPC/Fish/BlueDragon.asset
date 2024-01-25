@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: BlueDragon
+  m_EditorClassIdentifier: 
+  fishType: 3
+  MaxHealth: 10000
+  Score: 15000
+  CoinSpawnAmount: 20
+  FishFrames:
+  - {fileID: -448493184, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -2118764589, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 318485042, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -889659522, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -179815295, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1711201209, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -1168705917, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -2037019598, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1354585511, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -1583136066, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 854904457, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 77971540, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 451334833, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 35043495, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 2132729652, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 166541721, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 378964430, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1275192057, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -1719826515, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1444319491, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1114473591, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -1441288472, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1912209609, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1805258313, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 543776772, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -2147273167, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -1220309782, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1825318052, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -2121403774, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -92611323, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 49991621, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: -476298690, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 1051414804, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  - {fileID: 653355105, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  FishDefaultFrame: {fileID: -448493184, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  FishFrameRate: 0.1
+  speed: 0.4
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

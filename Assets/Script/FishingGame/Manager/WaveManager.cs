@@ -26,7 +26,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _normalStageDuration = 3; //3 minutes
     [SerializeField] private float _bossFightDuration = 3; //3 minutes
     [SerializeField] private float _bonusStageDuration = 3; //3 minutes
-    private int mapIndex = 1;
+    private int mapIndex = 0;
 
     public void Awake()
     {
@@ -82,9 +82,9 @@ public class WaveManager : MonoBehaviour
         EnterBossStage?.Invoke(mapIndex);
         Debug.Log("Boss Fight Stage");
         mapIndex++;
-        if(mapIndex > 3)
+        if(mapIndex > 2)
         {
-            mapIndex = 1;
+            mapIndex = 0;
         }
     }
 

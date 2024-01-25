@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GeneratedFishManager : MonoBehaviour
 {
-    private List<Fish> _generatedFishList = new List<Fish>();
+    private List<FishHealth> _generatedFishList = new List<FishHealth>();
 
     public static GeneratedFishManager Instance;
     public void Awake()
@@ -17,13 +17,35 @@ public class GeneratedFishManager : MonoBehaviour
         Instance = this;
     }
 
-    public void AddFish(Fish fish)
+    public FishHealth GetRandomFish()
+    {
+        if (_generatedFishList.Count == 0)
+            return null;
+
+        int randomIndex = Random.Range(0, _generatedFishList.Count);
+        FishHealth selectedFish = _generatedFishList[randomIndex];
+
+        // Check if the fish has been destroyed
+        if (selectedFish == null)
+        {
+            // If the fish has been destroyed, remove it from the list
+            _generatedFishList.RemoveAt(randomIndex);
+
+            // Recursively call GetRandomFish to get a new fish
+            return GetRandomFish();
+        }
+
+        return selectedFish;
+    }
+
+    public void AddFish(FishHealth fish)
     {
         _generatedFishList.Add(fish);
     }
 
-    public void RemoveFish(Fish fish)
+    public void RemoveFish(FishHealth fish)
     {
         _generatedFishList.Remove(fish);
     }
 }
+

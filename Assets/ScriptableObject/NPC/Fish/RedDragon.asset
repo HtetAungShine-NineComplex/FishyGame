@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: RedDragon
+  m_EditorClassIdentifier: 
+  fishType: 3
+  MaxHealth: 10000
+  Score: 15000
+  CoinSpawnAmount: 20
+  FishFrames:
+  - {fileID: -200211918, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1600746161, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1577580283, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1365168799, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1165461045, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1336499462, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1342345169, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 976748871, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 108325109, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1738332211, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1845962263, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 708486952, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -581085596, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1052849713, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 33271612, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1177314770, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1632975345, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -40816587, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1896553032, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -598645236, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 384471188, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 264306987, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1262629192, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1042329641, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -97788994, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 129330073, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 85417732, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1464961990, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -808018711, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1264877074, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 718082214, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1243282181, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: -1676644289, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  - {fileID: 1914871811, guid: 93dd92d7eb84a324dbf59be35bc55bee, type: 3}
+  FishDefaultFrame: {fileID: -448493184, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  FishFrameRate: 0.1
+  speed: 0.4
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

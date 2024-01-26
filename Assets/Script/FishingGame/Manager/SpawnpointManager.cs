@@ -119,9 +119,27 @@ public class SpawnpointManager : MonoBehaviour
 
     }
 
+    public SpawnPosition GetSpawnPosition()
+    {
+        return spawnPosition;
+    }
 
+    public Vector3 GetControlPoint(Vector3 spawnPoint, Vector3 endPoint, float dist)
+    {
+        // Calculate the midpoint between the spawn and end points
+        Vector3 midPoint = (spawnPoint + endPoint) / 2f;
 
-    public Vector3 GetRandomEndPoint(Vector3 spawnPoint)
+        // Calculate a direction perpendicular to the line between the spawn and end points
+        Vector3 perpDirection = new Vector3(-(endPoint.y - spawnPoint.y), endPoint.x - spawnPoint.x, 0f).normalized;
+
+        // Move the control point a certain distance away from the midpoint in the perpendicular direction
+        float controlPointDistance = dist; // Adjust this value to change the curvature of the path
+        Vector3 controlPoint = midPoint + perpDirection * controlPointDistance;
+
+        return controlPoint;
+    }
+
+    public Vector3 GetRandomEndPoint(Vector3 spawnPoint, SpawnPosition spawnPos)
     {
         float endY = 0;
         float endX = 0;
@@ -134,7 +152,7 @@ public class SpawnpointManager : MonoBehaviour
 
 
 
-        switch (spawnPosition)
+        switch (spawnPos)
         {
             case SpawnPosition.Top:
                 endY = screenY + (_offsetY * 2);

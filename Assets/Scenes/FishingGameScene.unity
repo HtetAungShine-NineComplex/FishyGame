@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 1250891591}
   _transform: {fileID: 23553839}
@@ -2423,6 +2424,7 @@ MonoBehaviour:
   - {fileID: 709224195}
   - {fileID: 1805801021}
   - {fileID: 989966388}
+  _animator: {fileID: 0}
   _bulletPrefabs:
   - {fileID: 6015228984462601164, guid: a200047c0db1f42488c8950757d96436, type: 3}
   - {fileID: 5973510395487048083, guid: 0c634d14b78bca74781a63b5ca81a958, type: 3}
@@ -3286,6 +3288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 327992923}
   _transform: {fileID: 709224194}
@@ -3973,6 +3976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9617adbf2fb3cc84f9308594963df8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _withLevel: 0
   _increaseStep: 50
   _maxAmount: 600
   _cannonObjs:
@@ -4580,6 +4584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 1747438088}
   _transform: {fileID: 989966387}
@@ -8150,7 +8155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6291332059505405621, guid: fe99cd25b16fa0340bfb3dae42682447, type: 3}
-  spawnInterval: 1
+  spawnInterval: 2
   maxFish: 10000
   parentTF: {fileID: 808252845}
 --- !u!1 &1711817764
@@ -8947,6 +8952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 1655886194}
   _transform: {fileID: 1805801019}

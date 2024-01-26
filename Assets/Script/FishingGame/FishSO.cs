@@ -23,7 +23,7 @@ public class FishSO : ScriptableObject
     //For Animation
     public Sprite[] FishFrames;
     public Sprite FishDefaultFrame;
-    [Range(0.1f,1f)]public float FishFrameRate;
+    [Range(0.02f,1f)]public float FishFrameRate;
 
     //For Movement
     public float speed = 2f;

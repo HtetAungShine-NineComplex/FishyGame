@@ -67,6 +67,7 @@ public class FishManager : MonoBehaviour
             GameObject fish = Instantiate(fishPrefab, spawnPoint, Quaternion.identity,parentTF);
             Move move = fish.GetComponent<Move>();
             move.SetPoints(spawnPoint, endpoint);
+            move.spawnPosition = SpawnpointManager.Instance.GetSpawnPosition();
 
             GeneratedFishManager.Instance.AddFish(fish.GetComponent<FishHealth>());
 

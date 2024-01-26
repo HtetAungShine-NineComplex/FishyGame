@@ -35,7 +35,7 @@ public class FishManager : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
 
             spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPoint();
-            endpoint = SpawnpointManager.Instance.GetRandomEndPoint(spawnPoint);
+            endpoint = SpawnpointManager.Instance.GetRandomEndPoint(spawnPoint, SpawnpointManager.Instance.GetSpawnPosition());
 
 
             //fishMove.startPoint_T.position = spawnPoint;
@@ -44,6 +44,7 @@ public class FishManager : MonoBehaviour
             GameObject fish = Instantiate(fishPrefab, spawnPoint, Quaternion.identity,parentTF);
             Move move = fish.GetComponent<Move>();
             move.SetPoints(spawnPoint, endpoint);
+            move.spawnPosition = SpawnpointManager.Instance.GetSpawnPosition();
 
             fishSpawned++;
             fishAlive++;

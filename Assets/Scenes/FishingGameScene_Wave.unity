@@ -282,6 +282,8 @@ MonoBehaviour:
   maxFish: 3000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &151589491
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,10 +364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 3900039660422269666, guid: c762c5b4f81f65c48b2a8c16935a3685, type: 3}
-  spawnInterval: 12
-  maxFish: 3
+  spawnInterval: 10
+  maxFish: 5
   parentTF: {fileID: 808252845}
   _isMainBoss: 1
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &172359988
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,55 +445,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172359988}
   m_CullTransparentMesh: 1
---- !u!1 &230897224
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 230897225}
-  - component: {fileID: 230897226}
-  m_Layer: 0
-  m_Name: DragonManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &230897225
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230897224}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2038842535}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &230897226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 230897224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 8404961203191472891, guid: bef818944d18c3a4b9a48aaec41cbf1e, type: 3}
-  spawnInterval: 45
-  maxFish: 300
-  parentTF: {fileID: 808252845}
-  _isMainBoss: 0
 --- !u!1 &236056243
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +458,7 @@ GameObject:
   - component: {fileID: 236056245}
   - component: {fileID: 236056247}
   - component: {fileID: 236056248}
+  - component: {fileID: 236056249}
   m_Layer: 5
   m_Name: BG_Ice
   m_TagString: Untagged
@@ -574,6 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIndex: 0
   _animator: {fileID: 236056245}
+  _group: {fileID: 236056249}
 --- !u!114 &236056248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +561,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &236056249
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236056243}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &261980036
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +637,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4e4e8662c58f35945b7ccfc5359dbbbd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3b658d68ce1b0aa41a0aef8efae5c2c8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -848,6 +817,8 @@ MonoBehaviour:
   maxFish: 2000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &470558239
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +868,8 @@ MonoBehaviour:
   maxFish: 1700
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &528153431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1013,8 @@ MonoBehaviour:
   maxFish: 8000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &653678668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,7 +1105,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 1
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1147,7 +1122,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 2116602058}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1189,7 +1164,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &693362912
+--- !u!1 &690156066
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1197,22 +1172,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 693362913}
-  - component: {fileID: 693362914}
+  - component: {fileID: 690156067}
+  - component: {fileID: 690156068}
   m_Layer: 0
-  m_Name: SharkManager
+  m_Name: RedDragonBossManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &693362913
+--- !u!4 &690156067
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693362912}
+  m_GameObject: {fileID: 690156066}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1221,23 +1196,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2038842535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &693362914
+--- !u!114 &690156068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693362912}
+  m_GameObject: {fileID: 690156066}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 7270663068825654154, guid: b13499dbc88986649a25c55b391d2cfb, type: 3}
-  spawnInterval: 9.5
-  maxFish: 1500
+  fishPrefab: {fileID: 3900039660422269666, guid: 929335278dc11414b824f68e853f841f, type: 3}
+  spawnInterval: 10
+  maxFish: 5
   parentTF: {fileID: 808252845}
-  _isMainBoss: 0
+  _isMainBoss: 1
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &697481033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4465505882870708646, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
@@ -1489,6 +1466,8 @@ MonoBehaviour:
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &823148472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,10 +1900,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 3900039660422269666, guid: a8ed4483a2086074f9d3ab5373626677, type: 3}
-  spawnInterval: 12
-  maxFish: 3
+  spawnInterval: 10
+  maxFish: 5
   parentTF: {fileID: 808252845}
   _isMainBoss: 1
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!4 &1163620282
 Transform:
   m_ObjectHideFlags: 0
@@ -2026,6 +2007,7 @@ MonoBehaviour:
   _bosses:
   - {fileID: 169911019}
   - {fileID: 1163620281}
+  - {fileID: 690156068}
 --- !u!1 &1255614982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2236,8 @@ MonoBehaviour:
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1528723043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2286,7 @@ GameObject:
   - component: {fileID: 1537566360}
   - component: {fileID: 1537566362}
   - component: {fileID: 1537566363}
+  - component: {fileID: 1537566364}
   m_Layer: 5
   m_Name: BG_Green
   m_TagString: Untagged
@@ -2402,6 +2387,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIndex: 1
   _animator: {fileID: 1537566362}
+  _group: {fileID: 1537566364}
+--- !u!225 &1537566364
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537566358}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1539238889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,6 +2449,8 @@ MonoBehaviour:
   maxFish: 2500
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1578119679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,6 +2633,7 @@ GameObject:
   - component: {fileID: 1630948079}
   - component: {fileID: 1630948081}
   - component: {fileID: 1630948082}
+  - component: {fileID: 1630948083}
   m_Layer: 5
   m_Name: BG_Blue
   m_TagString: Untagged
@@ -2732,6 +2733,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIndex: 2
   _animator: {fileID: 1630948081}
+  _group: {fileID: 1630948083}
+--- !u!225 &1630948083
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630948077}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1660443496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,6 +2894,8 @@ MonoBehaviour:
   maxFish: 10000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1711137794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,6 +2945,8 @@ MonoBehaviour:
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1802118749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,6 +3150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2110835841}
   - {fileID: 879681421}
   - {fileID: 1122368335}
   - {fileID: 559733730}
@@ -3139,18 +3158,16 @@ Transform:
   - {fileID: 2141022396}
   - {fileID: 40586750}
   - {fileID: 1539238890}
-  - {fileID: 693362913}
   - {fileID: 470558240}
-  - {fileID: 230897225}
   - {fileID: 360943407}
   - {fileID: 295785741}
-  - {fileID: 2110835841}
   - {fileID: 2130470287}
   - {fileID: 1711137795}
   - {fileID: 1482414475}
   - {fileID: 816059020}
   - {fileID: 169911018}
   - {fileID: 1163620282}
+  - {fileID: 690156067}
   - {fileID: 1229034680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3292,92 +3309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b3a29228d2c644188cd30c0af6d700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normalStageDuration: 0.1
+  _normalStageDuration: 0.5
   _bossFightDuration: 1
-  _bonusStageDuration: 0.1
---- !u!1 &2116602056
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2116602059}
-  - component: {fileID: 2116602058}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!20 &2116602058
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116602056}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 837.01
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &2116602059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116602056}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -190}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  _bonusStageDuration: 0.5
 --- !u!114 &2118416683 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2456438448073122249, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
@@ -3434,10 +3368,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 2991986638028462469, guid: cee2a271dd9a0404e836c9358996a7d0, type: 3}
-  spawnInterval: 18
+  spawnInterval: 13
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 1
 --- !u!1 &2141022395
 GameObject:
   m_ObjectHideFlags: 0
@@ -3487,6 +3423,8 @@ MonoBehaviour:
   maxFish: 3000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &2142767051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3492,10 @@ PrefabInstance:
       propertyPath: _buttonRects.Array.data[3]
       value: 
       objectReference: {fileID: 1802118750}
+    - target: {fileID: 6101400661013012445, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 29ed4e23eee8c5e46bcca0e51197f0cb, type: 3}
     - target: {fileID: 7322619433823121936, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3654,5 +3596,4 @@ SceneRoots:
   - {fileID: 528153433}
   - {fileID: 684130711}
   - {fileID: 784643929}
-  - {fileID: 2116602059}
   - {fileID: 2038842535}

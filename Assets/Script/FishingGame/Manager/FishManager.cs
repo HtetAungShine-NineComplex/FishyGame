@@ -9,6 +9,8 @@ public class FishManager : MonoBehaviour
     public int maxFish = 20;
     public Transform parentTF;
     public bool _isMainBoss;
+    public bool _isHorizontal;
+    public bool _isVertical;
 
     private int fishSpawned = 0;
     private int fishDestroyed;
@@ -49,7 +51,11 @@ public class FishManager : MonoBehaviour
                 yield return new WaitForSeconds(spawnInterval);
             }
 
-            if(_isMainBoss)
+            if(_isMainBoss || _isHorizontal)
+            {
+                spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPointHorizontal();
+            }
+            else if (_isVertical)
             {
                 spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPointVertical();
             }
@@ -58,7 +64,7 @@ public class FishManager : MonoBehaviour
                 spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPoint();
             }
 
-            endpoint = SpawnpointManager.Instance.GetRandomEndPoint(spawnPoint);
+            endpoint = SpawnpointManager.Instance.GetRandomEndPoint(spawnPoint, SpawnpointManager.Instance.GetSpawnPosition());
 
 
             //fishMove.startPoint_T.position = spawnPoint;

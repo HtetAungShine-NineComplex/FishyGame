@@ -36,21 +36,21 @@ public class CannonController : MonoBehaviour
         HandleInputs();
     }
 
-    public void ChangeType()
+    public void ChangeType(int index)
     {
-        if(_currentCannonIndex == 0)
+        _cannons[index].SetActive(true);
+
+        if(index == 0)
         {
-            _cannons[1].SetActive(true);
-            _cannons[0].SetActive(false);
-            
-            _currentCannonIndex = 1;
-        }
-        else
-        {
-            _cannons[0].SetActive(true);
             _cannons[1].SetActive(false);
-            _currentCannonIndex = 0;
+            
         }
+        else if (index == 1)
+        {
+            _cannons[0].SetActive(false);
+        }
+
+        _currentCannonIndex = index;
     }
 
     public void SetPlayerManager(PlayerManager playerManager)

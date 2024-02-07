@@ -6,16 +6,21 @@ public class LaserCannonController : MonoBehaviour
 {
     [SerializeField] private float _damageRate;
     [SerializeField] private Transform _shootPoint;
-    [SerializeField] private Camera _camera;
+    [SerializeField] private LaserRenderer _laserRenderer;
 
     private int _damageAmount;
     private FishHealth _targetFish;
 
     private float _damageTimer = 0f;
 
-    private void Start()
+    private void OnEnable()
     {
-        
+        _laserRenderer.gameObject.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        _laserRenderer.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -38,9 +43,9 @@ public class LaserCannonController : MonoBehaviour
 
         if (_targetFish != null)
         {
-
             ShootLaser(_targetFish.transform.position);
         }
+
     }
 
     private void LateUpdate()
@@ -50,18 +55,6 @@ public class LaserCannonController : MonoBehaviour
 
     private void ShootLaser(Vector2 targetPosition)
     {
-        /*Vector2 ShootPos = new Vector2(((_shootPoint.position.x / Screen.width) * 1920f), (_shootPoint.position.y / Screen.height) * 1080f) ;
-        Vector2 TargetPos = new Vector2((targetPosition.x / Screen.width) * 1920, (targetPosition.y / Screen.height) * 1080);
-
-        _lineRenderer.Points.SetValue(ShootPos, 0);
-        _lineRenderer.Points.SetValue(TargetPos, 1);
-
-
-        Debug.Log(targetPosition);
-
-        *//*_lineRenderer.Points.SetValue((Vector2)_shootPoint.position, 0);
-        _lineRenderer.Points.SetValue(targetPosition, 1);*//*
-
-        _lineRenderer.SetVerticesDirty();*/
+        _laserRenderer.SetLaser(_shootPoint.transform.position, targetPosition);
     }
 }

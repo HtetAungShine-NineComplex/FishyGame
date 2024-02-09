@@ -31,6 +31,11 @@ public class LaserCannonController : MonoBehaviour
             _damageTimer += Time.deltaTime;
             if (_damageTimer >= _damageRate)
             {
+                if(!GeneratedFishManager.Instance.HasFish(_targetFish))
+                {
+                    _targetFish = GeneratedFishManager.Instance.GetRandomFish();
+                }
+
                 _targetFish.Damage(_damageAmount);
                 _damageTimer = 0f;
             }
@@ -43,7 +48,12 @@ public class LaserCannonController : MonoBehaviour
 
         if (_targetFish != null)
         {
+            _laserRenderer.gameObject.SetActive(true);
             ShootLaser(_targetFish.transform.position);
+        }
+        else
+        {
+            _laserRenderer.gameObject.SetActive(false);
         }
 
     }
@@ -51,6 +61,11 @@ public class LaserCannonController : MonoBehaviour
     private void LateUpdate()
     {
         
+    }
+
+    public void SetDamageAmount(int amount)
+    {
+        _damageAmount = amount;
     }
 
     private void ShootLaser(Vector2 targetPosition)

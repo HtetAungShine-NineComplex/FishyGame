@@ -17,6 +17,24 @@ public class GeneratedFishManager : MonoBehaviour
         Instance = this;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        FishHealth fish = collision.GetComponent<FishHealth>();
+        if (fish != null)
+        {
+            AddFish(fish);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        FishHealth fish = collision.GetComponent<FishHealth>();
+        if (fish != null)
+        {
+            RemoveFish(fish);
+        }
+    }
+
     public FishHealth GetRandomFish()
     {
         if (_generatedFishList.Count == 0)
@@ -45,7 +63,12 @@ public class GeneratedFishManager : MonoBehaviour
 
     public void RemoveFish(FishHealth fish)
     {
-        _generatedFishList.Remove(fish);
+        if(_generatedFishList.Contains(fish))
+        {
+            _generatedFishList.Remove(fish);
+        }
     }
+
+    public bool HasFish(FishHealth fish) => _generatedFishList.Contains(fish);
 }
 

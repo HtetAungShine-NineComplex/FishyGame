@@ -75,7 +75,7 @@ public class FishManager : MonoBehaviour
             move.SetPoints(spawnPoint, endpoint);
             move.spawnPosition = SpawnpointManager.Instance.GetSpawnPosition();
 
-            GeneratedFishManager.Instance.AddFish(fish.GetComponent<FishHealth>());
+            //GeneratedFishManager.Instance.AddFish(fish.GetComponent<FishHealth>());
 
             fishSpawned++;
             fishAlive++;

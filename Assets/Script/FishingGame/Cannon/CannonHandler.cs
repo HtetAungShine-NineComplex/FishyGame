@@ -22,6 +22,7 @@ public class CannonHandler : MonoBehaviour
     private int _currentCannonIndex = 0;
 
     private int _amount;
+    private LaserCannonController _laserCannonController;
 
     private int Amount
     {
@@ -49,9 +50,12 @@ public class CannonHandler : MonoBehaviour
 
     private void Start()
     {
+        _laserCannonController = _laserCannon.GetComponentInChildren<LaserCannonController>();
+
         Amount = _increaseStep;
 
         _cannonController.SetPlayerManager(_playerManager);
+        
     }
 
     private void OnEnable()
@@ -110,6 +114,7 @@ public class CannonHandler : MonoBehaviour
         
 
         _cannonController.SetDamageAmount(Amount);
+        _laserCannonController?.SetDamageAmount(Amount);
     }
 
     private void SetCannonLevel(int levelIndex)

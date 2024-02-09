@@ -45,6 +45,7 @@ public class FishHealth : MonoBehaviour,IDamageable
         if (_audio != null) _audio.Play();
         _isDead = true;
         _fish.OnDead();
+        GeneratedFishManager.Instance.RemoveFish(this);
         Destroy(gameObject, 1f);
     }
 

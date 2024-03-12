@@ -8,10 +8,12 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Transform[] _netSpawnPoints;
     [SerializeField] private GameObject _netPrefab;
     [SerializeField] private GameObject _rewardTxtPrefab;
+    [SerializeField] private int _totalBounce = 5; //default value
 
     private PlayerManager _playerManager;
 
     private int _damageAmount;
+    private int _bounceCount = 0; 
 
     void Update()
     {
@@ -77,5 +79,26 @@ public class Bullet : MonoBehaviour
         {
             _playerManager.AddCoin(caughtFish.Score);
         }
+    }
+
+    public void ReflectDirection(bool isTop)
+    {
+        _bounceCount++;
+
+        if(_bounceCount >= _totalBounce)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if(isTop)
+        {
+            transform.Rotate(180, 0, 0, Space.World);
+        }
+        else
+        {
+            transform.Rotate(0, 180, 0, Space.World);
+        }
+        
     }
 }

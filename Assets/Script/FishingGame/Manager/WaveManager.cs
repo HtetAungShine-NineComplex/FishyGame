@@ -26,6 +26,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _normalStageDuration = 3; //3 minutes
     [SerializeField] private float _bossFightDuration = 3; //3 minutes
     [SerializeField] private float _bonusStageDuration = 3; //3 minutes
+
+    [SerializeField] private GameObject[] _bossTitles;
     private int mapIndex = 0;
 
     public void Awake()
@@ -80,11 +82,27 @@ public class WaveManager : MonoBehaviour
         _currentStage = WaveStage.BossFight;
         _counter = 0;
         EnterBossStage?.Invoke(mapIndex);
+        StartCoroutine(ShowTitle(mapIndex));
         Debug.Log("Boss Fight Stage");
         mapIndex++;
         if(mapIndex > 2)
         {
             mapIndex = 0;
+        }
+    }
+
+    IEnumerator ShowTitle(int index)
+    {
+        if (_bossTitles[index] != null)
+        {
+            _bossTitles[index].SetActive(true);
+        }
+
+        yield return new WaitForSeconds(6);
+
+        if (_bossTitles[index] != null)
+        {
+            _bossTitles[index].SetActive(false);
         }
     }
 

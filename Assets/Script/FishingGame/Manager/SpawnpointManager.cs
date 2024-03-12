@@ -32,13 +32,12 @@ public class SpawnpointManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
     {
-        _offsetX = (screenX * 0.2f);
-        _offsetY = (screenY * 0.2f);
+        _offsetX = (screenX * 0.7f);
+        _offsetY = (screenY * 0.3f);
     }
 
     public Vector3 GetRandomSpawnPoint()
@@ -78,6 +77,84 @@ public class SpawnpointManager : MonoBehaviour
         return spawnPoint;
 
          
+    }
+
+    public Vector3 GetRandomSpawnPointHorizontal()
+    {
+        int border = Random.Range(2, 4);
+
+        switch (border)
+        {
+            case 0: //Top
+                randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+                randomY = screenY + _offsetY;
+                spawnPosition = SpawnPosition.Top;
+                break;
+
+            case 1: //Bottom
+                randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+                randomY = 0f - _offsetY;
+                spawnPosition = SpawnPosition.Bottom;
+                break;
+
+            case 2: //Left
+                randomX = 0f - _offsetX;
+                randomY = Random.Range(0f + (screenY * 0.1f), screenY - (screenY * 0.1f));
+                spawnPosition = SpawnPosition.Left;
+                break;
+
+            case 3:
+                randomX = screenX + _offsetX;
+                randomY = Random.Range(0f + (screenY * 0.1f), screenY - (screenY * 0.1f));
+                spawnPosition = SpawnPosition.Right;
+                break;
+        }
+
+        //Vector3 spawnPoint = Camera.main.ScreenToWorldPoint(new Vector3(randomX, randomY, 10f));
+
+        Vector3 spawnPoint = new Vector3(randomX, randomY, 0);
+        return spawnPoint;
+
+
+    }
+
+    public Vector3 GetRandomSpawnPointVertical()
+    {
+        int border = Random.Range(0, 2);
+
+        switch (border)
+        {
+            case 0: //Top
+                randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+                randomY = screenY + _offsetY;
+                spawnPosition = SpawnPosition.Top;
+                break;
+
+            case 1: //Bottom
+                randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+                randomY = 0f - _offsetY;
+                spawnPosition = SpawnPosition.Bottom;
+                break;
+
+            case 2: //Left
+                randomX = 0f - _offsetX;
+                randomY = Random.Range(0f + (screenY * 0.1f), screenY - (screenY * 0.1f));
+                spawnPosition = SpawnPosition.Left;
+                break;
+
+            case 3:
+                randomX = screenX + _offsetX;
+                randomY = Random.Range(0f + (screenY * 0.1f), screenY - (screenY * 0.1f));
+                spawnPosition = SpawnPosition.Right;
+                break;
+        }
+
+        //Vector3 spawnPoint = Camera.main.ScreenToWorldPoint(new Vector3(randomX, randomY, 10f));
+
+        Vector3 spawnPoint = new Vector3(randomX, randomY, 0);
+        return spawnPoint;
+
+
     }
 
     public SpawnPosition GetSpawnPosition()

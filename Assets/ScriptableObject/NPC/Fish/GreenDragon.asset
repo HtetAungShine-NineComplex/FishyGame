@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: GreenDragon
+  m_EditorClassIdentifier: 
+  fishType: 3
+  MaxHealth: 10000
+  Score: 15000
+  CoinSpawnAmount: 20
+  FishFrames:
+  - {fileID: 259802588, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1481122214, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -929478833, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 42646263, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1468875468, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1440070374, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -119750182, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -536357189, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 226452538, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 522958222, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -341341383, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -1219543949, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -324744541, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1114248471, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 470011394, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1934847002, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -73989114, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 610449295, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 505649230, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1997637853, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -1422905397, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -227690235, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1316523263, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1557273759, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -728489244, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -1663850055, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1037272101, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -431575805, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -1987630748, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -1382028857, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -124287459, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -1566560639, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: 1012696785, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  - {fileID: -1155236494, guid: 182b3bb56aadc8c478b7e1167af7d189, type: 3}
+  FishDefaultFrame: {fileID: -448493184, guid: ad90cc82a48c43a41a21c855f148b903, type: 3}
+  FishFrameRate: 0.05
+  speed: 1
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

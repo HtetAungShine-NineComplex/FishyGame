@@ -5,6 +5,7 @@ using UnityEngine;
 public class BGBlue : GameBG
 {
     [SerializeField] private Animator _animator;
+    [SerializeField] private CanvasGroup _group;
 
     protected override void OnEnterNormalStage(int mapIndex)
     {
@@ -28,13 +29,34 @@ public class BGBlue : GameBG
         base.OnEnterBonusStage(mapIndex);
         if (mapIndex == this.mapIndex)
         {
+            _group.alpha = 1;
             gameObject.SetActive(true);
         }
-        else
+        else if (gameObject.activeSelf)
         {
-            gameObject.SetActive(false);
+            StartCoroutine(Fade());
         }
 
 
     }
+
+    IEnumerator Fade()
+    {
+        float fadeDuration = 2f;
+        float fadeRate = 1 / fadeDuration;
+
+        while (_group.alpha > 0)
+        {
+            _group.alpha -= fadeRate * Time.deltaTime;
+
+            if (_group.alpha <= 0)
+            {
+                _group.alpha = 0;
+                gameObject.SetActive(false);
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
 }

@@ -7,6 +7,7 @@ public class CannonController : MonoBehaviour
     [Header("Ref")]
     [SerializeField] private Animator[] _animators; // use this when cannon has levels
     [SerializeField] private Animator _animator; // use this when cannon has only one levels
+    [SerializeField] private Animator _rocketAnimator; // use this when cannon has only one levels
     [SerializeField] private GameObject[] _bulletPrefabs;
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private RectTransform _transform;
@@ -14,12 +15,16 @@ public class CannonController : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float _shootSpeed;
+    [SerializeField] private GameObject[] _cannons;
+
+    [SerializeField]private int _currentCannonIndex = 0;
 
     private bool _canShoot = true;
     private bool _isCursorOverButton = false;
     private Coroutine _shootCoroutine;
     private int _currentLevel = 0;
     private int _damageAmount = 0;
+    private bool _autoShoot = false;
 
     public event Action CannonShoot;
 
@@ -29,6 +34,23 @@ public class CannonController : MonoBehaviour
     {
         CheckCursorOverButton();
         HandleInputs();
+    }
+
+    public void ChangeType(int index)
+    {
+        _cannons[index].SetActive(true);
+
+        if(index == 0)
+        {
+            _cannons[1].SetActive(false);
+            
+        }
+        else if (index == 1)
+        {
+            _cannons[0].SetActive(false);
+        }
+
+        _currentCannonIndex = index;
     }
 
     public void SetPlayerManager(PlayerManager playerManager)
@@ -51,13 +73,36 @@ public class CannonController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             SyncRotation();
+
+        }
+
+        if (Input.GetMouseButton(0) || _autoShoot)
+        {
             Shoot();
+
         }
 
         if(Input.GetMouseButtonUp(0))
         {
             Shoot();
         }
+    }
+
+    public void ToggleAutoShoot()
+    {
+
+
+        if(_autoShoot)
+        {
+            _autoShoot = false;
+        }
+        else
+        {
+            _autoShoot = true;
+            
+        }
+
+        Debug.Log(_autoShoot);
     }
 
     private void SyncRotation()
@@ -99,7 +144,7 @@ public class CannonController : MonoBehaviour
 
     private void Shoot()
     {
-        if (_canShoot && !_isCursorOverButton)
+        if ((_canShoot && !_isCursorOverButton) || (_isCursorOverButton && _autoShoot && _canShoot))
         {
             _shootCoroutine = StartCoroutine(ShootHandle());
         }
@@ -108,7 +153,7 @@ public class CannonController : MonoBehaviour
 
     IEnumerator ShootHandle()
     {
-        GameObject bulletObj = Instantiate(_bulletPrefabs[_currentLevel], _shootPoint.position, _shootPoint.rotation, 
+        GameObject bulletObj = Instantiate(_bulletPrefabs[_currentCannonIndex], _shootPoint.position, _shootPoint.rotation, 
             CanvasInstance.Instance.GetMainCanvas().transform);
 
         Bullet bullet = bulletObj.GetComponent<Bullet>();
@@ -121,7 +166,15 @@ public class CannonController : MonoBehaviour
         }
         else
         {
-            _animator.SetTrigger("Shoot");
+            if(_currentCannonIndex == 0)
+            {
+                _animator.SetTrigger("Shoot");
+            }
+            else
+            {
+                _rocketAnimator.SetTrigger("Shoot");
+            }
+
         }
         _canShoot = false;
         CannonShoot?.Invoke();

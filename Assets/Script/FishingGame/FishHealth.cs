@@ -8,6 +8,7 @@ public class FishHealth : MonoBehaviour,IDamageable
 
     [SerializeField] private FishSO fishSO;
     [SerializeField] private Fish _fish;
+    [SerializeField] private AudioSource _audio;
     private int _maxHealth;
 
     private int _currentHealth;
@@ -19,7 +20,7 @@ public class FishHealth : MonoBehaviour,IDamageable
     }
     private void Awake()
     {
-        
+
     }
 
     public bool Damage(int damage)
@@ -41,8 +42,15 @@ public class FishHealth : MonoBehaviour,IDamageable
 
     public void Die()
     {
+        if (_audio != null) _audio.Play();
         _isDead = true;
         _fish.OnDead();
+        GeneratedFishManager.Instance.RemoveFish(this);
         Destroy(gameObject, 1f);
+    }
+
+    public Fish GetFish()
+    {
+        return _fish;
     }
 }

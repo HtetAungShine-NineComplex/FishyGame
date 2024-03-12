@@ -12,13 +12,17 @@ public class CannonHandler : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject[] _cannonObjs;
+    [SerializeField] private GameObject _laserCannon;
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private CannonController _cannonController;
     [SerializeField] private AudioSource _audioSource;
 
     public event Action<int> AmountChanged;
 
+    private int _currentCannonIndex = 0;
+
     private int _amount;
+    private LaserCannonController _laserCannonController;
 
     private int Amount
     {
@@ -42,18 +46,24 @@ public class CannonHandler : MonoBehaviour
     {
         AmountChanged += n => OnAmountChange();
 
-        
     }
 
     private void Start()
     {
+        _laserCannonController = _laserCannon.GetComponentInChildren<LaserCannonController>();
+
         Amount = _increaseStep;
 
         _cannonController.SetPlayerManager(_playerManager);
+        
     }
 
     private void OnEnable()
     {
+        Amount = _increaseStep;
+
+        _cannonController.SetPlayerManager(_playerManager);
+
         _cannonController.CannonShoot += OnShoot;
     }
 
@@ -104,6 +114,7 @@ public class CannonHandler : MonoBehaviour
         
 
         _cannonController.SetDamageAmount(Amount);
+        _laserCannonController?.SetDamageAmount(Amount);
     }
 
     private void SetCannonLevel(int levelIndex)
@@ -120,5 +131,29 @@ public class CannonHandler : MonoBehaviour
 
         _cannonObjs[levelIndex].SetActive(true);
         _cannonController.SetLevel(levelIndex);
+    }
+
+    public void SwapWeapon()
+    {
+        _currentCannonIndex++;
+
+        if(_currentCannonIndex > 2)
+        {
+            _currentCannonIndex = 0;
+        }
+
+        if(_currentCannonIndex < 2)
+        {
+            _laserCannon.SetActive(false);
+            _cannonController.gameObject.SetActive(true);
+            _cannonController.ChangeType(_currentCannonIndex);
+        }
+        else
+        {
+            _cannonController.gameObject.SetActive(false);
+            _laserCannon.SetActive(true);
+        }
+
+        Debug.Log(_currentCannonIndex);
     }
 }

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class FishNet : MonoBehaviour
 {
+    [SerializeField] private float _duration = 0.7f;
+
     private void Start()
     {
-        Destroy(gameObject, 0.7f);
+        Destroy(gameObject, _duration);
     }
 }

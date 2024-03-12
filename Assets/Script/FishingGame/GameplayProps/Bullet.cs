@@ -7,10 +7,13 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private Transform[] _netSpawnPoints;
     [SerializeField] private GameObject _netPrefab;
+    [SerializeField] private GameObject _rewardTxtPrefab;
+    [SerializeField] private int _totalBounce = 5; //default value
 
     private PlayerManager _playerManager;
 
     private int _damageAmount;
+    private int _bounceCount = 0; 
 
     void Update()
     {
@@ -38,7 +41,16 @@ public class Bullet : MonoBehaviour
         {
             if(collision.GetComponent<IDamageable>().Damage(_damageAmount))
             {
-                OnCaughtFish(collision.GetComponent<Fish>());
+                
+
+                if(collision.TryGetComponent<Fish>(out Fish fish))
+                {
+                    OnCaughtFish(fish);
+                }
+                else
+                {
+                    OnCaughtFish(collision.GetComponentInChildren<Fish>());
+                }
             }
 
             OnHitFish();
@@ -57,10 +69,36 @@ public class Bullet : MonoBehaviour
 
     private void OnCaughtFish(Fish caughtFish)
     {
+
+        //instantiate reward text
+        GameObject rewardTxt = Instantiate(_rewardTxtPrefab, transform.position, Quaternion.identity, CanvasInstance.Instance.GetMainCanvas().transform);
+        rewardTxt.gameObject.GetComponent<RewardText>().SetValueText(caughtFish.Score);
+
         //CoinManager.Instance.ShowCoin(transform.position, Random.Range(1, 3));
         if(_playerManager != null)
         {
             _playerManager.AddCoin(caughtFish.Score);
         }
+    }
+
+    public void ReflectDirection(bool isTop)
+    {
+        _bounceCount++;
+
+        if(_bounceCount >= _totalBounce)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if(isTop)
+        {
+            transform.Rotate(180, 0, 0, Space.World);
+        }
+        else
+        {
+            transform.Rotate(0, 180, 0, Space.World);
+        }
+        
     }
 }

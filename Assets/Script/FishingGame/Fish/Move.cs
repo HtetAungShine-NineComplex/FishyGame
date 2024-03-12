@@ -17,6 +17,8 @@ public class Move : MonoBehaviour
     public SpawnPosition spawnPosition;
     public float _curveDistance = 500f;
 
+    private bool _isDead = false;
+
     private void Start()
     {
         speed = fishSO.speed;
@@ -27,11 +29,21 @@ public class Move : MonoBehaviour
 
     private void Update()
     {
+        if(_isDead)
+        {
+            return;
+        }
+
         if (_startPoint != null && _endPoint != null)
         {
 
             MoveFish(_startPoint, _endPoint);
         }
+    }
+
+    public void OnDead()
+    {
+        _isDead = true;
     }
 
     public void SetPoints(Vector3 startPoint_T, Vector3 destroyPoint_T)
@@ -98,18 +110,4 @@ public class Move : MonoBehaviour
         }
     }*/
 
-    private IEnumerator ChangeEndpointPeriodically(float interval)
-    {
-       
-
-
-        while (true)
-        {
-            
-
-            
-
-            yield return new WaitForEndOfFrame();
-        }
-    }
 }

@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class Fish : MonoBehaviour
 {
     [SerializeField] private FishSO fishSO;
+    [SerializeField] private Move _move;
+    [SerializeField] private Collider2D _coll;
 
-    private Image fish_2D;
+    [SerializeField] private Image fish_2D;
     private Sprite[] fish_frames;
     private float frameRate = 0.05f;
 
@@ -19,7 +21,7 @@ public class Fish : MonoBehaviour
 
     private void Start()
     {
-        fish_2D = GetComponent<Image>();
+        //fish_2D = GetComponent<Image>();
 
         fish_2D.sprite = fishSO.FishDefaultFrame;
         fish_frames = fishSO.FishFrames;
@@ -43,6 +45,8 @@ public class Fish : MonoBehaviour
 
     public void OnDead()
     {
+        _coll.enabled = false;
+        _move.OnDead();
         frameRate /= 4;
         StartCoroutine(FadeFish());
         CoinManager.Instance.ShowCoin(GetComponent<RectTransform>().anchoredPosition, CoinSpawnAmount);

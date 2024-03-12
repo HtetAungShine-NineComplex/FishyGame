@@ -10,7 +10,7 @@ public static class Bezier
         float oneMinusT = 1f - t;
         return oneMinusT * oneMinusT * start + 2f * oneMinusT * t * control + t * t * end;
     }
-
+    
     public static Vector2 GetDerivative(Vector2 start, Vector2 control, Vector2 end, float t)
     {
         t = Mathf.Clamp01(t);

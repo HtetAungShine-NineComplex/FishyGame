@@ -1008,6 +1008,57 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+--- !u!1 &453682630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453682631}
+  - component: {fileID: 453682632}
+  m_Layer: 0
+  m_Name: CrocoBossManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &453682631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453682630}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &453682632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453682630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 8932748071712669342, guid: f793587a016b0e24993c467a7147220f, type: 3}
+  spawnInterval: 5
+  maxFish: 5
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 1
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &470558239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,6 +2677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bosses:
+  - {fileID: 453682632}
   - {fileID: 169911019}
   - {fileID: 1163620281}
   - {fileID: 690156068}
@@ -4149,6 +4201,7 @@ Transform:
   - {fileID: 1482414475}
   - {fileID: 816059020}
   - {fileID: 169911018}
+  - {fileID: 453682631}
   - {fileID: 1163620282}
   - {fileID: 690156067}
   - {fileID: 1229034680}

@@ -20,7 +20,7 @@ public class FishManager : MonoBehaviour
     Vector3 spawnPoint;
     Vector3 endpoint;
 
-    private void Start()
+    protected virtual void Start()
     {
 
         if(!_isMainBoss)
@@ -34,7 +34,7 @@ public class FishManager : MonoBehaviour
         
     }
 
-    public void SpawnFishFromStart()
+    public virtual void SpawnFishFromStart()
     {
         fishSpawned = 0;
         StartCoroutine(SpawnFishCoroutine());

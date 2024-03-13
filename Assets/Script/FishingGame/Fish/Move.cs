@@ -5,13 +5,13 @@ using UnityEngine.Rendering;
 public class Move : MonoBehaviour
 {
     [SerializeField] private FishSO fishSO;
-    private float speed;
-    private AnimationCurve curve;
-    private float elapsedTime;
-    private float desiredDuration = 7f;
+    protected float speed;
+    protected AnimationCurve curve;
+    protected float elapsedTime;
+    protected float desiredDuration = 7f;
     private Vector3 _startPoint;
     private Vector3 _endPoint;
-    private Vector3 _controlPoint;
+    protected Vector3 _controlPoint;
     private FishHealth _health;
 
     public SpawnPosition spawnPosition;
@@ -19,7 +19,7 @@ public class Move : MonoBehaviour
 
     private bool _isDead = false;
 
-    private void Start()
+    protected virtual void Start()
     {
         speed = fishSO.speed;
         curve = fishSO.SpeedCurve;
@@ -27,7 +27,7 @@ public class Move : MonoBehaviour
         
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if(_isDead)
         {
@@ -41,12 +41,12 @@ public class Move : MonoBehaviour
         }
     }
 
-    public void OnDead()
+    public virtual void OnDead()
     {
         _isDead = true;
     }
 
-    public void SetPoints(Vector3 startPoint_T, Vector3 destroyPoint_T)
+    public virtual void SetPoints(Vector3 startPoint_T, Vector3 destroyPoint_T)
     {
         _startPoint = startPoint_T;
         _endPoint = destroyPoint_T;
@@ -59,7 +59,7 @@ public class Move : MonoBehaviour
         return _endPoint;
     }
 
-    private void MoveFish(Vector3 startPoint, Vector3 destroyPoint)
+    protected virtual void MoveFish(Vector3 startPoint, Vector3 destroyPoint)
     {
         if (_health != null && _health._isDead)
         {

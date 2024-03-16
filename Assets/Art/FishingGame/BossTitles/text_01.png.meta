@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -139,12 +139,12 @@ TextureImporter:
       name: King_Kong
       rect:
         serializedVersion: 2
-        x: 13
+        x: 23
         y: 866
         width: 351
         height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: Ancient_Crocodile
       rect:
         serializedVersion: 2
-        x: 408
+        x: 419
         y: 736
         width: 613
         height: 281
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: Emperor_Crab
       rect:
         serializedVersion: 2
-        x: 24
-        y: 643
+        x: 35
+        y: 639
         width: 300
         height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: Raging_Dragon
       rect:
         serializedVersion: 2
-        x: 340
-        y: 424
+        x: 357
+        y: 421
         width: 412
         height: 312
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: Smash_Hammer
       rect:
         serializedVersion: 2
-        x: 23
-        y: 424
+        x: 34
+        y: 438
         width: 306
         height: 197
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: Whale_King
       rect:
         serializedVersion: 2
-        x: 56
-        y: 325
+        x: 66
+        y: 326
         width: 234
         height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,7 +270,7 @@ TextureImporter:
         width: 321
         height: 224
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,12 +286,12 @@ TextureImporter:
       name: Darkness_Monster
       rect:
         serializedVersion: 2
-        x: 1
+        x: 11
         y: 32
-        width: 373
+        width: 370
         height: 284
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -312,7 +312,7 @@ TextureImporter:
         width: 345
         height: 138
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,12 +328,12 @@ TextureImporter:
       name: GhostShip_PU
       rect:
         serializedVersion: 2
-        x: 727
+        x: 740
         y: 8
         width: 288
         height: 148
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,13 +346,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: text_01_12
+      name: EmperorCrab
       rect:
         serializedVersion: 2
-        x: 118
-        y: 16
-        width: 22
-        height: 10
+        x: 791
+        y: 174
+        width: 451
+        height: 337
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,8 +360,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4aa634784db53f4caf417d372c9f6cd
-      internalID: -2109031008
+      spriteID: 1b4154dc336b0644a85fdeaeb5468fff
+      internalID: -297161449
       vertices: []
       indices: 
       edges: []
@@ -380,6 +380,7 @@ TextureImporter:
       Ancient_Crocodile: 44703145
       Crocodile_PU: -1108576597
       Darkness_Monster: 229883421
+      EmperorCrab: -297161449
       Emperor_Crab: 1283357489
       GhostShip_PU: 1952154573
       King_Kong: 939312454

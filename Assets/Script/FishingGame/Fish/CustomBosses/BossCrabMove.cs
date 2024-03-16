@@ -28,6 +28,11 @@ public class BossCrabMove : Move
 
     protected override void Update()
     {
+        if(_isDead)
+        {
+            return;
+        }
+
         CrabMove();
     }
 

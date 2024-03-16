@@ -12,7 +12,7 @@ public class FishManager : MonoBehaviour
     public bool _isHorizontal;
     public bool _isVertical;
 
-    private int fishSpawned = 0;
+    protected int fishSpawned = 0;
     private int fishDestroyed;
     private int fishAlive;
     private Move fishMove;
@@ -20,13 +20,20 @@ public class FishManager : MonoBehaviour
     Vector3 spawnPoint;
     Vector3 endpoint;
 
+    protected bool _isBonusRound = false;
+    private Coroutine _currentCoroutine;
+
     protected virtual void Start()
     {
+        _currentCoroutine = null;
 
-        if(!_isMainBoss)
+        /*if(!_isMainBoss)
         {
-            StartCoroutine(SpawnFishCoroutine());
-        }
+            SpawnFishFromStart();
+        }*/
+
+        WaveManager.Instance.EnterBonusStage += OnEnterBonusStage;
+        WaveManager.Instance.EnterNormalStage += OnEnterNormalStage;
     }
     private void Awake()
     {
@@ -37,12 +44,15 @@ public class FishManager : MonoBehaviour
     public virtual void SpawnFishFromStart()
     {
         fishSpawned = 0;
-        StartCoroutine(SpawnFishCoroutine());
+        _currentCoroutine = StartCoroutine(SpawnFishCoroutine());
     }
 
     IEnumerator SpawnFishCoroutine()
     {
-
+        if(_isBonusRound)
+        {
+            yield break;
+        }
 
         while (fishSpawned < maxFish)
         {
@@ -84,6 +94,28 @@ public class FishManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(spawnInterval);
             }
+        }
+    }
+
+    protected virtual void OnEnterBonusStage(int index)
+    {
+        Debug.Log("Enter Bonus Stage and spawning fishes stopped");
+
+        _isBonusRound = true;
+        if(_currentCoroutine != null)
+        {
+            StopCoroutine(_currentCoroutine);
+            _currentCoroutine = null;
+        }
+    }
+
+    protected virtual void OnEnterNormalStage(int index)
+    {
+        Debug.Log("Enter Normal Stage and spawning fishes started");
+        _isBonusRound = false;
+        if (!_isMainBoss)
+        {
+            SpawnFishFromStart();
         }
     }
 }

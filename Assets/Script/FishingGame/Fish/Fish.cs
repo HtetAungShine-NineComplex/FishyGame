@@ -9,7 +9,7 @@ public class Fish : MonoBehaviour
     [SerializeField] private Move _move;
     [SerializeField] private Collider2D _coll;
 
-    [SerializeField] private Image fish_2D;
+    [SerializeField] protected Image fish_2D;
     private Sprite[] fish_frames;
     private float frameRate = 0.05f;
 
@@ -30,7 +30,7 @@ public class Fish : MonoBehaviour
         CoinSpawnAmount = fishSO.CoinSpawnAmount;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         timer += Time.deltaTime;
 
@@ -43,7 +43,7 @@ public class Fish : MonoBehaviour
             
     }
 
-    public void OnDead()
+    public virtual void OnDead()
     {
         _coll.enabled = false;
         _move.OnDead();

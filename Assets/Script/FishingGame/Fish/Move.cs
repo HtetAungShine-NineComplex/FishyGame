@@ -10,6 +10,7 @@ public class Move : MonoBehaviour
     protected float elapsedTime;
     protected float desiredDuration = 7f;
     private Vector3 _startPoint;
+    private Vector3 _centerPoint; //only for fishes move in circle shape
     private Vector3 _endPoint;
     protected Vector3 _controlPoint;
     private FishHealth _health;
@@ -34,10 +35,14 @@ public class Move : MonoBehaviour
             return;
         }
 
-        if (_startPoint != null && _endPoint != null)
+        if (_startPoint != Vector3.zero && _endPoint != Vector3.zero && _centerPoint == Vector3.zero)
         {
 
             MoveFish(_startPoint, _endPoint);
+        }
+        else if(_startPoint != Vector3.zero && _endPoint != Vector3.zero && _centerPoint != Vector3.zero)
+        {
+            MoveFishInCircleShape(_startPoint, _centerPoint, _endPoint);
         }
     }
 
@@ -63,6 +68,13 @@ public class Move : MonoBehaviour
         _controlPoint = SpawnpointManager.Instance.GetControlPoint(_startPoint, _endPoint, curveDistance);
     }
 
+    public virtual void SetPointsForCircleShape(Vector3 startPoint_T, Vector3 centerPoint, Vector3 endPoint) //for circular movement
+    {
+        _startPoint = startPoint_T;
+        _centerPoint = centerPoint;
+        _endPoint = endPoint;
+    }
+
     public Vector3 GetEndPoint()
     {
         return _endPoint;
@@ -70,6 +82,8 @@ public class Move : MonoBehaviour
 
     protected virtual void MoveFish(Vector3 startPoint, Vector3 destroyPoint)
     {
+        
+
         if (_health != null && _health._isDead)
         {
             return;
@@ -90,12 +104,53 @@ public class Move : MonoBehaviour
         transform.position = position;
         transform.up = transform.up = direction.normalized; ;
 
+        Debug.Log("MoveFish" + completePercent * speed);
+
         float distance = Vector3.Distance(transform.position, destroyPoint);
 
         if (distance <= 0.1f)
         {
             Destroy(this.gameObject);
         }
+    }
+
+    protected virtual void MoveFishInCircleShape(Vector3 startPoint, Vector3 centerPoint, Vector3 endPoint)
+    {
+        if (_health != null && _health._isDead)
+        {
+            return;
+        }
+
+        elapsedTime += Time.deltaTime;
+        float completePercent = elapsedTime / (desiredDuration / 2);
+
+        // Calculate the initial angle based on the startPoint and centerPoint
+        Vector3 radius = startPoint - centerPoint;
+        float initialAngle = Mathf.Atan2(radius.y, radius.x);
+
+        // Calculate the current position along the circle
+        float angle = initialAngle + completePercent * Mathf.PI * 2;
+        Vector3 position = centerPoint + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * radius.magnitude;
+
+        transform.position = position;
+
+        Vector3 direction = new Vector3(-Mathf.Sin(angle), Mathf.Cos(angle), 0);
+        transform.up = direction;
+
+        float distance = Vector3.Distance(transform.position, startPoint);
+
+        StartCoroutine(SwitchFromCircleToStraight(startPoint, endPoint));
+    }
+
+    private IEnumerator SwitchFromCircleToStraight(Vector3 startPoint, Vector3 endPoint)
+    {
+        yield return new WaitForSeconds(desiredDuration);
+        
+        SetPoints(transform.position, endPoint, 0);
+        _centerPoint = Vector3.zero;
+
+        elapsedTime = 0;
+        speed = 2f;
     }
 
     private IEnumerator ChangeSpeedSmoothly(float newDuration)

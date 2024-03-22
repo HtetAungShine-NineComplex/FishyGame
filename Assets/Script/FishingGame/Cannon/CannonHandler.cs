@@ -13,6 +13,7 @@ public class CannonHandler : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject[] _cannonObjs;
     [SerializeField] private GameObject _laserCannon;
+    [SerializeField] private GameObject _laserPowerUp;
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private CannonController _cannonController;
     [SerializeField] private AudioSource _audioSource;
@@ -155,5 +156,19 @@ public class CannonHandler : MonoBehaviour
         }
 
         Debug.Log(_currentCannonIndex);
+    }
+
+    public void ActiveLaserCannon()
+    {
+        StartCoroutine(LaserCannon()); 
+    }
+
+    IEnumerator LaserCannon()
+    {
+        yield return new WaitForSeconds(3f);
+
+        _laserPowerUp.SetActive(true);
+        _laserCannon.SetActive(false);
+        _cannonController.gameObject.SetActive(false);
     }
 }

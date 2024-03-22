@@ -46,6 +46,11 @@ public class Move : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        WaveManager.Instance.EnterBonusStage -= OnEnterBonusStage;
+    }
+
     public virtual void OnDead()
     {
         _isDead = true;
@@ -102,9 +107,7 @@ public class Move : MonoBehaviour
         Vector2 direction = Bezier.GetDerivative(startPoint, _controlPoint, destroyPoint, curve.Evaluate(completePercent * speed));
 
         transform.position = position;
-        transform.up = transform.up = direction.normalized; ;
-
-        Debug.Log("MoveFish" + completePercent * speed);
+        transform.up = transform.up = direction.normalized; 
 
         float distance = Vector3.Distance(transform.position, destroyPoint);
 
@@ -137,16 +140,14 @@ public class Move : MonoBehaviour
         Vector3 direction = new Vector3(-Mathf.Sin(angle), Mathf.Cos(angle), 0);
         transform.up = direction;
 
-        float distance = Vector3.Distance(transform.position, startPoint);
-
-        StartCoroutine(SwitchFromCircleToStraight(startPoint, endPoint));
+        StartCoroutine(SwitchFromCircleToStraight(transform.position, endPoint));
     }
 
     private IEnumerator SwitchFromCircleToStraight(Vector3 startPoint, Vector3 endPoint)
     {
         yield return new WaitForSeconds(desiredDuration);
         
-        SetPoints(transform.position, endPoint, 0);
+        SetPoints(startPoint, endPoint, 0);
         _centerPoint = Vector3.zero;
 
         elapsedTime = 0;

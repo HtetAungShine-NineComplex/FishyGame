@@ -539,6 +539,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
   m_PrefabInstance: {fileID: 153124117}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &155559850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6192984432704471632, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+  m_PrefabInstance: {fileID: 784151070590069692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &169911017
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _silverCoinPrefab: {fileID: 3538222900795926884, guid: f614ce338c1b6424b8922b2c1ff19627, type: 3}
+  _rewardTxtPrefab: {fileID: 7236329039662098932, guid: 7bb9eb38816f0a845be4f6c05258b2e3, type: 3}
   _root: {fileID: 261980037}
   _coinInterval: 0.2
   _playerTransform: {fileID: 1474899121}
@@ -1486,6 +1492,41 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 480, y: 750}
   m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &448066147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448066148}
+  m_Layer: 5
+  m_Name: ForeGroundSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &448066148
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448066147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 684130711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &470558239
 GameObject:
@@ -2096,6 +2137,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
   m_PrefabInstance: {fileID: 566959998}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &568727235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568727236}
+  - component: {fileID: 568727237}
+  m_Layer: 0
+  m_Name: LaserCrabManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568727236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568727235}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &568727237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568727235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 2991986638028462469, guid: 10ffaeb6cc709124e9a0d4f9d900ee74, type: 3}
+  spawnInterval: 1
+  maxFish: 1000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 1
 --- !u!1 &583588023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,13 +2240,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6291332059505405621, guid: 294902ce16d68aa40aac07de85338a0f, type: 3}
   spawnInterval: 1.5
-  maxFish: 20
+  maxFish: 26
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 1
   _isVertical: 0
   _delay: 10
   _interval: 2
+  _waveInterval: 0
+  _waveFishCount: 0
   _startPoint: {fileID: 925990841}
   _centerPoint: {fileID: 0}
   _endPoint: {fileID: 344642323}
@@ -2409,8 +2503,8 @@ RectTransform:
   - {fileID: 808252845}
   - {fileID: 687788858}
   - {fileID: 295956960}
-  - {fileID: 261980037}
   - {fileID: 1700906884}
+  - {fileID: 261980037}
   - {fileID: 1101721866}
   - {fileID: 986220453}
   - {fileID: 1203490722}
@@ -2419,6 +2513,7 @@ RectTransform:
   - {fileID: 197746916}
   - {fileID: 2141111368}
   - {fileID: 1483053183}
+  - {fileID: 448066148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3374,13 +3469,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6291332059505405621, guid: 294902ce16d68aa40aac07de85338a0f, type: 3}
   spawnInterval: 1.5
-  maxFish: 20
+  maxFish: 26
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 1
   _isVertical: 0
   _delay: 10
   _interval: 2
+  _waveInterval: 0
+  _waveFishCount: 0
   _startPoint: {fileID: 436338101}
   _centerPoint: {fileID: 0}
   _endPoint: {fileID: 1173151374}
@@ -3437,13 +3534,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6291332059505405621, guid: 294902ce16d68aa40aac07de85338a0f, type: 3}
   spawnInterval: 1.5
-  maxFish: 20
+  maxFish: 26
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 1
   _isVertical: 0
   _delay: 10
   _interval: 2
+  _waveInterval: 0
+  _waveFishCount: 0
   _startPoint: {fileID: 1769438045}
   _centerPoint: {fileID: 0}
   _endPoint: {fileID: 553132840}
@@ -3603,6 +3702,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 684130710}
+  _foregroundSpawn: {fileID: 448066148}
+  _cannonHandler: {fileID: 1578214982}
 --- !u!1001 &1076943272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6517,6 +6618,7 @@ Transform:
   - {fileID: 360943407}
   - {fileID: 295785741}
   - {fileID: 2130470287}
+  - {fileID: 568727236}
   - {fileID: 1470224347}
   - {fileID: 1711137795}
   - {fileID: 1482414475}
@@ -6732,8 +6834,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b3a29228d2c644188cd30c0af6d700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normalStageDuration: 0.1
-  _bossFightDuration: 0.1
+  _normalStageDuration: 10
+  _bossFightDuration: 0.5
   _bonusStageDuration: 1
   _bossTitles:
   - {fileID: 1098605500}
@@ -6909,6 +7011,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118979827}
   m_CullTransparentMesh: 1
+--- !u!1 &2120123150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2651458666902978503, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+  m_PrefabInstance: {fileID: 784151070590069692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2130470286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7193,6 +7300,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 684130711}
     m_Modifications:
+    - target: {fileID: 802471264539278630, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336409680758441659, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: _laserPowerUp
+      value: 
+      objectReference: {fileID: 155559850}
     - target: {fileID: 2456438448073122249, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: _buttonRects.Array.data[2]
       value: 
@@ -7209,14 +7324,22 @@ PrefabInstance:
       propertyPath: _buttonRects.Array.data[5]
       value: 
       objectReference: {fileID: 197746916}
-    - target: {fileID: 3234358908438228911, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: _damageRate
-      value: 1
+    - target: {fileID: 2651458666902978503, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3234358908438228911, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: _laserRenderer
       value: 
       objectReference: {fileID: 687788855}
+    - target: {fileID: 7321095903849824166, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: _laserBeam
+      value: 
+      objectReference: {fileID: 2120123150}
+    - target: {fileID: 7321095903849824166, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: _cannonHandler
+      value: 
+      objectReference: {fileID: 1578214982}
     - target: {fileID: 7322619433823121936, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7297,11 +7420,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8339918120365649250, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -643
+      objectReference: {fileID: 0}
     - target: {fileID: 9178570197384237733, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: m_Name
       value: Player_UI_Group
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3100729766182654567, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

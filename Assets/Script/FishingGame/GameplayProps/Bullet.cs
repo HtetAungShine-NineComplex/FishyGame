@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private Transform[] _netSpawnPoints;
     [SerializeField] private GameObject _netPrefab;
-    [SerializeField] private GameObject _rewardTxtPrefab;
     [SerializeField] private int _totalBounce = 5; //default value
 
     private PlayerManager _playerManager;
@@ -70,9 +69,7 @@ public class Bullet : MonoBehaviour
     private void OnCaughtFish(Fish caughtFish)
     {
 
-        //instantiate reward text
-        GameObject rewardTxt = Instantiate(_rewardTxtPrefab, transform.position, Quaternion.identity, CanvasInstance.Instance.GetMainCanvas().transform);
-        rewardTxt.gameObject.GetComponent<RewardText>().SetValueText(caughtFish.Score);
+
 
         //CoinManager.Instance.ShowCoin(transform.position, Random.Range(1, 3));
         if(_playerManager != null)

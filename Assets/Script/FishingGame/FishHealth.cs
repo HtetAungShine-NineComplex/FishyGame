@@ -9,6 +9,8 @@ public class FishHealth : MonoBehaviour,IDamageable
     [SerializeField] private FishSO fishSO;
     [SerializeField] private Fish _fish;
     [SerializeField] private AudioSource _audio;
+    [SerializeField] private float _destroyDelay = 1f;
+    [SerializeField] private bool _canDieInstantly = true;
     private int _maxHealth;
 
     private int _currentHealth;
@@ -40,13 +42,21 @@ public class FishHealth : MonoBehaviour,IDamageable
         }
     }
 
+    public void InstantDie()
+    {
+        if(_canDieInstantly == false) return;
+
+        Debug.Log("InstantDie");
+        Die();
+    }
+
     public void Die()
     {
         if (_audio != null) _audio.Play();
         _isDead = true;
         _fish.OnDead();
         GeneratedFishManager.Instance.RemoveFish(this);
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, _destroyDelay);
     }
 
     public Fish GetFish()

@@ -6,6 +6,8 @@ using UnityEngine;
 public class CanvasInstance : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
+    [SerializeField] private Transform _foregroundSpawn;
+    [SerializeField] private CannonHandler _cannonHandler;
 
     public static CanvasInstance Instance;
 
@@ -24,5 +26,15 @@ public class CanvasInstance : MonoBehaviour
     public Canvas GetMainCanvas()
     {
         return canvas;
+    }
+
+    public Transform GetForegroundSpawn()
+    {
+        return _foregroundSpawn;
+    }
+
+    public CannonHandler GetCannonHandler()
+    {
+        return _cannonHandler;
     }
 }

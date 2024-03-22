@@ -82,16 +82,17 @@ public class PatternFishManager : FishManager
     protected override void OnEnterBonusStage(int index)
     {
         _isBonusRound = true;
+        fishSpawned = 0;
         SpawnFishFromStart();
     }
 
     protected override void OnEnterNormalStage(int index)
     {
         _isBonusRound = false;
-        if(_bonusPatternCoroutine != null)
+        /*if(_bonusPatternCoroutine != null)
         {
             StopCoroutine(_bonusPatternCoroutine);
             _bonusPatternCoroutine = null;
-        }
+        }*/
     }
 }

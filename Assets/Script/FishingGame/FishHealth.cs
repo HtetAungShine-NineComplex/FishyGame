@@ -11,18 +11,17 @@ public class FishHealth : MonoBehaviour,IDamageable
     [SerializeField] private AudioSource _audio;
     [SerializeField] private float _destroyDelay = 1f;
     [SerializeField] private bool _canDieInstantly = true;
+    [SerializeField] private bool isLionTurtle
+    
     private int _maxHealth;
 
     private int _currentHealth;
     public bool _isDead = false;
+
     private void Start()
     {
         _maxHealth = fishSO.MaxHealth;
         _currentHealth = _maxHealth;
-    }
-    private void Awake()
-    {
-
     }
 
     public bool Damage(int damage)
@@ -56,7 +55,12 @@ public class FishHealth : MonoBehaviour,IDamageable
         _isDead = true;
         _fish.OnDead();
         GeneratedFishManager.Instance.RemoveFish(this);
-        Destroy(gameObject, _destroyDelay);
+        
+        if (isLionTurtle == true)
+        {
+            Destroy(gameObject, 60f);
+        }
+        else Destroy(gameObject, _destroyDelay);
     }
 
     public Fish GetFish()

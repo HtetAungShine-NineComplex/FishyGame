@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
+    [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private FishSO fishSO;
-    [SerializeField] private Move _move;
-    [SerializeField] private Collider2D _coll;
+    [SerializeField] protected Move _move;
+    [SerializeField] protected Collider2D _coll;
 
-    [SerializeField] private Image fish_2D;
+    [SerializeField] protected Image fish_2D;
     private Sprite[] fish_frames;
-    private float frameRate = 0.05f;
+    protected float frameRate = 0.05f;
 
     private int currentFrame;
     private float timer;
@@ -19,7 +20,7 @@ public class Fish : MonoBehaviour
     public int Score { get; private set; }
     public int CoinSpawnAmount { get; private set; }
 
-    private void Start()
+    protected virtual void Start()
     {
         //fish_2D = GetComponent<Image>();
 
@@ -30,7 +31,7 @@ public class Fish : MonoBehaviour
         CoinSpawnAmount = fishSO.CoinSpawnAmount;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         timer += Time.deltaTime;
 
@@ -43,18 +44,18 @@ public class Fish : MonoBehaviour
             
     }
 
-    public void OnDead()
+    public virtual void OnDead()
     {
         _coll.enabled = false;
         _move.OnDead();
         frameRate /= 4;
-        StartCoroutine(FadeFish());
-        CoinManager.Instance.ShowCoin(GetComponent<RectTransform>().anchoredPosition, CoinSpawnAmount);
+        StartCoroutine(FadeFish(0.5f));
+        CoinManager.Instance.ShowCoin(_rectTransform.anchoredPosition, CoinSpawnAmount, Score);
     }
 
-    IEnumerator FadeFish()
+    protected IEnumerator FadeFish(float fadeDelay)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fadeDelay);
 
         //fish_2D.color = Color.Lerp(fish_2D.color, new Color(255, 255, 255, 0), 1f * Time.deltaTime);
         Color curColor = fish_2D.color;

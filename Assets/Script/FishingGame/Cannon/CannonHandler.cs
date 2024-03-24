@@ -13,6 +13,7 @@ public class CannonHandler : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject[] _cannonObjs;
     [SerializeField] private GameObject _laserCannon;
+    [SerializeField] private GameObject _laserPowerUp;
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private CannonController _cannonController;
     [SerializeField] private AudioSource _audioSource;
@@ -45,7 +46,6 @@ public class CannonHandler : MonoBehaviour
     private void Awake()
     {
         AmountChanged += n => OnAmountChange();
-
     }
 
     private void Start()
@@ -56,6 +56,7 @@ public class CannonHandler : MonoBehaviour
 
         _cannonController.SetPlayerManager(_playerManager);
         
+        _laserCannonController.LaserShoot += OnShoot;
     }
 
     private void OnEnable()
@@ -70,6 +71,7 @@ public class CannonHandler : MonoBehaviour
     private void OnDisable()
     {
         _cannonController.CannonShoot -= OnShoot;
+        _laserCannonController.LaserShoot -= OnShoot;
     }
 
     public void IncreaseAmount()
@@ -155,5 +157,19 @@ public class CannonHandler : MonoBehaviour
         }
 
         Debug.Log(_currentCannonIndex);
+    }
+
+    public void ActiveLaserCannon()
+    {
+        StartCoroutine(LaserCannon()); 
+    }
+
+    IEnumerator LaserCannon()
+    {
+        yield return new WaitForSeconds(2f);
+
+        _laserPowerUp.SetActive(true);
+        _laserCannon.SetActive(false);
+        _cannonController.gameObject.SetActive(false);
     }
 }

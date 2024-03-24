@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class LaserCannonController : MonoBehaviour
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private LaserRenderer _laserRenderer;
 
+    public event Action LaserShoot;
+
     private int _damageAmount;
     private FishHealth _targetFish;
 
@@ -15,7 +18,7 @@ public class LaserCannonController : MonoBehaviour
 
     private void OnEnable()
     {
-        _laserRenderer.gameObject.SetActive(true);
+        //_laserRenderer.gameObject.SetActive(true);
     }
 
     private void OnDisable()
@@ -25,7 +28,7 @@ public class LaserCannonController : MonoBehaviour
 
     private void Update()
     {
-        if (_targetFish != null)
+        if (_targetFish != null && Input.GetMouseButton(0))
         {
             
             _damageTimer += Time.deltaTime;
@@ -37,12 +40,14 @@ public class LaserCannonController : MonoBehaviour
                 }
 
                 _targetFish.Damage(_damageAmount);
+                LaserShoot?.Invoke();
                 _damageTimer = 0f;
             }
         }
         else
         {
             _targetFish = GeneratedFishManager.Instance.GetRandomFish();
+            _laserRenderer.gameObject.SetActive(false);
         }
         //_lineRenderer.gameObject.SetActive(_targetFish != null);
 

@@ -17,6 +17,7 @@ public class WaveManager : MonoBehaviour
     public event Action<int> EnterNormalStage;
 
     public event Action<int> EnterBossStage;
+    public event Action<int> ExitBossStage;
 
     public event Action<int> EnterBonusStage;
 
@@ -108,6 +109,7 @@ public class WaveManager : MonoBehaviour
 
     private void BonusStage()
     {
+        ExitBossStage?.Invoke(mapIndex - 1);
         _currentStage = WaveStage.Bonus;
         _counter = 0;
         EnterBonusStage?.Invoke(mapIndex);

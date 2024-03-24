@@ -28,6 +28,7 @@ public class FishHealth : MonoBehaviour,IDamageable
         if(_isDead) return true;
 
         _currentHealth -= damage;
+        _fish.OnHit();
 
         if(_currentHealth <= 0)
         {

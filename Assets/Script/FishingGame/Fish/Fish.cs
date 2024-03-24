@@ -11,6 +11,7 @@ public class Fish : MonoBehaviour
     [SerializeField] protected Collider2D _coll;
 
     [SerializeField] protected Image fish_2D;
+    [SerializeField] protected Image _fishGlow;
     private Sprite[] fish_frames;
     protected float frameRate = 0.05f;
 
@@ -43,6 +44,63 @@ public class Fish : MonoBehaviour
         }
             
     }
+
+    public virtual void OnHit()
+    {
+        if(_fishGlow == null) return;
+
+        StartCoroutine(HitEffect());
+    }
+
+    IEnumerator HitEffect()
+    {
+        Debug.Log("HitEffect");
+
+        float duration = 0.3f; // Duration of the color change
+        float elapsed = 0f; // Time elapsed since the start of the color change
+
+        Color startColor = new Color(1, 1, 1, 0); // Starting color (should be white)
+        Color endColor = new Color(1, 1, 1, 1); // Ending color
+
+        _fishGlow.color = startColor;
+
+        while (elapsed < duration)
+        {
+            // Calculate the current time ratio
+            float t = elapsed / duration;
+
+            // Lerp the color and apply it
+            _fishGlow.color = Color.Lerp(startColor, endColor, t);
+
+            // Update the elapsed time
+            elapsed += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Now we lerp back to the original color
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            // Calculate the current time ratio
+            float t = elapsed / duration;
+
+            // Lerp the color and apply it
+            _fishGlow.color = Color.Lerp(endColor, startColor, t);
+
+            // Update the elapsed time
+            elapsed += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Ensure the color is set back to the original color
+        _fishGlow.color = startColor;
+    }
+
+
 
     public virtual void OnDead()
     {

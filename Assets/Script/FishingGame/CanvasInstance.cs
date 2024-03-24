@@ -7,6 +7,7 @@ public class CanvasInstance : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
     [SerializeField] private Transform _foregroundSpawn;
+    [SerializeField] private Transform _midGroundSpawn;
     [SerializeField] private CannonHandler _cannonHandler;
 
     public static CanvasInstance Instance;
@@ -31,6 +32,11 @@ public class CanvasInstance : MonoBehaviour
     public Transform GetForegroundSpawn()
     {
         return _foregroundSpawn;
+    }
+
+    public Transform GetMidGroundSpawn()
+    {
+        return _midGroundSpawn;
     }
 
     public CannonHandler GetCannonHandler()

@@ -7,6 +7,7 @@ public class PowerUpCrab : Fish
     [SerializeField] private PowerUpType _powerUpType;
     [SerializeField] private CannonHandler _cannonHandler; //for player temp
     [SerializeField] private GameObject _cannonObject;
+    [SerializeField] private GameObject _powerUpTitle;
 
     protected override void Start()
     {
@@ -20,31 +21,45 @@ public class PowerUpCrab : Fish
         base.OnDead();
 
         _cannonHandler.ActiveLaserCannon();
-        StartCoroutine(MoveCannonObject());
+        StartCoroutine(MoveCannonObjectAndTitle());
     }
 
-    private IEnumerator MoveCannonObject()
+    private IEnumerator MoveCannonObjectAndTitle()
     {
-        Debug.Log("MoveCannonObject");
         float elapsedTime = 0;
         float duration = 2f;
-        
+
+        float titleElapsedTime = 0;
+        float titleDuration = 1.5f;
 
         GameObject cannon = Instantiate(_cannonObject, transform.position, Quaternion.identity, CanvasInstance.Instance.GetForegroundSpawn());
+        GameObject title = Instantiate(_powerUpTitle, transform.position, Quaternion.identity, CanvasInstance.Instance.GetMidGroundSpawn());
 
-        Vector3 startingPosition = cannon.transform.position;
-        Vector3 targetPosition = _cannonHandler.transform.position;
+        Vector3 startingPositionCannon = cannon.transform.position;
+        Vector3 targetPositionCannon = _cannonHandler.transform.position;
+
+        Vector3 startingPositionTitle = title.transform.position;
+        Vector3 targetPositionTitle = _cannonHandler.transform.position + new Vector3(0f, 250f, 0f);
 
         while (elapsedTime < duration)
         {
-            cannon.transform.position = Vector3.Lerp(startingPosition, targetPosition, elapsedTime / duration);
+            cannon.transform.position = Vector3.Lerp(startingPositionCannon, targetPositionCannon, elapsedTime / duration);
             elapsedTime += Time.deltaTime;
+            if(titleElapsedTime < titleDuration)
+            {
+                title.transform.position = Vector3.Lerp(startingPositionTitle, targetPositionTitle, titleElapsedTime / titleDuration);
+                titleElapsedTime += Time.deltaTime;
+            }
             yield return null;
         }
 
-        // Ensure the object ends up exactly at the target position.
-        cannon.transform.position = targetPosition;
+
+
+        // Ensure the objects end up exactly at the target positions.
+        cannon.transform.position = targetPositionCannon;
+        title.transform.position = targetPositionTitle;
         Destroy(cannon.gameObject);
+        Destroy(title.gameObject);
     }
 }
 

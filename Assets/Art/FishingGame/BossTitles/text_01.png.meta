@@ -354,7 +354,7 @@ TextureImporter:
         width: 451
         height: 337
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,6 +362,27 @@ TextureImporter:
       bones: []
       spriteID: 1b4154dc336b0644a85fdeaeb5468fff
       internalID: -297161449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserBeam
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 524
+        width: 313
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6418660ed4844db40997f6eaaf0fd90b
+      internalID: -111846927
       vertices: []
       indices: 
       edges: []
@@ -384,6 +405,7 @@ TextureImporter:
       Emperor_Crab: 1283357489
       GhostShip_PU: 1952154573
       King_Kong: 939312454
+      LaserBeam: -111846927
       Mermaid: -92921751
       Raging_Dragon: -1320908987
       Smash_Hammer: 1068554509

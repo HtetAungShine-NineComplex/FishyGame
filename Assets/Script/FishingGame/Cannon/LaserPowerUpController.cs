@@ -6,9 +6,15 @@ using UnityEngine.UIElements;
 public class LaserPowerUpController : MonoBehaviour
 {
     [SerializeField] private GameObject _laserBeam;
+    [SerializeField] private GameObject _title;
     [SerializeField] private CannonHandler _cannonHandler;
 
     private bool _shoot = false;
+
+    private void OnEnable()
+    {
+        _title.SetActive(true);
+    }
 
     private void Update()
     {
@@ -54,6 +60,7 @@ public class LaserPowerUpController : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
 
+        _title.SetActive(false);
         _laserBeam.SetActive(false);
         _cannonHandler.SwapWeapon();
         _shoot = false;

@@ -46,7 +46,6 @@ public class CannonHandler : MonoBehaviour
     private void Awake()
     {
         AmountChanged += n => OnAmountChange();
-
     }
 
     private void Start()
@@ -57,6 +56,7 @@ public class CannonHandler : MonoBehaviour
 
         _cannonController.SetPlayerManager(_playerManager);
         
+        _laserCannonController.LaserShoot += OnShoot;
     }
 
     private void OnEnable()
@@ -71,6 +71,7 @@ public class CannonHandler : MonoBehaviour
     private void OnDisable()
     {
         _cannonController.CannonShoot -= OnShoot;
+        _laserCannonController.LaserShoot -= OnShoot;
     }
 
     public void IncreaseAmount()
@@ -165,7 +166,7 @@ public class CannonHandler : MonoBehaviour
 
     IEnumerator LaserCannon()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         _laserPowerUp.SetActive(true);
         _laserCannon.SetActive(false);

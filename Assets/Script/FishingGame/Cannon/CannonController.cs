@@ -148,7 +148,6 @@ public class CannonController : MonoBehaviour
         {
             _shootCoroutine = StartCoroutine(ShootHandle());
         }
-
     }
 
     IEnumerator ShootHandle()

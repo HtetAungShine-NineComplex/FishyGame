@@ -539,11 +539,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
   m_PrefabInstance: {fileID: 153124117}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &155559850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6192984432704471632, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-  m_PrefabInstance: {fileID: 784151070590069692}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &169911017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7059,11 +7054,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118979827}
   m_CullTransparentMesh: 1
---- !u!1 &2120123150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2651458666902978503, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-  m_PrefabInstance: {fileID: 784151070590069692}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2130470286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7449,14 +7439,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 684130711}
     m_Modifications:
-    - target: {fileID: 802471264539278630, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2336409680758441659, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: _laserPowerUp
-      value: 
-      objectReference: {fileID: 155559850}
     - target: {fileID: 2456438448073122249, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: _buttonRects.Array.data[2]
       value: 
@@ -7473,14 +7455,6 @@ PrefabInstance:
       propertyPath: _buttonRects.Array.data[5]
       value: 
       objectReference: {fileID: 197746916}
-    - target: {fileID: 2651458666902978503, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3234358908438228911, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: _damageRate
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3234358908438228911, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: _laserRenderer
       value: 
@@ -7489,14 +7463,6 @@ PrefabInstance:
       propertyPath: _title
       value: 
       objectReference: {fileID: 1827995198}
-    - target: {fileID: 7321095903849824166, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: _laserBeam
-      value: 
-      objectReference: {fileID: 2120123150}
-    - target: {fileID: 7321095903849824166, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: _cannonHandler
-      value: 
-      objectReference: {fileID: 1578214982}
     - target: {fileID: 7322619433823121936, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7577,16 +7543,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8339918120365649250, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -643
-      objectReference: {fileID: 0}
+    - target: {fileID: 7893616769151530702, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: _title
+      value: 
+      objectReference: {fileID: 1827995198}
     - target: {fileID: 9178570197384237733, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: m_Name
       value: Player_UI_Group
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3100729766182654567, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

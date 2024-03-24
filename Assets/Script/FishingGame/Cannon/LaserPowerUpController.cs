@@ -8,6 +8,7 @@ public class LaserPowerUpController : MonoBehaviour
     [SerializeField] private GameObject _laserBeam;
     [SerializeField] private GameObject _title;
     [SerializeField] private CannonHandler _cannonHandler;
+    [SerializeField] private AudioSource _audioSource;
 
     private bool _shoot = false;
 
@@ -51,6 +52,8 @@ public class LaserPowerUpController : MonoBehaviour
         }
 
         _shoot = true;
+        _audioSource.Stop();
+        _audioSource.Play();
         StartCoroutine(ShowLaserBeam());
     }
 
@@ -58,7 +61,7 @@ public class LaserPowerUpController : MonoBehaviour
     {
         _laserBeam.SetActive(true);
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
         _title.SetActive(false);
         _laserBeam.SetActive(false);

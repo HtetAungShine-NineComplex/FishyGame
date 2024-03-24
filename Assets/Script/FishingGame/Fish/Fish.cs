@@ -11,7 +11,8 @@ public class Fish : MonoBehaviour
     [SerializeField] protected Collider2D _coll;
 
     [SerializeField] protected Image fish_2D;
-    [SerializeField] protected Image _fishGlow;
+    [SerializeField] protected CanvasGroup _fishGlow;
+
     private Sprite[] fish_frames;
     protected float frameRate = 0.05f;
 
@@ -56,21 +57,21 @@ public class Fish : MonoBehaviour
     {
         Debug.Log("HitEffect");
 
-        float duration = 0.3f; // Duration of the color change
-        float elapsed = 0f; // Time elapsed since the start of the color change
+        float duration = 0.3f; // Duration of the fade in/out
+        float elapsed = 0f; // Time elapsed since the start of the fade
 
-        Color startColor = new Color(1, 1, 1, 0); // Starting color (should be white)
-        Color endColor = new Color(1, 1, 1, 1); // Ending color
+        float startAlpha = 0f; // Starting alpha (completely transparent)
+        float endAlpha = 1f; // Ending alpha (completely opaque)
 
-        _fishGlow.color = startColor;
+        _fishGlow.alpha = startAlpha;
 
         while (elapsed < duration)
         {
             // Calculate the current time ratio
             float t = elapsed / duration;
 
-            // Lerp the color and apply it
-            _fishGlow.color = Color.Lerp(startColor, endColor, t);
+            // Lerp the alpha and apply it
+            _fishGlow.alpha = Mathf.Lerp(startAlpha, endAlpha, t);
 
             // Update the elapsed time
             elapsed += Time.deltaTime;
@@ -79,15 +80,15 @@ public class Fish : MonoBehaviour
             yield return null;
         }
 
-        // Now we lerp back to the original color
+        // Now we lerp back to the original alpha
         elapsed = 0f;
         while (elapsed < duration)
         {
             // Calculate the current time ratio
             float t = elapsed / duration;
 
-            // Lerp the color and apply it
-            _fishGlow.color = Color.Lerp(endColor, startColor, t);
+            // Lerp the alpha and apply it
+            _fishGlow.alpha = Mathf.Lerp(endAlpha, startAlpha, t);
 
             // Update the elapsed time
             elapsed += Time.deltaTime;
@@ -96,9 +97,10 @@ public class Fish : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the color is set back to the original color
-        _fishGlow.color = startColor;
+        // Ensure the alpha is set back to the original value
+        _fishGlow.alpha = startAlpha;
     }
+
 
 
 

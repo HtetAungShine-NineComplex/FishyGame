@@ -21,6 +21,7 @@ public class CannonHandler : MonoBehaviour
     public event Action<int> AmountChanged;
 
     private int _currentCannonIndex = 0;
+    private bool _isLaserCannon = false;
 
     private int _amount;
     private LaserCannonController _laserCannonController;
@@ -88,8 +89,11 @@ public class CannonHandler : MonoBehaviour
     {
         _playerManager.UseCoin(Amount);
 
-        _audioSource.Stop();
-        _audioSource.Play();
+        if(!_isLaserCannon)
+        {
+            _audioSource.Stop();
+            _audioSource.Play();
+        }
     }
 
     private void OnAmountChange()
@@ -149,11 +153,13 @@ public class CannonHandler : MonoBehaviour
             _laserCannon.SetActive(false);
             _cannonController.gameObject.SetActive(true);
             _cannonController.ChangeType(_currentCannonIndex);
+            _isLaserCannon = false;
         }
         else
         {
             _cannonController.gameObject.SetActive(false);
             _laserCannon.SetActive(true);
+            _isLaserCannon = true;
         }
 
         Debug.Log(_currentCannonIndex);

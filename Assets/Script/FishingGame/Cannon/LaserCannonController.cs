@@ -30,9 +30,9 @@ public class LaserCannonController : MonoBehaviour
     {
         if (_targetFish != null && Input.GetMouseButton(0))
         {
-            
+            _laserRenderer.gameObject.SetActive(true);
             _damageTimer += Time.deltaTime;
-            if (_damageTimer >= _damageRate)
+            if (_damageTimer >= 1/_damageRate)
             {
                 if(!GeneratedFishManager.Instance.HasFish(_targetFish))
                 {
@@ -53,7 +53,6 @@ public class LaserCannonController : MonoBehaviour
 
         if (_targetFish != null)
         {
-            _laserRenderer.gameObject.SetActive(true);
             ShootLaser(_targetFish.transform.position);
         }
         else

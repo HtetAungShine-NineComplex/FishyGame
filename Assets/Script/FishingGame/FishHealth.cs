@@ -11,8 +11,7 @@ public class FishHealth : MonoBehaviour,IDamageable
     [SerializeField] private AudioSource _audio;
     [SerializeField] private float _destroyDelay = 1f;
     [SerializeField] private bool _canDieInstantly = true;
-    [SerializeField] private bool isLionTurtle
-    
+    [SerializeField] private bool isLionTurtle;
     private int _maxHealth;
 
     private int _currentHealth;

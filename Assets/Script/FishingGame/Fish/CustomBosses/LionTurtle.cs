@@ -111,7 +111,7 @@ public class LionTurtle : Fish
         }
 
         shellRotateImg.gameObject.SetActive(false);
-        CoinManager.Instance.ShowCoin(GetComponent<RectTransform>().anchoredPosition, CoinSpawnAmount);
+        CoinManager.Instance.ShowCoin(GetComponent<RectTransform>().anchoredPosition, CoinSpawnAmount, Score);
         Debug.Log("Finished Fire Particle Animation");
         yield return new WaitForSeconds(5f);
         

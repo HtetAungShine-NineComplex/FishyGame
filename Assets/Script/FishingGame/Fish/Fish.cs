@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Fish : MonoBehaviour
 {
     [SerializeField] private FishSO fishSO;
-    [SerializeField] private Move _move;
+    [SerializeField] protected Move _move;
     [SerializeField] private Collider2D _coll;
 
     [SerializeField] protected Image fish_2D;

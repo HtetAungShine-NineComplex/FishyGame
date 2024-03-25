@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: CrocodileBoss Variant
+  m_EditorClassIdentifier: 
+  fishType: 2
+  MaxHealth: 10000
+  Score: 15000
+  CoinSpawnAmount: 6
+  FishFrames:
+  - {fileID: 1091341759, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 53077596, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -201316706, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 1442171174, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -336629660, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -1204610055, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -1204610055, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -336629660, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 1442171174, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -201316706, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 53077596, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 1091341759, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 53077596, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -201316706, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 1442171174, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -336629660, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -1204610055, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -836387654, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -1151559784, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -1928967985, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -1371094623, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: -201316706, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 53077596, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  - {fileID: 1091341759, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  FishDefaultFrame: {fileID: 1091341759, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  FishFrameRate: 0.25
+  speed: 1
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.6288347
+      outSlope: 0.6288347
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.60437155
+      value: 0.38004982
+      inSlope: 0.7074462
+      outSlope: 0.7074462
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06437339
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.567001
+      outSlope: 1.567001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

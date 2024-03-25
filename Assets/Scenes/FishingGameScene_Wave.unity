@@ -1440,6 +1440,10 @@ PrefabInstance:
       value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF
       value: 
       objectReference: {fileID: 808252845}
@@ -2119,6 +2123,10 @@ PrefabInstance:
       value: 2231
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF
       value: 
       objectReference: {fileID: 808252845}
@@ -2385,6 +2393,10 @@ PrefabInstance:
     - target: {fileID: 7509100669679763263, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2396
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF
@@ -3636,6 +3648,10 @@ PrefabInstance:
       value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF
       value: 
       objectReference: {fileID: 808252845}
@@ -3792,6 +3808,10 @@ PrefabInstance:
     - target: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF
@@ -4101,6 +4121,10 @@ PrefabInstance:
     - target: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF
@@ -4454,6 +4478,7 @@ MonoBehaviour:
   - {fileID: 1470224348}
   _thirdMapBosses:
   - {fileID: 690156068}
+  - {fileID: 1862292226}
 --- !u!1 &1255614982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4590,6 +4615,10 @@ PrefabInstance:
     - target: {fileID: 7509100669679763263, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2488
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF
@@ -6442,6 +6471,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 290609769277260443, guid: d91cf1afb83dde64396285913f5fe76e, type: 3}
   m_PrefabInstance: {fileID: 36246574406512462}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1862292224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862292225}
+  - component: {fileID: 1862292226}
+  m_Layer: 0
+  m_Name: AnglerBossManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862292225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862292224}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862292226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862292224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 3947903996969571724, guid: 1eb8a5c91e92673498dd1c357216f2e5, type: 3}
+  spawnInterval: 30
+  maxFish: 2
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 1
+  _isHorizontal: 1
+  _isVertical: 0
 --- !u!1 &1867955792
 GameObject:
   m_ObjectHideFlags: 0
@@ -6669,6 +6749,7 @@ Transform:
   - {fileID: 169911018}
   - {fileID: 1163620282}
   - {fileID: 690156067}
+  - {fileID: 1862292225}
   - {fileID: 1229034680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6877,8 +6958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b3a29228d2c644188cd30c0af6d700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _normalStageDuration: 10
-  _bossFightDuration: 0.5
+  _normalStageDuration: 1
+  _bossFightDuration: 1
   _bonusStageDuration: 1
   _bossTitles:
   - {fileID: 1098605500}
@@ -7647,6 +7728,10 @@ PrefabInstance:
     - target: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
+      propertyPath: maxFish
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8424017246529501045, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
       propertyPath: parentTF

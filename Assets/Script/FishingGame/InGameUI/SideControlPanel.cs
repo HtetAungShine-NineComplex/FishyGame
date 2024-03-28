@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TinAungKhant.UIManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,13 +9,41 @@ public class SideControlPanel : MonoBehaviour
     [SerializeField] private Button _toggleBtn;
     [SerializeField] private RectTransform _root;
 
+    [Header("Side Panel Button")]
+    [SerializeField] private Button _fishStatsBtn;
+    [SerializeField] private Button _quitBtn;
+    [SerializeField] private Button _settingBtn;
+    [SerializeField] private Button _exchangeGoldBtn;
+
+
+
     private bool _isOpened = false;
 
     private void Start()
     {
         _toggleBtn.onClick.AddListener(OnToggleBtnClick);
+        _fishStatsBtn.onClick.AddListener(OnCLickFishStatsBtn);
+        _quitBtn.onClick.AddListener(OnCLickQuitBtn);
+        _settingBtn.onClick.AddListener(OnCLickSettingBtn);
+        _exchangeGoldBtn.onClick.AddListener(OnClickExchangeGoldBtn);
     }
 
+    private void OnClickExchangeGoldBtn()
+    {
+        UIManager.Instance.ShowUI(GLOBALCONST.UI_INGAMETAKESCORE);
+    }
+    private void OnCLickSettingBtn()
+    {
+        UIManager.Instance.ShowUI(GLOBALCONST.UI_INGAMESETTING);
+    }
+    private void OnCLickQuitBtn()
+    {
+        UIManager.Instance.ShowUI(GLOBALCONST.UI_INGAMEQUIT);
+    }
+    private void OnCLickFishStatsBtn()
+    {
+        UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS);
+    }
     private void OnToggleBtnClick()
     {
         _isOpened = !_isOpened;

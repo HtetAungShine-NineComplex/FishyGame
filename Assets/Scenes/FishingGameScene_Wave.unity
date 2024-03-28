@@ -757,6 +757,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleBtn: {fileID: 1101051271}
   _root: {fileID: 197746916}
+  _fishStatsBtn: {fileID: 1262288270}
+  _quitBtn: {fileID: 1806511436}
+  _settingBtn: {fileID: 1136126888}
+  _exchangeGoldBtn: {fileID: 2118979829}
 --- !u!224 &235698814 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
@@ -2580,7 +2584,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &684130711
 RectTransform:
@@ -4788,7 +4792,7 @@ GameObject:
   - component: {fileID: 1262288271}
   - component: {fileID: 1262288270}
   m_Layer: 5
-  m_Name: Multiple_Btn
+  m_Name: FishStat_Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7666,7 +7670,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 135.6061, y: 162.12119}
+  m_SizeDelta: {x: 149.2376, y: 155.7599}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118979829
 MonoBehaviour:
@@ -8255,6 +8259,10 @@ PrefabInstance:
       propertyPath: _title
       value: 
       objectReference: {fileID: 1827995198}
+    - target: {fileID: 8888014180756959802, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9178570197384237733, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: m_Name
       value: Player_UI_Group

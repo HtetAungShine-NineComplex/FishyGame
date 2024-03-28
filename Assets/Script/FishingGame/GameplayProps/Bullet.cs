@@ -33,9 +33,10 @@ public class Bullet : MonoBehaviour
 
     void MoveBullet()
     {
-        if(_move)
+        if (_move)
         {
-            transform.Translate(Vector2.up * speed * Time.deltaTime * 100);
+            float normalizedSpeed = speed * Time.deltaTime * Screen.height / 1080f; // 1080 is the base resolution
+            transform.Translate(Vector2.up * normalizedSpeed * 100);
         }
     }
 

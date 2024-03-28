@@ -147,7 +147,7 @@ public class Move : MonoBehaviour
     {
         yield return new WaitForSeconds(desiredDuration);
         
-        SetPoints(startPoint, endPoint, 0);
+        SetPoints(transform.position, endPoint, 0);
         _centerPoint = Vector3.zero;
 
         elapsedTime = 0;

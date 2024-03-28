@@ -35,6 +35,11 @@ public class GeneratedFishManager : MonoBehaviour
         }
     }
 
+    public List<FishHealth> GetGeneratedFishList()
+    {
+        return _generatedFishList;
+    }
+
     public FishHealth GetRandomFish()
     {
         if (_generatedFishList.Count == 0)

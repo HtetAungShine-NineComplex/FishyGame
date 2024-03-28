@@ -7,14 +7,16 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private Transform[] _netSpawnPoints;
     [SerializeField] private GameObject _netPrefab;
-    [SerializeField] private int _totalBounce = 5; //default value
+    [SerializeField] protected int _totalBounce = 5; //default value
 
     private PlayerManager _playerManager;
 
-    private int _damageAmount;
-    private int _bounceCount = 0; 
+    protected bool _move = true;
 
-    void Update()
+    private int _damageAmount;
+    protected int _bounceCount = 0; 
+
+    protected virtual void Update()
     {
         MoveBullet();
     }
@@ -31,10 +33,13 @@ public class Bullet : MonoBehaviour
 
     void MoveBullet()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime * 100);
+        if(_move)
+        {
+            transform.Translate(Vector2.up * speed * Time.deltaTime * 100);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Fish"))
         {
@@ -68,9 +73,6 @@ public class Bullet : MonoBehaviour
 
     private void OnCaughtFish(Fish caughtFish)
     {
-
-
-
         //CoinManager.Instance.ShowCoin(transform.position, Random.Range(1, 3));
         if(_playerManager != null)
         {
@@ -78,7 +80,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void ReflectDirection(bool isTop)
+    public virtual void ReflectDirection(bool isTop)
     {
         _bounceCount++;
 

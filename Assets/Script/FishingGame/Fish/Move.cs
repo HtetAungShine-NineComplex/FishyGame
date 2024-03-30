@@ -16,9 +16,23 @@ public class Move : MonoBehaviour
     private FishHealth _health;
 
     public SpawnPosition spawnPosition;
-    public float _curveDistance = 500f;
+    private float _curveDistance = 500f;
+
+    public float CurveDistance
+    {
+        get { return _curveDistance; }
+        set
+        {
+            _curveDistance = value * Screen.height / 1080f;
+        }
+    }
 
     protected bool _isDead = false;
+
+    private void Awake()
+    {
+        _curveDistance *= Screen.height / 1080f;
+    }
 
     protected virtual void Start()
     {

@@ -16,12 +16,12 @@ public class BossCrabMove : Move
     {
         base.Start();
 
-        _curveDistance = -100f;
+        CurveDistance = -100f;
 
         _controlPoint = SpawnpointManager.Instance.GetControlPoint(
             _wayPoints[_previousWayPointIndex].position, 
             _wayPoints[_currentWayPointIndex].position,
-            _curveDistance);
+            CurveDistance);
 
         //_controlPoint = new Vector3(_controlPoint.x, _controlPoint.y, _controlPoint.z);
     }
@@ -82,7 +82,7 @@ public class BossCrabMove : Move
                     _currentWayPointIndex = _wayPoints.Length - 1;
                 }
 
-                _curveDistance = 100;
+                CurveDistance = 100;
             }
             else
             {
@@ -90,7 +90,7 @@ public class BossCrabMove : Move
                 _previousWayPointIndex = _currentWayPointIndex;
                 _currentWayPointIndex  = (_currentWayPointIndex + 1) % _wayPoints.Length;
 
-                _curveDistance = -100;
+                CurveDistance = -100;
             }
 
             /*if((_currentWayPointIndex == 1 && _previousWayPointIndex == 0) || (_currentWayPointIndex == 0 && _previousWayPointIndex == 1))
@@ -113,7 +113,7 @@ public class BossCrabMove : Move
             _controlPoint = SpawnpointManager.Instance.GetControlPoint(
             _wayPoints[_previousWayPointIndex].position, 
             _wayPoints[_currentWayPointIndex].position,
-            _curveDistance);
+            CurveDistance);
 
             elapsedTime = 0;
         }

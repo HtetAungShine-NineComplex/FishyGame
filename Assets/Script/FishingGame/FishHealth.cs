@@ -12,6 +12,7 @@ public class FishHealth : MonoBehaviour,IDamageable
     [SerializeField] private float _destroyDelay = 1f;
     [SerializeField] private bool _canDieInstantly = true;
     [SerializeField] private bool isLionTurtle;
+    [SerializeField] private bool isDragon;
     private int _maxHealth;
 
     private int _currentHealth;
@@ -56,9 +57,9 @@ public class FishHealth : MonoBehaviour,IDamageable
         _fish.OnDead();
         GeneratedFishManager.Instance.RemoveFish(this);
         
-        if (isLionTurtle == true)
+        if (isLionTurtle || isDragon == true)
         {
-            Destroy(gameObject, 60f);
+            Destroy(gameObject, 60f); //Hardcode for LionTurtle death effect duration
         }
         else Destroy(gameObject, _destroyDelay);
     }

@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 2854301548273642982}
   - component: {fileID: 8855901159641774503}
   - component: {fileID: 6995449616556001285}
-  - component: {fileID: 3597048822449652440}
+  - component: {fileID: 2374351192009748457}
   m_Layer: 5
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2854301548273642982
 RectTransform:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3597048822449652440
+--- !u!114 &2374351192009748457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,15 +85,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 340734086175273357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75cc7bc659334fb4794498a5e4d94910, type: 3}
+  m_Script: {fileID: 11500000, guid: 35847f0474c387c4da5fa2f2b0d1aca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rectTransform: {fileID: 0}
+  _rectTransform: {fileID: 6629902709021420973}
   fishSO: {fileID: 11400000, guid: c098602ca8b4dd84186d3503a9f90422, type: 2}
-  _move: {fileID: 0}
-  _coll: {fileID: 0}
-  fish_2D: {fileID: 6995449616556001285}
-  _fishGlow: {fileID: 0}
+  _move: {fileID: 6678164767544303110}
+  _coll: {fileID: 6945424343159101116}
+  fish_2D: {fileID: 868471069498690768}
+  _fishGlow: {fileID: 5868215391562945969}
+  shellImg: {fileID: 3104368702944771705}
+  shellRotateImg: {fileID: 923105043101868089}
+  fireEffectImg: {fileID: 2639184543769611914}
+  shellWithFire: {fileID: 5955512423828226743}
+  shellAnimationClip: {fileID: 7400000, guid: 783c02602399b4c4985eafb5202b03a3, type: 2}
+  fireEffectAnimationClip: {fileID: 7400000, guid: b3925a01bad66024f85f45d80a0cb60d, type: 2}
+  fireEffectBGAnimationClip: {fileID: 7400000, guid: 836193f5a9240824ebf0ba1f65e60543, type: 2}
 --- !u!1 &1516543647267613053
 GameObject:
   m_ObjectHideFlags: 0

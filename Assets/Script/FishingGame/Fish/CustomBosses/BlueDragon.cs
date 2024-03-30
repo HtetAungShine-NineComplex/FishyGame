@@ -89,11 +89,14 @@ public class BlueDragon : Fish
         SmallDragonManager.Instance.SpawnSmallDragon_Bot();
         yield return new WaitForSeconds(1.7f);
 
-/*        SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
+        Backgroundmanager.Instance.FullOfExplosionEffect.SetActive(true);
+        SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
-        SmallDragonManager.Instance.SpawnSmallDragon_Top();
-        SmallDragonManager.Instance.SpawnSmallDragon_Bot();
-        yield return new WaitForSeconds(2.2f);*/
+        SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
+        SmallDragonManager.Instance.SpawnSecSmallDragon_Bot();
+        yield return new WaitForSeconds(2f);
+
+
         fireBallImg.gameObject.SetActive(false);
         //multiply Text
 

@@ -6,4 +6,5 @@ public class Backgroundmanager : Singleton<Backgroundmanager>
 {
     public GameObject FireEfectBG;
     public GameObject BurningBorderBG;
+    public GameObject FullOfExplosionEffect;
 }

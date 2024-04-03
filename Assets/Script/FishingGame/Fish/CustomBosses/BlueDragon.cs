@@ -12,16 +12,10 @@ public class BlueDragon : Fish
 
     [SerializeField] private Image fireBallImg;
     [SerializeField] private GameObject ShadowGO;
-<<<<<<< HEAD
 
     [SerializeField] private Image CountImg;
     [SerializeField] private List<Sprite> MultiplyCount2Ds = new List<Sprite>();
 
-=======
-    [SerializeField] private Image CountImg;
-
-    [SerializeField] private List<Sprite> MultiplyCount2Ds= new List<Sprite>();
->>>>>>> f693026 (Updated Lion Turtle Multiply Count)
     private enum DeathState
     {
         DyingPhaseOne,
@@ -56,7 +50,7 @@ public class BlueDragon : Fish
             case DeathState.DyingPhaseOne:
                 StartCoroutine(DyingPhaseOneCoroutine());
                 break;
-            default: 
+            default:
                 break;
 
         }
@@ -68,38 +62,35 @@ public class BlueDragon : Fish
         fish_2D.enabled = false;
         fireBallImg.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.2f);
-
-        CountImg.gameObject.SetActive(true);
-        CountImg.sprite = MultiplyCount2Ds[0];
+;
         SmallDragonManager.Instance.SpawnSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSmallDragon_Right();
         yield return new WaitForSeconds(2.2f);
 
-        CountImg.sprite = MultiplyCount2Ds[1];
         SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
         yield return new WaitForSeconds(2.1f);
 
-        CountImg.sprite = MultiplyCount2Ds[2];
+        SmallDragonManager.Instance.SpawnSmallDragon_Left();
+        SmallDragonManager.Instance.SpawnSmallDragon_Right();
+        yield return new WaitForSeconds(2.0f);
+
         SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
         SmallDragonManager.Instance.SpawnSmallDragon_Bot();
         yield return new WaitForSeconds(1.9f);
 
-        CountImg.sprite = MultiplyCount2Ds[3];
         SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Bot();
         yield return new WaitForSeconds(1.8f);
 
-        CountImg.sprite = MultiplyCount2Ds[4];
         SmallDragonManager.Instance.SpawnSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSmallDragon_Right();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
         SmallDragonManager.Instance.SpawnSmallDragon_Bot();
         yield return new WaitForSeconds(1.7f);
 
-<<<<<<< HEAD
         ExplosionEffectManager.Instance.ShowExplosionEffects();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
@@ -114,9 +105,6 @@ public class BlueDragon : Fish
         }
         yield return new WaitForSeconds(2f);
 
-=======
-        CountImg.gameObject.SetActive(false);
->>>>>>> f693026 (Updated Lion Turtle Multiply Count)
         fireBallImg.gameObject.SetActive(false);
         //multiply Text
 
@@ -167,7 +155,7 @@ public class BlueDragon : Fish
         FishesInstantDie();
 
         yield return new WaitForSeconds(1.7f);
-        
+
 
         CountImg.gameObject.SetActive(false);
         fireBallImg.gameObject.SetActive(false);

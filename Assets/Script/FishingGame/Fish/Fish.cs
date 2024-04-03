@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
+    [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private FishSO fishSO;
-    [SerializeField] private Move _move;
-    [SerializeField] private Collider2D _coll;
+    [SerializeField] protected Move _move;
+    [SerializeField] protected Collider2D _coll;
 
-    [SerializeField] private Image fish_2D;
+    [SerializeField] protected Image fish_2D;
+    [SerializeField] protected CanvasGroup _fishGlow;
+
     private Sprite[] fish_frames;
-    private float frameRate = 0.05f;
+    protected float frameRate = 0.05f;
 
     private int currentFrame;
     private float timer;
@@ -19,7 +22,7 @@ public class Fish : MonoBehaviour
     public int Score { get; private set; }
     public int CoinSpawnAmount { get; private set; }
 
-    private void Start()
+    protected virtual void Start()
     {
         //fish_2D = GetComponent<Image>();
 
@@ -30,7 +33,7 @@ public class Fish : MonoBehaviour
         CoinSpawnAmount = fishSO.CoinSpawnAmount;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         timer += Time.deltaTime;
 
@@ -43,18 +46,76 @@ public class Fish : MonoBehaviour
             
     }
 
-    public void OnDead()
+    public virtual void OnHit()
+    {
+        if(_fishGlow == null) return;
+
+        StartCoroutine(HitEffect());
+    }
+
+    IEnumerator HitEffect()
+    {
+        Debug.Log("HitEffect");
+
+        float duration = 0.3f; // Duration of the fade in/out
+        float elapsed = 0f; // Time elapsed since the start of the fade
+
+        float startAlpha = 0f; // Starting alpha (completely transparent)
+        float endAlpha = 1f; // Ending alpha (completely opaque)
+
+        _fishGlow.alpha = startAlpha;
+
+        while (elapsed < duration)
+        {
+            // Calculate the current time ratio
+            float t = elapsed / duration;
+
+            // Lerp the alpha and apply it
+            _fishGlow.alpha = Mathf.Lerp(startAlpha, endAlpha, t);
+
+            // Update the elapsed time
+            elapsed += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Now we lerp back to the original alpha
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            // Calculate the current time ratio
+            float t = elapsed / duration;
+
+            // Lerp the alpha and apply it
+            _fishGlow.alpha = Mathf.Lerp(endAlpha, startAlpha, t);
+
+            // Update the elapsed time
+            elapsed += Time.deltaTime;
+
+            // Wait for the next frame
+            yield return null;
+        }
+
+        // Ensure the alpha is set back to the original value
+        _fishGlow.alpha = startAlpha;
+    }
+
+
+
+
+    public virtual void OnDead()
     {
         _coll.enabled = false;
         _move.OnDead();
         frameRate /= 4;
-        StartCoroutine(FadeFish());
-        CoinManager.Instance.ShowCoin(GetComponent<RectTransform>().anchoredPosition, CoinSpawnAmount);
+        StartCoroutine(FadeFish(0.5f));
+        CoinManager.Instance.ShowCoin(_rectTransform.anchoredPosition, CoinSpawnAmount, Score);
     }
 
-    IEnumerator FadeFish()
+    protected IEnumerator FadeFish(float fadeDelay)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fadeDelay);
 
         //fish_2D.color = Color.Lerp(fish_2D.color, new Color(255, 255, 255, 0), 1f * Time.deltaTime);
         Color curColor = fish_2D.color;

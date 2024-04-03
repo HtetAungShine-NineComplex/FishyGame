@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BossManager : MonoBehaviour
 {
-    [SerializeField] private FishManager[] _bosses;
+    [SerializeField] private FishManager[] _firstMapBosses;
+    [SerializeField] private FishManager[] _secondMapBosses;
+    [SerializeField] private FishManager[] _thirdMapBosses;
 
     private void Start()
     {
@@ -13,6 +15,39 @@ public class BossManager : MonoBehaviour
 
     private void OnEnterBossStage(int mapIndex)
     {
-        _bosses[mapIndex].SpawnFishFromStart();
+        StartCoroutine(SpawnBosses(mapIndex));
+    }
+
+    IEnumerator SpawnBosses(int mapIndex)
+    {
+        yield return new WaitForSeconds(5f);
+
+        switch (mapIndex)
+        {
+            case 0: //first map
+                for (int i = 0; i < _firstMapBosses.Length; i++)
+                {
+                    _firstMapBosses[i].SpawnFishFromStart();
+                }
+                break;
+
+            case 1: //second map
+                for (int i = 0; i < _secondMapBosses.Length; i++)
+                {
+                    _secondMapBosses[i].SpawnFishFromStart();
+                }
+                break;
+
+            case 2: //third map
+                for (int i = 0; i < _thirdMapBosses.Length; i++)
+                {
+                    _thirdMapBosses[i].SpawnFishFromStart();
+                }
+                break;
+
+            default:
+                break;
+        }
+
     }
 }

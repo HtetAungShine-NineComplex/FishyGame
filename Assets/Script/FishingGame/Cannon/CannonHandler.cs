@@ -13,6 +13,10 @@ public class CannonHandler : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject[] _cannonObjs;
     [SerializeField] private GameObject _laserCannon;
+    [SerializeField] private GameObject _laserPowerUp;
+    [SerializeField] private GameObject _drillPowerUp;
+    [SerializeField] private GameObject _hammerSmash;
+    [SerializeField] private GameObject _hammerSmashTitle;
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private CannonController _cannonController;
     [SerializeField] private AudioSource _audioSource;
@@ -20,9 +24,12 @@ public class CannonHandler : MonoBehaviour
     public event Action<int> AmountChanged;
 
     private int _currentCannonIndex = 0;
+    private bool _isLaserCannon = false;
 
     private int _amount;
     private LaserCannonController _laserCannonController;
+
+    private bool _isPowerUpActive = false;
 
     private int Amount
     {
@@ -45,7 +52,6 @@ public class CannonHandler : MonoBehaviour
     private void Awake()
     {
         AmountChanged += n => OnAmountChange();
-
     }
 
     private void Start()
@@ -56,6 +62,7 @@ public class CannonHandler : MonoBehaviour
 
         _cannonController.SetPlayerManager(_playerManager);
         
+        _laserCannonController.LaserShoot += OnShoot;
     }
 
     private void OnEnable()
@@ -70,6 +77,7 @@ public class CannonHandler : MonoBehaviour
     private void OnDisable()
     {
         _cannonController.CannonShoot -= OnShoot;
+        _laserCannonController.LaserShoot -= OnShoot;
     }
 
     public void IncreaseAmount()
@@ -86,8 +94,11 @@ public class CannonHandler : MonoBehaviour
     {
         _playerManager.UseCoin(Amount);
 
-        _audioSource.Stop();
-        _audioSource.Play();
+        if(!_isLaserCannon)
+        {
+            _audioSource.Stop();
+            _audioSource.Play();
+        }
     }
 
     private void OnAmountChange()
@@ -135,6 +146,9 @@ public class CannonHandler : MonoBehaviour
 
     public void SwapWeapon()
     {
+
+        _isPowerUpActive = false;
+
         _currentCannonIndex++;
 
         if(_currentCannonIndex > 2)
@@ -147,13 +161,84 @@ public class CannonHandler : MonoBehaviour
             _laserCannon.SetActive(false);
             _cannonController.gameObject.SetActive(true);
             _cannonController.ChangeType(_currentCannonIndex);
+            _isLaserCannon = false;
         }
         else
         {
             _cannonController.gameObject.SetActive(false);
             _laserCannon.SetActive(true);
+            _isLaserCannon = true;
         }
 
         Debug.Log(_currentCannonIndex);
+    }
+
+    public void ActivePowerUp(PowerUpType type)
+    {
+        if(_isPowerUpActive)
+        {
+            return;
+        }
+
+        StartCoroutine(ActivePowerUpCannon(type));
+    }
+
+    IEnumerator ActivePowerUpCannon(PowerUpType type)
+    {
+        _isPowerUpActive = true;
+
+        yield return new WaitForSeconds(2f);
+
+        switch (type)
+        {
+            case PowerUpType.Laser:
+                _laserPowerUp.SetActive(true);
+                _laserCannon.SetActive(false);
+                _cannonController.gameObject.SetActive(false);
+                break;
+
+            case PowerUpType.Drill:
+                _drillPowerUp.SetActive(true);
+                _laserCannon.SetActive(false);
+                _cannonController.gameObject.SetActive(false);
+                break;
+
+            case PowerUpType.Hammer:
+                StartCoroutine(HammerSmashEffect());
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    IEnumerator HammerSmashEffect()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            _hammerSmash.SetActive(false);
+            yield return new WaitForSeconds(1f);
+
+            _hammerSmash.SetActive(true);
+            _hammerSmashTitle.SetActive(true);
+
+            yield return new WaitForSeconds(2f);
+
+            List<FishHealth> fishList = GeneratedFishManager.Instance.GetGeneratedFishList();
+
+            for (int a = 0; a < fishList.Count; a++)
+            {
+                fishList[a].InstantDie();
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        _isPowerUpActive = false;
+
+        _hammerSmash.SetActive(false);
+        _hammerSmashTitle.SetActive(false);
     }
 }

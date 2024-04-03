@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75cc7bc659334fb4794498a5e4d94910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 5330267505097675299}
   fishSO: {fileID: 0}
   _move: {fileID: 5284785134040080776}
   _coll: {fileID: 8474039234513201458}
@@ -171,6 +172,8 @@ MonoBehaviour:
   Config: {fileID: 0}
   fishSO: {fileID: 0}
   _fish: {fileID: 8555422473807289894}
+  _audio: {fileID: 0}
+  _destroyDelay: 1
   _isDead: 0
 --- !u!82 &802696355588252161
 AudioSource:

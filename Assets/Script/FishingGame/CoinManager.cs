@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoinManager : MonoBehaviour
 {
     [SerializeField] private GameObject _silverCoinPrefab;
+    [SerializeField] private GameObject _rewardTxtPrefab;
     [SerializeField] private Transform _root;
     [SerializeField] private float _coinInterval;
     [SerializeField] private Transform _playerTransform; //temporary use only
@@ -26,8 +27,13 @@ public class CoinManager : MonoBehaviour
         }
     }
 
-    public void ShowCoin(Vector3 spawnPos, int coinAmount)
+    public void ShowCoin(Vector3 spawnPos, int coinAmount, int score)
     {
+        //instantiate reward text
+        GameObject rewardTxt = Instantiate(_rewardTxtPrefab, _root);
+        rewardTxt.GetComponent<RectTransform>().anchoredPosition = spawnPos;
+        rewardTxt.gameObject.GetComponent<RewardText>().SetValueText(score);
+
         StartCoroutine(SilverCoinSpawn(spawnPos, coinAmount));
     }
 

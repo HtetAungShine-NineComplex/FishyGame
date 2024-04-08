@@ -18,6 +18,8 @@ public class FishHealth : MonoBehaviour,IDamageable
     private int _currentHealth;
     public bool _isDead = false;
 
+    public Sprite FishIcon { get { return _fish.FishIcon; } }
+
     private void Start()
     {
         _maxHealth = fishSO.MaxHealth;

@@ -22,6 +22,8 @@ public class Fish : MonoBehaviour
     public int Score { get; private set; }
     public int CoinSpawnAmount { get; private set; }
 
+    public Sprite FishIcon { get; private set; }
+
     protected virtual void Start()
     {
         //fish_2D = GetComponent<Image>();
@@ -31,6 +33,7 @@ public class Fish : MonoBehaviour
         frameRate = fishSO.FishFrameRate;
         Score = fishSO.Score;
         CoinSpawnAmount = fishSO.CoinSpawnAmount;
+        FishIcon = fishSO.FishIcon;
     }
 
     protected virtual void Update()

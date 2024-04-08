@@ -697,6 +697,8 @@ MonoBehaviour:
   _laserCannon: {fileID: 6757659870298275864}
   _laserPowerUp: {fileID: 5026888297338195334}
   _drillPowerUp: {fileID: 6920862372793979260}
+  _hammerSmash: {fileID: 0}
+  _hammerSmashTitle: {fileID: 0}
   _playerManager: {fileID: 0}
   _cannonController: {fileID: 8850366699901042603}
   _audioSource: {fileID: 894338139358560703}
@@ -1366,7 +1368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595396477265204056, guid: 3d394762854269b40ae8f9db42cb17af, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 40
+      value: 159
       objectReference: {fileID: 0}
     - target: {fileID: 7595396477265204056, guid: 3d394762854269b40ae8f9db42cb17af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

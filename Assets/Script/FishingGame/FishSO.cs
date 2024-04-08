@@ -14,6 +14,7 @@ public class FishSO : ScriptableObject
         Boss
     }
     public FishType fishType;
+    public Sprite FishIcon;
 
     //For Health
     [Range(100f, 10000f)] public int MaxHealth;

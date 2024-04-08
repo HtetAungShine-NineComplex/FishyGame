@@ -50,7 +50,7 @@ public class BlueDragon : Fish
             case DeathState.DyingPhaseOne:
                 StartCoroutine(DyingPhaseOneCoroutine());
                 break;
-            default: 
+            default:
                 break;
 
         }
@@ -155,7 +155,7 @@ public class BlueDragon : Fish
         FishesInstantDie();
 
         yield return new WaitForSeconds(1.7f);
-        
+
 
         CountImg.gameObject.SetActive(false);
         fireBallImg.gameObject.SetActive(false);

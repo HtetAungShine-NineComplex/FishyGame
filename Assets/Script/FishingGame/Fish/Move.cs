@@ -168,7 +168,7 @@ public class Move : MonoBehaviour
         speed = 2f;
     }
 
-    private IEnumerator ChangeSpeedSmoothly(float newDuration)
+    public IEnumerator ChangeSpeedSmoothly(float newDuration)
     {
         while (true)
         {

@@ -13,11 +13,11 @@ public class Fish : MonoBehaviour
     [SerializeField] protected Image fish_2D;
     [SerializeField] protected CanvasGroup _fishGlow;
 
-    private Sprite[] fish_frames;
+    protected Sprite[] fish_frames;
     protected float frameRate = 0.05f;
 
-    private int currentFrame;
-    private float timer;
+    protected int currentFrame;
+    protected float timer;
 
     public int Score { get; private set; }
     public int CoinSpawnAmount { get; private set; }

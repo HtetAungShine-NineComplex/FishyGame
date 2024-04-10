@@ -52,17 +52,24 @@ public class CannonHandler : MonoBehaviour
     private void Awake()
     {
         AmountChanged += n => OnAmountChange();
+        _cannonController.withLevel = _withLevel;
     }
 
     private void Start()
     {
-        _laserCannonController = _laserCannon.GetComponentInChildren<LaserCannonController>();
+        if(_laserCannon != null)
+        {
+            _laserCannonController = _laserCannon.GetComponentInChildren<LaserCannonController>();
+        }
 
         Amount = _increaseStep;
 
         _cannonController.SetPlayerManager(_playerManager);
         
-        _laserCannonController.LaserShoot += OnShoot;
+        if(_laserCannonController != null)
+        {
+            _laserCannonController.LaserShoot += OnShoot;
+        }
     }
 
     private void OnEnable()
@@ -77,7 +84,12 @@ public class CannonHandler : MonoBehaviour
     private void OnDisable()
     {
         _cannonController.CannonShoot -= OnShoot;
-        _laserCannonController.LaserShoot -= OnShoot;
+
+        if (_laserCannonController != null)
+        {
+            _laserCannonController.LaserShoot -= OnShoot;
+        }
+        
     }
 
     public void IncreaseAmount()

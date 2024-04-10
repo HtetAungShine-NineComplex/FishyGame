@@ -26,6 +26,8 @@ public class CannonController : MonoBehaviour
     private int _damageAmount = 0;
     private bool _autoShoot = false;
 
+    public bool withLevel = false;
+
     public event Action CannonShoot;
 
     private PlayerManager _playerManager;
@@ -152,8 +154,18 @@ public class CannonController : MonoBehaviour
 
     IEnumerator ShootHandle()
     {
-        GameObject bulletObj = Instantiate(_bulletPrefabs[_currentCannonIndex], _shootPoint.position, _shootPoint.rotation, 
+        GameObject bulletObj = null;
+
+        if (withLevel)
+        {
+            bulletObj = Instantiate(_bulletPrefabs[_currentLevel], _shootPoint.position, _shootPoint.rotation,
             CanvasInstance.Instance.GetMainCanvas().transform);
+        }
+        else
+        {
+            bulletObj = Instantiate(_bulletPrefabs[_currentCannonIndex], _shootPoint.position, _shootPoint.rotation,
+            CanvasInstance.Instance.GetMainCanvas().transform);
+        }
 
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.SetDamageAmount(_damageAmount);

@@ -250,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &23553839
 RectTransform:
   m_ObjectHideFlags: 0
@@ -307,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animators: []
   _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 1250891591}
   _transform: {fileID: 23553839}
@@ -314,6 +315,9 @@ MonoBehaviour:
   - {fileID: 1693856207}
   - {fileID: 2054884466}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!1 &40586749
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &40586750
 Transform:
   m_ObjectHideFlags: 0
@@ -362,6 +366,9 @@ MonoBehaviour:
   spawnInterval: 2.5
   maxFish: 3000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &84311079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,7 +1140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &230897225
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,6 +1172,9 @@ MonoBehaviour:
   spawnInterval: 45
   maxFish: 300
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &261980036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _silverCoinPrefab: {fileID: 3538222900795926884, guid: f614ce338c1b6424b8922b2c1ff19627, type: 3}
+  _rewardTxtPrefab: {fileID: 0}
   _root: {fileID: 261980037}
   _coinInterval: 0.2
   _playerTransform: {fileID: 1805801019}
@@ -1563,7 +1574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &360943407
 Transform:
   m_ObjectHideFlags: 0
@@ -1595,6 +1606,9 @@ MonoBehaviour:
   spawnInterval: 6
   maxFish: 2000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &393109811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,7 +2027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &470558240
 Transform:
   m_ObjectHideFlags: 0
@@ -2045,6 +2059,9 @@ MonoBehaviour:
   spawnInterval: 8.5
   maxFish: 1700
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &470711075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,6 +2442,7 @@ MonoBehaviour:
   - {fileID: 1805801021}
   - {fileID: 989966388}
   _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs:
   - {fileID: 6015228984462601164, guid: a200047c0db1f42488c8950757d96436, type: 3}
   - {fileID: 5973510395487048083, guid: 0c634d14b78bca74781a63b5ca81a958, type: 3}
@@ -2436,6 +2454,9 @@ MonoBehaviour:
   - {fileID: 1693856207}
   - {fileID: 2054884466}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!1 &559733729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &559733730
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,6 +2505,9 @@ MonoBehaviour:
   spawnInterval: 1.5
   maxFish: 8000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &582114469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,7 +2750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &606045173
 Transform:
   m_ObjectHideFlags: 0
@@ -2758,6 +2782,9 @@ MonoBehaviour:
   spawnInterval: 28
   maxFish: 1000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &623619742
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,7 +3208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &693362913
 Transform:
   m_ObjectHideFlags: 0
@@ -3213,6 +3240,9 @@ MonoBehaviour:
   spawnInterval: 9.5
   maxFish: 1500
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &709224193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,6 +3319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animators: []
   _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 327992923}
   _transform: {fileID: 709224194}
@@ -3296,6 +3327,9 @@ MonoBehaviour:
   - {fileID: 1693856207}
   - {fileID: 2054884466}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!1 &713834716
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,6 +3708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acc98bda6ffd18478ca7d566c745c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isTop: 0
 --- !u!1 &784643926
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,7 +4011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9617adbf2fb3cc84f9308594963df8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _withLevel: 0
+  _withLevel: 1
   _increaseStep: 50
   _maxAmount: 600
   _cannonObjs:
@@ -3984,6 +4019,11 @@ MonoBehaviour:
   - {fileID: 709224193}
   - {fileID: 1805801018}
   - {fileID: 989966386}
+  _laserCannon: {fileID: 0}
+  _laserPowerUp: {fileID: 0}
+  _drillPowerUp: {fileID: 0}
+  _hammerSmash: {fileID: 0}
+  _hammerSmashTitle: {fileID: 0}
   _playerManager: {fileID: 1474899123}
   _cannonController: {fileID: 536780484}
   _audioSource: {fileID: 888566465}
@@ -4431,6 +4471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 684130710}
+  _foregroundSpawn: {fileID: 0}
+  _midGroundSpawn: {fileID: 0}
+  _cannonHandler: {fileID: 0}
 --- !u!1 &988106786
 GameObject:
   m_ObjectHideFlags: 0
@@ -4585,6 +4628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animators: []
   _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 1747438088}
   _transform: {fileID: 989966387}
@@ -4592,6 +4636,9 @@ MonoBehaviour:
   - {fileID: 1693856207}
   - {fileID: 2054884466}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!1 &1008940551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5531,7 +5578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1122368335
 Transform:
   m_ObjectHideFlags: 0
@@ -6645,7 +6692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1474483068
 Transform:
   m_ObjectHideFlags: 0
@@ -6677,6 +6724,9 @@ MonoBehaviour:
   spawnInterval: 30
   maxFish: 1000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1474495537
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,7 +7348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1539238890
 Transform:
   m_ObjectHideFlags: 0
@@ -7330,6 +7380,9 @@ MonoBehaviour:
   spawnInterval: 4
   maxFish: 2500
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1565409039
 GameObject:
   m_ObjectHideFlags: 0
@@ -7499,6 +7552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acc98bda6ffd18478ca7d566c745c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isTop: 1
 --- !u!1 &1599212245
 GameObject:
   m_ObjectHideFlags: 0
@@ -7855,6 +7909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acc98bda6ffd18478ca7d566c745c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isTop: 0
 --- !u!1 &1663139097
 GameObject:
   m_ObjectHideFlags: 0
@@ -7871,7 +7926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1663139098
 Transform:
   m_ObjectHideFlags: 0
@@ -7903,6 +7958,9 @@ MonoBehaviour:
   spawnInterval: 18
   maxFish: 1000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1663373835
 GameObject:
   m_ObjectHideFlags: 0
@@ -8126,7 +8184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1707282825
 Transform:
   m_ObjectHideFlags: 0
@@ -8158,6 +8216,9 @@ MonoBehaviour:
   spawnInterval: 2
   maxFish: 10000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1711817764
 GameObject:
   m_ObjectHideFlags: 0
@@ -8670,7 +8731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1795920359
 Transform:
   m_ObjectHideFlags: 0
@@ -8702,6 +8763,9 @@ MonoBehaviour:
   spawnInterval: 31
   maxFish: 1000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &1800807006
 GameObject:
   m_ObjectHideFlags: 0
@@ -8953,6 +9017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animators: []
   _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 1655886194}
   _transform: {fileID: 1805801019}
@@ -8960,6 +9025,9 @@ MonoBehaviour:
   - {fileID: 1693856207}
   - {fileID: 2054884466}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!95 &1805801021
 Animator:
   serializedVersion: 5
@@ -10624,6 +10692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acc98bda6ffd18478ca7d566c745c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isTop: 1
 --- !u!1 &2132386030
 GameObject:
   m_ObjectHideFlags: 0
@@ -10715,7 +10784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2141022396
 Transform:
   m_ObjectHideFlags: 0
@@ -10747,6 +10816,9 @@ MonoBehaviour:
   spawnInterval: 3
   maxFish: 3000
   parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
 --- !u!1 &2142767051
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,6 +45,7 @@ public class SmallDragonManager : Singleton<SmallDragonManager>
     public void SpawnSmallDragon_Bot()
     {
         GameObject fish = Instantiate(sec_smallDragon_Bot, parentTransform);
+        Debug.LogWarning(sec_smallDragon_Bot.transform.position);
     }
     public void SpawnSecSmallDragon_Top()
     {

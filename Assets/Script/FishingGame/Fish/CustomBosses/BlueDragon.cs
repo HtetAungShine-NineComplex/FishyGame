@@ -56,60 +56,6 @@ public class BlueDragon : Fish
         }
     }
 
-    /*private IEnumerator DyingPhaseOneCoroutine() // Need to apply multiply text
-    {
-        ShadowGO.gameObject.SetActive(false);
-        fish_2D.enabled = false;
-        fireBallImg.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.2f);
-;
-        SmallDragonManager.Instance.SpawnSmallDragon_Left();
-        SmallDragonManager.Instance.SpawnSmallDragon_Right();
-        yield return new WaitForSeconds(2.2f);
-
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
-        yield return new WaitForSeconds(2.1f);
-
-        SmallDragonManager.Instance.SpawnSmallDragon_Left();
-        SmallDragonManager.Instance.SpawnSmallDragon_Right();
-        yield return new WaitForSeconds(2.0f);
-
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
-        SmallDragonManager.Instance.SpawnSmallDragon_Bot();
-        yield return new WaitForSeconds(1.9f);
-
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Bot();
-        yield return new WaitForSeconds(1.8f);
-
-        SmallDragonManager.Instance.SpawnSmallDragon_Left();
-        SmallDragonManager.Instance.SpawnSmallDragon_Right();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
-        SmallDragonManager.Instance.SpawnSmallDragon_Bot();
-        yield return new WaitForSeconds(1.7f);
-
-        ExplosionEffectManager.Instance.ShowExplosionEffects();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
-        SmallDragonManager.Instance.SpawnSecSmallDragon_Bot();
-
-        List<FishHealth> fishList = GeneratedFishManager.Instance.GetGeneratedFishList();
-
-        for (int a = 0; a < fishList.Count; a++)
-        {
-            fishList[a].InstantDie();
-        }
-        yield return new WaitForSeconds(2f);
-
-        fireBallImg.gameObject.SetActive(false);
-        //multiply Text
-
-    }*/
-
     private IEnumerator DyingPhaseOneCoroutine() // Need to apply multiply text
     {
         ShadowGO.gameObject.SetActive(false);

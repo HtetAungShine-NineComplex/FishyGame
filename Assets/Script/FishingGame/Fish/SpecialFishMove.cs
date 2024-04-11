@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpecialFishMove : Move
 {
+    [SerializeField] private GameObject _coinFX;
+
     public override void OnDead()
     {
         base.OnDead();
@@ -21,5 +23,7 @@ public class SpecialFishMove : Move
             transform.position = Vector3.Lerp(startPoint, endPoint, time);
             yield return null;
         }
+
+        Instantiate(_coinFX, transform.position, Quaternion.identity, CanvasInstance.Instance.GetMidGroundSpawn());
     }
 }

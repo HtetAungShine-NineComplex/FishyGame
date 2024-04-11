@@ -634,6 +634,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleBtn: {fileID: 1101051271}
   _root: {fileID: 197746916}
+  _fishStatsBtn: {fileID: 0}
+  _quitBtn: {fileID: 0}
+  _settingBtn: {fileID: 0}
+  _exchangeGoldBtn: {fileID: 0}
 --- !u!1 &236056243
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _silverCoinPrefab: {fileID: 3538222900795926884, guid: f614ce338c1b6424b8922b2c1ff19627, type: 3}
+  _rewardTxtPrefab: {fileID: 0}
   _root: {fileID: 261980037}
   _coinInterval: 0.2
   _playerTransform: {fileID: 1474899121}
@@ -1650,8 +1655,12 @@ MonoBehaviour:
   _isVertical: 0
   _delay: 5
   _interval: 2
+  _waveInterval: 0
+  _waveFishCount: 0
   _startPoint: {fileID: 925990841}
+  _centerPoint: {fileID: 0}
   _endPoint: {fileID: 344642323}
+  _type: 0
 --- !u!1 &653678668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,7 +2314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &816059020
 Transform:
   m_ObjectHideFlags: 0
@@ -2506,8 +2515,12 @@ MonoBehaviour:
   _isVertical: 0
   _delay: 5
   _interval: 2
+  _waveInterval: 0
+  _waveFishCount: 0
   _startPoint: {fileID: 436338101}
+  _centerPoint: {fileID: 0}
   _endPoint: {fileID: 1173151374}
+  _type: 0
 --- !u!1 &960597823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2567,8 +2580,12 @@ MonoBehaviour:
   _isVertical: 0
   _delay: 5
   _interval: 2
+  _waveInterval: 0
+  _waveFishCount: 0
   _startPoint: {fileID: 1769438045}
+  _centerPoint: {fileID: 0}
   _endPoint: {fileID: 553132840}
+  _type: 0
 --- !u!1 &986220452
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,6 +2635,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 684130710}
+  _foregroundSpawn: {fileID: 0}
+  _midGroundSpawn: {fileID: 0}
+  _cannonHandler: {fileID: 0}
 --- !u!1 &1087040854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3685,6 +3705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireEfectBG: {fileID: 1571764280}
   BurningBorderBG: {fileID: 14300056}
+  FullOfExplosionEffect: {fileID: 0}
 --- !u!1 &1537566358
 GameObject:
   m_ObjectHideFlags: 0
@@ -4457,7 +4478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1707282825
 Transform:
   m_ObjectHideFlags: 0

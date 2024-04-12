@@ -13,24 +13,21 @@ MonoBehaviour:
   m_Name: Big Nemo
   m_EditorClassIdentifier: 
   fishType: 0
+  FishIcon: {fileID: -1536209428, guid: 220ff1c38716cb24dadd05c7bc837d5a, type: 3}
   MaxHealth: 600
   Score: 400
   CoinSpawnAmount: 2
   FishFrames:
-  - {fileID: -452619049, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: 485485277, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: -840897597, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: 938219511, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: -1224633683, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: 1599698997, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: -1756434877, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: 1599698997, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: -1224633683, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: 938219511, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: -840897597, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: 485485277, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  - {fileID: -452619049, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
-  FishDefaultFrame: {fileID: -452619049, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
+  - {fileID: 628470346, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: -835273374, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: -1915689936, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: 1183314964, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: -842348422, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: 1183314964, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: -1915689936, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: -835273374, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  - {fileID: 628470346, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
+  FishDefaultFrame: {fileID: 628470346, guid: f8da407b1e0a3154ea99469847030a9e, type: 3}
   FishFrameRate: 0.15
   speed: 0.8
   SpeedCurve:

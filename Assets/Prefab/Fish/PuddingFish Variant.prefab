@@ -188,6 +188,24 @@ MonoBehaviour:
   _coll: {fileID: 8721460622977085230}
   fish_2D: {fileID: 1447818648666592169}
   _fishGlow: {fileID: 6494138565318773954}
+  _deadFrames:
+  - {fileID: 187111603, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 837799403, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 1512028394, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: -1593781037, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: -60787265, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: -256470346, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 1110033148, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 1303971008, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 830490135, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 1303971008, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 1110033148, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: -256470346, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: -60787265, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: -1593781037, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 1512028394, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 837799403, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
+  - {fileID: 187111603, guid: 14ba3386cb406df4893fa7102cb1660e, type: 3}
 --- !u!1 &2465205280668770897
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,3 +761,5 @@ MonoBehaviour:
   fishSO: {fileID: 11400000, guid: 3d5e5fad69c76f943a3841c5b94240f7, type: 2}
   spawnPosition: 0
   _coinFX: {fileID: 3969616937594883578, guid: 665c20dd21c183a4d9cdff9f7d36f3c2, type: 3}
+  _coinSpawnPlaces:
+  - {fileID: 5001781736730612799}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-public class BossCrabMove : Move
+public class BossCrabMove : SpecialFishMove
 {
     [SerializeField] private Transform[] _wayPoints;
 

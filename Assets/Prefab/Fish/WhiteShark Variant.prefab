@@ -90,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
   fishSO: {fileID: 11400000, guid: ae9125343ec97cb4bbdb55cddc9f0dde, type: 2}
-  _move: {fileID: 9040149062240805392}
+  _move: {fileID: 0}
   _coll: {fileID: 4736536052954114730}
   fish_2D: {fileID: 5127302770944692761}
   _fishGlow: {fileID: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
   fishSO: {fileID: 11400000, guid: ae9125343ec97cb4bbdb55cddc9f0dde, type: 2}
-  _move: {fileID: 9040149062240805392}
+  _move: {fileID: 0}
   _coll: {fileID: 4736536052954114730}
   fish_2D: {fileID: 6364330178126549405}
   _fishGlow: {fileID: 0}
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
   fishSO: {fileID: 11400000, guid: ae9125343ec97cb4bbdb55cddc9f0dde, type: 2}
-  _move: {fileID: 9040149062240805392}
+  _move: {fileID: 0}
   _coll: {fileID: 4736536052954114730}
   fish_2D: {fileID: 3308774446305814058}
   _fishGlow: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 5922647839587354992}
   - component: {fileID: 875738860419928833}
   - component: {fileID: 6731572253199634154}
-  - component: {fileID: 2217030379684119296}
+  - component: {fileID: 2826435712626196189}
   m_Layer: 5
   m_Name: FIsh
   m_TagString: Untagged
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2217030379684119296
+--- !u!114 &2826435712626196189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -418,15 +418,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6213954513918425694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75cc7bc659334fb4794498a5e4d94910, type: 3}
+  m_Script: {fileID: 11500000, guid: d5ac017f89a00ce47a7fae2169ab0667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 9068756198008771003}
   fishSO: {fileID: 11400000, guid: ae9125343ec97cb4bbdb55cddc9f0dde, type: 2}
-  _move: {fileID: 9040149062240805392}
+  _move: {fileID: 6825956701435539623}
   _coll: {fileID: 4736536052954114730}
   fish_2D: {fileID: 6731572253199634154}
   _fishGlow: {fileID: 2222258769882117357}
+  _deadFrames: []
 --- !u!1 &8416591113408734043
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
   fishSO: {fileID: 11400000, guid: ae9125343ec97cb4bbdb55cddc9f0dde, type: 2}
-  _move: {fileID: 9040149062240805392}
+  _move: {fileID: 0}
   _coll: {fileID: 4736536052954114730}
   fish_2D: {fileID: 7175781982594575735}
   _fishGlow: {fileID: 0}
@@ -532,7 +533,7 @@ PrefabInstance:
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: _fish
       value: 
-      objectReference: {fileID: 2217030379684119296}
+      objectReference: {fileID: 2826435712626196189}
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: Config
       value: 
@@ -545,6 +546,10 @@ PrefabInstance:
       propertyPath: fishSO
       value: 
       objectReference: {fileID: 11400000, guid: ae9125343ec97cb4bbdb55cddc9f0dde, type: 2}
+    - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      propertyPath: _destroyDelay
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fishSO
       value: 
@@ -652,6 +657,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7948068399954265977, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
     - {fileID: 8555422473807289894, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+    - {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
@@ -663,14 +669,17 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7769804728470234850}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8612866281859157046, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6825956701435539623}
   m_SourcePrefab: {fileID: 100100000, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
 --- !u!114 &1641486569557173123 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
   m_PrefabInstance: {fileID: 3756665888095912856}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4874398897246523310}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 370bc6ccc049f754f9e555c8d52ef60d, type: 3}
@@ -686,17 +695,28 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
   m_PrefabInstance: {fileID: 3756665888095912856}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9040149062240805392 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+--- !u!1 &4874398897246523310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8612866281859157046, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
   m_PrefabInstance: {fileID: 3756665888095912856}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &6825956701435539623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874398897246523310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 022dc8622a578c449b490d1adf64324c, type: 3}
+  m_Script: {fileID: 11500000, guid: 078bb6db08b58a242841aac348f2c07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishSO: {fileID: 11400000, guid: ae9125343ec97cb4bbdb55cddc9f0dde, type: 2}
+  spawnPosition: 0
+  _coinFX: {fileID: 3969616937594883578, guid: 665c20dd21c183a4d9cdff9f7d36f3c2, type: 3}
+  _coinSpawnPlaces:
+  - {fileID: 9068756198008771003}
 --- !u!224 &9068756198008771003 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}

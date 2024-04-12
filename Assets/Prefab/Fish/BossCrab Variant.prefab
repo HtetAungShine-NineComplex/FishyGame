@@ -188,28 +188,7 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 8989362638077558335}
   _fishGlow: {fileID: 3911901930627076554}
-  _deathFrames:
-  - {fileID: 1063589783, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1468508446, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1249561009, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -107364089, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 994467024, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1603594972, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -180044487, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -23163582, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 779961127, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 99777004, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1963884940, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 571945534, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1541678920, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1676154587, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -814036623, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -965817492, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 745347421, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1908387031, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -480877469, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1740494258, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1015450887, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  _deadFrames:
   - {fileID: 1902825170, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
   - {fileID: 360818638, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
   - {fileID: -770322753, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
@@ -217,23 +196,13 @@ MonoBehaviour:
   - {fileID: -26711733, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
   - {fileID: 1889822586, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
   - {fileID: -683993653, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1889822586, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -26711733, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 2137979079, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -770322753, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 360818638, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1902825170, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1015450887, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1740494258, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -480877469, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1908387031, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 745347421, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -965817492, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -814036623, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1676154587, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 1541678920, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: 571945534, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
-  - {fileID: -1963884940, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  - {fileID: 1118671803, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  - {fileID: 232438371, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  - {fileID: -41107332, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  - {fileID: 714432322, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  - {fileID: -1420728992, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  - {fileID: 1483045658, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
+  _hasDeadAnimations: 1
 --- !u!1 &2169747865269219657
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +561,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 544258d66dfd0fc45acf611f484351bf, type: 2}
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      propertyPath: _destroyDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: _canDieInstantly
       value: 0
       objectReference: {fileID: 0}
@@ -779,7 +752,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishSO: {fileID: 11400000, guid: 544258d66dfd0fc45acf611f484351bf, type: 2}
   spawnPosition: 0
-  _curveDistance: 500
+  _coinFX: {fileID: 3969616937594883578, guid: 665c20dd21c183a4d9cdff9f7d36f3c2, type: 3}
+  _coinSpawnPlaces:
+  - {fileID: 1727778828302337936}
   _wayPoints: []
 --- !u!61 &3142231024501570689 stripped
 BoxCollider2D:

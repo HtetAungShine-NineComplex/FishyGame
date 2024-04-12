@@ -66,7 +66,14 @@ public class Crocodile : Fish
 
     IEnumerator BiteDelay()
     {
-        yield return new WaitForSeconds(2f);
+        if(_move.spawnPosition == SpawnPosition.Top || _move.spawnPosition == SpawnPosition.Bottom)
+        {
+            yield return new WaitForSeconds(3f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(8f);
+        }
 
         _canBite = true;
     }

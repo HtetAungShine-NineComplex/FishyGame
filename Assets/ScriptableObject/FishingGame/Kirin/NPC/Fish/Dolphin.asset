@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: Dolphin
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: 0}
+  MaxHealth: 600
+  Score: 400
+  CoinSpawnAmount: 2
+  FishFrames:
+  - {fileID: -1011276242, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: -376945201, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: 1967398912, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: 1402372089, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: -187133044, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: 945808678, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: -1626148959, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: 1835267650, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: -1626148959, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: 945808678, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: -187133044, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: 1402372089, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: 1967398912, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: -376945201, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  - {fileID: -1011276242, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  FishDefaultFrame: {fileID: -1011276242, guid: 9933fa8cb2f2a43449e0ece49f29e6bb, type: 3}
+  FishFrameRate: 0.26
+  speed: 0.6
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: SDragon_Type2
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: 0}
+  MaxHealth: 600
+  Score: 400
+  CoinSpawnAmount: 2
+  FishFrames:
+  - {fileID: 691336010, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: -366212430, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: 1603498452, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: -439333071, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: -1279235622, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: -1196974105, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: -1464796879, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: -428864166, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  - {fileID: 328446454, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  FishDefaultFrame: {fileID: 691336010, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
+  FishFrameRate: 0.36
+  speed: 0.36
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

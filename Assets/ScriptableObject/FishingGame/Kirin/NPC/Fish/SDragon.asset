@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: SDragon
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: 0}
+  MaxHealth: 600
+  Score: 400
+  CoinSpawnAmount: 2
+  FishFrames:
+  - {fileID: -853261085, guid: b748b475c538d204095c92160b1d5c97, type: 3}
+  - {fileID: -1616265807, guid: b748b475c538d204095c92160b1d5c97, type: 3}
+  - {fileID: -1277588185, guid: b748b475c538d204095c92160b1d5c97, type: 3}
+  - {fileID: -153773220, guid: b748b475c538d204095c92160b1d5c97, type: 3}
+  - {fileID: -1718371040, guid: b748b475c538d204095c92160b1d5c97, type: 3}
+  FishDefaultFrame: {fileID: -853261085, guid: b748b475c538d204095c92160b1d5c97, type: 3}
+  FishFrameRate: 0.36
+  speed: 0.36
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

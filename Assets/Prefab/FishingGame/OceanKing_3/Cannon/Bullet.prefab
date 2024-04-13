@@ -217,10 +217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  _netSpawnPoints:
-  - {fileID: 4080003755588079768}
+  _netSpawnPoint: {fileID: 4080003755588079768}
   _netPrefab: {fileID: 66144656237312839, guid: eea5312bd31b9a34e88b8de4865e6984, type: 3}
-  _rewardTxtPrefab: {fileID: 7236329039662098932, guid: 7bb9eb38816f0a845be4f6c05258b2e3, type: 3}
+  _totalBounce: 5
 --- !u!50 &8408113681133173808
 Rigidbody2D:
   serializedVersion: 4

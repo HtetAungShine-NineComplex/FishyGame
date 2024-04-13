@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    [SerializeField] private Transform[] _netSpawnPoints;
+    [SerializeField] private Transform _netSpawnPoint;
     [SerializeField] private GameObject _netPrefab;
     [SerializeField] protected int _totalBounce = 5; //default value
 
@@ -14,11 +15,21 @@ public class Bullet : MonoBehaviour
     protected bool _move = true;
 
     private int _damageAmount;
-    protected int _bounceCount = 0; 
+    protected int _bounceCount = 0;
+
+    private FishHealth targetFish;
+    private bool _toTarget = false;
 
     protected virtual void Update()
     {
-        MoveBullet();
+        if(_toTarget && GeneratedFishManager.Instance.HasFish(targetFish))
+        { 
+            MoveBulletTowardTarget();
+        }
+        else
+        {
+            MoveBullet();
+        }
     }
 
     public void SetPlayerManager(PlayerManager playerManager)
@@ -29,6 +40,32 @@ public class Bullet : MonoBehaviour
     public void SetDamageAmount(int amount)
     {
         _damageAmount = amount;
+    }
+
+    public void SetTargetFish(FishHealth target)
+    {
+        targetFish = target;
+        _toTarget = true;
+    }
+
+    void MoveBulletTowardTarget()
+    {
+        if (_move)
+        {
+            // Calculate the direction to the target position
+            Vector3 directionToTarget = (targetFish.transform.position - transform.position).normalized;
+
+            // Calculate the rotation needed to point the bullet to the target position
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+
+            // Apply the rotation to the bullet's transform
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.deltaTime);
+            transform.up = directionToTarget;
+
+            // Move the bullet forward
+            float normalizedSpeed = speed * Time.deltaTime * Screen.height / 1080f; // 1080 is the base resolution
+            transform.Translate(Vector2.up * normalizedSpeed * 100);
+        }
     }
 
     void MoveBullet()
@@ -44,10 +81,13 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Fish"))
         {
+            if(_toTarget && collision.GetComponent<FishHealth>() != targetFish && GeneratedFishManager.Instance.HasFish(targetFish))
+            {
+                return;
+            }
+
             if(collision.GetComponent<IDamageable>().Damage(_damageAmount))
             {
-                
-
                 if(collision.TryGetComponent<Fish>(out Fish fish))
                 {
                     OnCaughtFish(fish);
@@ -66,10 +106,7 @@ public class Bullet : MonoBehaviour
 
     private void OnHitFish()
     {
-        foreach (Transform t in _netSpawnPoints)
-        {
-            Instantiate(_netPrefab, t.position, Quaternion.identity, CanvasInstance.Instance.GetMainCanvas().transform);
-        }
+        Instantiate(_netPrefab, _netSpawnPoint.position, _netSpawnPoint.rotation, CanvasInstance.Instance.GetMainCanvas().transform);
     }
 
     private void OnCaughtFish(Fish caughtFish)

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class CannonController : MonoBehaviour
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private RectTransform _transform;
     [SerializeField] private RectTransform[] _buttonRects;
+    [SerializeField] private UILineRenderer _dottedLine;
 
     [Header("Settings")]
     [SerializeField] private float _shootSpeed;
@@ -31,11 +33,38 @@ public class CannonController : MonoBehaviour
     public event Action CannonShoot;
 
     private PlayerManager _playerManager;
+    private FishHealth _targetFish = null;
 
     void Update()
     {
         CheckCursorOverButton();
         HandleInputs();
+        AutoAttack();
+        SyncRotationAuto();
+    }
+
+    private void AutoAttack()
+    {
+        if (_dottedLine != null && _autoShoot)
+        {
+            _dottedLine.gameObject.SetActive(true);
+            if (_targetFish == null || !GeneratedFishManager.Instance.HasFish(_targetFish))
+            {
+                _targetFish = GeneratedFishManager.Instance.GetRandomFish();
+                _dottedLine.gameObject.SetActive(false);
+            }
+            else
+            {
+                _dottedLine.SetDir(_shootPoint.position, _targetFish.transform.position);
+            }
+
+
+        }
+        else if (!_autoShoot)
+        {
+            _targetFish = null;
+            _dottedLine.gameObject.SetActive(false);
+        }
     }
 
     public void ChangeType(int index)
@@ -109,7 +138,7 @@ public class CannonController : MonoBehaviour
 
     private void SyncRotation()
     {
-        if(_isCursorOverButton)
+        if(_isCursorOverButton || (withLevel && _autoShoot && GeneratedFishManager.Instance.HasFish(_targetFish)))
         {
             return;
         }
@@ -124,6 +153,18 @@ public class CannonController : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         _transform.localRotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+    }
+
+    private void SyncRotationAuto()
+    {
+        if(withLevel && _autoShoot && _targetFish != null && GeneratedFishManager.Instance.HasFish(_targetFish))
+        {
+            Vector2 direction = new Vector2(_targetFish.transform.position.x - _transform.position.x, _targetFish.transform.position.y - _transform.position.y);
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            _transform.localRotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        }
     }
 
     void CheckCursorOverButton()
@@ -160,6 +201,11 @@ public class CannonController : MonoBehaviour
         {
             bulletObj = Instantiate(_bulletPrefabs[_currentLevel], _shootPoint.position, _shootPoint.rotation,
             CanvasInstance.Instance.GetMainCanvas().transform);
+
+            if(_autoShoot && _targetFish != null && GeneratedFishManager.Instance.HasFish(_targetFish))
+            {
+                bulletObj.GetComponent<Bullet>().SetTargetFish(_targetFish);
+            }
         }
         else
         {

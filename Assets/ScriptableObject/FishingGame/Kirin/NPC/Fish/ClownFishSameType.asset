@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
-  m_Name: BlueTang
+  m_Name: ClownFishSameType
   m_EditorClassIdentifier: 
-  fishType: 1
+  fishType: 0
   FishIcon: {fileID: 0}
-  MaxHealth: 600
-  Score: 400
-  CoinSpawnAmount: 2
+  MaxHealth: 4850
+  Score: 1500
+  CoinSpawnAmount: 10
   FishFrames:
-  - {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: 1146996137, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: 362823473, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: -2007004432, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: -1695508752, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: -1923939676, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: 284555074, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: -419721266, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  - {fileID: -1195641014, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
-  FishDefaultFrame: {fileID: -1505821920, guid: f1baf6565374bb943a783a05e4d06445, type: 3}
+  - {fileID: -2059777930, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: -1766738056, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: 791009474, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: -1066374145, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: 1079133394, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: 976978942, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: 1569597896, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: 1874556632, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  - {fileID: -1875714327, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
+  FishDefaultFrame: {fileID: -2059777930, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
   FishFrameRate: 0.2
   speed: 0.4
   SpeedCurve:

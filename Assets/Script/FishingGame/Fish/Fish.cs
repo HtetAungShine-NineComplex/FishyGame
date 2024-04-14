@@ -23,6 +23,7 @@ public class Fish : MonoBehaviour
     public int CoinSpawnAmount { get; private set; }
 
     public Sprite FishIcon { get; private set; }
+    public FishType Type { get; private set; }
 
     protected virtual void Start()
     {
@@ -34,6 +35,7 @@ public class Fish : MonoBehaviour
         Score = fishSO.Score;
         CoinSpawnAmount = fishSO.CoinSpawnAmount;
         FishIcon = fishSO.FishIcon;
+        Type = fishSO.fishType;
     }
 
     protected virtual void Update()

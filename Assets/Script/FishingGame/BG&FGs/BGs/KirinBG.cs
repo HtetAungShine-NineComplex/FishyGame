@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGBlue : GameBG
+public class KirinBG : GameBG
 {
-    [SerializeField] private Animator _animator;
     [SerializeField] private CanvasGroup _group;
 
     protected override void OnEnterNormalStage(int mapIndex)
     {
         base.OnEnterNormalStage(mapIndex);
         if (mapIndex != this.mapIndex) return;
+
         gameObject.SetActive(true);
     }
 
@@ -19,14 +19,12 @@ public class BGBlue : GameBG
         base.OnEnterBossStage(mapIndex);
         if (mapIndex != this.mapIndex) return;
 
-        _animator.SetBool("IsBossFight", true);
     }
 
     protected override void OnEnterBonusStage(int mapIndex)
     {
-        _animator.SetBool("IsBossFight", false);
 
-        base.OnEnterBonusStage(mapIndex);
+
         if (mapIndex == this.mapIndex)
         {
             _group.alpha = 1;
@@ -36,7 +34,6 @@ public class BGBlue : GameBG
         {
             StartCoroutine(Fade());
         }
-
 
     }
 
@@ -58,5 +55,4 @@ public class BGBlue : GameBG
             yield return new WaitForEndOfFrame();
         }
     }
-
 }

@@ -86,8 +86,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: -22.8}
-  m_SizeDelta: {x: 268, y: 331}
+  m_AnchoredPosition: {x: -6.7, y: -9.5}
+  m_SizeDelta: {x: 123, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8365551205628975899
 CanvasRenderer:
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1505821920, guid: f1baf6565374bb943a783a05e4d06445, type: 3}
+  m_Sprite: {fileID: -2059777930, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 6f72ce49ac0721c4194065a1c4b66b3e, type: 2}
+  fishSO: {fileID: 11400000, guid: 626f44807821d55469231ad132dbe604, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 7033600752458950831}
@@ -181,7 +181,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 268, y: 331}
+  m_SizeDelta: {x: 123, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4279718751337770849
 CanvasRenderer:
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1505821920, guid: f1baf6565374bb943a783a05e4d06445, type: 3}
+  m_Sprite: {fileID: -2059777930, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -234,11 +234,86 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 6f72ce49ac0721c4194065a1c4b66b3e, type: 2}
+  fishSO: {fileID: 11400000, guid: 626f44807821d55469231ad132dbe604, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 3781008024367669116}
   _fishGlow: {fileID: 0}
+--- !u!1 &3905604073137830160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5885542107963006894}
+  - component: {fileID: 1320140325473949058}
+  - component: {fileID: 950481224812984260}
+  m_Layer: 5
+  m_Name: Bottle
+  m_TagString: Fish
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5885542107963006894
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905604073137830160}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7579746613646110880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 24.1}
+  m_SizeDelta: {x: 173, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1320140325473949058
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905604073137830160}
+  m_CullTransparentMesh: 1
+--- !u!114 &950481224812984260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905604073137830160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 318171623, guid: 7d50d64523d9bd24aa6b89a774e25b00, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7112426218399084798
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +350,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 268, y: 331}
+  m_SizeDelta: {x: 123, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &998797670523792821
 CanvasRenderer:
@@ -305,7 +380,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1505821920, guid: f1baf6565374bb943a783a05e4d06445, type: 3}
+  m_Sprite: {fileID: -2059777930, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -328,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 6f72ce49ac0721c4194065a1c4b66b3e, type: 2}
+  fishSO: {fileID: 11400000, guid: 626f44807821d55469231ad132dbe604, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 5955172488964599638}
@@ -368,7 +443,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 268, y: 331}
+  m_SizeDelta: {x: 123, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6473241218471681766
 CanvasRenderer:
@@ -398,7 +473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1505821920, guid: f1baf6565374bb943a783a05e4d06445, type: 3}
+  m_Sprite: {fileID: -2059777930, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -444,7 +519,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 268, y: 331}
+  m_SizeDelta: {x: 123, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8934263224174058258
 CanvasRenderer:
@@ -474,7 +549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1505821920, guid: f1baf6565374bb943a783a05e4d06445, type: 3}
+  m_Sprite: {fileID: -2059777930, guid: 90e022b6512588f4d9efdd5dbff8ebcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -497,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 6f72ce49ac0721c4194065a1c4b66b3e, type: 2}
+  fishSO: {fileID: 11400000, guid: 626f44807821d55469231ad132dbe604, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 7737753994210195021}
@@ -511,17 +586,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      propertyPath: _fish
+      value: 
+      objectReference: {fileID: 7878795569978721791}
+    - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: Config
       value: 
       objectReference: {fileID: 156959145959899800}
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fishSO
       value: 
-      objectReference: {fileID: 11400000, guid: 6f72ce49ac0721c4194065a1c4b66b3e, type: 2}
+      objectReference: {fileID: 11400000, guid: d73c5e2f97ed217449b209243ddb8a8d, type: 2}
     - target: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fishSO
       value: 
-      objectReference: {fileID: 11400000, guid: 6f72ce49ac0721c4194065a1c4b66b3e, type: 2}
+      objectReference: {fileID: 11400000, guid: d73c5e2f97ed217449b209243ddb8a8d, type: 2}
     - target: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: turnRate
       value: 5
@@ -620,24 +699,24 @@ PrefabInstance:
       objectReference: {fileID: -452619049, guid: bfbd67a5d7f66fc4bb257a8c4527f755, type: 3}
     - target: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: m_Size.x
-      value: 146.27197
+      value: 34.89868
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: m_Size.y
-      value: 150.9466
+      value: 87.41437
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: m_Offset.x
-      value: -3.088745
+      value: -6.113098
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: m_Offset.y
-      value: 20.616547
+      value: 8.112274
       objectReference: {fileID: 0}
     - target: {fileID: 8555422473807289894, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fishSO
       value: 
-      objectReference: {fileID: 11400000, guid: 6f72ce49ac0721c4194065a1c4b66b3e, type: 2}
+      objectReference: {fileID: 11400000, guid: 626f44807821d55469231ad132dbe604, type: 2}
     - target: {fileID: 8555422473807289894, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fish_2D
       value: 
@@ -652,11 +731,12 @@ PrefabInstance:
       objectReference: {fileID: 5955172488964599638}
     - target: {fileID: 8612866281859157046, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: m_Name
-      value: Stingray
+      value: ClownFishSameType
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7948068399954265977, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
     - {fileID: 802696355588252161, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+    - {fileID: 8555422473807289894, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
@@ -664,25 +744,70 @@ PrefabInstance:
       addedObject: {fileID: 8805757125378401695}
     - targetCorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5885542107963006894}
+    - targetCorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5773617000822035525}
     - targetCorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9142697077805724949}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8612866281859157046, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 7878795569978721791}
   m_SourcePrefab: {fileID: 100100000, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
 --- !u!114 &156959145959899800 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
   m_PrefabInstance: {fileID: 2362209940006707843}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6291332059505405621}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 370bc6ccc049f754f9e555c8d52ef60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &6147858405263330225 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+  m_PrefabInstance: {fileID: 2362209940006707843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6291332059505405621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8612866281859157046, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+  m_PrefabInstance: {fileID: 2362209940006707843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7878795569978721791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291332059505405621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81079efd505a98d46a5b67adbf31151b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 7579746613646110880}
+  fishSO: {fileID: 11400000, guid: d73c5e2f97ed217449b209243ddb8a8d, type: 2}
+  _move: {fileID: 7610825502873764619}
+  _coll: {fileID: 6147858405263330225}
+  fish_2D: {fileID: 8617037578619109663}
+  _fishGlow: {fileID: 8560313482517084784}
 --- !u!224 &7579746613646110880 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5330267505097675299, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
   m_PrefabInstance: {fileID: 2362209940006707843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7610825502873764619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+  m_PrefabInstance: {fileID: 2362209940006707843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6291332059505405621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 022dc8622a578c449b490d1adf64324c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

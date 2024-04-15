@@ -22,7 +22,7 @@ public class BlueDragon : Fish
         DyingPhaseTwo
     }
 
-    private DeathState deathState;
+    private DeathState m_deathState;
 
     protected override void Update()
     {
@@ -30,25 +30,25 @@ public class BlueDragon : Fish
         {
             base.Update();
         }
-        else if (deathState == DeathState.DyingPhaseOne)
+        else if (m_deathState == DeathState.DyingPhaseOne)
         {
             LerpToMiddle();
         }
     }
     public override void OnDead()
     {
-        deathState = DeathState.DyingPhaseOne;
-        HandleDeathState();
+        m_deathState = DeathState.DyingPhaseOne;
+        handleDeathState();
         base.OnDead();
         isDead = true;
     }
 
-    private void HandleDeathState()
+    private void handleDeathState()
     {
-        switch (deathState)
+        switch (m_deathState)
         {
             case DeathState.DyingPhaseOne:
-                StartCoroutine(DyingPhaseOneCoroutine());
+                StartCoroutine(IDyingPhaseOneCoroutine());
                 break;
             default:
                 break;
@@ -56,7 +56,7 @@ public class BlueDragon : Fish
         }
     }
 
-    private IEnumerator DyingPhaseOneCoroutine() // Need to apply multiply text
+    private IEnumerator IDyingPhaseOneCoroutine() // Need to apply multiply text
     {
         ShadowGO.gameObject.SetActive(false);
         fish_2D.enabled = false;

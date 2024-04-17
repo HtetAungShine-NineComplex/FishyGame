@@ -140,6 +140,7 @@ MonoBehaviour:
   - {fileID: -201316706, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
   - {fileID: 53077596, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
   - {fileID: 1091341759, guid: 5a91cb5c86541f14497b238300c4972a, type: 3}
+  _biteColl: {fileID: 6041115228183245921}
 --- !u!50 &13581887852522929
 Rigidbody2D:
   serializedVersion: 4
@@ -165,7 +166,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &6041115228183245921
 BoxCollider2D:
@@ -199,7 +200,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 288.66, y: 20.39}
+  m_Offset: {x: 290.79575, y: 20.39}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -210,7 +211,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 143.26, y: 196.97}
+  m_Size: {x: 252.18689, y: 370.13788}
   m_EdgeRadius: 0
 --- !u!1 &445206937510450927
 GameObject:
@@ -848,6 +849,10 @@ PrefabInstance:
     - target: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: m_Size.y
       value: 632.2621
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: m_Offset.x

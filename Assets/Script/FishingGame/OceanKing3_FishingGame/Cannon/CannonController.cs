@@ -63,7 +63,7 @@ public class CannonController : MonoBehaviour
         else if (!_autoShoot)
         {
             _targetFish = null;
-            _dottedLine.gameObject.SetActive(false);
+            _dottedLine?.gameObject.SetActive(false);
         }
     }
 

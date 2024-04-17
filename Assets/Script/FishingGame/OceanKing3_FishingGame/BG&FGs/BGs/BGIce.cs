@@ -42,7 +42,7 @@ public class BGIce : GameBG
         
     }
 
-    IEnumerator Fade()
+    protected override IEnumerator Fade()
     {
         float fadeDuration = 2f;
         float fadeRate = 1 / fadeDuration;

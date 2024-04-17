@@ -40,6 +40,18 @@ public class GeneratedFishManager : MonoBehaviour
         return _generatedFishList;
     }
 
+    public void KillAllSameTypeFishes(FishType type)
+    {
+
+        for (int i = 0; i < _generatedFishList.Count; i++)
+        {
+            if (_generatedFishList[i].GetFish().Type == type)
+            {
+                _generatedFishList[i].InstantDie();
+            }
+        }
+    }
+
     public FishHealth GetRandomFish()
     {
         if (_generatedFishList.Count == 0)

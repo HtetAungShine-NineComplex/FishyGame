@@ -34,5 +34,10 @@ public abstract class GameBG : MonoBehaviour
     {
 
     }
+
+    protected virtual IEnumerator Fade()
+    {
+        yield return null;
+    }
 }
 

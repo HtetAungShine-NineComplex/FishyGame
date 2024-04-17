@@ -6,5 +6,6 @@ public enum SceneIndex
 {
     LOADING_SCENE = 0,
     MAIN_MENU = 1,
-    FISHING_GAME_SCENE = 2
+    FISHING_GAME_SCENE = 2,
+    FISHING_GAME_SCENE_KIRI = 3
 }

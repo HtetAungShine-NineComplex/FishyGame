@@ -26,13 +26,20 @@ public class UIRoomSelection_Kiri : UIBase
 
     private void BackToFishingGameUI()
     {
-        UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHING_GAME);
-        UIManager.Instance.CloseUI(GLOBALCONST.UI_ROOM_SELECT);
+        UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHING_GAME_KIRI);
+        UIManager.Instance.CloseUI(GLOBALCONST.UI_ROOM_SELECT_KIRI);
     }
 
     private void EnterRoom() //temp
     {
         UIManager.Instance.ShowUI(GLOBALCONST.UI_LOADING);
+        
         SceneLoader.Instance.LoadSceneAsync((int)SceneIndex.FISHING_GAME_SCENE_KIRI, false);
+       
+    }
+
+    private void OnDisable()
+    {
+        UIManager.Instance.CloseAllOpeningUIs();
     }
 }

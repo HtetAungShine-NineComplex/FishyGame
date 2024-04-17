@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishType: 1
   FishIcon: {fileID: 0}
-  MaxHealth: 4707
-  Score: 1700
-  CoinSpawnAmount: 10
+  MaxHealth: 5000
+  Score: 7000
+  CoinSpawnAmount: 6
   FishFrames:
   - {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
   - {fileID: 1146996137, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
@@ -29,7 +29,7 @@ MonoBehaviour:
   - {fileID: -1195641014, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
   FishDefaultFrame: {fileID: -1505821920, guid: f1baf6565374bb943a783a05e4d06445, type: 3}
   FishFrameRate: 0.2
-  speed: 0.4
+  speed: 0.3
   SpeedCurve:
     serializedVersion: 2
     m_Curve:

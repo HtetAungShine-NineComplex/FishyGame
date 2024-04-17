@@ -14,21 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishType: 2
   FishIcon: {fileID: 0}
-  MaxHealth: 600
-  Score: 400
-  CoinSpawnAmount: 2
+  MaxHealth: 10000
+  Score: 12000
+  CoinSpawnAmount: 10
   FishFrames:
-  - {fileID: 691336010, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: -366212430, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: 1603498452, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: -439333071, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: -1279235622, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: -1196974105, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: -1464796879, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: -428864166, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  - {fileID: 328446454, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  FishDefaultFrame: {fileID: 691336010, guid: c9e6039520578644ba1a5ae8f3c6e0e3, type: 3}
-  FishFrameRate: 0.36
+  - {fileID: -2061091287, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: 1170654356, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: -870339862, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: -1134315084, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: -37290617, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: -880650878, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: -914651217, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: 672007523, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  - {fileID: 87171984, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  FishDefaultFrame: {fileID: -2061091287, guid: 82f576f3c873b6449b11d2ce9ab96bb3, type: 3}
+  FishFrameRate: 0.421
   speed: 0.36
   SpeedCurve:
     serializedVersion: 2

@@ -35,4 +35,9 @@ public class UIRoomSelection : UIBase
         UIManager.Instance.ShowUI(GLOBALCONST.UI_LOADING);
         SceneLoader.Instance.LoadSceneAsync((int)SceneIndex.FISHING_GAME_SCENE, false);
     }
+
+    private void OnDisable()
+    {
+        UIManager.Instance.CloseAllOpeningUIs();
+    }
 }

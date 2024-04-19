@@ -375,7 +375,7 @@ TextureImporter:
         width: 313
         height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,6 +383,27 @@ TextureImporter:
       bones: []
       spriteID: 6418660ed4844db40997f6eaaf0fd90b
       internalID: -111846927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phoenix
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 7
+        width: 471
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff1aed75a8f13e4487945b3926a58c8
+      internalID: -890491785
       vertices: []
       indices: 
       edges: []
@@ -410,6 +431,7 @@ TextureImporter:
       Raging_Dragon: -1320908987
       Smash_Hammer: 1068554509
       Whale_King: -615036454
+      phoenix: -890491785
       text_01_12: -2109031008
       text_01_5: 1373779595
       text_01_6: -2127939142

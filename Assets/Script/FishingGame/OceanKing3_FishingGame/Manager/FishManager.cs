@@ -61,7 +61,7 @@ public class FishManager : MonoBehaviour
                 yield return new WaitForSeconds(spawnInterval);
             }
 
-            if(_isMainBoss || _isHorizontal)
+            if(_isHorizontal)
             {
                 spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPointHorizontal();
             }

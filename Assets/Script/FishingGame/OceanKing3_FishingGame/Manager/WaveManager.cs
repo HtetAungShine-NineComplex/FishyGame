@@ -86,7 +86,7 @@ public class WaveManager : MonoBehaviour
         StartCoroutine(ShowTitle(mapIndex));
         Debug.Log("Boss Fight Stage");
         mapIndex++;
-        if(mapIndex > 2)
+        if(mapIndex > 3)
         {
             mapIndex = 0;
         }

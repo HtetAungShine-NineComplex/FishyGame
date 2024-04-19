@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CannonController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class CannonController : MonoBehaviour
     [SerializeField] private RectTransform _transform;
     [SerializeField] private RectTransform[] _buttonRects;
     [SerializeField] private UILineRenderer _dottedLine;
+    [SerializeField] private GameObject _lockImage;
+    [SerializeField] private Image _lockedFishImg;
 
     [Header("Settings")]
     [SerializeField] private float _shootSpeed;
@@ -45,25 +48,35 @@ public class CannonController : MonoBehaviour
 
     private void AutoAttack()
     {
-        if (_dottedLine != null && _autoShoot)
+        if (_autoShoot)
         {
-            _dottedLine.gameObject.SetActive(true);
+            _dottedLine?.gameObject.SetActive(true);
+            if(_lockImage != null) _lockImage.SetActive(true);
+
+            
+            
+            
             if (_targetFish == null || !GeneratedFishManager.Instance.HasFish(_targetFish))
             {
                 _targetFish = GeneratedFishManager.Instance.GetRandomFish();
-                _dottedLine.gameObject.SetActive(false);
+                _dottedLine?.gameObject.SetActive(false);
+                _lockedFishImg.gameObject.SetActive(false);
             }
             else
             {
-                _dottedLine.SetDir(_shootPoint.position, _targetFish.transform.position);
+                _dottedLine?.SetDir(_shootPoint.position, _targetFish.transform.position);
+                if (_targetFish.GetFish().FishIcon != null && _lockedFishImg != null)
+                {
+                    _lockedFishImg.gameObject.SetActive(true);
+                    _lockedFishImg.sprite = _targetFish.GetFish().FishIcon;
+                }
             }
-
-
         }
         else if (!_autoShoot)
         {
             _targetFish = null;
             _dottedLine?.gameObject.SetActive(false);
+            if (_lockImage != null) _lockImage.SetActive(false);
         }
     }
 

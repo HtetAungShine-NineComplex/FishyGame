@@ -15,9 +15,8 @@ public class Crocodile : Fish
     {
         base.Start();
 
-        //StartCoroutine(BiteDelay());
+        StartCoroutine(BiteDelay());
 
-        _canBite = true;   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,10 +27,9 @@ public class Crocodile : Fish
             if(collision.gameObject.CompareTag("Cannon"))
             {
                 Debug.Log("Bite");
-                StartCoroutine(BiteDelay());
                 _isBiting = true;
                 currentFrame = 0;
-                StartCoroutine(_move.ChangeSpeedSmoothly(6f));
+                StartCoroutine(_move.ChangeSpeedSmoothly(4f));
             }
         }
     }
@@ -69,16 +67,8 @@ public class Crocodile : Fish
 
     IEnumerator BiteDelay()
     {
-        if(_move.spawnPosition == SpawnPosition.Top || _move.spawnPosition == SpawnPosition.Bottom)
-        {
-            yield return new WaitForSeconds(2f);
-        }
-        else
-        {
-            yield return new WaitForSeconds(4f);
-            
-        }
+        yield return new WaitForSeconds(3f);
 
-        _isBiting = true;
+        _canBite = true;
     }
 }

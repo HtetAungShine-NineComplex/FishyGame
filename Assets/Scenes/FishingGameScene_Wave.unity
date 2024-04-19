@@ -4162,6 +4162,7 @@ MonoBehaviour:
   _foregroundSpawn: {fileID: 448066148}
   _midGroundSpawn: {fileID: 1867955793}
   _cannonHandler: {fileID: 1578214982}
+  _bossRewardShower: {fileID: 0}
 --- !u!1 &1051509006 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1647712089401175551, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
@@ -5199,7 +5200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1356814231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9027,11 +9028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bonusStageDuration
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _normalStageDuration
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossTitles.Array.size

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CannonHandler : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class CannonHandler : MonoBehaviour
     [SerializeField] private PlayerManager _playerManager;
     [SerializeField] private CannonController _cannonController;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private Image _cannonBaseOneImg;
+    [SerializeField] private Image _cannonBaseTwoImg;
 
     public event Action<int> AmountChanged;
 
@@ -117,11 +120,7 @@ public class CannonHandler : MonoBehaviour
     {
         if(_withLevel)
         {
-            if (Amount < 200)
-            {
-                SetCannonLevel(0);
-            }
-            else if (Amount < 300)
+            if (Amount < 300)
             {
                 SetCannonLevel(1);
             }
@@ -158,18 +157,31 @@ public class CannonHandler : MonoBehaviour
 
     public void SwapWeapon()
     {
+        _currentCannonIndex++;
+        SetCannon();
+    }
 
+    public void SetCannon()
+    {
         _isPowerUpActive = false;
 
-        _currentCannonIndex++;
-
-        if(_currentCannonIndex > 2)
+        if (_currentCannonIndex > 2)
         {
             _currentCannonIndex = 0;
         }
 
-        if(_currentCannonIndex < 2)
+        if (_currentCannonIndex < 2)
         {
+            if(_currentCannonIndex == 1)
+            {
+                _cannonBaseOneImg.enabled = false;
+                _cannonBaseTwoImg.enabled = true;
+            }
+            else
+            {
+                _cannonBaseOneImg.enabled = true;
+                _cannonBaseTwoImg.enabled = false;
+            }
             _laserCannon.SetActive(false);
             _cannonController.gameObject.SetActive(true);
             _cannonController.ChangeType(_currentCannonIndex);
@@ -177,12 +189,12 @@ public class CannonHandler : MonoBehaviour
         }
         else
         {
+            _cannonBaseOneImg.enabled = true;
+            _cannonBaseTwoImg.enabled = false;
             _cannonController.gameObject.SetActive(false);
             _laserCannon.SetActive(true);
             _isLaserCannon = true;
         }
-
-        Debug.Log(_currentCannonIndex);
     }
 
     public void ActivePowerUp(PowerUpType type)

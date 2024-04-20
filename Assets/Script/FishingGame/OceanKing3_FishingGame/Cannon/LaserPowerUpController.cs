@@ -65,7 +65,7 @@ public class LaserPowerUpController : MonoBehaviour
 
         _title.SetActive(false);
         _laserBeam.SetActive(false);
-        _cannonHandler.SwapWeapon();
+        _cannonHandler.SetCannon();
         _shoot = false;
         gameObject.SetActive(false);
     }

@@ -17,6 +17,7 @@ public class CannonController : MonoBehaviour
     [SerializeField] private UILineRenderer _dottedLine;
     [SerializeField] private GameObject _lockImage;
     [SerializeField] private Image _lockedFishImg;
+    
 
     [Header("Settings")]
     [SerializeField] private float _shootSpeed;

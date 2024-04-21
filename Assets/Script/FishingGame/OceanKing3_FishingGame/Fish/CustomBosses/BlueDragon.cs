@@ -62,7 +62,7 @@ public class BlueDragon : Fish
         fish_2D.enabled = false;
         fireBallImg.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.2f);
-
+        BGShaker.Instance.Shake(1.5f);
         CountImg.gameObject.SetActive(true);
         CountImg.transform.rotation = new Quaternion(0, 0, 0, 1);
 
@@ -72,18 +72,21 @@ public class BlueDragon : Fish
         FishesInstantDie();
         yield return new WaitForSeconds(2.2f);
 
+        BGShaker.Instance.Shake(1.5f);
         CountImg.sprite = MultiplyCount2Ds[1];
         SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
         FishesInstantDie();
         yield return new WaitForSeconds(2.1f);
 
+        BGShaker.Instance.Shake(1.5f);
         CountImg.sprite = MultiplyCount2Ds[2];
         SmallDragonManager.Instance.SpawnSecSmallDragon_Top();
         SmallDragonManager.Instance.SpawnSmallDragon_Bot();
         FishesInstantDie();
         yield return new WaitForSeconds(1.9f);
 
+        BGShaker.Instance.Shake(1.5f);
         CountImg.sprite = MultiplyCount2Ds[3];
         SmallDragonManager.Instance.SpawnSecSmallDragon_Left();
         SmallDragonManager.Instance.SpawnSecSmallDragon_Right();
@@ -92,6 +95,7 @@ public class BlueDragon : Fish
         FishesInstantDie();
         yield return new WaitForSeconds(1.8f);
 
+        BGShaker.Instance.Shake(1.5f);
         CountImg.sprite = MultiplyCount2Ds[4];
         ExplosionEffectManager.Instance.ShowExplosionEffects();
         SmallDragonManager.Instance.SpawnSmallDragon_Left();
@@ -102,7 +106,7 @@ public class BlueDragon : Fish
 
         yield return new WaitForSeconds(1.7f);
 
-
+        BGShaker.Instance.Shake(3f);
         CountImg.gameObject.SetActive(false);
         fireBallImg.gameObject.SetActive(false);
         //multiply Text

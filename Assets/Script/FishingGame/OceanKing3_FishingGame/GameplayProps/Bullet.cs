@@ -8,7 +8,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private Transform _netSpawnPoint;
     [SerializeField] private GameObject _netPrefab;
-    [SerializeField] protected int _totalBounce = 5; //default value
 
     private PlayerManager _playerManager;
 
@@ -120,14 +119,6 @@ public class Bullet : MonoBehaviour
 
     public virtual void ReflectDirection(bool isTop)
     {
-        _bounceCount++;
-
-        if(_bounceCount >= _totalBounce)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         if(isTop)
         {
             transform.Rotate(180, 0, 0, Space.World);

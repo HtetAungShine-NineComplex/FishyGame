@@ -27,7 +27,7 @@ public class Crocodile : Fish
             if(collision.gameObject.CompareTag("Cannon"))
             {
                 Debug.Log("Bite");
-                BGShaker.Instance.Shake();
+                BGShaker.Instance.Shake(4);
                 _isBiting = true;
                 currentFrame = 0;
                 StartCoroutine(_move.ChangeSpeedSmoothly(4f));

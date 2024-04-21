@@ -58,6 +58,7 @@ public class Phoenix : Fish
     }
     private IEnumerator IDyingPhaseOneCoroutine()
     {
+        BGShaker.Instance.Shake(25f);
         fish_2D.enabled = false;
         shadowGO.gameObject.SetActive(false);       
         featherImg.gameObject.SetActive(true);

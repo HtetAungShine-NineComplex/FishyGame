@@ -16,11 +16,19 @@ public class BGShaker : MonoBehaviour
 
     private void Start()
     {
-        WaveManager.Instance.EnterBossStage += n => Shake();
+        WaveManager.Instance.EnterBossStage += n => Shake(6);
     }
 
-    public void Shake()
+    public void Shake(float duration)
     {
-        _animator.SetTrigger("Shake");
+        StartCoroutine(ShakeBG(duration));
+    }
+
+    IEnumerator ShakeBG(float duration)
+    {
+        _animator.SetBool("IsShaking", true);
+        yield return new WaitForSeconds(duration);
+
+        _animator.SetBool("IsShaking", false);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TinAungKhant.UIManagement;
 using UnityEngine;
 
 public class FishingGameSceneManager : GameSceneManager

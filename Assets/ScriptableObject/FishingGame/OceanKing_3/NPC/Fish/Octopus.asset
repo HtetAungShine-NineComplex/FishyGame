@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: Octopus
+  m_EditorClassIdentifier: 
+  fishType: 1
+  FishIcon: {fileID: -479496426, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  MaxHealth: 2000
+  Score: 1800
+  CoinSpawnAmount: 4
+  FishFrames:
+  - {fileID: -479496426, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  - {fileID: -887756506, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  - {fileID: -668978450, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  - {fileID: 159449104, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  - {fileID: 1696759517, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  - {fileID: 1132746387, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  - {fileID: 593557214, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  FishDefaultFrame: {fileID: -479496426, guid: 67400febfba42f540b97470ae5a27022, type: 3}
+  FishFrameRate: 0.25
+  speed: 0.6
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

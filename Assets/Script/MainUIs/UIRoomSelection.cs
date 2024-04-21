@@ -20,8 +20,8 @@ public class UIRoomSelection : UIBase
     protected override void OnClose()
     {
         base.OnClose();
-        _backBtn.onClick.RemoveAllListeners();
-        _selectChairBtn.onClick.RemoveAllListeners();
+        _backBtn?.onClick.RemoveAllListeners();
+        _selectChairBtn?.onClick.RemoveAllListeners();
     }
 
     private void BackToFishingGameUI()
@@ -33,11 +33,8 @@ public class UIRoomSelection : UIBase
     private void EnterRoom() //temp
     {
         UIManager.Instance.ShowUI(GLOBALCONST.UI_LOADING);
+        UIManager.Instance.CloseAllOpeningUIs();
         SceneLoader.Instance.LoadSceneAsync((int)SceneIndex.FISHING_GAME_SCENE, false);
     }
 
-    private void OnDisable()
-    {
-        UIManager.Instance.CloseAllOpeningUIs();
-    }
 }

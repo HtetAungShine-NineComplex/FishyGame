@@ -12,7 +12,7 @@ public class UIRoomSelection_Kiri : UIBase
     protected override void OnShow(UIBaseData Data = null)
     {
         base.OnShow(Data);
-
+        
         _backBtn.onClick.AddListener(BackToFishingGameUI);
         _selectChairBtn.onClick.AddListener(EnterRoom);
     }
@@ -20,8 +20,8 @@ public class UIRoomSelection_Kiri : UIBase
     protected override void OnClose()
     {
         base.OnClose();
-        _backBtn.onClick.RemoveAllListeners();
-        _selectChairBtn.onClick.RemoveAllListeners();
+        _backBtn?.onClick.RemoveAllListeners();
+        _selectChairBtn?.onClick.RemoveAllListeners();
     }
 
     private void BackToFishingGameUI()
@@ -33,13 +33,13 @@ public class UIRoomSelection_Kiri : UIBase
     private void EnterRoom() //temp
     {
         UIManager.Instance.ShowUI(GLOBALCONST.UI_LOADING);
-        
+        UIManager.Instance.CloseAllOpeningUIs();
         SceneLoader.Instance.LoadSceneAsync((int)SceneIndex.FISHING_GAME_SCENE_KIRI, false);
        
     }
 
-    private void OnDisable()
+   /* private void OnDisable()
     {
         UIManager.Instance.CloseAllOpeningUIs();
-    }
+    }*/
 }

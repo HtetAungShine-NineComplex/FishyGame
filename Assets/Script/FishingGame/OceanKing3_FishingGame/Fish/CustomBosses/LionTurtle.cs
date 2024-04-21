@@ -42,6 +42,7 @@ public class LionTurtle : Fish
 
     public override void OnDead()
     {
+        BGShaker.Instance.Shake(20);
         deathState = DeathState.DyingPhase1;
         HandleDeathState();
         base.OnDead();      

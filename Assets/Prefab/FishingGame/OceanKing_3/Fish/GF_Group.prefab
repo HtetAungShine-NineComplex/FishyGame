@@ -51,7 +51,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishSO: {fileID: 11400000, guid: b3c6735d77f7e904ea8748f00f07b7cb, type: 2}
   spawnPosition: 0
-  _curveDistance: 1800
 --- !u!1 &6963336082570622636
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8400401494726600709, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 7826271666403035539}
     - target: {fileID: 8478522795223693845, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
       propertyPath: m_Name
       value: GoldFish (4)
@@ -302,6 +305,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8400401494726600709, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 7826271666403035539}
     - target: {fileID: 8478522795223693845, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
       propertyPath: m_Name
       value: GoldFish (1)
@@ -424,6 +431,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8400401494726600709, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 7826271666403035539}
     - target: {fileID: 8478522795223693845, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
       propertyPath: m_Name
       value: GoldFish (2)
@@ -542,6 +553,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8400401494726600709, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 7826271666403035539}
     - target: {fileID: 8478522795223693845, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
       propertyPath: m_Name
       value: GoldFish
@@ -648,6 +663,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8400401494726600709, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
+      propertyPath: _rectTransform
+      value: 
+      objectReference: {fileID: 7826271666403035539}
     - target: {fileID: 8478522795223693845, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
       propertyPath: m_Name
       value: GoldFish (3)

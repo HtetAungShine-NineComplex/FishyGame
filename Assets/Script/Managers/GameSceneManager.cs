@@ -9,9 +9,9 @@ public abstract class GameSceneManager : MonoBehaviour
 
     protected virtual void Awake()
     {
-        if(_mainUICanvas != null)
+        /*if(_mainUICanvas != null)
         {
             UIManager.Instance.SetUIRoot(_mainUICanvas.transform);
-        }
+        }*/
     }
 }

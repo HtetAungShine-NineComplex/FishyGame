@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TinAungKhant.UIManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIRoomSelection_Kiri : UIBase
@@ -33,13 +34,9 @@ public class UIRoomSelection_Kiri : UIBase
     private void EnterRoom() //temp
     {
         UIManager.Instance.ShowUI(GLOBALCONST.UI_LOADING);
-        UIManager.Instance.CloseAllOpeningUIs();
         SceneLoader.Instance.LoadSceneAsync((int)SceneIndex.FISHING_GAME_SCENE_KIRI, false);
-       
+
     }
 
-   /* private void OnDisable()
-    {
-        UIManager.Instance.CloseAllOpeningUIs();
-    }*/
+
 }

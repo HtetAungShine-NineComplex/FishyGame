@@ -473,6 +473,7 @@ MonoBehaviour:
   _gameType: 0
   m_SplashScreen: {fileID: 3513779468407706676}
   m_SplashScreenArt: {fileID: 21300000, guid: d12bb5f800edd3749a086699991f891f, type: 3}
+  fadeDuration: 0.75
 --- !u!1 &730030360480047998
 GameObject:
   m_ObjectHideFlags: 0
@@ -3372,6 +3373,7 @@ GameObject:
   - component: {fileID: 8431052390490639272}
   - component: {fileID: 6723502036653198802}
   - component: {fileID: 3513779468407706676}
+  - component: {fileID: 806847407427447775}
   m_Layer: 5
   m_Name: SplashScren_Img
   m_TagString: Untagged
@@ -3436,6 +3438,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &806847407427447775
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579174879707095392}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c0da2b5ff74260438057916c92fe69d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7744855840832325381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,6 +3644,7 @@ MonoBehaviour:
   _gameType: 0
   m_SplashScreen: {fileID: 3513779468407706676}
   m_SplashScreenArt: {fileID: 21300000, guid: d3edf0bdb3d144c4880649143c04a3cd, type: 3}
+  fadeDuration: 0.75
 --- !u!1 &8228589788573744629
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,6 +4320,7 @@ MonoBehaviour:
   _gameType: 0
   m_SplashScreen: {fileID: 0}
   m_SplashScreenArt: {fileID: 0}
+  fadeDuration: 0.75
 --- !u!224 &6236186563218878766 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}

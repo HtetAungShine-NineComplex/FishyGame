@@ -10,6 +10,7 @@ public class KiriGameUIButton : MonoBehaviour
     [SerializeField] private GameType _gameType; //the game type that will be loaded on click
     [SerializeField] private Image m_SplashScreen;
     [SerializeField] private Sprite m_SplashScreenArt;
+    [SerializeField] private float fadeDuration = 0.75f;
 
     private void OnEnable()
     {
@@ -30,7 +31,7 @@ public class KiriGameUIButton : MonoBehaviour
     {
         m_SplashScreen.gameObject.SetActive(true);
         m_SplashScreen.sprite = m_SplashScreenArt;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(fadeDuration);
         m_SplashScreen.gameObject.SetActive(false);
         UIManager.Instance.CloseUI(GLOBALCONST.UI_MAIN_MENU);
         UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHING_GAME_KIRI);

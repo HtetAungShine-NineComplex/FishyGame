@@ -13,26 +13,17 @@ MonoBehaviour:
   m_Name: GoldFish
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: -1414792071, guid: 220ff1c38716cb24dadd05c7bc837d5a, type: 3}
+  FishIcon: {fileID: -1714702832, guid: 220ff1c38716cb24dadd05c7bc837d5a, type: 3}
   MaxHealth: 500
   Score: 100
   CoinSpawnAmount: 0
   FishFrames:
-  - {fileID: 648641139, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: -1200361210, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: 805842787, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: 278086515, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: -1080415094, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: -36056145, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: 457372476, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: -88990714, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: 457372476, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: -36056145, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: -1080415094, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: 278086515, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: 805842787, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: -1200361210, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
-  - {fileID: 648641139, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
+  - {fileID: -1776944658, guid: 9dcf68c9c264e984491b138c84fd385e, type: 3}
+  - {fileID: 374525321, guid: 9dcf68c9c264e984491b138c84fd385e, type: 3}
+  - {fileID: 1485533806, guid: 9dcf68c9c264e984491b138c84fd385e, type: 3}
+  - {fileID: 473197397, guid: 9dcf68c9c264e984491b138c84fd385e, type: 3}
+  - {fileID: 490373171, guid: 9dcf68c9c264e984491b138c84fd385e, type: 3}
+  - {fileID: 473197397, guid: 9dcf68c9c264e984491b138c84fd385e, type: 3}
   FishDefaultFrame: {fileID: 648641139, guid: 99b5b043a6bcf4c42a9360c8f9248024, type: 3}
   FishFrameRate: 0.1
   speed: 0.5
@@ -42,20 +33,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 1.3170552
+      outSlope: 1.3170552
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.05730337
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 1.6604476
+      outSlope: 1.6604476
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.075280905
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

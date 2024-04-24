@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -76,17 +77,22 @@ public class LionTurtle : Fish
 
     private IEnumerator DyingPhase2Coroutine()
     {
+
         shellWithFire.gameObject.SetActive(true);
+        FishesInstantDie();
         yield return new WaitForSeconds(0.5f);
         shellWithFire.gameObject.SetActive(false);
         shellRotateImg.gameObject.SetActive(true);
         shellRotateImg.GetComponent<RectTransform>().sizeDelta = new Vector2(450, 450);
         fireEffectImg.gameObject.SetActive(true);
+        FishesInstantDie();
         yield return new WaitForSeconds(fireEffectAnimationClip.length);
         fireEffectImg.gameObject.SetActive(false);
         Backgroundmanager.Instance.FireEfectBG.SetActive(true);
+        FishesInstantDie();
         yield return new WaitForSeconds(fireEffectBGAnimationClip.length / 2);
         Backgroundmanager.Instance.BurningBorderBG.SetActive(true);
+        FishesInstantDie();
         yield return new WaitForSeconds(fireEffectBGAnimationClip.length + 0.4f);
         Backgroundmanager.Instance.FireEfectBG.SetActive(false);
         shellRotateImg.GetComponent<RectTransform>().sizeDelta = new Vector2(290, 290);
@@ -95,20 +101,25 @@ public class LionTurtle : Fish
         for (int i = 0; i < deathCycleMax; i++)
         {
             shellWithFire.gameObject.SetActive(true);
+            FishesInstantDie();
             yield return new WaitForSeconds(0.5f);
             shellWithFire.gameObject.SetActive(false);
             shellRotateImg.gameObject.SetActive(true);
             shellRotateImg.GetComponent<RectTransform>().sizeDelta = new Vector2(450, 450);
             fireEffectImg.gameObject.SetActive(true);
+            FishesInstantDie();
             yield return new WaitForSeconds(fireEffectAnimationClip.length);
             fireEffectImg.gameObject.SetActive(false);
             Backgroundmanager.Instance.FireEfectBG.SetActive(true);
+            FishesInstantDie();
             yield return new WaitForSeconds(fireEffectBGAnimationClip.length / 2);
             Backgroundmanager.Instance.BurningBorderBG.SetActive(true);
+            FishesInstantDie();
             yield return new WaitForSeconds(fireEffectBGAnimationClip.length + 0.4f);
             Backgroundmanager.Instance.FireEfectBG.SetActive(false);
             shellRotateImg.GetComponent<RectTransform>().sizeDelta = new Vector2(290, 290);
             shellRotateImg.gameObject.SetActive(false);
+            FishesInstantDie();
         }
 
         shellRotateImg.gameObject.SetActive(false);
@@ -117,6 +128,16 @@ public class LionTurtle : Fish
         yield return new WaitForSeconds(5f);
         
         Backgroundmanager.Instance.BurningBorderBG.SetActive(false);
+    }
+
+    private static void FishesInstantDie()
+    {
+        List<FishHealth> fishList = GeneratedFishManager.Instance.GetGeneratedFishList();
+
+        for (int a = 0; a < fishList.Count; a++)
+        {
+            fishList[a].InstantDie();
+        }
     }
 
     private void LerpToMiddle()

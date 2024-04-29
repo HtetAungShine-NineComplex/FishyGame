@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Rendering;
+using System.Net;
 
 public class Move : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Move : MonoBehaviour
     private Vector3 _endPoint;
     protected Vector3 _controlPoint;
     private FishHealth _health;
+    private Transform[] _points; //for triangleShape
+    private int _pointIndex = 1;
 
     public SpawnPosition spawnPosition;
     private float _curveDistance = 500f;
@@ -31,6 +34,7 @@ public class Move : MonoBehaviour
 
     private void Awake()
     {
+        _points = new Transform[0];
         _curveDistance *= Screen.height / 1080f;
     }
 
@@ -49,14 +53,19 @@ public class Move : MonoBehaviour
             return;
         }
 
-        if (_startPoint != Vector3.zero && _endPoint != Vector3.zero && _centerPoint == Vector3.zero)
+        if (_startPoint != Vector3.zero && _endPoint != Vector3.zero && _centerPoint == Vector3.zero && _points.Length == 0)
         {
-
+            
             MoveFish(_startPoint, _endPoint);
         }
         else if(_startPoint != Vector3.zero && _endPoint != Vector3.zero && _centerPoint != Vector3.zero)
         {
             MoveFishInCircleShape(_startPoint, _centerPoint, _endPoint);
+        }
+        else if (_points.Length > 0)
+        {
+            Debug.Log("Moving in triangle shape" + _curveDistance);
+            MoveFishInTriangleShape();
         }
     }
 
@@ -92,6 +101,16 @@ public class Move : MonoBehaviour
         _startPoint = startPoint_T;
         _centerPoint = centerPoint;
         _endPoint = endPoint;
+    }
+
+    public virtual void SetPointsForTriangleShape(Transform[] points)
+    {
+        desiredDuration = 1.5f;
+
+        _points = points;
+        _curveDistance = 0;
+        
+        _startPoint = _points[0].position;
     }
 
     public Vector3 GetEndPoint()
@@ -154,10 +173,41 @@ public class Move : MonoBehaviour
         Vector3 direction = new Vector3(-Mathf.Sin(angle), Mathf.Cos(angle), 0);
         transform.up = direction;
 
-        StartCoroutine(SwitchFromCircleToStraight(transform.position, endPoint));
+        StartCoroutine(SwitchTargetPosition(transform.position, endPoint));
     }
 
-    private IEnumerator SwitchFromCircleToStraight(Vector3 startPoint, Vector3 endPoint)
+    private void MoveFishInTriangleShape()
+    {
+        if (_health != null && _health._isDead)
+        {
+            return;
+        }
+
+        
+
+        elapsedTime += Time.deltaTime;
+        float completePercent = elapsedTime / desiredDuration;
+
+        _controlPoint = SpawnpointManager.Instance.GetControlPoint(_startPoint, _points[_pointIndex].position, _curveDistance);
+
+        Vector2 position = Bezier.GetPoint(_startPoint, _controlPoint, _points[_pointIndex].position, curve.Evaluate(completePercent * speed));
+        Vector2 direction = Bezier.GetDerivative(_startPoint, _controlPoint, _points[_pointIndex].position, curve.Evaluate(completePercent * speed));
+
+        transform.position = position;
+        transform.up = transform.up = direction.normalized;
+
+        float distance = Vector3.Distance(transform.position, _points[_pointIndex].position);
+
+        if (distance <= 0.01f && elapsedTime > 0)
+        {
+            _startPoint = transform.position;
+            _pointIndex = _pointIndex + 1;
+            elapsedTime = 0;
+        }
+
+    }
+
+    private IEnumerator SwitchTargetPosition(Vector3 startPoint, Vector3 endPoint)
     {
         yield return new WaitForSeconds(desiredDuration);
         

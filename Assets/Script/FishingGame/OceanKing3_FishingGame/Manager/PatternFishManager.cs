@@ -6,7 +6,8 @@ using UnityEngine;
 public enum PatternType
 {
     Straight,
-    Circle
+    Circle,
+    Triangle
 }
 
 public class PatternFishManager : FishManager
@@ -19,6 +20,7 @@ public class PatternFishManager : FishManager
     [SerializeField] private Transform _centerPoint; //center
     [SerializeField] private Transform _endPoint; //vertical
     [SerializeField] private PatternType _type;
+    [SerializeField] private Transform[] _triangleShapePoints;
 
     private Coroutine _bonusPatternCoroutine;
 
@@ -31,6 +33,10 @@ public class PatternFishManager : FishManager
                 break;
             case PatternType.Circle:
                 _bonusPatternCoroutine = StartCoroutine(SpawnFishPatternCircle(_delay));
+                break;
+
+            case PatternType.Triangle:
+                _bonusPatternCoroutine = StartCoroutine(SpawnFishPatternTriangle(_delay));
                 break;
             default:
                 break;
@@ -71,6 +77,25 @@ public class PatternFishManager : FishManager
                 GameObject fish = Instantiate(fishPrefab, _startPoint.position, Quaternion.identity, parentTF);
                 Move move = fish.GetComponent<Move>();
                 move.SetPointsForCircleShape(_startPoint.position, _centerPoint.position, _endPoint.position); //no curve
+                fishSpawned++;
+                yield return new WaitForSeconds(_interval);
+            }
+
+            yield return new WaitForSeconds(_waveInterval);
+        }
+    }
+
+    IEnumerator SpawnFishPatternTriangle(int delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        while (fishSpawned < maxFish)
+        {
+            for (int i = 0; i < _waveFishCount; i++)
+            {
+                GameObject fish = Instantiate(fishPrefab, _startPoint.position, Quaternion.identity, parentTF);
+                Move move = fish.GetComponent<Move>();
+                move.SetPointsForTriangleShape(_triangleShapePoints); //no curve
                 fishSpawned++;
                 yield return new WaitForSeconds(_interval);
             }

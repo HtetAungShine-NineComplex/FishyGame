@@ -92,24 +92,6 @@ public class BossCrabMove : SpecialFishMove
 
                 CurveDistance = -100;
             }
-
-            /*if((_currentWayPointIndex == 1 && _previousWayPointIndex == 0) || (_currentWayPointIndex == 0 && _previousWayPointIndex == 1))
-            {
-                _curveDistance = -100;
-            }
-            else if((_currentWayPointIndex == 3 && _previousWayPointIndex == 2) || (_currentWayPointIndex == 2 && _previousWayPointIndex == 3))
-            {
-                _curveDistance = 100;
-            }
-            else if((_currentWayPointIndex == 2 && _previousWayPointIndex == 1) || (_currentWayPointIndex == 1 && _previousWayPointIndex == 2))
-            {
-                _curveDistance = 10;
-            }
-            else if((_currentWayPointIndex == 0 && _previousWayPointIndex == 3) || (_currentWayPointIndex == 3 && _previousWayPointIndex == 0))
-            {
-                _curveDistance = -10;
-            }*/
-
             _controlPoint = SpawnpointManager.Instance.GetControlPoint(
             _wayPoints[_previousWayPointIndex].position, 
             _wayPoints[_currentWayPointIndex].position,

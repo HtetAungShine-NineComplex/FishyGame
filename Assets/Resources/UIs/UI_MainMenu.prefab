@@ -471,6 +471,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _btn: {fileID: 7979191382495663334}
   _gameType: 0
+  m_SplashScreen: {fileID: 3513779468407706676}
+  m_SplashScreenArt: {fileID: 21300000, guid: d12bb5f800edd3749a086699991f891f, type: 3}
+  fadeDuration: 0.75
 --- !u!1 &730030360480047998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,6 +1977,7 @@ RectTransform:
   - {fileID: 4509244265063832655}
   - {fileID: 2201907473780663786}
   - {fileID: 1131442943823676177}
+  - {fileID: 8431052390490639272}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3358,6 +3362,103 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7579174879707095392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8431052390490639272}
+  - component: {fileID: 6723502036653198802}
+  - component: {fileID: 3513779468407706676}
+  - component: {fileID: 806847407427447775}
+  m_Layer: 5
+  m_Name: SplashScren_Img
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &8431052390490639272
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579174879707095392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2744470683021325801}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6723502036653198802
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579174879707095392}
+  m_CullTransparentMesh: 1
+--- !u!114 &3513779468407706676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579174879707095392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!95 &806847407427447775
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7579174879707095392}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c0da2b5ff74260438057916c92fe69d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7744855840832325381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,6 +3642,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _btn: {fileID: 84939065815176609}
   _gameType: 0
+  m_SplashScreen: {fileID: 3513779468407706676}
+  m_SplashScreenArt: {fileID: 21300000, guid: d3edf0bdb3d144c4880649143c04a3cd, type: 3}
+  fadeDuration: 0.75
 --- !u!1 &8228589788573744629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3994,7 +4098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4002,7 +4106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4042,11 +4146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1746.7778
       objectReference: {fileID: 0}
     - target: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4067,6 +4171,10 @@ PrefabInstance:
     - target: {fileID: 7996403278813417207, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_Name
       value: FishGameUI_Btn (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996403278813417207, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8942849410011830222, guid: 652d184619df6794788aa52a8eec4ede, type: 3}
       propertyPath: m_Sprite
@@ -4210,6 +4318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _btn: {fileID: 6717160813927188087}
   _gameType: 0
+  m_SplashScreen: {fileID: 0}
+  m_SplashScreenArt: {fileID: 0}
+  fadeDuration: 0.75
 --- !u!224 &6236186563218878766 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 719011384994699434, guid: 652d184619df6794788aa52a8eec4ede, type: 3}

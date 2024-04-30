@@ -99,14 +99,14 @@ public abstract class UIBase : MonoBehaviour
     }
     public void Focus()
     {
-        if (!Opened)
-            return;
+        if (!Opened) return;
+
         OnFocus();
     }
     public void Defocus()
     {
-        if (!Opened)
-            return;
+        if (!Opened) return;
+
         OnDefocus();
     }
 }

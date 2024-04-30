@@ -473,6 +473,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1259957290527041651}
     m_Modifications:
+    - target: {fileID: 2363034250492827192, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
+      propertyPath: fishSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 65ace45fa4e80154f91c30ef26dfc43f, type: 2}
     - target: {fileID: 5464596711779083264, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -553,6 +557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8400401494726600709, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
+      propertyPath: fishSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 65ace45fa4e80154f91c30ef26dfc43f, type: 2}
     - target: {fileID: 8400401494726600709, guid: 93db9acc03456994f836fcb6e3a4d692, type: 3}
       propertyPath: _rectTransform
       value: 

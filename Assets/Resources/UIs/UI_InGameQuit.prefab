@@ -383,7 +383,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsCamUI: 0
-  CloseBtn: {fileID: 7144150469864605343}
+  closeBtn: {fileID: 0}
+  quitBtn: {fileID: 8660863419995995652}
+  cancelBtn: {fileID: 7144150469864605343}
 --- !u!1 &5836945277700544745
 GameObject:
   m_ObjectHideFlags: 0

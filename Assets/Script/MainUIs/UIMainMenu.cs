@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIMainMenu : UIBase
 {
-    protected override void OnShow(UIBaseData Data = null)
+    /*protected override void OnShow(UIBaseData Data = null)
     {
         base.OnShow(Data);
     }
@@ -12,5 +12,5 @@ public class UIMainMenu : UIBase
     protected override void OnClose()
     {
         base.OnClose();
-    }
+    }*/
 }

@@ -203,6 +203,11 @@ public class Move : MonoBehaviour
             _startPoint = transform.position;
             _pointIndex = _pointIndex + 1;
             elapsedTime = 0;
+
+            if(_pointIndex >= _points.Length)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
     }

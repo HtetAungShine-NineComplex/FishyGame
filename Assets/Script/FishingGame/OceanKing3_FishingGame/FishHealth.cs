@@ -7,9 +7,9 @@ public class FishHealth : MonoBehaviour,IDamageable
     public FishHealth Config;
 
     [SerializeField] private FishSO fishSO;
-    [SerializeField] private Fish _fish;
-    [SerializeField] private AudioSource _audio;
-    [SerializeField] private float _destroyDelay = 1f;
+    [SerializeField] protected Fish _fish;
+    [SerializeField] protected AudioSource _audio;
+    [SerializeField] protected float _destroyDelay = 1f;
     [SerializeField] private bool _canDieInstantly = true;
     [SerializeField] private bool isLionTurtle;
     [SerializeField] private bool isDragon;
@@ -20,9 +20,15 @@ public class FishHealth : MonoBehaviour,IDamageable
 
     public Sprite FishIcon { get { return _fish.FishIcon; } }
 
-    private void Start()
+    protected virtual void Start()
     {
         _maxHealth = fishSO.MaxHealth;
+        SetCurrentHealthToMax();
+        
+    }
+
+    protected void SetCurrentHealthToMax()
+    {
         _currentHealth = _maxHealth;
     }
 
@@ -52,7 +58,7 @@ public class FishHealth : MonoBehaviour,IDamageable
         Die();
     }
 
-    public void Die()
+    public virtual void Die()
     {
         if (_audio != null) _audio.Play();
         _isDead = true;

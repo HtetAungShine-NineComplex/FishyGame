@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Fish : MonoBehaviour
 {
-    [SerializeField] private RectTransform _rectTransform;
+    [SerializeField] protected RectTransform _rectTransform;
     [SerializeField] private FishSO fishSO;
     [SerializeField] protected Move _move;
     [SerializeField] protected Collider2D _coll;
@@ -131,5 +131,11 @@ public class Fish : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         
+    }
+
+    public void ResetFrames()
+    {
+        currentFrame = 0;
+        timer = 0;
     }
 }

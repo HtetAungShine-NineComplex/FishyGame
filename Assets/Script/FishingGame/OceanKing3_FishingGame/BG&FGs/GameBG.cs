@@ -6,6 +6,7 @@ public abstract class GameBG : MonoBehaviour
 {
     [SerializeField] protected int mapIndex = 1;
 
+
     protected virtual void Start()
     {
         WaveManager.Instance.EnterNormalStage += OnEnterNormalStage;

@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 2fd962d8169493344af46bf5af0fe873
+guid: e48835352f1a1e24aa34fa985be65c26
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,15 +37,15 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
+    wrapU: 0
+    wrapV: 0
     wrapW: 0
-  nPOTScale: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -74,7 +74,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: King_Kong
+      name: Comp 1_00000
       rect:
         serializedVersion: 2
-        x: 23
-        y: 866
-        width: 351
-        height: 139
+        x: 0
+        y: 3296
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38dd206fd1125f94e8d4bc57a0e805d2
-      internalID: 939312454
+      spriteID: 1dcc982d867f1b4448ef6db425e528f6
+      internalID: -341237853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ancient_Crocodile
+      name: Comp 1_00001
       rect:
         serializedVersion: 2
-        x: 419
-        y: 736
-        width: 613
-        height: 281
+        x: 800
+        y: 3296
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b399a3e646fad444bfa388ea9a289a7
-      internalID: 44703145
+      spriteID: 26a6db5b48b8c054fa4ee48040dedbaa
+      internalID: 87679409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Emperor_Crab
+      name: Comp 1_00002
       rect:
         serializedVersion: 2
-        x: 35
-        y: 639
-        width: 300
-        height: 185
+        x: 1600
+        y: 3296
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1743cf145af0d4343b349d05e3ea8a4b
-      internalID: 1283357489
+      spriteID: 2592d9a366ecf9c47b536223bc78b1b2
+      internalID: 223946788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Raging_Dragon
+      name: Comp 1_00003
       rect:
         serializedVersion: 2
-        x: 357
-        y: 421
-        width: 412
-        height: 312
+        x: 2400
+        y: 3296
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bb5e12e7f78bc24ab9b01e0ce43408a
-      internalID: -1320908987
+      spriteID: 1b598ba0e6631e44dbf1d9546a15d52f
+      internalID: 1467934692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smash_Hammer
+      name: Comp 1_00004
       rect:
         serializedVersion: 2
-        x: 34
-        y: 438
-        width: 306
-        height: 197
+        x: 3200
+        y: 3296
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a28153b826496a46bbef9c5aa82224a
-      internalID: 1068554509
+      spriteID: c83a2c85d6f8e304aa864c449ed49d23
+      internalID: 835703234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Whale_King
+      name: Comp 1_00005
       rect:
         serializedVersion: 2
-        x: 66
-        y: 326
-        width: 234
-        height: 91
+        x: 0
+        y: 2496
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7d0bc4e7851e194c92b657ad6de5b8d
-      internalID: -615036454
+      spriteID: 861b8c83c3976a3438fa94f04a7b075e
+      internalID: -1253352673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mermaid
+      name: Comp 1_00006
       rect:
         serializedVersion: 2
-        x: 393
-        y: 178
-        width: 321
-        height: 224
+        x: 800
+        y: 2496
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a13eee0379e20a446b800625223bcecc
-      internalID: -92921751
+      spriteID: 3466ee638c0c06c44956d59a0b8de2e5
+      internalID: -1736647621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Darkness_Monster
+      name: Comp 1_00007
       rect:
         serializedVersion: 2
-        x: 11
-        y: 32
-        width: 370
-        height: 284
+        x: 1600
+        y: 2496
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +297,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 621a323857bf70e40b33ed94ebb21457
-      internalID: 229883421
+      spriteID: 7b205027147f21747930aca1cb958e7d
+      internalID: 698886061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crocodile_PU
+      name: Comp 1_00008
       rect:
         serializedVersion: 2
-        x: 375
-        y: 14
-        width: 345
-        height: 138
+        x: 2400
+        y: 2496
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +318,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcd2e8fea855cb246818583cc709afac
-      internalID: -1108576597
+      spriteID: ad841a2b0259e3c42a4b3f34334f70b4
+      internalID: 825738811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostShip_PU
+      name: Comp 1_00009
       rect:
         serializedVersion: 2
-        x: 740
-        y: 8
-        width: 288
-        height: 148
+        x: 3200
+        y: 2496
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,20 +339,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb81c668a84b9814c8fc8808818edac1
-      internalID: 1952154573
+      spriteID: 52f5a6a83dc076d46a5821605b0001da
+      internalID: -680368375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EmperorCrab
+      name: Comp 1_00010
       rect:
         serializedVersion: 2
-        x: 791
-        y: 174
-        width: 451
-        height: 337
+        x: 0
+        y: 1696
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,20 +360,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4154dc336b0644a85fdeaeb5468fff
-      internalID: -297161449
+      spriteID: 55421cd0f87da354f85edb080c7374f0
+      internalID: 1070785269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LaserBeam
+      name: Comp 1_00011
       rect:
         serializedVersion: 2
-        x: 799
-        y: 524
-        width: 313
-        height: 193
+        x: 800
+        y: 1696
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,20 +381,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6418660ed4844db40997f6eaaf0fd90b
-      internalID: -111846927
+      spriteID: 6fd391dccb3675544badfb7d311aa744
+      internalID: 2002478213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: phoenix
+      name: Comp 1_00012
       rect:
         serializedVersion: 2
-        x: 1555
-        y: 698
-        width: 471
-        height: 326
+        x: 1600
+        y: 1696
+        width: 800
+        height: 800
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,50 +402,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bff1aed75a8f13e4487945b3926a58c8
-      internalID: -890491785
+      spriteID: 7b07c764d88cf424bbe0c8fbd5b08730
+      internalID: 1785151596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buffalo_Logo
+      name: Comp 1_00013
       rect:
         serializedVersion: 2
-        x: 1065
-        y: 709
-        width: 454
-        height: 310
+        x: 2400
+        y: 1696
+        width: 800
+        height: 800
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cc2456afc1a85c4ba7f8329278cae04
-      internalID: 827159249
+      spriteID: 45e3dfb9ff2f17c42affd0ec41530b55
+      internalID: 468408621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Buffalo_Boss_Title
+      name: Comp 1_00014
       rect:
         serializedVersion: 2
-        x: 1264
-        y: 185
-        width: 739
-        height: 505
+        x: 3200
+        y: 1696
+        width: 800
+        height: 800
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38051ccd6f60f4b4db02d8f5aebf1db4
-      internalID: -1274131766
+      spriteID: ebe3fa4f55be34f45a5497efa2da9f14
+      internalID: -1698970656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comp 1_00015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e97ab53bda22d4eb0c213d092fcc15
+      internalID: -1186254282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Comp 1_00016
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 896
+        width: 800
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72a201bc53068b49a3e87fb0cdb4d7c
+      internalID: 123134998
       vertices: []
       indices: 
       edges: []
@@ -453,7 +495,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 57c7d3857d5c1fa459d68ce337e3ee23
+    spriteID: 0c30747b158e31e4c937e121e4276dc3
     internalID: 0
     vertices: []
     indices: 
@@ -461,24 +503,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ancient_Crocodile: 44703145
-      Buffalo_Boss_Title: -1274131766
-      Buffalo_Logo: 827159249
-      Crocodile_PU: -1108576597
-      Darkness_Monster: 229883421
-      EmperorCrab: -297161449
-      Emperor_Crab: 1283357489
-      GhostShip_PU: 1952154573
-      King_Kong: 939312454
-      LaserBeam: -111846927
-      Mermaid: -92921751
-      Raging_Dragon: -1320908987
-      Smash_Hammer: 1068554509
-      Whale_King: -615036454
-      phoenix: -890491785
-      text_01_12: -2109031008
-      text_01_5: 1373779595
-      text_01_6: -2127939142
+      Comp 1_00000: -341237853
+      Comp 1_00001: 87679409
+      Comp 1_00002: 223946788
+      Comp 1_00003: 1467934692
+      Comp 1_00004: 835703234
+      Comp 1_00005: -1253352673
+      Comp 1_00006: -1736647621
+      Comp 1_00007: 698886061
+      Comp 1_00008: 825738811
+      Comp 1_00009: -680368375
+      Comp 1_00010: 1070785269
+      Comp 1_00011: 2002478213
+      Comp 1_00012: 1785151596
+      Comp 1_00013: 468408621
+      Comp 1_00014: -1698970656
+      Comp 1_00015: -1186254282
+      Comp 1_00016: 123134998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

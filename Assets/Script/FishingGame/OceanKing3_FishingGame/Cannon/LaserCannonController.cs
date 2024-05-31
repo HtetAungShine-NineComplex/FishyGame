@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LaserCannonController : MonoBehaviour
@@ -30,6 +31,36 @@ public class LaserCannonController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("Mouse Click Detected");
+
+            // Create pointer event data
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current)
+            {
+                position = new Vector2(Input.mousePosition.x, Input.mousePosition.y)
+            };
+
+            // Raycast and store the results
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+
+            // Check if any results were returned
+            if (results.Count > 0)
+            {
+                Debug.Log("Raycast hit: " + results[0].gameObject.name);
+
+                _targetFish = results[0].gameObject.GetComponentInParent<FishHealth>();
+
+               
+            }
+            else
+            {
+                Debug.Log("No raycast results found.");
+            }
+        }
+
+
         if (_targetFish != null && Input.GetMouseButton(0))
         {
             
@@ -60,7 +91,7 @@ public class LaserCannonController : MonoBehaviour
         }
         else
         {
-            _targetFish = GeneratedFishManager.Instance.GetRandomFish();
+            //_targetFish = GeneratedFishManager.Instance.GetRandomFish();
             _laserRenderer.gameObject.SetActive(false);
         }
         //_lineRenderer.gameObject.SetActive(_targetFish != null);

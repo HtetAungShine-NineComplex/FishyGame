@@ -6,6 +6,12 @@ public class LaserRenderer : MonoBehaviour
 {
     [SerializeField] private RectTransform _rect;
     [SerializeField] private RectTransform _touch;
+    float fixedHeight;
+
+    private void Start()
+    {
+        fixedHeight = 200;
+    }
 
     private void OnEnable()
     {
@@ -24,7 +30,8 @@ public class LaserRenderer : MonoBehaviour
 
         Vector2 direction = end - start;
         float distance = direction.magnitude;
-        _rect.sizeDelta = new Vector2(distance, _rect.sizeDelta.y);
+        
+        _rect.sizeDelta = new Vector2(distance, fixedHeight);
         _rect.anchoredPosition = start + (direction / 2);
         _rect.localEulerAngles = new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class UILineRenderer : MonoBehaviour
 {
     [SerializeField] private RectTransform _rect;
+    [SerializeField] private Transform _endPointUI; //optional
 
     public void SetDir(Vector2 globalStart, Vector2 globalEnd)
     {
@@ -16,5 +17,9 @@ public class UILineRenderer : MonoBehaviour
         _rect.sizeDelta = new Vector2(distance, _rect.sizeDelta.y);
         _rect.anchoredPosition = start + (direction / 2);
         _rect.localEulerAngles = new Vector3(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+        if(_endPointUI != null)
+        {
+            _endPointUI.position = globalEnd;
+        }
     }
 }

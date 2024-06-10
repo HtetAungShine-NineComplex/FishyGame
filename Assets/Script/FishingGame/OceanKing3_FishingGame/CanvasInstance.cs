@@ -10,6 +10,7 @@ public class CanvasInstance : MonoBehaviour
     [SerializeField] private Transform _midGroundSpawn;
     [SerializeField] private CannonHandler _cannonHandler;
     [SerializeField] private BossRewardShower _bossRewardShower; //for Kirin
+    [SerializeField] private Transform _anglerFishLight;
 
     public static CanvasInstance Instance;
 
@@ -48,5 +49,10 @@ public class CanvasInstance : MonoBehaviour
     public BossRewardShower GetBossRewardShower()
     {
         return _bossRewardShower;
+    }
+
+    public Transform GetAnglerFishLight()
+    {
+        return _anglerFishLight;
     }
 }

@@ -7,6 +7,8 @@ public class BGBlue : GameBG
     [SerializeField] private Animator _animator;
     [SerializeField] private CanvasGroup _group;
 
+    [SerializeField] private CanvasGroup _bossfightDim;
+
     protected override void OnEnterNormalStage(int mapIndex)
     {
         base.OnEnterNormalStage(mapIndex);
@@ -19,12 +21,14 @@ public class BGBlue : GameBG
         base.OnEnterBossStage(mapIndex);
         if (mapIndex != this.mapIndex) return;
 
-        _animator.SetBool("IsBossFight", true);
+        //_animator.SetBool("IsBossFight", true);
+        StartCoroutine(BossFadeIn());
     }
 
     protected override void OnEnterBonusStage(int mapIndex)
     {
-        _animator.SetBool("IsBossFight", false);
+        //_animator.SetBool("IsBossFight", false);
+        BossFadeOut();
 
         base.OnEnterBonusStage(mapIndex);
         if (mapIndex == this.mapIndex)
@@ -59,4 +63,26 @@ public class BGBlue : GameBG
         }
     }
 
+    void BossFadeOut()
+    {
+        _bossfightDim.alpha = 0;
+    }
+
+    IEnumerator BossFadeIn()
+    {
+        float fadeDuration = 2f;
+        float fadeRate = 1 / fadeDuration;
+
+        while (_bossfightDim.alpha < 1)
+        {
+            _bossfightDim.alpha += fadeRate * Time.deltaTime;
+
+            if (_bossfightDim.alpha >= 1)
+            {
+                _bossfightDim.alpha = 1;
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+    }
 }

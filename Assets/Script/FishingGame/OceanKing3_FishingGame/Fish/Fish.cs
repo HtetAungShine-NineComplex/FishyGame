@@ -60,7 +60,6 @@ public class Fish : MonoBehaviour
 
     IEnumerator HitEffect()
     {
-        Debug.Log("HitEffect");
 
         float duration = 0.3f; // Duration of the fade in/out
         float elapsed = 0f; // Time elapsed since the start of the fade

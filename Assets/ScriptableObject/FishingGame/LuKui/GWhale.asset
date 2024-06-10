@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: GWhale
+  m_EditorClassIdentifier: 
+  fishType: 2
+  FishIcon: {fileID: -640376786, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  MaxHealth: 7000
+  Score: 8000
+  CoinSpawnAmount: 8
+  FishFrames:
+  - {fileID: -640376786, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -1833127534, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: 1757787018, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -854987386, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -1112593434, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -172565212, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -1113568169, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -172565212, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -1112593434, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -854987386, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: 1757787018, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -1833127534, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  - {fileID: -640376786, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  FishDefaultFrame: {fileID: -640376786, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
+  FishFrameRate: 0.26
+  speed: 0.6
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

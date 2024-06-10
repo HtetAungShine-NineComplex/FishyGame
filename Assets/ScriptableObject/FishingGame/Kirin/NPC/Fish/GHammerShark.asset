@@ -13,17 +13,33 @@ MonoBehaviour:
   m_Name: GHammerShark
   m_EditorClassIdentifier: 
   fishType: 2
-  FishIcon: {fileID: -1800904922, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  FishIcon: {fileID: -640376786, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
   MaxHealth: 7000
   Score: 8000
   CoinSpawnAmount: 8
   FishFrames:
+  - {fileID: -1051599466, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
   - {fileID: -1800904922, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
-  - {fileID: -828902042, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
   - {fileID: 660453737, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
   - {fileID: -828902042, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
-  - {fileID: -1800904922, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
-  FishDefaultFrame: {fileID: -1051599466, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -1328779322, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -1060876639, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: 1644972869, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: 2093877510, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -411807051, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -2066261183, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -317055397, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: 1015042863, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -190012603, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -1267553775, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -734724662, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: 219168226, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -1650349395, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -1873837331, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: 1930971893, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: -1985349134, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  - {fileID: 1044931964, guid: e14753b2ca4c9d04ca9953953be41557, type: 3}
+  FishDefaultFrame: {fileID: -640376786, guid: 6d3a9c5b44556b742afa08a793a2d104, type: 3}
   FishFrameRate: 0.26
   speed: 0.6
   SpeedCurve:

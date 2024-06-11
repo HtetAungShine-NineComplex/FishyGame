@@ -19,14 +19,14 @@ public class Move : MonoBehaviour
     private int _pointIndex = 1;
 
     public SpawnPosition spawnPosition;
-    private float _curveDistance = 500f;
+    [SerializeField]private float _curveDist = 500f;
 
     public float CurveDistance
     {
-        get { return _curveDistance; }
+        get { return _curveDist; }
         set
         {
-            _curveDistance = value * Screen.height / 1080f;
+            _curveDist = value * Screen.height / 1080f;
         }
     }
 
@@ -35,7 +35,7 @@ public class Move : MonoBehaviour
     private void Awake()
     {
         _points = new Transform[0];
-        _curveDistance *= Screen.height / 1080f;
+        _curveDist *= Screen.height / 1080f;
     }
 
     protected virtual void Start()
@@ -64,7 +64,7 @@ public class Move : MonoBehaviour
         }
         else if (_points.Length > 0)
         {
-            Debug.Log("Moving in triangle shape" + _curveDistance);
+            Debug.Log("Moving in triangle shape" + _curveDist);
             MoveFishInTriangleShape();
         }
     }
@@ -85,7 +85,7 @@ public class Move : MonoBehaviour
         _startPoint = startPoint_T;
         _endPoint = destroyPoint_T;
 
-        _controlPoint = SpawnpointManager.Instance.GetControlPoint(_startPoint, _endPoint, _curveDistance);
+        _controlPoint = SpawnpointManager.Instance.GetControlPoint(_startPoint, _endPoint, _curveDist);
     }
 
     public virtual void SetPoints(Vector3 startPoint_T, Vector3 destroyPoint_T, float curveDistance)
@@ -108,7 +108,7 @@ public class Move : MonoBehaviour
         desiredDuration = 1.5f;
 
         _points = points;
-        _curveDistance = 0;
+        _curveDist = 0;
         
         _startPoint = _points[0].position;
     }
@@ -188,7 +188,7 @@ public class Move : MonoBehaviour
         elapsedTime += Time.deltaTime;
         float completePercent = elapsedTime / desiredDuration;
 
-        _controlPoint = SpawnpointManager.Instance.GetControlPoint(_startPoint, _points[_pointIndex].position, _curveDistance);
+        _controlPoint = SpawnpointManager.Instance.GetControlPoint(_startPoint, _points[_pointIndex].position, _curveDist);
 
         Vector2 position = Bezier.GetPoint(_startPoint, _controlPoint, _points[_pointIndex].position, curve.Evaluate(completePercent * speed));
         Vector2 direction = Bezier.GetDerivative(_startPoint, _controlPoint, _points[_pointIndex].position, curve.Evaluate(completePercent * speed));

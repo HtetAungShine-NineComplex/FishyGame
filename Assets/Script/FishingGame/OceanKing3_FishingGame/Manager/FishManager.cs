@@ -11,6 +11,7 @@ public class FishManager : MonoBehaviour
     public bool _isMainBoss;
     public bool _isHorizontal;
     public bool _isVertical;
+    public bool _isGoFromMiddle;
 
     protected int fishSpawned = 0;
     private int fishDestroyed;
@@ -69,14 +70,23 @@ public class FishManager : MonoBehaviour
             {
                 spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPointVertical();
             }
+            else if(_isGoFromMiddle)
+            {
+                spawnPoint = SpawnpointManager.Instance.GetScreenMidPointHorizontal();
+            }
             else
             {
                 spawnPoint = SpawnpointManager.Instance.GetRandomSpawnPoint();
             }
 
-            endpoint = SpawnpointManager.Instance.GetRandomEndPoint(spawnPoint, SpawnpointManager.Instance.GetSpawnPosition());
-
-
+            if(_isGoFromMiddle)
+            {
+                endpoint = SpawnpointManager.Instance.GetRandomEndPointMid(spawnPoint, SpawnpointManager.Instance.GetSpawnPosition());
+            }
+            else
+            {
+                endpoint = SpawnpointManager.Instance.GetRandomEndPoint(spawnPoint, SpawnpointManager.Instance.GetSpawnPosition());
+            }
             //fishMove.startPoint_T.position = spawnPoint;
             //fishMove.destoryPoint_T.position = endpoint;
 

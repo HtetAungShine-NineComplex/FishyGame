@@ -40,6 +40,8 @@ public class Fish : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(fish_frames== null) return;
+
         timer += Time.deltaTime;
 
         if (timer >= frameRate)

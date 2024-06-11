@@ -372,6 +372,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &84311079
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +785,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 1
 --- !u!1 &115283602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1161,58 @@ RectTransform:
   m_AnchoredPosition: {x: -1282, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &160755846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160755847}
+  - component: {fileID: 160755848}
+  m_Layer: 0
+  m_Name: CoralManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &160755847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160755846}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &160755848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160755846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 6291332059505405621, guid: d87272735cc5d02488b90adfde1b46c7, type: 3}
+  spawnInterval: 24
+  maxFish: 10000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &197760160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1502,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainUICanvas: {fileID: 684130710}
+--- !u!1 &318384061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318384062}
+  - component: {fileID: 318384063}
+  m_Layer: 0
+  m_Name: BombManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318384062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318384061}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318384063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318384061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 6291332059505405621, guid: b0289294dcda48940b3f337ee40acac7, type: 3}
+  spawnInterval: 46
+  maxFish: 10000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &325180689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,6 +2009,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394989643}
   m_CullTransparentMesh: 1
+--- !u!1 &408430489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 408430490}
+  - component: {fileID: 408430491}
+  m_Layer: 0
+  m_Name: FreezeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &408430490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408430489}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &408430491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408430489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 6291332059505405621, guid: 5936da75d1ab23f44bdda3ace5ba1f2b, type: 3}
+  spawnInterval: 37
+  maxFish: 10000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1001 &437056577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2051,6 +2209,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &469493797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,6 +2471,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &497955472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,12 +3240,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 6291332059505405621, guid: 7533a831322a04041ad5425f7a35a408, type: 3}
-  spawnInterval: 35
+  spawnInterval: 40
   maxFish: 10000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 1
 --- !u!1 &652148639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,13 +3528,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: 79d1fcab828561d448a11a0f31d890aa, type: 3}
+  fishPrefab: {fileID: 6291332059505405621, guid: 5fb660615227e4848b19a9304e787838, type: 3}
   spawnInterval: 18
   maxFish: 10000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &709224193
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,6 +4569,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &910750807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910750808}
+  - component: {fileID: 910750809}
+  m_Layer: 0
+  m_Name: SwordBombManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910750808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910750807}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910750809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910750807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 6291332059505405621, guid: e752d8ba5fdd055469a4887627a50f0e, type: 3}
+  spawnInterval: 35
+  maxFish: 10000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &924587249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4627,7 +4841,7 @@ GameObject:
   - component: {fileID: 934194089}
   - component: {fileID: 934194090}
   m_Layer: 0
-  m_Name: BlueTangTripleGoldManager
+  m_Name: BlueTangTripleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4660,13 +4874,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: 9e416f13f782d7f469ad451880584fb8, type: 3}
+  fishPrefab: {fileID: 6291332059505405621, guid: 6d52f8d3a032ab748b8898082e1bf8dd, type: 3}
   spawnInterval: 25
   maxFish: 10000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &947689340
 GameObject:
   m_ObjectHideFlags: 0
@@ -4824,13 +5039,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: 79d1fcab828561d448a11a0f31d890aa, type: 3}
+  fishPrefab: {fileID: 6291332059505405621, guid: a866e85103e33324999fea029e5082d5, type: 3}
   spawnInterval: 33
   maxFish: 10000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &983357559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6311,7 +6527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1200682708
 Transform:
   m_ObjectHideFlags: 0
@@ -6346,6 +6562,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1207271544
 GameObject:
   m_ObjectHideFlags: 0
@@ -6397,6 +6614,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1216383996
 GameObject:
   m_ObjectHideFlags: 0
@@ -6754,6 +6972,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 1
 --- !u!1 &1255614982
 GameObject:
   m_ObjectHideFlags: 0
@@ -8328,7 +8547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1533080814
 Transform:
   m_ObjectHideFlags: 0
@@ -8363,6 +8582,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1534970452
 GameObject:
   m_ObjectHideFlags: 0
@@ -8592,6 +8812,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1565409039
 GameObject:
   m_ObjectHideFlags: 0
@@ -9437,6 +9658,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1728975744
 GameObject:
   m_ObjectHideFlags: 0
@@ -11201,13 +11423,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: 7f7bd4e59cf581a4d9a1f898edbda2d0, type: 3}
-  spawnInterval: 40
+  fishPrefab: {fileID: 6291332059505405621, guid: df25fd45df9ab5b4599f08e90c66a85f, type: 3}
+  spawnInterval: 37
   maxFish: 10000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1994701713
 GameObject:
   m_ObjectHideFlags: 0
@@ -11771,6 +11994,10 @@ Transform:
   - {fileID: 1200682708}
   - {fileID: 694360940}
   - {fileID: 965400319}
+  - {fileID: 910750808}
+  - {fileID: 160755847}
+  - {fileID: 408430490}
+  - {fileID: 318384062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2045921942
@@ -12106,6 +12333,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &2132386030
 GameObject:
   m_ObjectHideFlags: 0
@@ -12252,6 +12480,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!114 &375381911209371288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12271,6 +12500,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &771221491190631990
 GameObject:
   m_ObjectHideFlags: 0
@@ -12307,6 +12537,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &939583731915766305
 GameObject:
   m_ObjectHideFlags: 0
@@ -12358,6 +12589,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1081283189164962660
 GameObject:
   m_ObjectHideFlags: 0
@@ -12490,6 +12722,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!4 &2987950811657836706
 Transform:
   m_ObjectHideFlags: 0
@@ -12524,6 +12757,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &4285876611993983013
 GameObject:
   m_ObjectHideFlags: 0
@@ -12560,6 +12794,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1001 &5555059002204415651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12680,6 +12915,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &7867248325847560207
 GameObject:
   m_ObjectHideFlags: 0

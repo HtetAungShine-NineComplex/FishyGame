@@ -79,6 +79,47 @@ public class SpawnpointManager : MonoBehaviour
          
     }
 
+    public Vector3 GetScreenMidPointHorizontal()
+    {
+        float randomOffset = Random.Range(-screenY * 0.1f, screenY * 0.1f);
+
+        float midY = (screenY / 2) + randomOffset;
+
+        int border = Random.Range(2, 4);
+
+        switch (border)
+        {
+            case 0: //Top
+                randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+                randomY = screenY + _offsetY;
+                spawnPosition = SpawnPosition.Top;
+                break;
+
+            case 1: //Bottom
+                randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+                randomY = 0f - _offsetY;
+                spawnPosition = SpawnPosition.Bottom;
+                break;
+
+            case 2: //Left
+                randomX = 0f - _offsetX;
+                randomY = midY;
+                spawnPosition = SpawnPosition.Left;
+                break;
+
+            case 3:
+                randomX = screenX + _offsetX;
+                randomY = midY;
+                spawnPosition = SpawnPosition.Right;
+                break;
+        }
+
+        //Vector3 spawnPoint = Camera.main.ScreenToWorldPoint(new Vector3(randomX, randomY, 10f));
+
+        Vector3 spawnPoint = new Vector3(randomX, randomY, 0);
+        return spawnPoint;
+    }
+
     public Vector3 GetRandomSpawnPointHorizontal()
     {
         int border = Random.Range(2, 4);
@@ -225,6 +266,65 @@ public class SpawnpointManager : MonoBehaviour
                 return endPoint;
 
                 //return spawnPoint - new Vector3(screenX + (_offsetX * 2), 0f, 0f);
+
+            default:
+                return spawnPoint - new Vector3(0f, 0f, 0f);
+        }
+
+    }
+
+    public Vector3 GetRandomEndPointMid(Vector3 spawnPoint, SpawnPosition spawnPos)
+    {
+        float endY = 0;
+        float endX = 0;
+        float lastY = 0;
+        float lastX = 0;
+        Vector3 endPoint = Vector3.zero;
+
+        float randomOffset = Random.Range(-screenY * 0.1f, screenY * 0.1f);
+
+        float midY = (screenY / 2) + randomOffset;
+
+        float randomX = Random.Range(0f + (screenX * 0.1f), screenX - (screenX * 0.1f));
+        float randomY = midY;
+
+
+
+        switch (spawnPos)
+        {
+            case SpawnPosition.Top:
+                endY = screenY + (_offsetY * 2);
+                lastY = spawnPoint.y - endY;
+                endPoint = new Vector3(randomX, lastY, 0f);
+
+                return endPoint;
+
+            case SpawnPosition.Bottom:
+                endY = -screenY - (_offsetY * 2);
+                lastY = spawnPoint.y - endY;
+                endPoint = new Vector3(randomX, lastY, 0f);
+
+                return endPoint;
+
+            //return spawnPoint - new Vector3(0f, -screenY - (_offsetY * 2), 0f);
+
+            case SpawnPosition.Left:
+                endX = -screenX - (_offsetX * 2);
+                lastX = spawnPoint.x - endX;
+                endPoint = new Vector3(lastX, randomY, 0f);
+
+                return endPoint;
+
+            //return spawnPoint - new Vector3(-screenX - (_offsetX * 2), 0f, 0f);
+
+            case SpawnPosition.Right:
+                endX = screenX + (_offsetX * 2);
+                lastX = spawnPoint.x - endX;
+                endPoint = new Vector3(lastX, randomY, 0f);
+
+                return endPoint;
+
+            //return spawnPoint - new Vector3(screenX + (_offsetX * 2), 0f, 0f);
 
             default:
                 return spawnPoint - new Vector3(0f, 0f, 0f);

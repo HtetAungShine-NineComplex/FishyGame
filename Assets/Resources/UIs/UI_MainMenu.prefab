@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 6921446312408596388}
   - component: {fileID: 415293860348637963}
   - component: {fileID: 4624176785231878135}
-  - component: {fileID: 6366941191861073964}
+  - component: {fileID: 8325439652376910498}
   m_Layer: 5
   m_Name: FishGameUI_ChasingWind
   m_TagString: Untagged
@@ -587,7 +587,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6366941191861073964
+--- !u!114 &8325439652376910498
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -596,13 +596,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 273924872917643929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27e80dda8441604a9b623ba8ba63c22, type: 3}
+  m_Script: {fileID: 11500000, guid: bec6ace89ac2c9f48afeff5e9a2c795a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _btn: {fileID: 4624176785231878135}
   _gameType: 0
   m_SplashScreen: {fileID: 3513779468407706676}
-  m_SplashScreenArt: {fileID: 21300000, guid: 4347370978285c14f8b04be6a4a6dc6d, type: 3}
+  m_SplashScreenArt: {fileID: 21300000, guid: 149536e1be8010b438d1343e12000a5a, type: 3}
   fadeDuration: 0.75
 --- !u!1 &698411704031865094
 GameObject:

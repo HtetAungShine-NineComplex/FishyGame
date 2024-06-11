@@ -12,6 +12,7 @@ public class GLOBALCONST
 	public const string UI_FISHING_GAME = "UI_FishingGame";
     public const string UI_FISHING_GAME_OCTOPUS = "UI_FishingGame_Octopus"; 
     public const string UI_FISHING_GAME_BUFFALO = "UI_FishingGame_Buffalo";
+    public const string UI_FISHING_GAME_CHASINGWIND = "UI_FishingGame_ChasingWind";
     public const string UI_FISHING_GAME_LIKUI = "UI_FishingGame_LiKui";
     public const string UI_FISHING_GAME_KIRI = "UI_FishingGame_Kiri";
     public const string UI_LOADING = "UI_Loading";
@@ -19,6 +20,7 @@ public class GLOBALCONST
     public const string UI_ROOM_SELECT_OCTOPUS = "UI_RoomSelection_Octopus";
     public const string UI_ROOM_SELECT_KIRI = "UI_RoomSelection_Kiri";
     public const string UI_ROOM_SELECT_BUFFALO = "UI_RoomSelection_Buffalo";
+    public const string UI_ROOM_SELECT_CHASINGWIND = "UI_RoomSelection_ChasingWind";
     public const string UI_ROOM_SELECT_LIKUI = "UI_RoomSelection_LiKui";
     public const string UI_FISHSTATS = "UI_InGameFishStats";
 	public const string UI_INGAMEQUIT = "UI_InGameQuit";

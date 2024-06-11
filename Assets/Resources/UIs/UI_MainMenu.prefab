@@ -1907,6 +1907,7 @@ GameObject:
   - component: {fileID: 3229336210637332041}
   - component: {fileID: 1148554082159670621}
   - component: {fileID: 1425859837284865425}
+  - component: {fileID: 611611472316315581}
   m_Layer: 5
   m_Name: pudding_fish
   m_TagString: Untagged
@@ -1930,8 +1931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.4, y: 66.7}
-  m_SizeDelta: {x: 72.5271, y: 71.3667}
+  m_AnchoredPosition: {x: -8.1, y: 38.5}
+  m_SizeDelta: {x: 54.4931, y: 53.6213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1148554082159670621
 CanvasRenderer:
@@ -1971,6 +1972,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &611611472316315581
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542953013680044946}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 453e7006ef3abff47bb9f5b1776b484c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2556471307871309113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,6 +3607,7 @@ GameObject:
   - component: {fileID: 3122615367786454949}
   - component: {fileID: 5113420503490690930}
   - component: {fileID: 2054611892322561507}
+  - component: {fileID: 8367348180974309144}
   m_Layer: 5
   m_Name: octo_hand_1
   m_TagString: Untagged
@@ -3599,17 +3622,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4607697025078157423}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2447920527996180667}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51, y: 0}
-  m_SizeDelta: {x: 104.6289, y: 180.9565}
+  m_AnchoredPosition: {x: -26.5, y: -19.4}
+  m_SizeDelta: {x: 230, y: 133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5113420503490690930
 CanvasRenderer:
@@ -3639,7 +3662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1070515897, guid: 257451f21c1ead640911e0f6129ded71, type: 3}
+  m_Sprite: {fileID: 690898540, guid: 3775e498317ad8a4fbe62e4cf23863f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3649,6 +3672,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &8367348180974309144
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607697025078157423}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7e7e3d1e676ef44f9235e38fa69b173, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4713992997076092027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4238,7 +4282,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.5, y: 21.4}
+  m_AnchoredPosition: {x: 58.1, y: 21.4}
   m_SizeDelta: {x: 37.5109, y: 36.9426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2578812333253572605
@@ -4904,6 +4948,7 @@ GameObject:
   - component: {fileID: 2816033247818836253}
   - component: {fileID: 968268417605886931}
   - component: {fileID: 7335684643594415476}
+  - component: {fileID: 8136898758972841116}
   m_Layer: 5
   m_Name: BG_Layer
   m_TagString: Untagged
@@ -4951,7 +4996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4968,6 +5013,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &8136898758972841116
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6840431508084350140}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 709d3775183a92d40978bccea20ac696, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6924056691190663974
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,6 +5359,7 @@ GameObject:
   - component: {fileID: 180570029801149906}
   - component: {fileID: 6799843066067624651}
   - component: {fileID: 6866232408212865089}
+  - component: {fileID: 4421010409133701166}
   m_Layer: 5
   m_Name: octo_hand_2
   m_TagString: Untagged
@@ -5307,17 +5374,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7057010712825078766}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2447920527996180667}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 71, y: 0}
-  m_SizeDelta: {x: 110.2046, y: 190.5998}
+  m_AnchoredPosition: {x: 55, y: -17.2}
+  m_SizeDelta: {x: 230, y: 133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6799843066067624651
 CanvasRenderer:
@@ -5347,7 +5414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -31301031, guid: 257451f21c1ead640911e0f6129ded71, type: 3}
+  m_Sprite: {fileID: 690898540, guid: 3775e498317ad8a4fbe62e4cf23863f6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5357,6 +5424,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &4421010409133701166
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7057010712825078766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f573b51f2185f864d8ec66aad9b43cf1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7069314295322324552
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,9 @@ public class GLOBALCONST
     public const string UI_ROOM_SELECT_CHASINGWIND = "UI_RoomSelection_ChasingWind";
     public const string UI_ROOM_SELECT_LIKUI = "UI_RoomSelection_LiKui";
     public const string UI_FISHSTATS = "UI_InGameFishStats";
-	public const string UI_INGAMEQUIT = "UI_InGameQuit";
+    public const string UI_FISHSTATS_LIKUI = "UI_InGameFishStats_LiKui";
+    public const string UI_FISHSTATS_CHASINGWIND = "UI_InGameFishStats_ChasingWind";
+    public const string UI_INGAMEQUIT = "UI_InGameQuit";
     public const string UI_INGAMESETTING = "UI_InGameSetting";
 	public const string UI_INGAMETAKESCORE = "UI_InGameTakeScore";
     #endregion

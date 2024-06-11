@@ -15,7 +15,9 @@ public class SideControlPanel : MonoBehaviour
     [SerializeField] private Button _settingBtn;
     [SerializeField] private Button _exchangeGoldBtn;
 
-
+    [Header("Fishing Game Name")]
+    [SerializeField] private bool isLiKui;
+    [SerializeField] private bool isChasingWind;
 
     private bool _isOpened = false;
 
@@ -37,12 +39,19 @@ public class SideControlPanel : MonoBehaviour
         UIManager.Instance.ShowUI(GLOBALCONST.UI_INGAMESETTING);
     }
     private void OnCLickQuitBtn()
-    {
+    {        
         UIManager.Instance.ShowUI(GLOBALCONST.UI_INGAMEQUIT);
     }
     private void OnCLickFishStatsBtn()
     {
-        UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS);
+        if (isChasingWind)
+            UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_CHASINGWIND);
+
+        else if (isLiKui)
+            UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_LIKUI);
+
+        else
+            UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS);
     }
     private void OnToggleBtnClick()
     {

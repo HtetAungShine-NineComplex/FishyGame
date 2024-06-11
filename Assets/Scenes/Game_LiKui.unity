@@ -3970,6 +3970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rect: {fileID: 788766239}
+  _endPointUI: {fileID: 0}
 --- !u!114 &788766241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4958,6 +4959,7 @@ MonoBehaviour:
   _midGroundSpawn: {fileID: 206326324}
   _cannonHandler: {fileID: 888566463}
   _bossRewardShower: {fileID: 1516248489}
+  _anglerFishLight: {fileID: 0}
 --- !u!1 &988106786
 GameObject:
   m_ObjectHideFlags: 0
@@ -6888,6 +6890,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2646266305170033284, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
+      propertyPath: isLiKui
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3255662840515384221, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8491,7 +8497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 708dbb66140e0a94f87cac7ec42f8b75, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5283d7cb4605a264cbd4feb10bf7971b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

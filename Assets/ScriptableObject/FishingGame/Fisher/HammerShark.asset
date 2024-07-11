@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: HammerShark
+  m_EditorClassIdentifier: 
+  fishType: 2
+  FishIcon: {fileID: 716596787, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  MaxHealth: 6843
+  Score: 1500
+  CoinSpawnAmount: 8
+  FishFrames:
+  - {fileID: 716596787, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 940424100, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 529694254, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: -1249072067, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: -909389516, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 367205132, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 4387531, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 1724506326, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 4387531, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 367205132, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: -909389516, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: -1249072067, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 529694254, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  - {fileID: 940424100, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  FishDefaultFrame: {fileID: 716596787, guid: 465a11aeef2349d4cafae215b30687f0, type: 3}
+  FishFrameRate: 0.2
+  speed: 0.3
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

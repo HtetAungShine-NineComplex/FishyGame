@@ -95,6 +95,18 @@ public class CannonHandler : MonoBehaviour
         
     }
 
+    public void ActiveByOtherPowerUp()
+    {
+        _isPowerUpActive = true;
+        _cannonController.ToggleControl(false);
+    }
+
+    public void DisablePowerUp()
+    {
+        _isPowerUpActive = false;
+        _cannonController.ToggleControl(true);
+    }
+
     public void IncreaseAmount()
     {
         Amount += _increaseStep;

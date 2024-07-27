@@ -18,6 +18,8 @@ public class SideControlPanel : MonoBehaviour
     [Header("Fishing Game Name")]
     [SerializeField] private bool isLiKui;
     [SerializeField] private bool isChasingWind;
+    [SerializeField] private bool isCoinTree;
+    [SerializeField] private bool isFisher;
 
     private bool _isOpened = false;
 
@@ -49,6 +51,12 @@ public class SideControlPanel : MonoBehaviour
 
         else if (isLiKui)
             UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_LIKUI);
+
+        else if (isCoinTree)
+            UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_COINTREE);
+
+        else if (isFisher)
+            UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_FISHER);
 
         else
             UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS);

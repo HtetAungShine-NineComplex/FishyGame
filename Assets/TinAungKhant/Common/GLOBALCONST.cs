@@ -13,6 +13,8 @@ public class GLOBALCONST
     public const string UI_FISHING_GAME_OCTOPUS = "UI_FishingGame_Octopus"; 
     public const string UI_FISHING_GAME_BUFFALO = "UI_FishingGame_Buffalo";
     public const string UI_FISHING_GAME_CHASINGWIND = "UI_FishingGame_ChasingWind";
+    public const string UI_FISHING_GAME_FISHER = "UI_FishingGame_Fisher";
+    public const string UI_FISHING_GAME_COINTREE = "UI_FishingGame_CoinTree";
     public const string UI_FISHING_GAME_LIKUI = "UI_FishingGame_LiKui";
     public const string UI_FISHING_GAME_KIRI = "UI_FishingGame_Kiri";
     public const string UI_LOADING = "UI_Loading";
@@ -21,9 +23,13 @@ public class GLOBALCONST
     public const string UI_ROOM_SELECT_KIRI = "UI_RoomSelection_Kiri";
     public const string UI_ROOM_SELECT_BUFFALO = "UI_RoomSelection_Buffalo";
     public const string UI_ROOM_SELECT_CHASINGWIND = "UI_RoomSelection_ChasingWind";
+    public const string UI_ROOM_SELECT_FISHER = "UI_RoomSelection_Fisher";
+    public const string UI_ROOM_SELECT_COINTREE = "UI_RoomSelection_CoinTree";
     public const string UI_ROOM_SELECT_LIKUI = "UI_RoomSelection_LiKui";
     public const string UI_FISHSTATS = "UI_InGameFishStats";
     public const string UI_FISHSTATS_LIKUI = "UI_InGameFishStats_LiKui";
+    public const string UI_FISHSTATS_COINTREE = "UI_InGameFishStats_CoinTree";
+    public const string UI_FISHSTATS_FISHER = "UI_InGameFishStats_Fisher";
     public const string UI_FISHSTATS_CHASINGWIND = "UI_InGameFishStats_ChasingWind";
     public const string UI_INGAMEQUIT = "UI_InGameQuit";
     public const string UI_INGAMESETTING = "UI_InGameSetting";

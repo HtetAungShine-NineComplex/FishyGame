@@ -390,6 +390,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &104907160
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +517,7 @@ MonoBehaviour:
   _isMainBoss: 1
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &151589491
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +718,7 @@ MonoBehaviour:
   _isMainBoss: 1
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &172359988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1351,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
   _delay: 5
   _interval: 0.2
   _waveInterval: 10
@@ -1380,7 +1384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &360943407
 Transform:
   m_ObjectHideFlags: 0
@@ -1415,6 +1419,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &371875069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,6 +1762,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &436338100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,7 +2000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &472400876
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2647,6 +2653,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &559733729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,6 +2705,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1001 &566959998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2867,6 +2875,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!1 &583588023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,6 +2933,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
   _delay: 10
   _interval: 2
   _waveInterval: 0
@@ -2984,6 +2994,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!1 &653678668
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,6 +3521,7 @@ MonoBehaviour:
   _isMainBoss: 1
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1001 &720080488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4093,6 +4105,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &823148472
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,6 +4472,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
   _delay: 10
   _interval: 2
   _waveInterval: 0
@@ -4525,6 +4539,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
   _delay: 10
   _interval: 2
   _waveInterval: 0
@@ -5101,6 +5116,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1163620280
 GameObject:
   m_ObjectHideFlags: 0
@@ -5137,6 +5153,7 @@ MonoBehaviour:
   _isMainBoss: 1
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!4 &1163620282
 Transform:
   m_ObjectHideFlags: 0
@@ -5365,7 +5382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f23ea3c9ee8b14d9b89edc85449418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _phoenixBoss: {fileID: 1862292226}
+  _phoenixBoss: {fileID: 113057387}
   _firstMapBosses:
   - {fileID: 1818857824}
   _secondMapBosses:
@@ -6141,6 +6158,7 @@ MonoBehaviour:
   _isMainBoss: 1
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
   _wayPoints:
   - {fileID: 1685717811}
   - {fileID: 390836854}
@@ -6334,6 +6352,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1483053182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6592,6 +6611,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1566380591
 GameObject:
   m_ObjectHideFlags: 0
@@ -7056,6 +7076,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!1001 &1649023159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7365,6 +7386,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1711137794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7416,6 +7438,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1768975605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7771,6 +7794,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1818857823
 GameObject:
   m_ObjectHideFlags: 0
@@ -7807,6 +7831,7 @@ MonoBehaviour:
   _isMainBoss: 1
   _isHorizontal: 0
   _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!4 &1818857825
 Transform:
   m_ObjectHideFlags: 0
@@ -8051,7 +8076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1862292225
 Transform:
   m_ObjectHideFlags: 0
@@ -8086,6 +8111,7 @@ MonoBehaviour:
   _isMainBoss: 1
   _isHorizontal: 1
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1867955792
 GameObject:
   m_ObjectHideFlags: 0
@@ -8139,7 +8165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1878697753
 Transform:
   m_ObjectHideFlags: 0
@@ -8174,6 +8200,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1919362505
 GameObject:
   m_ObjectHideFlags: 0
@@ -8494,6 +8521,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1001 &2004521555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8897,6 +8925,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!1 &2141022395
 GameObject:
   m_ObjectHideFlags: 0
@@ -8948,6 +8977,7 @@ MonoBehaviour:
   _isMainBoss: 0
   _isHorizontal: 0
   _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &2141111367
 GameObject:
   m_ObjectHideFlags: 0

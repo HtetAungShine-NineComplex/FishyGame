@@ -750,7 +750,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &113487801
 Transform:
   m_ObjectHideFlags: 0
@@ -3211,7 +3211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &649816992
 Transform:
   m_ObjectHideFlags: 0
@@ -3969,7 +3969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e775b130cc7a7a8439fed5a5eb7fafc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8c26ea6ecf307e4d85f7191c4462cea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6937,7 +6937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1253563656
 Transform:
   m_ObjectHideFlags: 0
@@ -7111,6 +7111,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2646266305170033284, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
       propertyPath: isLiKui
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646266305170033284, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
+      propertyPath: isCoinTree
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3255662840515384221, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
@@ -8717,7 +8721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5283d7cb4605a264cbd4feb10bf7971b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2426354660b7d142afaf9b3a516ec10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11894,7 +11898,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc418231fbad3f4408004ae8108eb7ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51b27409d2fdfbe42b08078ffb942bc7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12554,7 +12558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1011312990285294012
 Transform:
   m_ObjectHideFlags: 0

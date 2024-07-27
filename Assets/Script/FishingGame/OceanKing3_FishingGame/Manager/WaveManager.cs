@@ -30,6 +30,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _maxMap = 3; //3 
 
     [SerializeField] private GameObject[] _bossTitles;
+
     private int mapIndex = 0;
 
     public void Awake()

@@ -12,7 +12,7 @@ public class BGIce : GameBG
     protected override void OnEnterNormalStage(int mapIndex)
     {
         base.OnEnterNormalStage(mapIndex);
-        if (mapIndex != this.mapIndex) return;
+        if (mapIndex != this.mapIndex || mapIndex != 0) return;
 
         gameObject.SetActive(true);
     }

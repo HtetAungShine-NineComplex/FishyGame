@@ -49,10 +49,16 @@ public class LaserCannonController : MonoBehaviour
             if (results.Count > 0)
             {
                 Debug.Log("Raycast hit: " + results[0].gameObject.name);
+                
 
-                _targetFish = results[0].gameObject.GetComponentInParent<FishHealth>();
-
-               
+               if(TryGetComponent<FishHealth>(out FishHealth health))
+                {
+                    _targetFish = health;
+                }
+                else
+                {
+                    _targetFish = results[0].gameObject.GetComponentInParent<FishHealth>();
+                }
             }
             else
             {

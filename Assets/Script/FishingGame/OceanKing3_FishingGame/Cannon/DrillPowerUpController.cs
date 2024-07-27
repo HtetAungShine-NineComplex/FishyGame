@@ -59,7 +59,7 @@ public class DrillPowerUpController : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
 
-        _cannonHandler.SwapWeapon();
+        _cannonHandler.SetCannon();
         _shoot = false;
         gameObject.SetActive(false);
     }

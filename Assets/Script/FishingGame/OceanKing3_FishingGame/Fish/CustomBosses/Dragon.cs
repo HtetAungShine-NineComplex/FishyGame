@@ -58,6 +58,7 @@ public class Dragon : Fish
 
     private IEnumerator DyingPhaseOneCoroutine() // Need to apply multiply text
     {
+        CanvasInstance.Instance.GetCannonHandler().ActiveByOtherPowerUp();
         ShadowGO.gameObject.SetActive(false);
         fish_2D.enabled = false;
         fireBallImg.gameObject.SetActive(true);
@@ -102,7 +103,7 @@ public class Dragon : Fish
 
         yield return new WaitForSeconds(1.7f);
 
-
+        CanvasInstance.Instance.GetCannonHandler().DisablePowerUp();
         CountImg.gameObject.SetActive(false);
         fireBallImg.gameObject.SetActive(false);
         //multiply Text

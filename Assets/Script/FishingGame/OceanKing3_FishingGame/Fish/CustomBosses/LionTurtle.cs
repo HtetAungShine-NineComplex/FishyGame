@@ -64,6 +64,7 @@ public class LionTurtle : Fish
 
     private IEnumerator DyingPhase1Coroutine()
     {
+        CanvasInstance.Instance.GetCannonHandler().ActiveByOtherPowerUp();
         fish_2D.enabled = false;
         shellImg.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
@@ -126,7 +127,8 @@ public class LionTurtle : Fish
         CoinManager.Instance.ShowCoin(GetComponent<RectTransform>().anchoredPosition, CoinSpawnAmount, Score);
         Debug.Log("Finished Fire Particle Animation");
         yield return new WaitForSeconds(5f);
-        
+
+        CanvasInstance.Instance.GetCannonHandler().DisablePowerUp();
         Backgroundmanager.Instance.BurningBorderBG.SetActive(false);
     }
 

@@ -25,6 +25,7 @@ public class CannonController : MonoBehaviour
 
     [SerializeField]private int _currentCannonIndex = 0;
 
+    private bool _canControl = true;
     private bool _canShoot = true;
     private bool _isCursorOverButton = false;
     private Coroutine _shootCoroutine;
@@ -41,10 +42,20 @@ public class CannonController : MonoBehaviour
 
     void Update()
     {
+        if(!_canControl)
+        {
+            return;
+        }
+
         CheckCursorOverButton();
         HandleInputs();
         AutoAttack();
         SyncRotationAuto();
+    }
+
+    public void ToggleControl(bool toggle)
+    {
+        _canControl = toggle;
     }
 
     private void AutoAttack()
@@ -203,6 +214,7 @@ public class CannonController : MonoBehaviour
     {
         if ((_canShoot && !_isCursorOverButton) || (_isCursorOverButton && _autoShoot && _canShoot))
         {
+            Debug.Log("CanShoot " + _canShoot);
             _shootCoroutine = StartCoroutine(ShootHandle());
         }
     }

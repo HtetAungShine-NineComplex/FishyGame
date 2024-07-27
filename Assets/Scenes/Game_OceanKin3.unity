@@ -442,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.9490196}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1436442996e73c4428c5918c582760d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapIndex: 3
+  mapIndex: 1
   _animator: {fileID: 236056245}
   _group: {fileID: 236056249}
 --- !u!114 &236056248
@@ -3025,9 +3025,9 @@ RectTransform:
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 236056244}
-  - {fileID: 1537566359}
   - {fileID: 1630948078}
+  - {fileID: 1537566359}
+  - {fileID: 236056244}
   m_Father: {fileID: 684130711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3627,6 +3627,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
   m_PrefabInstance: {fileID: 720080488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &735128031 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6450126182545206675, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+  m_PrefabInstance: {fileID: 784151070590069692}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &759177461
 GameObject:
@@ -4274,7 +4279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 010d8f7db78df024eaa741a7f2a5204d, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4307,8 +4312,8 @@ CanvasGroup:
   m_GameObject: {fileID: 877944519}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &881962223
 GameObject:
@@ -7009,7 +7014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9f2adabc47cdd4baa798f1e26ce1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapIndex: 0
+  mapIndex: 3
   _animator: {fileID: 1630948081}
   _group: {fileID: 1630948083}
   _bossfightDim: {fileID: 1842281785}
@@ -8024,7 +8029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 3c82c56610016bd4ea0f8352c3e93f16, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 0.9372549}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8057,8 +8062,8 @@ CanvasGroup:
   m_GameObject: {fileID: 1842281781}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1862292224
 GameObject:
@@ -9632,6 +9637,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1649023161}
     - target: {fileID: 2456438448073122249, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: _buttonRects.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456438448073122249, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: _buttonRects.Array.data[2]
       value: 
       objectReference: {fileID: 1474495538}
@@ -9647,6 +9656,10 @@ PrefabInstance:
       propertyPath: _buttonRects.Array.data[5]
       value: 
       objectReference: {fileID: 197746916}
+    - target: {fileID: 2456438448073122249, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
+      propertyPath: _buttonRects.Array.data[6]
+      value: 
+      objectReference: {fileID: 735128031}
     - target: {fileID: 2895133602410592021, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
       propertyPath: m_Pivot.y
       value: 0
@@ -10069,11 +10082,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bonusStageDuration
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _normalStageDuration
-      value: 0.1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossTitles.Array.size

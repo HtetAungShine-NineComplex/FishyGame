@@ -34,6 +34,7 @@ public class MermaidFX : MonoBehaviour
 
     IEnumerator PlayMermaidFX()
     {
+        CanvasInstance.Instance.GetCannonHandler().ActiveByOtherPowerUp();
         _fx.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);
@@ -42,6 +43,7 @@ public class MermaidFX : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        CanvasInstance.Instance.GetCannonHandler().DisablePowerUp();
         _fx.SetActive(false);
     }
 }

@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _normalStageDuration = 3; //3 minutes
     [SerializeField] private float _bossFightDuration = 3; //3 minutes
     [SerializeField] private float _bonusStageDuration = 3; //3 minutes
-    [SerializeField] private float _maxMap = 3; //3 
+    [SerializeField] private int _maxMap = 3; //3 
 
     [SerializeField] private GameObject[] _bossTitles;
 
@@ -111,7 +111,14 @@ public class WaveManager : MonoBehaviour
 
     private void BonusStage()
     {
-        ExitBossStage?.Invoke(mapIndex - 1);
+        int recentMap = mapIndex - 1;
+
+        if (mapIndex == 0)
+        {
+            recentMap = _maxMap;
+        }
+
+        ExitBossStage?.Invoke(recentMap);
         _currentStage = WaveStage.Bonus;
         _counter = 0;
         EnterBonusStage?.Invoke(mapIndex);

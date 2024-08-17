@@ -10,25 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
-  m_Name: AngleFish
+  m_Name: YellowBigEyeFish
   m_EditorClassIdentifier: 
   fishType: 1
-  FishIcon: {fileID: 991266776, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  MaxHealth: 1000
-  Score: 850
+  FishIcon: {fileID: -466523744, guid: 68609781476ac5f4aa87e3dab4c43bb4, type: 3}
+  MaxHealth: 4000
+  Score: 1000
   CoinSpawnAmount: 4
   FishFrames:
-  - {fileID: 991266776, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  - {fileID: -23276890, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  - {fileID: -1578543207, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  - {fileID: -185931361, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  - {fileID: -1385525065, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  - {fileID: 1186988278, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  - {fileID: 1641610804, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  - {fileID: 356932554, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  FishDefaultFrame: {fileID: 991266776, guid: e9c7f63bf7f3cc945896a18cc21e2535, type: 3}
-  FishFrameRate: 0.3
-  speed: 0.6
+  - {fileID: -466523744, guid: 68609781476ac5f4aa87e3dab4c43bb4, type: 3}
+  - {fileID: -1503712150, guid: 68609781476ac5f4aa87e3dab4c43bb4, type: 3}
+  - {fileID: -168735902, guid: 68609781476ac5f4aa87e3dab4c43bb4, type: 3}
+  - {fileID: -2006697442, guid: 68609781476ac5f4aa87e3dab4c43bb4, type: 3}
+  - {fileID: 1153270711, guid: 68609781476ac5f4aa87e3dab4c43bb4, type: 3}
+  FishDefaultFrame: {fileID: 0}
+  FishFrameRate: 0.1
+  speed: 0.45
   SpeedCurve:
     serializedVersion: 2
     m_Curve:

@@ -3206,7 +3206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 2991986638028462469, guid: 10ffaeb6cc709124e9a0d4f9d900ee74, type: 3}
-  spawnInterval: 14
+  spawnInterval: 15
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
@@ -3325,7 +3325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 2991986638028462469, guid: daaed0ce78888ac47ae1c5c5501b35fe, type: 3}
-  spawnInterval: 20
+  spawnInterval: 21
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
@@ -8000,7 +8000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 2991986638028462469, guid: 0b2d6da9104c5b642a60e584c82b90a7, type: 3}
-  spawnInterval: 16
+  spawnInterval: 17
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
@@ -9856,6 +9856,58 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
   m_PrefabInstance: {fileID: 2004521555}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2022265433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022265434}
+  - component: {fileID: 2022265435}
+  m_Layer: 0
+  m_Name: BombCrabManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2022265434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022265433}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022265435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022265433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 2991986638028462469, guid: ca16ea6c68b933e4bad85aee8396fa2f, type: 3}
+  spawnInterval: 5
+  maxFish: 1000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!1 &2038842534
 GameObject:
   m_ObjectHideFlags: 0
@@ -9903,6 +9955,7 @@ Transform:
   - {fileID: 568727236}
   - {fileID: 1636498483}
   - {fileID: 633589077}
+  - {fileID: 2022265434}
   - {fileID: 1470224347}
   - {fileID: 1711137795}
   - {fileID: 1482414475}
@@ -10118,7 +10171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2130470287
 Transform:
   m_ObjectHideFlags: 0
@@ -10147,7 +10200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 2991986638028462469, guid: cee2a271dd9a0404e836c9358996a7d0, type: 3}
-  spawnInterval: 13
+  spawnInterval: 12
   maxFish: 1000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0

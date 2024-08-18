@@ -10,29 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
-  m_Name: CrabDragon
+  m_Name: BombCrab
   m_EditorClassIdentifier: 
   fishType: 2
-  FishIcon: {fileID: 585730108, guid: 220ff1c38716cb24dadd05c7bc837d5a, type: 3}
+  FishIcon: {fileID: 942084984, guid: 220ff1c38716cb24dadd05c7bc837d5a, type: 3}
   MaxHealth: 10000
-  Score: 2500
+  Score: 500
   CoinSpawnAmount: 5
   FishFrames:
-  - {fileID: 1687928245, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: 504685533, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: -2044845706, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: -870550445, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: 26880142, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: 82959094, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: -35019631, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: 82959094, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: 26880142, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: -870550445, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: -2044845706, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: 504685533, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  - {fileID: 1687928245, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  FishDefaultFrame: {fileID: 1687928245, guid: 47481ad8f3c41404d9c361e85a7ae80c, type: 3}
-  FishFrameRate: 0.04
+  - {fileID: -138501920, guid: f3681f8e32364764b9e285bc0649d6b3, type: 3}
+  - {fileID: 1237202428, guid: f3681f8e32364764b9e285bc0649d6b3, type: 3}
+  - {fileID: 728918890, guid: f3681f8e32364764b9e285bc0649d6b3, type: 3}
+  - {fileID: 1237202428, guid: f3681f8e32364764b9e285bc0649d6b3, type: 3}
+  - {fileID: -138501920, guid: f3681f8e32364764b9e285bc0649d6b3, type: 3}
+  FishDefaultFrame: {fileID: -138501920, guid: f3681f8e32364764b9e285bc0649d6b3, type: 3}
+  FishFrameRate: 0.2
   speed: 1
   SpeedCurve:
     serializedVersion: 2

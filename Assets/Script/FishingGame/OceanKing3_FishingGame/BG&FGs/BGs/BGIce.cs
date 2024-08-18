@@ -12,7 +12,7 @@ public class BGIce : GameBG
     protected override void OnEnterNormalStage(int mapIndex)
     {
         base.OnEnterNormalStage(mapIndex);
-        if (mapIndex != this.mapIndex && mapIndex != 0) return;
+        if (mapIndex != this.mapIndex || mapIndex != 0) return;
 
         gameObject.SetActive(true);
     }
@@ -29,7 +29,7 @@ public class BGIce : GameBG
     {
         
 
-        if (mapIndex == this.mapIndex || mapIndex == 0)
+        if (mapIndex == this.mapIndex)
         {
             _group.alpha = 1;
             _animator.SetBool("IsBossFight", false);

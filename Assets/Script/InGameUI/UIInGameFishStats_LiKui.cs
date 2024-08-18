@@ -2,7 +2,7 @@ using TinAungKhant.UIManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIInGameFishStats_LiKui : UIBase
+public class UIInGameFishStats_CoinTree : UIBase
 {
     [SerializeField] private Button CloseBtn;
 

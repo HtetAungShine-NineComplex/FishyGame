@@ -443,6 +443,58 @@ MonoBehaviour:
   _isHorizontal: 0
   _isVertical: 0
   _isGoFromMiddle: 0
+--- !u!1 &59691607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 59691608}
+  - component: {fileID: 59691609}
+  m_Layer: 0
+  m_Name: FireTattooManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &59691608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59691607}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &59691609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59691607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 4874398897246523310, guid: 433f06fc56f120c4d9b0215da8807879, type: 3}
+  spawnInterval: 22.7
+  maxFish: 1000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &104907160
 GameObject:
   m_ObjectHideFlags: 0
@@ -9479,6 +9531,58 @@ MonoBehaviour:
   _isHorizontal: 0
   _isVertical: 0
   _isGoFromMiddle: 0
+--- !u!1 &1838155942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838155943}
+  - component: {fileID: 1838155944}
+  m_Layer: 0
+  m_Name: FireTattooManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1838155943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838155942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1838155944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838155942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 4874398897246523310, guid: 5b3939a8754900f46ba78ceac27d7542, type: 3}
+  spawnInterval: 27.8
+  maxFish: 1000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1842281781
 GameObject:
   m_ObjectHideFlags: 0
@@ -10485,6 +10589,8 @@ Transform:
   - {fileID: 2022265434}
   - {fileID: 1470224347}
   - {fileID: 1711137795}
+  - {fileID: 1838155943}
+  - {fileID: 59691608}
   - {fileID: 1482414475}
   - {fileID: 816059020}
   - {fileID: 169911018}

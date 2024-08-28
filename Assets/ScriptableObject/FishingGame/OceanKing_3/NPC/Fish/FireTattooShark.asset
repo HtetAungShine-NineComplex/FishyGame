@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: FireTattooShark
+  m_EditorClassIdentifier: 
+  fishType: 2
+  FishIcon: {fileID: -375749461, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  MaxHealth: 4000
+  Score: 7500
+  CoinSpawnAmount: 10
+  FishFrames:
+  - {fileID: -375749461, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 43691860, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: -140873815, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 765349776, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 1344282434, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: -666863769, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: -1330742907, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 732916823, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 1652528104, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 440707558, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 94511790, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: -1002725110, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 1461445559, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 826273702, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 1461445559, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: -1002725110, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 94511790, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 440707558, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 1652528104, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: 732916823, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  - {fileID: -1330742907, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  FishDefaultFrame: {fileID: -375749461, guid: f821587d833ec2f47bba4ea75d6a6b1c, type: 3}
+  FishFrameRate: 0.3
+  speed: 0.27
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

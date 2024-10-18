@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 1805846616848975929}
   - component: {fileID: 6333364955815579865}
   m_Layer: 5
-  m_Name: Layer1
+  m_Name: Layer0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1742,7 @@ RectTransform:
   m_GameObject: {fileID: 1166365273114771869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3040419, y: 1.3040419, z: 1.3040419}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5364991853620962895}
@@ -1750,7 +1750,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 256, y: 417}
+  m_SizeDelta: {x: 408.2029, y: 498.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2056225585306538787
 CanvasRenderer:
@@ -6039,15 +6039,15 @@ RectTransform:
   m_GameObject: {fileID: 4930185868235891304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.59903145, y: 0.59903145, z: 0.59903145}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: -0.6070821, y: 0.6070821, z: 0.6070821}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 715160144784694616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7.5647}
-  m_SizeDelta: {x: 316, y: 494.5871}
+  m_AnchoredPosition: {x: 0, y: -6.92}
+  m_SizeDelta: {x: 319, y: 509.3202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1682086275963323054
 CanvasRenderer:
@@ -6847,7 +6847,7 @@ GameObject:
   - component: {fileID: 5641249343773648199}
   - component: {fileID: 951135819864319224}
   m_Layer: 5
-  m_Name: Layer1 (1)
+  m_Name: 'Layer1 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8581,7 +8581,7 @@ MonoBehaviour:
   _btn: {fileID: 7686491241094604619}
   _gameType: 0
   m_SplashScreen: {fileID: 3513779468407706676}
-  m_SplashScreenArt: {fileID: 21300000, guid: 2b02b90c7f20c37449907175b1b1cd58, type: 3}
+  m_SplashScreenArt: {fileID: 21300000, guid: 9251f3a4174b96f4299d4cf0ff54f7bc, type: 3}
   fadeDuration: 0.75
 --- !u!114 &1743558186260611740
 MonoBehaviour:

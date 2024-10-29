@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: SB_25PinkFish
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: -1999931694, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  MaxHealth: 1000
+  Score: 850
+  CoinSpawnAmount: 4
+  FishFrames:
+  - {fileID: -1999931694, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  - {fileID: -567489599, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  - {fileID: -565168724, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  - {fileID: -1187950926, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  - {fileID: -1676212935, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  - {fileID: 1600422388, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  FishDefaultFrame: {fileID: -1999931694, guid: f8f31b1dd82d6c04c8f009ab533ef146, type: 3}
+  FishFrameRate: 0.3
+  speed: 0.6
   SpeedCurve:
     serializedVersion: 2
     m_Curve: []

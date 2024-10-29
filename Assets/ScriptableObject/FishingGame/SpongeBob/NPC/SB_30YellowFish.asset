@@ -13,17 +13,65 @@ MonoBehaviour:
   m_Name: SB_30YellowFish
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: -809363845, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  MaxHealth: 3500
+  Score: 5500
+  CoinSpawnAmount: 8
+  FishFrames:
+  - {fileID: -809363845, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: -1965833919, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: 993138972, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: 1641884619, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: 21350974, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: 1415018943, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: -248495159, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: 94089279, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: 1888723318, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: 1348416666, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: -303887445, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  - {fileID: -1001665973, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  FishDefaultFrame: {fileID: -809363845, guid: 289802a1510a94c47ad5e9a5357c6c2d, type: 3}
+  FishFrameRate: 0.135
+  speed: 0.19
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.72824407
+      outSlope: 0.72824407
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.14531481
+    - serializedVersion: 3
+      time: 0.3788752
+      value: 0.23399162
+      inSlope: 1.2491812
+      outSlope: 1.2491812
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.80720544
+      value: 0.7192161
+      inSlope: 1.5619632
+      outSlope: 1.5619632
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

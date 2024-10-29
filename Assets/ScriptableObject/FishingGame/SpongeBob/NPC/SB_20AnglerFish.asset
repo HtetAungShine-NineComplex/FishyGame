@@ -13,17 +13,41 @@ MonoBehaviour:
   m_Name: SB_20AnglerFish
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: -845922330, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  MaxHealth: 600
+  Score: 400
+  CoinSpawnAmount: 2
+  FishFrames:
+  - {fileID: -845922330, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: -2083740878, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: 2019024985, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: 1459621449, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: -2103364511, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: 556828191, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  FishDefaultFrame: {fileID: -845922330, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  FishFrameRate: 0.17
+  speed: 0.6
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

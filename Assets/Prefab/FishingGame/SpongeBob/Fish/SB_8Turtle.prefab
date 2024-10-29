@@ -511,6 +511,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2514663280800129051, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: Config
+      value: 
+      objectReference: {fileID: 2216510984988894540}
+    - target: {fileID: 2514663280800129051, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: _audio
+      value: 
+      objectReference: {fileID: 3964434328030177110}
+    - target: {fileID: 2514663280800129051, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: fishSO
       value: 
       objectReference: {fileID: 11400000, guid: d2fa42264f85a914fb11fe463a805414, type: 2}
@@ -598,10 +606,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Size.x
+      value: 52.207825
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Size.y
+      value: 79.44855
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.6749573
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Offset.y
+      value: -5.999481
+      objectReference: {fileID: 0}
     - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: fishSO
       value: 
       objectReference: {fileID: 11400000, guid: d2fa42264f85a914fb11fe463a805414, type: 2}
+    - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: fish_2D
+      value: 
+      objectReference: {fileID: 6992083070446129422}
+    - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: _fishGlow
+      value: 
+      objectReference: {fileID: 3389802862014592343}
     - target: {fileID: 8612866281859157046, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: m_Name
       value: SB_8Turtle
@@ -620,6 +652,22 @@ PrefabInstance:
       addedObject: {fileID: 6608545007273738354}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+--- !u!114 &2216510984988894540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2514663280800129051, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+  m_PrefabInstance: {fileID: 4334503610018481495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370bc6ccc049f754f9e555c8d52ef60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &3964434328030177110 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 802696355588252161, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+  m_PrefabInstance: {fileID: 4334503610018481495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8493694474510882676 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5330267505097675299, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}

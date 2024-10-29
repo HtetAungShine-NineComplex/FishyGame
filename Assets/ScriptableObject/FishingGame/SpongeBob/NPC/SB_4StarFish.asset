@@ -13,17 +13,46 @@ MonoBehaviour:
   m_Name: SB_4StarFish
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: 310990562, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  MaxHealth: 528
+  Score: 400
+  CoinSpawnAmount: 3
+  FishFrames:
+  - {fileID: 310990562, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: -1533494083, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: 80001333, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: -930896850, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: -358719575, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: 168557800, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: -347808652, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: -1847165004, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: -406033648, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: 273306080, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  - {fileID: 1608939976, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  FishDefaultFrame: {fileID: 310990562, guid: cc91d64c16818b746bae5d7c026563c2, type: 3}
+  FishFrameRate: 0.1
+  speed: 0.51
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

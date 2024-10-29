@@ -13,14 +13,19 @@ MonoBehaviour:
   m_Name: SB_12Squidward
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: -1165617848, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  MaxHealth: 1300
+  Score: 250
+  CoinSpawnAmount: 1
+  FishFrames:
+  - {fileID: -1165617848, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: 722670857, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: 1968337201, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: -1548329481, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: -1359698634, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  FishDefaultFrame: {fileID: -1165617848, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  FishFrameRate: 0.1
+  speed: 0.2
   SpeedCurve:
     serializedVersion: 2
     m_Curve: []

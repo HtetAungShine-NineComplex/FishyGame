@@ -12,18 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
   m_Name: SB_5Squid
   m_EditorClassIdentifier: 
-  fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  fishType: 1
+  FishIcon: {fileID: -497848538, guid: 56dd3aafe23b21e4d915f11e990a13c2, type: 3}
+  MaxHealth: 4000
+  Score: 1000
+  CoinSpawnAmount: 4
+  FishFrames:
+  - {fileID: -497848538, guid: 56dd3aafe23b21e4d915f11e990a13c2, type: 3}
+  - {fileID: 729303481, guid: 56dd3aafe23b21e4d915f11e990a13c2, type: 3}
+  - {fileID: -158878592, guid: 56dd3aafe23b21e4d915f11e990a13c2, type: 3}
+  - {fileID: -1311467656, guid: 56dd3aafe23b21e4d915f11e990a13c2, type: 3}
+  - {fileID: -111550076, guid: 56dd3aafe23b21e4d915f11e990a13c2, type: 3}
+  FishDefaultFrame: {fileID: -497848538, guid: 56dd3aafe23b21e4d915f11e990a13c2, type: 3}
+  FishFrameRate: 0.1
+  speed: 0.45
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

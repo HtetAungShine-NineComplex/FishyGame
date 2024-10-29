@@ -13,17 +13,39 @@ MonoBehaviour:
   m_Name: SB_5Lobster
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: 756633189, guid: c08a25939098d344dafc9ef31bac0f89, type: 3}
+  MaxHealth: 700
+  Score: 500
+  CoinSpawnAmount: 3
+  FishFrames:
+  - {fileID: 756633189, guid: c08a25939098d344dafc9ef31bac0f89, type: 3}
+  - {fileID: -1773932785, guid: c08a25939098d344dafc9ef31bac0f89, type: 3}
+  - {fileID: 1118431180, guid: c08a25939098d344dafc9ef31bac0f89, type: 3}
+  - {fileID: 1250352534, guid: c08a25939098d344dafc9ef31bac0f89, type: 3}
+  FishDefaultFrame: {fileID: 756633189, guid: c08a25939098d344dafc9ef31bac0f89, type: 3}
+  FishFrameRate: 0.17
+  speed: 0.6
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

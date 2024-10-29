@@ -13,17 +13,121 @@ MonoBehaviour:
   m_Name: SB_SpongeBOb
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: -1713115414, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  MaxHealth: 10000
+  Score: 500
+  CoinSpawnAmount: 5
+  FishFrames:
+  - {fileID: -1713115414, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: 768759080, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -1063254299, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -1776175663, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: 471966714, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: 2138123890, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: 1574054244, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -2049022206, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -1806357204, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: 235232619, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -1236005401, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -1291921461, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -2087477923, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  - {fileID: -158322568, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  FishDefaultFrame: {fileID: -1713115414, guid: d3eb92d0f91af074091356a9ba26f5ee, type: 3}
+  FishFrameRate: 0.2
+  speed: 1
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0063934326
+      value: 0.099365234
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.13749601
+      value: 0.2549856
+      inSlope: 0.28504035
+      outSlope: 0.28504035
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1866507
+      value: 0.2583709
+      inSlope: 0.35586283
+      outSlope: 0.35586283
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.40961903
+      value: 0.46369785
+      inSlope: 0.5100616
+      outSlope: 0.5100616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.4754452
+      value: 0.47762728
+      inSlope: 0.5161551
+      outSlope: 0.5161551
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.65087855
+      value: 0.6810474
+      inSlope: 0.8398771
+      outSlope: 0.8398771
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7173163
+      value: 0.6954055
+      inSlope: 0.5498919
+      outSlope: 0.5498919
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.80238336
+      value: 0.8220992
+      inSlope: 0.9723886
+      outSlope: 0.9723886
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.85394907
+      value: 0.82984376
+      inSlope: 0.54318964
+      outSlope: 0.54318964
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

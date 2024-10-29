@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishType: 1
   FishIcon: {fileID: -1055534916, guid: c5137eef44a7bc8409b06c0f2880c748, type: 3}
-  MaxHealth: 1277
-  Score: 81
-  CoinSpawnAmount: 0
+  MaxHealth: 600
+  Score: 400
+  CoinSpawnAmount: 2
   FishFrames:
   - {fileID: -1055534916, guid: c5137eef44a7bc8409b06c0f2880c748, type: 3}
   - {fileID: -240641349, guid: c5137eef44a7bc8409b06c0f2880c748, type: 3}
@@ -26,26 +26,26 @@ MonoBehaviour:
   - {fileID: 684786478, guid: c5137eef44a7bc8409b06c0f2880c748, type: 3}
   - {fileID: 1704657789, guid: c5137eef44a7bc8409b06c0f2880c748, type: 3}
   FishDefaultFrame: {fileID: -1055534916, guid: c5137eef44a7bc8409b06c0f2880c748, type: 3}
-  FishFrameRate: 0.518
-  speed: 0.29
+  FishFrameRate: 0.17
+  speed: 0.6
   SpeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0

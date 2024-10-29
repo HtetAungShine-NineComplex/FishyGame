@@ -13,17 +13,41 @@ MonoBehaviour:
   m_Name: SB_8Turtle
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
+  FishIcon: {fileID: 1683102913, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
   MaxHealth: 0
   Score: 0
   CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
+  FishFrames:
+  - {fileID: 1683102913, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
+  - {fileID: -447274289, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
+  - {fileID: -847894724, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
+  - {fileID: -636862384, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
+  - {fileID: 1191277522, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
+  - {fileID: -1915204650, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
+  FishDefaultFrame: {fileID: 1683102913, guid: b6bc9a178fe57874085d30f9991c3832, type: 3}
   FishFrameRate: 0
   speed: 2
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

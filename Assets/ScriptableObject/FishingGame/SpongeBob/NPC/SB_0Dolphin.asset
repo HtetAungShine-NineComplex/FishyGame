@@ -13,17 +13,67 @@ MonoBehaviour:
   m_Name: SB_0Dolphin
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: 2056364809, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  MaxHealth: 1904
+  Score: 15000
+  CoinSpawnAmount: 6
+  FishFrames:
+  - {fileID: 2056364809, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: 971774936, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: -644310818, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: -2142155160, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: 273580825, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: 1910015748, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: 1984329216, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: 720026239, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: -470278600, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: -900479932, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: -938690120, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: -418916740, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: 2074865169, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  - {fileID: 852176324, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  FishDefaultFrame: {fileID: 2056364809, guid: 7ec898e3b05ffdb42a875d4fdad9d431, type: 3}
+  FishFrameRate: 0.15
+  speed: 0.7
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.95255226
+      outSlope: 0.95255226
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3018061
+      value: 0.28748608
+      inSlope: 0.6027015
+      outSlope: 0.6027015
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.67740524
+      value: 0.44608757
+      inSlope: 0.7074462
+      outSlope: 0.7074462
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06437339
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.7170533
+      outSlope: 1.7170533
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

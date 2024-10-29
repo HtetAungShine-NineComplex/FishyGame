@@ -13,17 +13,43 @@ MonoBehaviour:
   m_Name: SB_15Fish
   m_EditorClassIdentifier: 
   fishType: 0
-  FishIcon: {fileID: 0}
-  MaxHealth: 0
-  Score: 0
-  CoinSpawnAmount: 0
-  FishFrames: []
-  FishDefaultFrame: {fileID: 0}
-  FishFrameRate: 0
-  speed: 2
+  FishIcon: {fileID: -1188224607, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  MaxHealth: 2400
+  Score: 1700
+  CoinSpawnAmount: 3
+  FishFrames:
+  - {fileID: -1188224607, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  - {fileID: -342182784, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  - {fileID: 1874983940, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  - {fileID: 412244149, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  - {fileID: -1663877674, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  - {fileID: -1085487946, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  - {fileID: 1695558305, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  - {fileID: -607655060, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  FishDefaultFrame: {fileID: -1188224607, guid: 04fa2c07813b87143b2460683a337a83, type: 3}
+  FishFrameRate: 0.17
+  speed: 1
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

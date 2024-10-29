@@ -511,6 +511,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2514663280800129051, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: Config
+      value: 
+      objectReference: {fileID: 5425785660249356732}
+    - target: {fileID: 2514663280800129051, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: fishSO
       value: 
       objectReference: {fileID: 11400000, guid: 7daf6cdc806c2d149a4a8887c79782bb, type: 2}
@@ -598,10 +602,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Size.x
+      value: 18.999084
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Size.y
+      value: 65.17859
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Offset.x
+      value: -3.3259583
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: m_Offset.y
+      value: 12.8396
+      objectReference: {fileID: 0}
     - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: fishSO
       value: 
       objectReference: {fileID: 11400000, guid: 7daf6cdc806c2d149a4a8887c79782bb, type: 2}
+    - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: fish_2D
+      value: 
+      objectReference: {fileID: 724535009116230605}
+    - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: _fishGlow
+      value: 
+      objectReference: {fileID: 6347641289745793971}
     - target: {fileID: 8612866281859157046, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: m_Name
       value: SB_2Fish
@@ -625,3 +653,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5330267505097675299, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
   m_PrefabInstance: {fileID: 7613796559739509159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5425785660249356732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2514663280800129051, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+  m_PrefabInstance: {fileID: 7613796559739509159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370bc6ccc049f754f9e555c8d52ef60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

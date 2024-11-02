@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: SB_20AnglerFish
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: -845922330, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  MaxHealth: 600
+  Score: 400
+  CoinSpawnAmount: 2
+  FishFrames:
+  - {fileID: -845922330, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: -2083740878, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: 2019024985, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: 1459621449, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: -2103364511, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  - {fileID: 556828191, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  FishDefaultFrame: {fileID: -845922330, guid: 53e83cce363b0894382cdf7c1fde63ef, type: 3}
+  FishFrameRate: 0.17
+  speed: 0.6
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

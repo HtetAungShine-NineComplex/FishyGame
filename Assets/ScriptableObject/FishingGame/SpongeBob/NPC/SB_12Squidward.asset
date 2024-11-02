@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: SB_12Squidward
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: -1165617848, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  MaxHealth: 1300
+  Score: 250
+  CoinSpawnAmount: 1
+  FishFrames:
+  - {fileID: -1165617848, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: 722670857, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: 1968337201, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: -1548329481, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  - {fileID: -1359698634, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  FishDefaultFrame: {fileID: -1165617848, guid: a86d72a7e5124f0459143ab317cb32a6, type: 3}
+  FishFrameRate: 0.1
+  speed: 0.2
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

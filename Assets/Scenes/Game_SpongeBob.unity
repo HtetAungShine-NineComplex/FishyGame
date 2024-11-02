@@ -350,12 +350,12 @@ GameObject:
   - component: {fileID: 40586750}
   - component: {fileID: 40586751}
   m_Layer: 0
-  m_Name: TurtleManager
+  m_Name: SB_4PatricManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &40586750
 Transform:
   m_ObjectHideFlags: 0
@@ -1211,6 +1211,58 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &339208325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339208326}
+  - component: {fileID: 339208327}
+  m_Layer: 0
+  m_Name: SB_30YellowFishManage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339208326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339208325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &339208327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339208325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 2586452013939524261, guid: 840bcf9c136c33a4da14916b70cfee10, type: 3}
+  spawnInterval: 20
+  maxFish: 1000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!1 &339234720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,12 +1431,12 @@ GameObject:
   - component: {fileID: 360943407}
   - component: {fileID: 360943408}
   m_Layer: 0
-  m_Name: AnglerFishManager
+  m_Name: SB_20AnglerFishManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &360943407
 Transform:
   m_ObjectHideFlags: 0
@@ -1412,7 +1464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 828559752169149206, guid: ebdc849674c79ca4b8d223fa8aca668b, type: 3}
+  fishPrefab: {fileID: 4722482250556250736, guid: c99a0ba87fe446146b1d29735fa2e242, type: 3}
   spawnInterval: 6.5
   maxFish: 2000
   parentTF: {fileID: 808252845}
@@ -1722,12 +1774,12 @@ GameObject:
   - component: {fileID: 411240226}
   - component: {fileID: 411240227}
   m_Layer: 0
-  m_Name: NormalCrabManager
+  m_Name: SB_4SeaHorseManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &411240226
 Transform:
   m_ObjectHideFlags: 0
@@ -1755,7 +1807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: 936ce43dc906d6f4b9a37cea0cfd9828, type: 3}
+  fishPrefab: {fileID: 1215312720479771406, guid: cca896d119461164887153c77eff23b1, type: 3}
   spawnInterval: 2.5
   maxFish: 10000
   parentTF: {fileID: 808252845}
@@ -2183,6 +2235,58 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2229884583739726534, guid: cf14d617e7a2eb34c91ab331d2d9924e, type: 3}
   m_PrefabInstance: {fileID: 474363025}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &495142868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495142869}
+  - component: {fileID: 495142870}
+  m_Layer: 0
+  m_Name: SB_15FishManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &495142869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495142868}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &495142870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495142868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7370586279474527451, guid: 6f95b2111ea258c4780ea5b2472fae6b, type: 3}
+  spawnInterval: 6.5
+  maxFish: 2000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &496566939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,7 +2769,7 @@ GameObject:
   - component: {fileID: 559733730}
   - component: {fileID: 559733731}
   m_Layer: 0
-  m_Name: GFManager
+  m_Name: SB_2Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2835,12 +2939,12 @@ GameObject:
   - component: {fileID: 568727236}
   - component: {fileID: 568727237}
   m_Layer: 0
-  m_Name: LaserCrabManager
+  m_Name: SB_50WhiteWhaleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &568727236
 Transform:
   m_ObjectHideFlags: 0
@@ -2868,7 +2972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2991986638028462469, guid: 10ffaeb6cc709124e9a0d4f9d900ee74, type: 3}
+  fishPrefab: {fileID: 7380485795669611680, guid: b8f3af467b97a8f48abec179096efbf1, type: 3}
   spawnInterval: 14
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -2954,12 +3058,12 @@ GameObject:
   - component: {fileID: 633589077}
   - component: {fileID: 633589078}
   m_Layer: 0
-  m_Name: HammerCrabManager
+  m_Name: SB_40SharkManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &633589077
 Transform:
   m_ObjectHideFlags: 0
@@ -2987,7 +3091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2991986638028462469, guid: daaed0ce78888ac47ae1c5c5501b35fe, type: 3}
+  fishPrefab: {fileID: 3571383749364242443, guid: d7217cec71e191b45a5220a010433d45, type: 3}
   spawnInterval: 20
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -3628,6 +3732,58 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
   m_PrefabInstance: {fileID: 720080488}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &721686027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721686028}
+  - component: {fileID: 721686029}
+  m_Layer: 0
+  m_Name: SB_10SquidManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721686028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721686027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721686029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721686027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 491746853185584838, guid: 39b27cf1d6786e947b38bfed7b0e6b5c, type: 3}
+  spawnInterval: 4.7
+  maxFish: 2500
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &759177461
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,6 +4501,58 @@ RectTransform:
   m_AnchoredPosition: {x: 35, y: 432}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &911996705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911996706}
+  - component: {fileID: 911996707}
+  m_Layer: 0
+  m_Name: SB_12SquidWardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &911996706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911996705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911996707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911996705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 7370586279474527451, guid: 6f95b2111ea258c4780ea5b2472fae6b, type: 3}
+  spawnInterval: 6.5
+  maxFish: 2000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &925990840
 GameObject:
   m_ObjectHideFlags: 0
@@ -5807,6 +6015,58 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4451561686222164161, guid: 02157f074d65080408adca6c3fd51a86, type: 3}
   m_PrefabInstance: {fileID: 1367954235}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1382256057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382256058}
+  - component: {fileID: 1382256059}
+  m_Layer: 0
+  m_Name: SB_18FairyFishManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382256058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382256057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1382256059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382256057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 3776846001621887000, guid: 4bccde6d75b52e14b8d9b45f5e81ee32, type: 3}
+  spawnInterval: 6.5
+  maxFish: 2000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1001 &1392738495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6312,12 +6572,12 @@ GameObject:
   - component: {fileID: 1482414475}
   - component: {fileID: 1482414476}
   m_Layer: 0
-  m_Name: PufferManager
+  m_Name: SB_4StarfishManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1482414475
 Transform:
   m_ObjectHideFlags: 0
@@ -6345,7 +6605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 8869280584541489706, guid: 993fa900e1406f24ab003f7a80f5d4a1, type: 3}
+  fishPrefab: {fileID: 4655820642745190046, guid: bb65264136cf0b049913ce445bdd6839, type: 3}
   spawnInterval: 31
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -6429,6 +6689,58 @@ RectTransform:
   m_AnchoredPosition: {x: -1335, y: -383}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1529400652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1529400653}
+  - component: {fileID: 1529400654}
+  m_Layer: 0
+  m_Name: SB_25PinkFishManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1529400653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529400652}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529400654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529400652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 4012428251561603341, guid: e6877907a606ceb489e4d7a2f2b91e1a, type: 3}
+  spawnInterval: 20
+  maxFish: 1000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 1
+  _isGoFromMiddle: 0
 --- !u!1 &1537566358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6571,12 +6883,12 @@ GameObject:
   - component: {fileID: 1539238890}
   - component: {fileID: 1539238891}
   m_Layer: 0
-  m_Name: StinGrayManager
+  m_Name: SB_18FairyFishManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1539238890
 Transform:
   m_ObjectHideFlags: 0
@@ -6604,7 +6916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 9017472557068854499, guid: c78a6d3791f3a8242bff4c75191a097c, type: 3}
+  fishPrefab: {fileID: 3776846001621887000, guid: 4bccde6d75b52e14b8d9b45f5e81ee32, type: 3}
   spawnInterval: 4
   maxFish: 2500
   parentTF: {fileID: 808252845}
@@ -7041,7 +7353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1636498483
 Transform:
   m_ObjectHideFlags: 0
@@ -7200,6 +7512,58 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1886615636658784771, guid: 52fbb5bf680282a4288664963437fc91, type: 3}
   m_PrefabInstance: {fileID: 1649023159}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1652426268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652426269}
+  - component: {fileID: 1652426270}
+  m_Layer: 0
+  m_Name: SB_5SquidManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652426269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652426268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1652426270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652426268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 1899907596812326458, guid: aac66cd44a78cf0418726050f1b739e2, type: 3}
+  spawnInterval: 4
+  maxFish: 2000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1 &1660443496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7346,12 +7710,12 @@ GameObject:
   - component: {fileID: 1707282825}
   - component: {fileID: 1707282826}
   m_Layer: 0
-  m_Name: NemoManager
+  m_Name: SB_3FishManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1707282825
 Transform:
   m_ObjectHideFlags: 0
@@ -7379,9 +7743,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: fe99cd25b16fa0340bfb3dae42682447, type: 3}
+  fishPrefab: {fileID: 6299957296083561820, guid: 80c38c63a3975264e9325abb6595f891, type: 3}
   spawnInterval: 1
   maxFish: 10000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
+--- !u!1 &1707364503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707364504}
+  - component: {fileID: 1707364505}
+  m_Layer: 0
+  m_Name: SB_8SilverFishManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1707364504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707364503}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707364505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707364503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 3174939897540238462, guid: 2937abd03ab66c84189efcd92f2b5f1b, type: 3}
+  spawnInterval: 3
+  maxFish: 3000
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 0
@@ -7398,12 +7814,12 @@ GameObject:
   - component: {fileID: 1711137795}
   - component: {fileID: 1711137796}
   m_Layer: 0
-  m_Name: WhiteSharkManger
+  m_Name: SB_100SharkManger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1711137795
 Transform:
   m_ObjectHideFlags: 0
@@ -7431,7 +7847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 4874398897246523310, guid: e3b53dfb891d60b4d8aea5535f0bbaa3, type: 3}
+  fishPrefab: {fileID: 6760794784729493111, guid: 79d80938b7a35bb42a7d96564fadfcfe, type: 3}
   spawnInterval: 30
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -7754,12 +8170,12 @@ GameObject:
   - component: {fileID: 1804812950}
   - component: {fileID: 1804812951}
   m_Layer: 0
-  m_Name: HammerFishManager
+  m_Name: SB_15FishManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1804812950
 Transform:
   m_ObjectHideFlags: 0
@@ -7787,7 +8203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 9017472557068854499, guid: 54db8a7e7f418fd44b803a102018233c, type: 3}
+  fishPrefab: {fileID: 9085748535514778464, guid: 6e70fae8932b31a46b26ff1d1ee95c18, type: 3}
   spawnInterval: 4.7
   maxFish: 2500
   parentTF: {fileID: 808252845}
@@ -8160,12 +8576,12 @@ GameObject:
   - component: {fileID: 1878697753}
   - component: {fileID: 1878697754}
   m_Layer: 0
-  m_Name: AngleFishManager
+  m_Name: SB_5Lobster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1878697753
 Transform:
   m_ObjectHideFlags: 0
@@ -8193,7 +8609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 828559752169149206, guid: 4239c3e3b731f4e478d6e38cb285a54f, type: 3}
+  fishPrefab: {fileID: 5255510301281932432, guid: 53beeba9a857a8c40a377ac30905a823, type: 3}
   spawnInterval: 4
   maxFish: 2000
   parentTF: {fileID: 808252845}
@@ -8481,12 +8897,12 @@ GameObject:
   - component: {fileID: 2000169285}
   - component: {fileID: 2000169286}
   m_Layer: 0
-  m_Name: OctopusManager
+  m_Name: SB_8TurtleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2000169285
 Transform:
   m_ObjectHideFlags: 0
@@ -8514,7 +8930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2858555736348261067, guid: 0cf8d4be3471d4443ae9f608f453a9a3, type: 3}
+  fishPrefab: {fileID: 5449439461721721185, guid: 2a49ae93d93d50f41a557516e3b7e041, type: 3}
   spawnInterval: 3
   maxFish: 3000
   parentTF: {fileID: 808252845}
@@ -8663,18 +9079,26 @@ Transform:
   - {fileID: 556795287}
   - {fileID: 1707282825}
   - {fileID: 411240226}
-  - {fileID: 2141022396}
-  - {fileID: 2000169285}
   - {fileID: 40586750}
+  - {fileID: 1878697753}
+  - {fileID: 1652426269}
+  - {fileID: 1707364504}
+  - {fileID: 2000169285}
+  - {fileID: 2141022396}
   - {fileID: 1539238890}
   - {fileID: 1804812950}
+  - {fileID: 721686028}
+  - {fileID: 911996706}
+  - {fileID: 495142869}
+  - {fileID: 1382256058}
   - {fileID: 360943407}
-  - {fileID: 1878697753}
+  - {fileID: 1529400653}
+  - {fileID: 339208326}
   - {fileID: 295785741}
   - {fileID: 2130470287}
+  - {fileID: 633589077}
   - {fileID: 568727236}
   - {fileID: 1636498483}
-  - {fileID: 633589077}
   - {fileID: 1470224347}
   - {fileID: 1711137795}
   - {fileID: 1482414475}

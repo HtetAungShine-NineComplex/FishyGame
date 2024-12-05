@@ -9,8 +9,13 @@ public class BossManager : MonoBehaviour
     [SerializeField] private FishManager[] _secondMapBosses;
     [SerializeField] private FishManager[] _thirdMapBosses;
 
+    public bool isActive = true;
+
     private void Start()
     {
+        if (!isActive)
+            { return; }
+
         WaveManager.Instance.EnterBossStage += OnEnterBossStage;
     }
 

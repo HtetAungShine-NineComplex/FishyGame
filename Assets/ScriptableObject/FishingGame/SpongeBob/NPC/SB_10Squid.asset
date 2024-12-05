@@ -25,11 +25,29 @@ MonoBehaviour:
   - {fileID: 7007145, guid: b23df8f3a091b6048990a3e8a19c27e0, type: 3}
   - {fileID: 1277397104, guid: b23df8f3a091b6048990a3e8a19c27e0, type: 3}
   FishDefaultFrame: {fileID: -1969493639, guid: b23df8f3a091b6048990a3e8a19c27e0, type: 3}
-  FishFrameRate: 0
-  speed: 2
+  FishFrameRate: 0.587
+  speed: 0.3
   SpeedCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

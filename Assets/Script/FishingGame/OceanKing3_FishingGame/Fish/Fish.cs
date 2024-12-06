@@ -28,7 +28,15 @@ public class Fish : MonoBehaviour
     protected virtual void Start()
     {
         //fish_2D = GetComponent<Image>();
+        if(fishSO.FishDefaultFrame == null)
+        {
+            Debug.LogWarning("Default frame nul : " + gameObject.name);
+        }
 
+        if (fish_2D == null)
+        {
+            Debug.LogWarning("fis 2d nul : " + gameObject.name);
+        }
         fish_2D.sprite = fishSO.FishDefaultFrame;
         fish_frames = fishSO.FishFrames;
         frameRate = fishSO.FishFrameRate;
@@ -47,7 +55,14 @@ public class Fish : MonoBehaviour
         if (timer >= frameRate)
         {
             timer -= frameRate;
-            currentFrame = (currentFrame + 1) % fish_frames.Length;
+            if (fish_frames.Length > 0)
+            {
+                currentFrame = (currentFrame + 1) % fish_frames.Length;
+            }
+            else
+            {
+                Debug.LogError("fish_frames array is empty : " + gameObject.name);
+            }
             fish_2D.sprite = fish_frames[currentFrame];
         }
             

@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -106,152 +106,178 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhiteDragonHorseSheet_0
+      name: Timeline 1_0000
       rect:
         serializedVersion: 2
         x: 0
-        y: 1173
-        width: 1024
-        height: 875
+        y: 1188
+        width: 1000
+        height: 860
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6697385a30f46ee47ad6dc0936b72135
-      internalID: -548553227
+      spriteID: 421ddd4b40e041c4981b1610d8c29bec
+      internalID: -1230640312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhiteDragonHorseSheet_1
+      name: Timeline 1_0001
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1173
-        width: 1024
-        height: 875
+        x: 1000
+        y: 1188
+        width: 1000
+        height: 860
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f786e4e596a3f924aa98bfda3a9a12ba
-      internalID: -689982789
+      spriteID: d49704872d7b74b42b1889fe5a16e851
+      internalID: 1001387468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhiteDragonHorseSheet_2
+      name: Timeline 1_0002
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 1173
-        width: 1024
-        height: 875
+        x: 2000
+        y: 1188
+        width: 1000
+        height: 860
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11cfb76052d762c469539b8de6ef9ac4
-      internalID: 725345880
+      spriteID: 67873751f1efa2843a302d2f887e6735
+      internalID: -1274045314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhiteDragonHorseSheet_3
+      name: Timeline 1_0003
       rect:
         serializedVersion: 2
-        x: 3072
-        y: 1173
-        width: 1024
-        height: 875
+        x: 3000
+        y: 1188
+        width: 1000
+        height: 860
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97c1a9b368dc7a04aa3df63213d2b2c5
-      internalID: -530312264
+      spriteID: be4b299cfc1511e4e8486fc2bac27559
+      internalID: 2066380413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhiteDragonHorseSheet_4
+      name: Timeline 1_0004
       rect:
         serializedVersion: 2
         x: 0
-        y: 298
-        width: 1024
-        height: 875
+        y: 328
+        width: 1000
+        height: 860
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 427a15329ca2d4a4a918e0ce02ed1e78
-      internalID: -1201511257
+      spriteID: 00ff1d07c9d0b2946b7d07249ce53f97
+      internalID: -69905061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhiteDragonHorseSheet_5
+      name: Timeline 1_0005
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 298
-        width: 1024
-        height: 875
+        x: 1000
+        y: 328
+        width: 1000
+        height: 860
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cd570f60fe23974da50bf4891f0018e
-      internalID: 709402173
+      spriteID: 0e6c75bd99cc991439c97b75b54a8319
+      internalID: 1100753253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhiteDragonHorseSheet_6
+      name: Timeline 1_0006
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 298
-        width: 1024
-        height: 875
+        x: 2000
+        y: 328
+        width: 1000
+        height: 860
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 706713259007d1249ac0740ca0c994c9
-      internalID: -790544979
+      spriteID: c151afa05bcbbad448f876b21fc133d6
+      internalID: -1181366148
       vertices: []
       indices: 
       edges: []
@@ -259,7 +285,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 10e2e29d64a9ef24da64d9b0d99aae49
     internalID: 0
     vertices: []
     indices: 
@@ -267,13 +293,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WhiteDragonHorseSheet_0: -548553227
-      WhiteDragonHorseSheet_1: -689982789
-      WhiteDragonHorseSheet_2: 725345880
-      WhiteDragonHorseSheet_3: -530312264
-      WhiteDragonHorseSheet_4: -1201511257
-      WhiteDragonHorseSheet_5: 709402173
-      WhiteDragonHorseSheet_6: -790544979
+      Timeline 1_0000: -1230640312
+      Timeline 1_0001: 1001387468
+      Timeline 1_0002: -1274045314
+      Timeline 1_0003: 2066380413
+      Timeline 1_0004: -69905061
+      Timeline 1_0005: 1100753253
+      Timeline 1_0006: -1181366148
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

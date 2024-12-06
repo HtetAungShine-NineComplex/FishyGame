@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 664ae3a830b9a364b9c9d1daaf5f58e4
+guid: 30cdccfa5ed2fc94dab7dbc21d82492e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -136,274 +136,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lkt_01
+      name: cannon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 431
-        width: 139
-        height: 81
+        x: 11
+        y: 436
+        width: 326
+        height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d79407fad3beb8c499ac8475934ab9b5
-      internalID: -871579632
+      spriteID: b65d3f1f2821fe54d91120e52bf42c71
+      internalID: -2120913354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_02
+      name: cannon_lvl_2
       rect:
         serializedVersion: 2
-        x: 139
-        y: 431
-        width: 139
-        height: 81
+        x: 390
+        y: 386
+        width: 83
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bee05c7da87011e419430579d78c3fa9
-      internalID: 2065401997
+      spriteID: 4205829d97947c34eb8a077d688b5bc9
+      internalID: -671393395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_03
+      name: cannon_2
       rect:
         serializedVersion: 2
-        x: 278
-        y: 431
-        width: 139
-        height: 81
+        x: 11
+        y: 358
+        width: 326
+        height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d47af59f06f3984cb6f49058b48d129
-      internalID: -1909247970
+      spriteID: 10a05017e45b0414abe0721dcbe62d5d
+      internalID: -598426107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_04
+      name: cannon_lvl_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 350
-        width: 139
-        height: 81
+        x: 360
+        y: 283
+        width: 58
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4fe05864c1c4f4ea68a27b9a77abb7
-      internalID: -1921386630
+      spriteID: 438154b7dd0f5734fb9b8098fc920a56
+      internalID: -353786979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_05
+      name: cannon_4
       rect:
         serializedVersion: 2
-        x: 139
-        y: 350
-        width: 139
-        height: 81
+        x: 11
+        y: 282
+        width: 326
+        height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdd7a696607523e418bfdba97f5674c9
-      internalID: 978089831
+      spriteID: 1b49619ad5b2f1e43996f7752dc943f0
+      internalID: 734071493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_06
+      name: increase_btn
       rect:
         serializedVersion: 2
-        x: 278
-        y: 350
-        width: 139
-        height: 81
+        x: 443
+        y: 313
+        width: 42
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57f9da58a0927a94385ebfc27d80ec41
-      internalID: 1562041307
+      spriteID: e6702686be82d994e8d1899275f3fb1a
+      internalID: 971116220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_07
+      name: cannon_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 269
-        width: 139
-        height: 81
+        x: 11
+        y: 204
+        width: 326
+        height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12fc1fad06ae7a34d83393565d930ba8
-      internalID: -942176191
+      spriteID: fb975965154df654b819f71da4624944
+      internalID: 357613175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_08
+      name: decrease_btn
       rect:
         serializedVersion: 2
-        x: 139
-        y: 269
-        width: 139
-        height: 81
+        x: 443
+        y: 245
+        width: 43
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8092d1851d7ed2439018425a731f9e9
-      internalID: -478751469
+      spriteID: 51cbec47223b89245ad6de49c31084d3
+      internalID: -1117106250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_09
+      name: cannon_8
       rect:
         serializedVersion: 2
-        x: 278
-        y: 269
-        width: 139
-        height: 81
+        x: 11
+        y: 125
+        width: 326
+        height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f70a7a80ceb454c45a8b3002a81d9012
-      internalID: -1775232844
+      spriteID: bf255ad1431ece949870dd15b47763da
+      internalID: -263866235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_10
+      name: cannon_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 188
-        width: 139
-        height: 81
+        x: 361
+        y: 99
+        width: 141
+        height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56cf832f9ad27744c8697f9273119933
-      internalID: 2101137827
+      spriteID: 3f03219b5cd620e4e88630e47456adac
+      internalID: -1720100269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_11
+      name: cannon_10
       rect:
         serializedVersion: 2
-        x: 139
-        y: 188
-        width: 139
-        height: 81
+        x: 11
+        y: 38
+        width: 326
+        height: 62
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9b7a60bc6adf944ea3a0b259ca99499
-      internalID: -493741163
+      spriteID: 85ddaa1d74968e045a752c033f17409c
+      internalID: -798934547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lkt_12
+      name: cannon_11
       rect:
         serializedVersion: 2
-        x: 278
-        y: 188
-        width: 139
-        height: 81
+        x: 361
+        y: 43
+        width: 141
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: feecf5a19fb13f742aec8ebb6ab4a8ba
-      internalID: 150998
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lkt_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 107
-        width: 139
-        height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70b3d3fcac75d0743b118a84a4eb8c1a
-      internalID: 298389596
+      spriteID: f0ad322ab5ac98149aa2ca8401ee4364
+      internalID: -1916616499
       vertices: []
       indices: 
       edges: []
@@ -411,7 +390,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 765d6abbe95ef084082dfd00b55e8c7c
+    spriteID: c9476051522878441ab89d41f830b557
     internalID: 0
     vertices: []
     indices: 
@@ -419,19 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lkt_01: -871579632
-      lkt_02: 2065401997
-      lkt_03: -1909247970
-      lkt_04: -1921386630
-      lkt_05: 978089831
-      lkt_06: 1562041307
-      lkt_07: -942176191
-      lkt_08: -478751469
-      lkt_09: -1775232844
-      lkt_10: 2101137827
-      lkt_11: -493741163
-      lkt_12: 150998
-      lkt_13: 298389596
+      cannon_0: -2120913354
+      cannon_10: -798934547
+      cannon_11: -1916616499
+      cannon_2: -598426107
+      cannon_4: 734071493
+      cannon_6: 357613175
+      cannon_8: -263866235
+      cannon_9: -1720100269
+      cannon_lvl_1: -353786979
+      cannon_lvl_2: -671393395
+      decrease_btn: -1117106250
+      increase_btn: 971116220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

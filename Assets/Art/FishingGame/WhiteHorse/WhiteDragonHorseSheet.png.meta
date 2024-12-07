@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,10 +37,10 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
+    wrapU: 0
+    wrapV: 0
     wrapW: 0
-  nPOTScale: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
@@ -106,32 +106,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -150,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 421ddd4b40e041c4981b1610d8c29bec
-      internalID: -1230640312
+      spriteID: c9d1de9fa70f2d84d895c7d20170a5e0
+      internalID: 1228710759
       vertices: []
       indices: 
       edges: []
@@ -171,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d49704872d7b74b42b1889fe5a16e851
-      internalID: 1001387468
+      spriteID: faad7037fa4191e4fadc04db4e871178
+      internalID: -1490100173
       vertices: []
       indices: 
       edges: []
@@ -192,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67873751f1efa2843a302d2f887e6735
-      internalID: -1274045314
+      spriteID: f62a73e78f2373842817dfcd1ff01884
+      internalID: -1387178744
       vertices: []
       indices: 
       edges: []
@@ -213,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be4b299cfc1511e4e8486fc2bac27559
-      internalID: 2066380413
+      spriteID: 3110ed3353349d7429cb23ff7e5eed53
+      internalID: 681309391
       vertices: []
       indices: 
       edges: []
@@ -234,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ff1d07c9d0b2946b7d07249ce53f97
-      internalID: -69905061
+      spriteID: a99f4695bf7496e44945614c55ef23b7
+      internalID: 1652658904
       vertices: []
       indices: 
       edges: []
@@ -255,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e6c75bd99cc991439c97b75b54a8319
-      internalID: 1100753253
+      spriteID: c3b78a339708f0143af6860fe52cc1f7
+      internalID: 43416052
       vertices: []
       indices: 
       edges: []
@@ -276,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c151afa05bcbbad448f876b21fc133d6
-      internalID: -1181366148
+      spriteID: 87af754dbfaad98469dfd77b4d82cf9b
+      internalID: 1568145161
       vertices: []
       indices: 
       edges: []
@@ -285,7 +259,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 10e2e29d64a9ef24da64d9b0d99aae49
+    spriteID: 18267378d7cbcb942b2fa11661660f82
     internalID: 0
     vertices: []
     indices: 
@@ -293,13 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Timeline 1_0000: -1230640312
-      Timeline 1_0001: 1001387468
-      Timeline 1_0002: -1274045314
-      Timeline 1_0003: 2066380413
-      Timeline 1_0004: -69905061
-      Timeline 1_0005: 1100753253
-      Timeline 1_0006: -1181366148
+      Timeline 1_0000: 1228710759
+      Timeline 1_0001: -1490100173
+      Timeline 1_0002: -1387178744
+      Timeline 1_0003: 681309391
+      Timeline 1_0004: 1652658904
+      Timeline 1_0005: 43416052
+      Timeline 1_0006: 1568145161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

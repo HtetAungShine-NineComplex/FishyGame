@@ -37,6 +37,8 @@ public class GLOBALCONST
     public const string UI_FISHSTATS_COINTREE = "UI_InGameFishStats_CoinTree";
     public const string UI_FISHSTATS_FISHER = "UI_InGameFishStats_Fisher";
     public const string UI_FISHSTATS_CHASINGWIND = "UI_InGameFishStats_ChasingWind";
+    public const string UI_FISHSTATS_DRAGON = "UI_InGameFishStats_Dragon";
+
     public const string UI_INGAMEQUIT = "UI_InGameQuit";
     public const string UI_INGAMESETTING = "UI_InGameSetting";
 	public const string UI_INGAMETAKESCORE = "UI_InGameTakeScore";

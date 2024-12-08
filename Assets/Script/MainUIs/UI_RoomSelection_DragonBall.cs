@@ -34,7 +34,7 @@ public class UI_RoomSelection_DragonBall : UIBase
     private void EnterRoom() //temp
     {
         UIManager.Instance.ShowUI(GLOBALCONST.UI_LOADING);
-        UIManager.Instance.CloseUI(GLOBALCONST.UI_ROOM_SELECT_DragonBall);
+        //UIManager.Instance.CloseUI(GLOBALCONST.UI_ROOM_SELECT_DragonBall);
         SceneLoader.Instance.LoadSceneAsync((int)SceneIndex.FISHING_GAME_SCENE_DragonBall, false);
     }
 }

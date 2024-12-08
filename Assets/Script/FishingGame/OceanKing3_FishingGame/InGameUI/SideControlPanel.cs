@@ -21,6 +21,7 @@ public class SideControlPanel : MonoBehaviour
     [SerializeField] private bool isCoinTree;
     [SerializeField] private bool isFisher;
 
+    [SerializeField] private bool isDragonOceanGame;
     private bool _isOpened = false;
 
     private void Start()
@@ -57,6 +58,8 @@ public class SideControlPanel : MonoBehaviour
 
         else if (isFisher)
             UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_FISHER);
+        else if (isDragonOceanGame)
+            UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_DRAGON);
 
         else
             UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS);

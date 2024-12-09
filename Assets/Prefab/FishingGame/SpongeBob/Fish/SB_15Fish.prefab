@@ -169,6 +169,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 8451626801869014784}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &7054342674499276315
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +265,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 2592973637998678968}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &7653315484359162211
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +361,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 4938503355391617946}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8401460538305955902
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +457,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 3492871453651750379}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8474250248666293558
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +642,14 @@ PrefabInstance:
       propertyPath: fish_2D
       value: 
       objectReference: {fileID: 6575005498658512985}
+    - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: isSushiFish
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
+      propertyPath: sushiPrefab
+      value: 
+      objectReference: {fileID: 6966282889702405720, guid: 636622e336bcad54e83072962ae75aa4, type: 3}
     - target: {fileID: 8612866281859157046, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: m_Name
       value: SB_15Fish

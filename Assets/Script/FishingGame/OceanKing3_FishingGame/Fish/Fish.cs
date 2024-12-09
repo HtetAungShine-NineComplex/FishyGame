@@ -12,6 +12,8 @@ public class Fish : MonoBehaviour
 
     [SerializeField] protected Image fish_2D;
     [SerializeField] protected CanvasGroup _fishGlow;
+    [SerializeField] protected bool isSushiFish;
+    [SerializeField] protected GameObject sushiPrefab;
 
     protected Sprite[] fish_frames;
     protected float frameRate = 0.05f;
@@ -131,7 +133,15 @@ public class Fish : MonoBehaviour
         _move.OnDead();
         frameRate /= 4;
         StartCoroutine(FadeFish(0.5f));
-        CoinManager.Instance.ShowCoin(_rectTransform.anchoredPosition, CoinSpawnAmount, Score);
+        if (isSushiFish == true)
+        {
+            CoinManager.Instance.ShowSushi(_rectTransform.anchoredPosition, CoinSpawnAmount, sushiPrefab);
+        }
+        else
+        {
+            CoinManager.Instance.ShowCoin(_rectTransform.anchoredPosition, CoinSpawnAmount, Score);
+        }
+        
     }
 
     protected IEnumerator FadeFish(float fadeDelay)

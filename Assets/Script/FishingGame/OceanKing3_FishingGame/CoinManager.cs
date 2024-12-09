@@ -27,6 +27,15 @@ public class CoinManager : MonoBehaviour
         }
     }
 
+    public void ShowSushi(Vector3 spawnPos, int score, GameObject sushiPrefab)
+    {
+        //instantiate reward text
+        GameObject rewardTxt = Instantiate(_rewardTxtPrefab, _root);
+        rewardTxt.GetComponent<RectTransform>().anchoredPosition = spawnPos;
+        rewardTxt.gameObject.GetComponent<RewardText>().SetValueText(score);
+
+        StartCoroutine(SushiSpawn(spawnPos, sushiPrefab));
+    }
     public void ShowCoin(Vector3 spawnPos, int coinAmount, int score)
     {
         //instantiate reward text
@@ -53,5 +62,15 @@ public class CoinManager : MonoBehaviour
 
             yield return new WaitForSeconds(_coinInterval);
         }
+    }
+
+    IEnumerator SushiSpawn(Vector3 spawnPos, GameObject sushiPrefab)
+    {
+        _audioSource.Stop();
+        _audioSource.Play();
+
+        GameObject sushiObj = Instantiate(sushiPrefab, _root);
+        sushiObj.GetComponent<RectTransform>().anchoredPosition = spawnPos;
+        yield return new WaitForSeconds(_coinInterval);
     }
 }

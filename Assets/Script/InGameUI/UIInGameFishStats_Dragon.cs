@@ -16,6 +16,6 @@ public class UIInGameFishStats_Dragon : UIBase
 
     private void OnCLickCloseBtn()
     {
-        UIManager.Instance.CloseUI(GLOBALCONST.UI_FISHSTATS_CHASINGWIND);
+        UIManager.Instance.CloseUI(GLOBALCONST.UI_FISHSTATS_DRAGON);
     }
 }

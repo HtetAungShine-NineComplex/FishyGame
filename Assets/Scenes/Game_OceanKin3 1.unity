@@ -1060,6 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapIndex: 1
+  isLastMap: 0
   _animator: {fileID: 236056245}
   _group: {fileID: 236056249}
 --- !u!114 &236056248
@@ -4526,6 +4527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapIndex: 0
+  isLastMap: 0
   _animator: {fileID: 814385274}
   _group: {fileID: 814385276}
   _root: {fileID: 2014671306}
@@ -7392,6 +7394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapIndex: 2
+  isLastMap: 0
   _animator: {fileID: 1537566362}
   _group: {fileID: 1537566364}
 --- !u!225 &1537566364
@@ -7931,6 +7934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapIndex: 3
+  isLastMap: 1
   _animator: {fileID: 1630948081}
   _group: {fileID: 1630948083}
   _bossfightDim: {fileID: 1842281785}
@@ -11225,19 +11229,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossFightDuration
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bonusStageDuration
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _normalStageDuration
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossTitles.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossTitles.Array.data[0]
@@ -11255,6 +11259,14 @@ PrefabInstance:
       propertyPath: _bossTitles.Array.data[3]
       value: 
       objectReference: {fileID: 474363027}
+    - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
+      propertyPath: _bossTitles.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
+      propertyPath: _bossTitles.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4768874116111111062, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: m_Name
       value: WaveManager

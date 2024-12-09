@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class GameBG : MonoBehaviour
 {
     [SerializeField] protected int mapIndex = 1;
+    [SerializeField] protected bool isLastMap = false;
 
 
     protected virtual void Start()

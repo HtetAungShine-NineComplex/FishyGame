@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0.00012207031}
-  m_SizeDelta: {x: 420, y: 270}
+  m_AnchoredPosition: {x: -0.00015258789, y: 0.000030517578}
+  m_SizeDelta: {x: 730, y: 495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1666776636904324595
 CanvasRenderer:
@@ -111,7 +111,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 420, y: 270}
+  m_SizeDelta: {x: 730, y: 495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4296698381185564932
 CanvasRenderer:
@@ -256,7 +256,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 420, y: 270}
+  m_SizeDelta: {x: 730, y: 495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8563664935605739398
 CanvasRenderer:
@@ -349,8 +349,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: -3.999878}
-  m_SizeDelta: {x: 420, y: 270}
+  m_AnchoredPosition: {x: -22, y: -14}
+  m_SizeDelta: {x: 730, y: 495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5898787344997778219
 CanvasRenderer:
@@ -444,7 +444,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 420, y: 270}
+  m_SizeDelta: {x: 730, y: 495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4966952998221337166
 CanvasRenderer:
@@ -608,19 +608,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: m_Size.x
-      value: 64.34668
+      value: 82.167755
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: m_Size.y
-      value: 194.72482
+      value: 390.75626
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: m_Offset.x
-      value: -3.8909912
+      value: -2.7772064
       objectReference: {fileID: 0}
     - target: {fileID: 8474039234513201458, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: m_Offset.y
-      value: 4.501114
+      value: -20.002823
       objectReference: {fileID: 0}
     - target: {fileID: 8555422473807289894, guid: 9694053ec036b7d46b06cb446d6a1186, type: 3}
       propertyPath: fishSO

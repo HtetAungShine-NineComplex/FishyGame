@@ -54,7 +54,18 @@ public class OctopusBG : GameBG
         }
         else if (gameObject.activeSelf)
         {
-            StartCoroutine(Fade());
+            if (isLastMap)
+            {
+                if (mapIndex == 0)
+                {
+                    StartCoroutine(Fade());
+                }
+            }
+            else
+            {
+                StartCoroutine(Fade());
+            }
+            
         }
 
 

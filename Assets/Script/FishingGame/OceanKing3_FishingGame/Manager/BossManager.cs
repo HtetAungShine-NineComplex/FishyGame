@@ -8,6 +8,7 @@ public class BossManager : MonoBehaviour
     [SerializeField] private FishManager[] _firstMapBosses;
     [SerializeField] private FishManager[] _secondMapBosses;
     [SerializeField] private FishManager[] _thirdMapBosses;
+    [SerializeField] private FishManager[] _otherBosses;
 
     public bool isActive = true;
 
@@ -31,7 +32,7 @@ public class BossManager : MonoBehaviour
         switch (mapIndex)
         {
             case 0: //phoenix
-                _phoenixBoss.SpawnFishFromStart();
+                _phoenixBoss?.SpawnFishFromStart();
                 break;
 
             case 1: //first map
@@ -56,6 +57,7 @@ public class BossManager : MonoBehaviour
                 break;
 
             default:
+                _otherBosses[mapIndex - 4].SpawnFishFromStart();
                 break;
         }
 

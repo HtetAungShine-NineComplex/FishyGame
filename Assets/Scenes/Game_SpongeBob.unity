@@ -13647,6 +13647,7 @@ MonoBehaviour:
   _thirdMapBosses:
   - {fileID: 690156068}
   - {fileID: 1862292226}
+  _otherBosses: []
   isActive: 0
 --- !u!1 &1229952130
 GameObject:
@@ -14114,6 +14115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapIndex: 1
+  isLastMap: 0
   _group: {fileID: 1256533169}
 --- !u!225 &1256533169
 CanvasGroup:
@@ -14893,6 +14895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapIndex: 2
+  isLastMap: 0
   _group: {fileID: 1315643795}
 --- !u!225 &1315643795
 CanvasGroup:
@@ -18185,6 +18188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapIndex: 0
+  isLastMap: 0
   _group: {fileID: 1630948083}
 --- !u!1 &1636498482
 GameObject:
@@ -30316,6 +30320,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2646266305170033284, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
+      propertyPath: isSpongeBob
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3255662840515384221, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -30378,7 +30386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3255662840515384221, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -92.91675
+      value: -92.917
       objectReference: {fileID: 0}
     - target: {fileID: 3255662840515384221, guid: 106fff04e45b9264ca9ac92456cabb08, type: 3}
       propertyPath: m_AnchoredPosition.y

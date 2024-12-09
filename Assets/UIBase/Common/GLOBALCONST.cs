@@ -35,6 +35,7 @@ public class GLOBALCONST
     public const string UI_FISHSTATS = "UI_InGameFishStats";
     public const string UI_FISHSTATS_LIKUI = "UI_InGameFishStats_LiKui";
     public const string UI_FISHSTATS_COINTREE = "UI_InGameFishStats_CoinTree";
+    public const string UI_FISHSTATS_SPONGEBOB = "UI_InGameFishStats_SpongeBob";
     public const string UI_FISHSTATS_FISHER = "UI_InGameFishStats_Fisher";
     public const string UI_FISHSTATS_CHASINGWIND = "UI_InGameFishStats_ChasingWind";
     public const string UI_FISHSTATS_DRAGON = "UI_InGameFishStats_Dragon";

@@ -19,6 +19,7 @@ public class GLOBALCONST
     public const string UI_FISHING_GAME_KIRI = "UI_FishingGame_Kiri";
     public const string UI_FISHING_GAME_DRAGONBALL = "UI_FishingGame_DragonBall";
     public const string UI_FISHING_GAME_SPONGEBOB = "UI_FishingGame_SpongeBob";
+    public const string UI_FISHING_GAME_OCEANKING2EX = "UI_FishingGame_OceanKing_2_EX";
 
     public const string UI_LOADING = "UI_Loading";
 	public const string UI_ROOM_SELECT = "UI_RoomSelection";
@@ -31,6 +32,7 @@ public class GLOBALCONST
     public const string UI_ROOM_SELECT_LIKUI = "UI_RoomSelection_LiKui";
     public const string UI_ROOM_SELECT_DragonBall = "UI_RoomSelection_DragonBall";
     public const string UI_ROOM_SELECT_SpongeBob = "UI_RoomSelection_SpongeBob";
+    public const string UI_ROOM_SELECT_OCEANKING2EX = "UI_RoomSelection_OCEANKING2EX";
 
     public const string UI_FISHSTATS = "UI_InGameFishStats";
     public const string UI_FISHSTATS_LIKUI = "UI_InGameFishStats_LiKui";
@@ -39,6 +41,7 @@ public class GLOBALCONST
     public const string UI_FISHSTATS_FISHER = "UI_InGameFishStats_Fisher";
     public const string UI_FISHSTATS_CHASINGWIND = "UI_InGameFishStats_ChasingWind";
     public const string UI_FISHSTATS_DRAGON = "UI_InGameFishStats_Dragon";
+    public const string UI_FISHSTATS_OC2EX = "UI_InGameFishStats_OC2EX";
 
     public const string UI_INGAMEQUIT = "UI_InGameQuit";
     public const string UI_INGAMESETTING = "UI_InGameSetting";

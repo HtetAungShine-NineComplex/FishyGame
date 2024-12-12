@@ -23,6 +23,7 @@ public class SideControlPanel : MonoBehaviour
     [SerializeField] private bool isSpongeBob;
 
     [SerializeField] private bool isDragonOceanGame;
+    [SerializeField] private bool isOC2Ex;
     private bool _isOpened = false;
 
     private void Start()
@@ -63,6 +64,8 @@ public class SideControlPanel : MonoBehaviour
             UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_DRAGON);
         else if(isSpongeBob)
             UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_SPONGEBOB);
+        else if (isOC2Ex)
+            UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS_OC2EX);
 
         else
             UIManager.Instance.ShowUI(GLOBALCONST.UI_FISHSTATS);

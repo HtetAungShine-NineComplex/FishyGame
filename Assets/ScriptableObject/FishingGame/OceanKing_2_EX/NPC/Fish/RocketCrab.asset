@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: RocketCrab
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: -1519566873, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  MaxHealth: 3500
+  Score: 2500
+  CoinSpawnAmount: 5
+  FishFrames:
+  - {fileID: -1519566873, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: -1174577793, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 1709963694, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 519710659, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 428078984, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 10661089, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 1330377728, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: -230236479, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: -606871435, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 1810951720, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: -626156093, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 32776314, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: -1937645902, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 1093911156, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 594232835, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: -1134783823, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 305696375, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 710895713, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 1063149447, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: -1675568308, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  - {fileID: 868061835, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  FishDefaultFrame: {fileID: -1519566873, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
+  FishFrameRate: 0.04
+  speed: 1
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

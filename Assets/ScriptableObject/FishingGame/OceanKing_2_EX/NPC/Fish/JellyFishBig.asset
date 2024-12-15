@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: JellyFishBig
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: 1334080578, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  MaxHealth: 600
+  Score: 400
+  CoinSpawnAmount: 2
+  FishFrames:
+  - {fileID: 1334080578, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 292060132, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -184723974, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1053773591, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1626334987, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 961301455, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1918244105, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -1998816189, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -1859839679, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1230160830, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 60067044, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1583507663, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -167929027, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1991867442, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1011305985, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1226518605, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 632110073, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 2146505093, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 212449952, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -581743384, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 284160902, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1641074639, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -235174083, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1448324167, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1187484639, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -1383067190, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1499674622, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1911145381, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -1692326734, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -2028313420, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -946624815, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -699325174, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1832530291, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 459241526, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1973114219, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: 1889481669, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -1729605149, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  - {fileID: -411948354, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  FishDefaultFrame: {fileID: 1334080578, guid: 1d8700615e04629458d890a900a31142, type: 3}
+  FishFrameRate: 0.17
+  speed: 0.6
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

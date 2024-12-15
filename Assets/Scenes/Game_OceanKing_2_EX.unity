@@ -355,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &40586750
 Transform:
   m_ObjectHideFlags: 0
@@ -389,58 +389,6 @@ MonoBehaviour:
   parentTF: {fileID: 808252845}
   _isMainBoss: 0
   _isHorizontal: 0
-  _isVertical: 0
-  _isGoFromMiddle: 0
---- !u!1 &113057385
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 113057386}
-  - component: {fileID: 113057387}
-  m_Layer: 0
-  m_Name: PhoenixManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &113057386
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113057385}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2038842535}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &113057387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113057385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 3900039660422269666, guid: c2a7af2deca47a74d9f9a527412c35c7, type: 3}
-  spawnInterval: 5
-  maxFish: 1
-  parentTF: {fileID: 808252845}
-  _isMainBoss: 1
-  _isHorizontal: 1
   _isVertical: 0
   _isGoFromMiddle: 0
 --- !u!1 &151589491
@@ -608,7 +556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &169911018
 Transform:
   m_ObjectHideFlags: 0
@@ -1310,7 +1258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &360943407
 Transform:
   m_ObjectHideFlags: 0
@@ -1681,7 +1629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: 936ce43dc906d6f4b9a37cea0cfd9828, type: 3}
+  fishPrefab: {fileID: 6043328249626359362, guid: d84bfa4f53dd49f48896c8ee5d1b8501, type: 3}
   spawnInterval: 2.5
   maxFish: 10000
   parentTF: {fileID: 808252845}
@@ -1705,7 +1653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &423259433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2564,7 +2512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &559733730
 Transform:
   m_ObjectHideFlags: 0
@@ -2729,7 +2677,7 @@ GameObject:
   - component: {fileID: 568727236}
   - component: {fileID: 568727237}
   m_Layer: 0
-  m_Name: LaserCrabManager
+  m_Name: RocketCrabManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2762,7 +2710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2991986638028462469, guid: 10ffaeb6cc709124e9a0d4f9d900ee74, type: 3}
+  fishPrefab: {fileID: 7683734729300745177, guid: 7c07db8206e7f4044a963c7acbf163dc, type: 3}
   spawnInterval: 14
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -2881,7 +2829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2991986638028462469, guid: daaed0ce78888ac47ae1c5c5501b35fe, type: 3}
+  fishPrefab: {fileID: 6456866940614385493, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
   spawnInterval: 20
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -3378,7 +3326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &690156067
 Transform:
   m_ObjectHideFlags: 0
@@ -3894,7 +3842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &816059020
 Transform:
   m_ObjectHideFlags: 0
@@ -4217,58 +4165,6 @@ MonoBehaviour:
   _endPoint: {fileID: 1173151374}
   _type: 0
   _triangleShapePoints: []
---- !u!1 &954682704
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 954682705}
-  - component: {fileID: 954682706}
-  m_Layer: 0
-  m_Name: BuffaloManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &954682705
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954682704}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2038842535}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &954682706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954682704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: d5cdfafe6977d6c41881370fa1bf8863, type: 3}
-  spawnInterval: 15
-  maxFish: 3
-  parentTF: {fileID: 808252845}
-  _isMainBoss: 1
-  _isHorizontal: 1
-  _isVertical: 0
-  _isGoFromMiddle: 0
 --- !u!1 &960597823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4352,7 +4248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &968683833
 Transform:
   m_ObjectHideFlags: 0
@@ -4552,6 +4448,58 @@ MonoBehaviour:
   _cannonHandler: {fileID: 1578214982}
   _bossRewardShower: {fileID: 0}
   _anglerFishLight: {fileID: 0}
+--- !u!1 &1011294010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011294011}
+  - component: {fileID: 1011294012}
+  m_Layer: 0
+  m_Name: 'JF Small Manager '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011294011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011294010}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2038842535}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011294012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011294010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishPrefab: {fileID: 6681314116956568388, guid: 684838605e145a84c980567c0c5a01b2, type: 3}
+  spawnInterval: 3
+  maxFish: 3000
+  parentTF: {fileID: 808252845}
+  _isMainBoss: 0
+  _isHorizontal: 0
+  _isVertical: 0
+  _isGoFromMiddle: 0
 --- !u!1001 &1076943272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4920,7 +4868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1151737251
 Transform:
   m_ObjectHideFlags: 0
@@ -4972,7 +4920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1163620281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5221,15 +5169,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f23ea3c9ee8b14d9b89edc85449418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _phoenixBoss: {fileID: 423259433}
+  _phoenixBoss: {fileID: 1698275119}
   _firstMapBosses:
   - {fileID: 1698275119}
   _secondMapBosses:
   - {fileID: 1698275119}
-  - {fileID: 169911019}
+  - {fileID: 1698275119}
   _thirdMapBosses:
-  - {fileID: 690156068}
-  - {fileID: 1862292226}
+  - {fileID: 1698275119}
+  - {fileID: 1698275119}
   _otherBosses: []
   isActive: 1
 --- !u!1 &1255614982
@@ -5964,7 +5912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1470224347
 Transform:
   m_ObjectHideFlags: 0
@@ -6142,58 +6090,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3338438181606118862, guid: c355b8c9acf13e54c9af74ef51081d4b, type: 3}
   m_PrefabInstance: {fileID: 784151070590069692}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1482414474
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1482414475}
-  - component: {fileID: 1482414476}
-  m_Layer: 0
-  m_Name: PufferManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1482414475
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482414474}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2038842535}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1482414476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482414474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 8869280584541489706, guid: 993fa900e1406f24ab003f7a80f5d4a1, type: 3}
-  spawnInterval: 31
-  maxFish: 1000
-  parentTF: {fileID: 808252845}
-  _isMainBoss: 0
-  _isHorizontal: 0
-  _isVertical: 0
-  _isGoFromMiddle: 0
 --- !u!1 &1483053182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6418,7 +6314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1539238890
 Transform:
   m_ObjectHideFlags: 0
@@ -6879,7 +6775,7 @@ GameObject:
   - component: {fileID: 1636498483}
   - component: {fileID: 1636498484}
   m_Layer: 0
-  m_Name: DrillCrabManager
+  m_Name: BombCrabManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6912,7 +6808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2991986638028462469, guid: 0b2d6da9104c5b642a60e584c82b90a7, type: 3}
+  fishPrefab: {fileID: 4654381631912266688, guid: 20a43ef22dbc24649b652919210e8fa6, type: 3}
   spawnInterval: 16
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -7184,7 +7080,7 @@ GameObject:
   - component: {fileID: 1698275118}
   - component: {fileID: 1698275119}
   m_Layer: 0
-  m_Name: WhiteHorseManager
+  m_Name: StrippedShark Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7217,7 +7113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: 840829c97fcd303438f219a079905951, type: 3}
+  fishPrefab: {fileID: 4231895281438612087, guid: 03af2521c6e83444d9b58d63316a60d5, type: 3}
   spawnInterval: 15
   maxFish: 3
   parentTF: {fileID: 808252845}
@@ -7241,7 +7137,7 @@ GameObject:
   - component: {fileID: 1707282825}
   - component: {fileID: 1707282826}
   m_Layer: 0
-  m_Name: NemoManager
+  m_Name: Gold Nemo Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7274,7 +7170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 6291332059505405621, guid: fe99cd25b16fa0340bfb3dae42682447, type: 3}
+  fishPrefab: {fileID: 6127555318967428486, guid: d51b594d383025047b9434ce3706ad8b, type: 3}
   spawnInterval: 1
   maxFish: 10000
   parentTF: {fileID: 808252845}
@@ -7293,7 +7189,7 @@ GameObject:
   - component: {fileID: 1711137795}
   - component: {fileID: 1711137796}
   m_Layer: 0
-  m_Name: WhiteSharkManger
+  m_Name: Puffer Big Manger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7326,7 +7222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 4874398897246523310, guid: e3b53dfb891d60b4d8aea5535f0bbaa3, type: 3}
+  fishPrefab: {fileID: 4091830746971593713, guid: 3c2323d79576b5f47adf0ddd74528e95, type: 3}
   spawnInterval: 30
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -7649,7 +7545,7 @@ GameObject:
   - component: {fileID: 1804812950}
   - component: {fileID: 1804812951}
   m_Layer: 0
-  m_Name: HammerFishManager
+  m_Name: HammarCrab Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7682,7 +7578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 9017472557068854499, guid: 54db8a7e7f418fd44b803a102018233c, type: 3}
+  fishPrefab: {fileID: 6456866940614385493, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
   spawnInterval: 4.7
   maxFish: 2500
   parentTF: {fileID: 808252845}
@@ -7706,7 +7602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1818857824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7883,7 +7779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1862292225
 Transform:
   m_ObjectHideFlags: 0
@@ -7967,7 +7863,7 @@ GameObject:
   - component: {fileID: 1878697753}
   - component: {fileID: 1878697754}
   m_Layer: 0
-  m_Name: AngleFishManager
+  m_Name: GoldShark Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8000,7 +7896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 828559752169149206, guid: 4239c3e3b731f4e478d6e38cb285a54f, type: 3}
+  fishPrefab: {fileID: 2711960621560752306, guid: 7caf967b76ef10f448e4829ee91fee29, type: 3}
   spawnInterval: 4
   maxFish: 2000
   parentTF: {fileID: 808252845}
@@ -8293,7 +8189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2000169285
 Transform:
   m_ObjectHideFlags: 0
@@ -8468,32 +8364,30 @@ Transform:
   - {fileID: 1122368335}
   - {fileID: 559733730}
   - {fileID: 556795287}
-  - {fileID: 1707282825}
-  - {fileID: 411240226}
-  - {fileID: 2141022396}
   - {fileID: 2000169285}
   - {fileID: 40586750}
   - {fileID: 1539238890}
   - {fileID: 1804812950}
   - {fileID: 360943407}
-  - {fileID: 1878697753}
-  - {fileID: 295785741}
-  - {fileID: 2130470287}
-  - {fileID: 568727236}
   - {fileID: 1636498483}
+  - {fileID: 411240226}
+  - {fileID: 1707282825}
+  - {fileID: 1878697753}
+  - {fileID: 2130470287}
+  - {fileID: 295785741}
   - {fileID: 633589077}
-  - {fileID: 1470224347}
+  - {fileID: 2141022396}
+  - {fileID: 1011294011}
   - {fileID: 1711137795}
-  - {fileID: 1482414475}
+  - {fileID: 568727236}
+  - {fileID: 1470224347}
   - {fileID: 816059020}
   - {fileID: 169911018}
-  - {fileID: 113057386}
   - {fileID: 1163620282}
   - {fileID: 690156067}
   - {fileID: 1862292225}
   - {fileID: 1818857825}
   - {fileID: 1151737251}
-  - {fileID: 954682705}
   - {fileID: 1698275118}
   - {fileID: 968683833}
   - {fileID: 423259434}
@@ -8696,7 +8590,7 @@ GameObject:
   - component: {fileID: 2130470287}
   - component: {fileID: 2130470288}
   m_Layer: 0
-  m_Name: CrabDragonManager
+  m_Name: GOldWhaleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8729,7 +8623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2991986638028462469, guid: cee2a271dd9a0404e836c9358996a7d0, type: 3}
+  fishPrefab: {fileID: 8334413822312331732, guid: db9370e93c95dc64d9c13907c0ff303a, type: 3}
   spawnInterval: 13
   maxFish: 1000
   parentTF: {fileID: 808252845}
@@ -8748,7 +8642,7 @@ GameObject:
   - component: {fileID: 2141022396}
   - component: {fileID: 2141022397}
   m_Layer: 0
-  m_Name: JFManager
+  m_Name: JF Big Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8781,7 +8675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82821b53e48c15c48b42da03c5c11910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 2858555736348261067, guid: d6b68f41c9aa15e4fa986d2907e12e34, type: 3}
+  fishPrefab: {fileID: 6780775965883132436, guid: 9c4f6e5381a3f0548bf1f618fa466bf0, type: 3}
   spawnInterval: 3
   maxFish: 3000
   parentTF: {fileID: 808252845}

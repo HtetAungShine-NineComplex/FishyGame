@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: JellyFishSmall
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: -2169586, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  MaxHealth: 700
+  Score: 500
+  CoinSpawnAmount: 3
+  FishFrames:
+  - {fileID: -2169586, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 571181332, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -165078133, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1639457271, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 678522547, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 70296502, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 503442360, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1686919477, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 983495269, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 1622453838, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -290604504, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 646001179, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 21754731, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 1549996806, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1467319261, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1769093947, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 1931175080, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 1774342013, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1465287633, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -2017647297, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 498383492, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 1571455988, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 397128723, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 444464102, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 1857618920, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1931961061, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -722048861, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 1674485790, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 107313307, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 2053512893, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -91178208, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -289665498, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 930996491, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1383307740, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -775199217, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1098822824, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: 2046896315, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  - {fileID: -1931275822, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  FishDefaultFrame: {fileID: -2169586, guid: d9fe9550c79e5d54dbb739a397f35018, type: 3}
+  FishFrameRate: 0.17
+  speed: 0.6
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

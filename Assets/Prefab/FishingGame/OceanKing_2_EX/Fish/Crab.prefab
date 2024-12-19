@@ -125,6 +125,18 @@ PrefabInstance:
       value: 356
       objectReference: {fileID: 0}
     - target: {fileID: 7486249268924678464, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486249268924678464, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486249268924678464, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486249268924678464, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -171,6 +183,10 @@ PrefabInstance:
     - target: {fileID: 7486249268924678464, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486249268924678464, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7991368654199946883, guid: 09b229069214ea14f9c6a9554b37abde, type: 3}
       propertyPath: m_Sprite

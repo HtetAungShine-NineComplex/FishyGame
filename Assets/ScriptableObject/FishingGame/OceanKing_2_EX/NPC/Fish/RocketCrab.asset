@@ -40,28 +40,46 @@ MonoBehaviour:
   - {fileID: -1675568308, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
   - {fileID: 868061835, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
   FishDefaultFrame: {fileID: -1519566873, guid: af8cb7b7d68b1b847b47925892630876, type: 3}
-  FishFrameRate: 0.04
-  speed: 1
+  FishFrameRate: 0.05
+  speed: 0.4
   SpeedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: 1.126645
+      outSlope: 1.126645
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.21611138
+      value: 0.2434808
+      inSlope: 0.3970954
+      outSlope: 0.3970954
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3346958
+    - serializedVersion: 3
+      time: 0.7456131
+      value: 0.74561304
+      inSlope: 0.38472345
+      outSlope: 0.38472345
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.711725
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 1.0000002
+      outSlope: 1.0000002
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

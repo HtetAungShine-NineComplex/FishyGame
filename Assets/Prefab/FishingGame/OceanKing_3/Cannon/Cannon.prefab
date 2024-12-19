@@ -355,13 +355,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 8891435356313276014}
   _transform: {fileID: 4138177933583492733}
   _buttonRects:
   - {fileID: 0}
   - {fileID: 0}
+  _dottedLine: {fileID: 0}
+  _lockImage: {fileID: 0}
+  _lockedFishImg: {fileID: 0}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!95 &4419538260040985144
 Animator:
   serializedVersion: 5
@@ -730,13 +738,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 6254426522054212212}
   _transform: {fileID: 6940586275033582369}
   _buttonRects:
   - {fileID: 0}
   - {fileID: 0}
+  _dottedLine: {fileID: 0}
+  _lockImage: {fileID: 0}
+  _lockedFishImg: {fileID: 0}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!95 &7504568338220615170
 Animator:
   serializedVersion: 5
@@ -809,6 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9617adbf2fb3cc84f9308594963df8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _withLevel: 0
   _increaseStep: 50
   _maxAmount: 600
   _cannonObjs:
@@ -816,9 +833,16 @@ MonoBehaviour:
   - {fileID: 8035591043564667283}
   - {fileID: 2754001215144215642}
   - {fileID: 7274775263275791584}
+  _laserCannon: {fileID: 0}
+  _laserPowerUp: {fileID: 0}
+  _drillPowerUp: {fileID: 0}
+  _hammerSmash: {fileID: 0}
+  _hammerSmashTitle: {fileID: 0}
   _playerManager: {fileID: 0}
   _cannonController: {fileID: 2244431437289867394}
   _audioSource: {fileID: 5326792792354926476}
+  _cannonBaseOneImg: {fileID: 0}
+  _cannonBaseTwoImg: {fileID: 0}
 --- !u!114 &6272356450609100023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,13 +1419,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 2421092828335193581}
   _transform: {fileID: 6085642879514301430}
   _buttonRects:
   - {fileID: 0}
   - {fileID: 0}
+  _dottedLine: {fileID: 0}
+  _lockImage: {fileID: 0}
+  _lockedFishImg: {fileID: 0}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!95 &4605548968617806858
 Animator:
   serializedVersion: 5
@@ -1552,13 +1584,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animators: []
+  _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs: []
   _shootPoint: {fileID: 3895009924342267451}
   _transform: {fileID: 1954483841029154957}
   _buttonRects:
   - {fileID: 0}
   - {fileID: 0}
+  _dottedLine: {fileID: 0}
+  _lockImage: {fileID: 0}
+  _lockedFishImg: {fileID: 0}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0
 --- !u!95 &928278729134679364
 Animator:
   serializedVersion: 5
@@ -1748,6 +1788,8 @@ MonoBehaviour:
   - {fileID: 928278729134679364}
   - {fileID: 4419538260040985144}
   - {fileID: 4605548968617806858}
+  _animator: {fileID: 0}
+  _rocketAnimator: {fileID: 0}
   _bulletPrefabs:
   - {fileID: 6015228984462601164, guid: a200047c0db1f42488c8950757d96436, type: 3}
   - {fileID: 5973510395487048083, guid: 0c634d14b78bca74781a63b5ca81a958, type: 3}
@@ -1758,4 +1800,10 @@ MonoBehaviour:
   _buttonRects:
   - {fileID: 0}
   - {fileID: 0}
+  _dottedLine: {fileID: 0}
+  _lockImage: {fileID: 0}
+  _lockedFishImg: {fileID: 0}
   _shootSpeed: 4
+  _cannons: []
+  _currentCannonIndex: 0
+  withLevel: 0

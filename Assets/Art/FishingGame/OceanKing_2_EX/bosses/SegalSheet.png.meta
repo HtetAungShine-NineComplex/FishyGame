@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: 6b22be378c100db499142fe043515072
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Segal_00000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a2cb123f63e664c83ad0ae14f497ff
+      internalID: 1899017555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00001
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f0aca9a0de4cb4e8d55ce82bae6119
+      internalID: -1432895726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00002
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febd362a3ab3c6449bc888b57bb0e86a
+      internalID: -1216479406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00003
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73fc0266f0f94b0448b4b46553c191be
+      internalID: 637397765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00004
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378c6d980a535784099cbcf2e6654d75
+      internalID: -681899727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00005
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1ec92d1bc115948af15f8a9b0540d6
+      internalID: -254491365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00006
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 3556
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09eb9dd533ebe9d40ac743c3bcdeb09d
+      internalID: -749814352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00007
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a54cb727a886d4e82474ba83fba447
+      internalID: -1900468151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00008
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe549394af6a964b80226853dd06650
+      internalID: 1093564040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00009
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd1e4fbfdad2b954688f7f697e842fec
+      internalID: -1328392825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00010
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88d9b2bafcdc08409331dd2c0efc864
+      internalID: 1473441636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00011
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90001b613f286f045b505a9f243566cd
+      internalID: -1450677891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00012
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b16884e5d128048a5ee142212aea84
+      internalID: 1034315469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00013
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 3016
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3d401369bd1114380c69392d1eca02
+      internalID: -693466505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00014
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad5395b654d718419412a814791d8bb
+      internalID: -1398435775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00015
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f29fb9ef16ed646ae6d3398df09ff2
+      internalID: 2089606529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00016
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b837ba43b828fe4081c1e032cbabe5e
+      internalID: -1426725255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00017
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c0122b2ac415349b56259b03091a11
+      internalID: 632831080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00018
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3db1f76a77b5343880bc1aa2538228
+      internalID: -1401411200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00019
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d911184e3af234ea979208659660e0
+      internalID: -532224381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00020
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 2476
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6cf78fe59fd5448b4c391a32a27e5e
+      internalID: 1734526457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00021
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fe212bbbe055b41a9afe094e293cea
+      internalID: 1868506862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00022
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6057e389fa008084381a707e9e4d955f
+      internalID: -1832232577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00023
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670609989d90386468c4df5e28e20974
+      internalID: -1967029797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00024
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6495fd8243740b841b907b6be7350bf8
+      internalID: -1358902759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00025
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d0009506dba414fb2a807cde70f266
+      internalID: 156979793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00026
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215cdf077c399bd408498cd0c97e429e
+      internalID: 1677540009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00027
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1936
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c73374f5c71d04e820c5ecf7ff7dbd
+      internalID: -485440245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00028
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1396
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3caf55519978bd54e96fda3ad6245635
+      internalID: 2099480181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00029
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1396
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de822361273a5949ada31015b5fc82f
+      internalID: 837059184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00030
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1396
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81324d5ca648fd242b1403cd716c60df
+      internalID: -299237457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00031
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1396
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9f9449a07bd6142ab5256537575d99
+      internalID: -1229360444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00032
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 1396
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8171ddbf2a1c06547b3ffccf90234839
+      internalID: -1226717528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00033
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 1396
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de46ab77cd17094ea2c6c545cf8938d
+      internalID: -1294070480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00034
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1396
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf9e95e3ac469144ad096d9b94bb415
+      internalID: -237886611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00035
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 856
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81964edb97fd85e4faf6cee4f0398b13
+      internalID: 2046274293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00036
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 856
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032981204ed0e7f4c8b0f30f5ac2c336
+      internalID: -1778682419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00037
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 856
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302d746bff9f4a64298f78e37d503c74
+      internalID: 1936194613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00038
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 856
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef8c3d13bfa32041a39215eb4a17ec4
+      internalID: 1506942799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00039
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 856
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c5b5e4bea088bd448b712cfee2db189
+      internalID: 1803148785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00040
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 856
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faabe35454b516d4e87e08873d893195
+      internalID: -1126540493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00041
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 856
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c38dcaa7ff97b4392c23c9d6e355ee
+      internalID: -1954333878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00042
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 316
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83c4af36349f0349a777637eade7585
+      internalID: -870505380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00043
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 316
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d3fa8f8576c6848ad5aee8f78b9bb7
+      internalID: -480006067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00044
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 316
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b45d98cce1811498ec4b0f2c676dfb
+      internalID: 652201206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00045
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 316
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547ed5276adb8ed4cad01dbd2480ba77
+      internalID: -1305900375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00046
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 316
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015a8133b9048634e863b5916c750f8d
+      internalID: -1615718005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Segal_00047
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 316
+        width: 540
+        height: 540
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887cca34ad0481745a9adfccdfcdfa58
+      internalID: -117856482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e2f690f2f276a1840af1aaeda9b3da39
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Segal_00000: 1899017555
+      Segal_00001: -1432895726
+      Segal_00002: -1216479406
+      Segal_00003: 637397765
+      Segal_00004: -681899727
+      Segal_00005: -254491365
+      Segal_00006: -749814352
+      Segal_00007: -1900468151
+      Segal_00008: 1093564040
+      Segal_00009: -1328392825
+      Segal_00010: 1473441636
+      Segal_00011: -1450677891
+      Segal_00012: 1034315469
+      Segal_00013: -693466505
+      Segal_00014: -1398435775
+      Segal_00015: 2089606529
+      Segal_00016: -1426725255
+      Segal_00017: 632831080
+      Segal_00018: -1401411200
+      Segal_00019: -532224381
+      Segal_00020: 1734526457
+      Segal_00021: 1868506862
+      Segal_00022: -1832232577
+      Segal_00023: -1967029797
+      Segal_00024: -1358902759
+      Segal_00025: 156979793
+      Segal_00026: 1677540009
+      Segal_00027: -485440245
+      Segal_00028: 2099480181
+      Segal_00029: 837059184
+      Segal_00030: -299237457
+      Segal_00031: -1229360444
+      Segal_00032: -1226717528
+      Segal_00033: -1294070480
+      Segal_00034: -237886611
+      Segal_00035: 2046274293
+      Segal_00036: -1778682419
+      Segal_00037: 1936194613
+      Segal_00038: 1506942799
+      Segal_00039: 1803148785
+      Segal_00040: -1126540493
+      Segal_00041: -1954333878
+      Segal_00042: -870505380
+      Segal_00043: -480006067
+      Segal_00044: 652201206
+      Segal_00045: -1305900375
+      Segal_00046: -1615718005
+      Segal_00047: -117856482
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

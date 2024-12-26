@@ -1,0 +1,1315 @@
+fileFormatVersion: 2
+guid: d8d2a0157883f294a8356dd35ae5ad22
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Coffin_00000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0f22aef444b7a4693b2b69e0d47b8c
+      internalID: -422731922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00001
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7b4dae7aad57f448e9d42ee36b4c80
+      internalID: -83241525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00002
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484f4de1f23c85343a03ccc3a83153ad
+      internalID: 204309062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00003
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5cf3c7d3f63ba4797cdcc820e2799e
+      internalID: -976030365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00004
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c8910b0e7243c468c77624fccbf882
+      internalID: 118073555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00005
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9271b98ca2d998947b9bcd0f60657a46
+      internalID: -2118969166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00006
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2dcb817a14970e4eb31720c818d85a5
+      internalID: -335953912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00007
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb861fd526ea10e4089e79141ab6b78b
+      internalID: -1714608808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00008
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852b09b26503d4248b85e3a116063e03
+      internalID: 381982327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a63a898ee563a4b8c0dbf88e5a677c
+      internalID: 1182068819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00010
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf84ddbda2c76c4597e7470975684b3
+      internalID: -440275784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00011
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c2ad9b5301d054f9be8fdf62712c76
+      internalID: -1330466141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00012
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd78923a411e2e439eac49eb410140e
+      internalID: -127969755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00013
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314469f77cf7a254cb50f5a890d480ec
+      internalID: 658698709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00014
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39daa58f1f21f7c4bbc5e7ddee19da3e
+      internalID: 1861501727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00015
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affeabfe62301304184cd542393ddd16
+      internalID: -2084801966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00016
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a8a9ac63124394c8c13a458411b1c7
+      internalID: -71733414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00017
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 1472
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b842cd93040107a4d97c12b1a4f08f1c
+      internalID: -1730650292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00018
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c209e8b2588a61a48906c530c6d32235
+      internalID: 156942005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00019
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9746155424327c4a87cd29b4a06bd1a
+      internalID: -940509248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00020
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9845c665ccaa444486162c59a6881a1
+      internalID: -403740342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00021
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1760
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7605bb8e71be4bf4b9ac9aa1a4446030
+      internalID: 168633393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00022
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d727975186f4d46a8b64c2cd4f6fb9
+      internalID: 910032446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00023
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a305341201885d442b014f59a960d583
+      internalID: -762621006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00024
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea3bd2bf38036644b7d996996378d04
+      internalID: 1414385624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00025
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240f1bb269183e0449297b39e62108a5
+      internalID: -635718330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00026
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd269d1f8566cc4fa4197a3a4975692
+      internalID: -491865994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00027
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 1184
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775b54feee46d084786698f07e01923b
+      internalID: -493743863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00028
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cff1f2dbda7b3e48af5f1637aabe690
+      internalID: 1860301935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00029
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb275159d894e54a946eddcd321b847
+      internalID: 1724116252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00030
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9420876d6fbb3a84382531e7c0bb589a
+      internalID: -525859176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00031
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be2052907365194481657a362f81a5d
+      internalID: -1340734443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00032
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11143c07af6180849ad35d10156be0c4
+      internalID: 624734075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00033
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5015e3e198e1d5e46922e87e9fdbcf68
+      internalID: -1091929377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00034
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a0c403d9a407246a13a2e0ba95d9ec
+      internalID: 2109737204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00035
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc208fddfee33074a85ca42ea0750b1e
+      internalID: 430856702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00036
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 896
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257e6159b6f97e045a64fe447049b291
+      internalID: -1215996849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00037
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b950e701a205d47bf9463eac560055
+      internalID: 1569950564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00038
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fee3ad4ba88fc43a650b4c164ee2d6
+      internalID: 479877250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00039
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08546a111da827408881ac31d670247
+      internalID: -1232342413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00040
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9090464f1dc790847bdf8ea573e4afeb
+      internalID: -1919076432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00041
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9500117e2e706ec449f1a65f3f2278cf
+      internalID: 1179024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00042
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1792c8f7550c3664d89df0d62e024270
+      internalID: -726045341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00043
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd593e716299ee84a8f569f0e608c3a7
+      internalID: 2077059025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00044
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a1fb5d023df254993e886bf605abb2
+      internalID: -1470865925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00045
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 608
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de08ac440994fe742947f4a1bcf2f218
+      internalID: -40580832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00046
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4912f44ca795024b8f5c0285bd69922
+      internalID: -1891455177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00047
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8923cca0859a684a8ea592fec4b8bde
+      internalID: -67094563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00048
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d564cc1ced6bb944be6255bc63e2082
+      internalID: -1944063025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00049
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14ea9d9091480449bf8f3097a86a6ac
+      internalID: 1496412960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00050
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f654519a92d3464092742dfb3702bb6
+      internalID: 2134844475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00051
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be16a783364602a4f875e36aca321561
+      internalID: -547009829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00052
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0379d307497e0024f9d5492ed8801866
+      internalID: 107980674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Coffin_00053
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 320
+        width: 436
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59f6b84834d537428959a09986da08c
+      internalID: -1617724515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9e98d6db7bdc0014894791663c211840
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Coffin_00000: -422731922
+      Coffin_00001: -83241525
+      Coffin_00002: 204309062
+      Coffin_00003: -976030365
+      Coffin_00004: 118073555
+      Coffin_00005: -2118969166
+      Coffin_00006: -335953912
+      Coffin_00007: -1714608808
+      Coffin_00008: 381982327
+      Coffin_00009: 1182068819
+      Coffin_00010: -440275784
+      Coffin_00011: -1330466141
+      Coffin_00012: -127969755
+      Coffin_00013: 658698709
+      Coffin_00014: 1861501727
+      Coffin_00015: -2084801966
+      Coffin_00016: -71733414
+      Coffin_00017: -1730650292
+      Coffin_00018: 156942005
+      Coffin_00019: -940509248
+      Coffin_00020: -403740342
+      Coffin_00021: 168633393
+      Coffin_00022: 910032446
+      Coffin_00023: -762621006
+      Coffin_00024: 1414385624
+      Coffin_00025: -635718330
+      Coffin_00026: -491865994
+      Coffin_00027: -493743863
+      Coffin_00028: 1860301935
+      Coffin_00029: 1724116252
+      Coffin_00030: -525859176
+      Coffin_00031: -1340734443
+      Coffin_00032: 624734075
+      Coffin_00033: -1091929377
+      Coffin_00034: 2109737204
+      Coffin_00035: 430856702
+      Coffin_00036: -1215996849
+      Coffin_00037: 1569950564
+      Coffin_00038: 479877250
+      Coffin_00039: -1232342413
+      Coffin_00040: -1919076432
+      Coffin_00041: 1179024
+      Coffin_00042: -726045341
+      Coffin_00043: 2077059025
+      Coffin_00044: -1470865925
+      Coffin_00045: -40580832
+      Coffin_00046: -1891455177
+      Coffin_00047: -67094563
+      Coffin_00048: -1944063025
+      Coffin_00049: 1496412960
+      Coffin_00050: 2134844475
+      Coffin_00051: -547009829
+      Coffin_00052: 107980674
+      Coffin_00053: -1617724515
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

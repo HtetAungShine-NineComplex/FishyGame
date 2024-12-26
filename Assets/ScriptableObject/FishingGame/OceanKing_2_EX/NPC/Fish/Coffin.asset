@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: Coffin
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: -422731922, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  MaxHealth: 10000
+  Score: 500
+  CoinSpawnAmount: 5
+  FishFrames:
+  - {fileID: -422731922, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -83241525, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 204309062, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -976030365, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 118073555, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -2118969166, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -335953912, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1714608808, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 381982327, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1182068819, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -440275784, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1330466141, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -127969755, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 658698709, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1861501727, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -2084801966, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -71733414, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1730650292, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 156942005, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -940509248, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -403740342, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 168633393, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 910032446, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -762621006, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1414385624, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -635718330, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -491865994, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -493743863, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1860301935, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1724116252, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -525859176, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1340734443, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 624734075, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1091929377, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 2109737204, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 430856702, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1215996849, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1569950564, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 479877250, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1232342413, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1919076432, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1179024, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -726045341, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 2077059025, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1470865925, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -40580832, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1891455177, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -67094563, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1944063025, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 1496412960, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 2134844475, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -547009829, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: 107980674, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  - {fileID: -1617724515, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  FishDefaultFrame: {fileID: -422731922, guid: d8d2a0157883f294a8356dd35ae5ad22, type: 3}
+  FishFrameRate: 0.2
+  speed: 1
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

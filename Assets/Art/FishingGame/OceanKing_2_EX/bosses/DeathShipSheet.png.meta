@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: cc5ceb00499a8fa4bbeb41cc1944e266
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DeaethShip_00000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dafd8b8e8e6cf49469dfd419da7b75ac
+      internalID: -1173948974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00001
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a45f8c21d7fa74d8618e169dbad3fc
+      internalID: 1955141087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00002
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a21702625fd1e4380f52c0392601c7
+      internalID: -785523151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00003
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bac9b3a7fe785b4d9b365946aa390ce
+      internalID: 2042527528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00004
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e878969b3fcbd45a702ecac8a4cbd9
+      internalID: 1513641806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00005
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 440008c75e6fd364f8d8a512aebe135f
+      internalID: 914198208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00006
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b52b4fbd365da4a895d92c5c8a58fd
+      internalID: 885662167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00007
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba26a54d391c6044fba286394661ccc6
+      internalID: 396340339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00008
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e482a007e801346a694b62f76660a5
+      internalID: -1628083178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00009
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959ccb1ccb2f7844f8db61ee0e460b05
+      internalID: 2132898434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00010
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ef2418c2b37934b937e23ee7e02c43
+      internalID: 160738205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00011
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb447759f854494aa73c8ec81c915ab
+      internalID: 426431372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00012
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef872f90663e6243b29b674c67ee0b6
+      internalID: 391328275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00013
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f67164dad1959408023aa4d96f72dc
+      internalID: -607349232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00014
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f348988da07c3d94a8ac4a8df75c631f
+      internalID: 912786268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00015
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d3e8bcc5432814080a9fd8b740e667
+      internalID: -1857137339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00016
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65445d4896a890d4abf9c006b71ade6c
+      internalID: -1833161274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00017
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3dd3d7c64dfd94f8e65a7bf1643005
+      internalID: -500881671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00018
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35a6fb0f5bf22f418f5e63c262e00ec
+      internalID: 2105736156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00019
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24db207f42f7ae5479522bfe5f2e6467
+      internalID: 506184008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00020
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1048
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b16cfb856b0e846ba642bce75443bb
+      internalID: 175353819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00021
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1048
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e7316a9a763494ebe3d069a5e74039
+      internalID: 527966807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00022
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1048
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9d77de8c48df44e88b16408449f5b4
+      internalID: -974635646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00023
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1048
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58928f7149ab9b4e9c22d6fbef63a4f
+      internalID: -1422970587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00024
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 1048
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac189f7d251a7843aa6bb3e57ee6b84
+      internalID: 375984955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00025
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21acd895f3c2754091a176f8113fd70
+      internalID: 400697465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00026
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aaebb44ed36ca94eb6681c983609e19
+      internalID: 1624294791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00027
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245fe2f7f55473f4f835df5263941764
+      internalID: 1614412736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00028
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e69807f0ddd934d8be77fe5604b952
+      internalID: -1206260007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00029
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 848
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e55f3bae0fa9c488c3558ad5dfcc5d
+      internalID: 628756461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00030
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113392fbdb09cc9418463558d3f81e59
+      internalID: 1851348944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00031
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8139df682ce0d794aa79158034822f74
+      internalID: 1190002555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00032
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc8a650f26faca498c0d91d1fb2bfcb
+      internalID: 192295715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00033
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd8ef63a7517cc4191055f2fa82cdcc
+      internalID: -2054063718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00034
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 648
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a6cbc9de4d0f64eaabdc576aa45767
+      internalID: -381051511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00035
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e44d6301e1358439430b0fa4bf4975
+      internalID: -2029381585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00036
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3fd33e82b5748409597323ffeb123a
+      internalID: -833335038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00037
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1825ad551407354b8df811d2aa86a75
+      internalID: -814703890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00038
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e117db9b0d54dd4b8ff73bcc85d8663
+      internalID: -1503477267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00039
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 448
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4034f6803a89da24aa790a5d73e952a0
+      internalID: -767575494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00040
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd627f0805759b42a28951a1b7503a2
+      internalID: 1029821449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00041
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35f7146df3196c4e8f26f4c5d339d39
+      internalID: -870217848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00042
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919e2f3aa2fb0084bb5ece2d8ef40071
+      internalID: -1734409264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00043
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbbe1c04da982d46b2b053caf428071
+      internalID: 2039733974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00044
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 248
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ae1330762c6f24e8db1c35fc26dafc
+      internalID: -1125137103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00045
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31368fc34712d043bc0dad795a8e4dd
+      internalID: -1157290370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00046
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 48
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 221d7863d5a66584393436d519c3b61b
+      internalID: 195513881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeaethShip_00047
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 48
+        width: 700
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc65b8bbeb883204685d65b1ceff1182
+      internalID: 1418461216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1b6ea6000dd9a5c41bed8a907d974a1a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DeaethShip_00000: -1173948974
+      DeaethShip_00001: 1955141087
+      DeaethShip_00002: -785523151
+      DeaethShip_00003: 2042527528
+      DeaethShip_00004: 1513641806
+      DeaethShip_00005: 914198208
+      DeaethShip_00006: 885662167
+      DeaethShip_00007: 396340339
+      DeaethShip_00008: -1628083178
+      DeaethShip_00009: 2132898434
+      DeaethShip_00010: 160738205
+      DeaethShip_00011: 426431372
+      DeaethShip_00012: 391328275
+      DeaethShip_00013: -607349232
+      DeaethShip_00014: 912786268
+      DeaethShip_00015: -1857137339
+      DeaethShip_00016: -1833161274
+      DeaethShip_00017: -500881671
+      DeaethShip_00018: 2105736156
+      DeaethShip_00019: 506184008
+      DeaethShip_00020: 175353819
+      DeaethShip_00021: 527966807
+      DeaethShip_00022: -974635646
+      DeaethShip_00023: -1422970587
+      DeaethShip_00024: 375984955
+      DeaethShip_00025: 400697465
+      DeaethShip_00026: 1624294791
+      DeaethShip_00027: 1614412736
+      DeaethShip_00028: -1206260007
+      DeaethShip_00029: 628756461
+      DeaethShip_00030: 1851348944
+      DeaethShip_00031: 1190002555
+      DeaethShip_00032: 192295715
+      DeaethShip_00033: -2054063718
+      DeaethShip_00034: -381051511
+      DeaethShip_00035: -2029381585
+      DeaethShip_00036: -833335038
+      DeaethShip_00037: -814703890
+      DeaethShip_00038: -1503477267
+      DeaethShip_00039: -767575494
+      DeaethShip_00040: 1029821449
+      DeaethShip_00041: -870217848
+      DeaethShip_00042: -1734409264
+      DeaethShip_00043: 2039733974
+      DeaethShip_00044: -1125137103
+      DeaethShip_00045: -1157290370
+      DeaethShip_00046: 195513881
+      DeaethShip_00047: 1418461216
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

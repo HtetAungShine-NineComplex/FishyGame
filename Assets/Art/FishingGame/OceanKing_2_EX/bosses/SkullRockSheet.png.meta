@@ -1,0 +1,3295 @@
+fileFormatVersion: 2
+guid: 7569ca8fbed30e14b80702dbd55d9008
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SkullRock_00000
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b7a77216a527b41ba8fa75d2d2eaf6
+      internalID: -1735857719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00001
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89ffd482fff3f84b8cef5d8f2f155f0
+      internalID: 299469520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00002
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7925c45fdde36c946bce7d40fcf89f1c
+      internalID: 1038287591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00003
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41b370dea780954e86d8315f406d060
+      internalID: -1858946043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00004
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c94fd74e3494a4997db781eed551a8
+      internalID: -398619218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00005
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7997e22fc7f2384394afa535f14908e
+      internalID: 1126675383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00006
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eab1011515179c43a05d41eb1252619
+      internalID: -303592348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00007
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27768d65de7a0f4b99ed84703d98520
+      internalID: -1630652591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00008
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 7688
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b21c6b8c7e90464aa2cd1dee8d04851
+      internalID: -1232542749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00009
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c53da4011eb04c439c7be24d202cf84
+      internalID: -1814427053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00010
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe38a79f92a51894a8fa21669f29c2d5
+      internalID: 528461329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00011
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1177e76a0679414ca880f791c2a8392
+      internalID: 2018568468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00012
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b79321bf76ce124c9577995ffdf1d2f
+      internalID: 1074503266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00013
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f3c77a8d9d8ba45a5cea19a7b02ab7
+      internalID: -605675957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00014
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45d35c75f47ba9488568cf34d303eb9
+      internalID: -196515027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00015
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31428a26ce8785e44ad503458787862f
+      internalID: 714089799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00016
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc892d209a53e64fa071f2dee339f54
+      internalID: -325960349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00017
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 7184
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf341dc5b53ed5478f5f302d1e511d6
+      internalID: -1668297979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00018
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167780c5f86882b42bab43c707ca4c7d
+      internalID: -997289640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00019
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50375e9968a70d4eaf8bb79f5f238e8
+      internalID: -278767486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00020
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96d80221c8adbe41a01e617ac3a0416
+      internalID: -1374104958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00021
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f214cc9dda2ff7489c19a8756f5f7f9
+      internalID: -1706531018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00022
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e149c94db8d38f34688e2ceb69915a6a
+      internalID: 1928846325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00023
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3f8ba3feebd4b418db0c42883e83dd
+      internalID: 1878847470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00024
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db11d1f774c5f0429df0fe4440fd368
+      internalID: 1918552145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00025
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32df895216deeed439bbe154a02c8293
+      internalID: -408533293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00026
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 6680
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7debc4ccbdce5fb45909c13fe036dbc3
+      internalID: 403722415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00027
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75aaf63608b635a4695ab66bbcbaccdd
+      internalID: -681313426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00028
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225ceaf54f77c334896aff4644498121
+      internalID: 422222546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00029
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07d4ae56c5654043b308646f4eb571b
+      internalID: -499954334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00030
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d341bb7c533f0419f61c3615bcc994
+      internalID: -952576875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00031
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977dd9f1c5a8cd7458ebcdec2e05a816
+      internalID: -879220542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00032
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017ea3b95ff9935448e5db7b776c8047
+      internalID: 1296626774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00033
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cd8f15f606db24cb1c8f4e9b7674da
+      internalID: 1669455163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00034
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e9e98723a50e24faedc73085ec6e5c
+      internalID: 174240312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00035
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 6176
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2ecfbdda23ffe41b9b49ea6d90d591
+      internalID: 2131563593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00036
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca4b6782edde8c40868e808c54560b0
+      internalID: 745659409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00037
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cca3eae07283664d83d0740546028c1
+      internalID: -800229078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00038
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e77bee1d63ce54cba8d32378ef66b3
+      internalID: -598983550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00039
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a824744990e245c429f788430ac05217
+      internalID: -1388726311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00040
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc77dcda79a9ee4caadc3d512836219
+      internalID: -90692907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00041
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2cfcd5ee13901a4684634276a3038a5
+      internalID: -2097409110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00042
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b705f24f4b9ed634cb6c063c7ab713da
+      internalID: -1932481488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00043
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3323f789c8cf5384191cf1c3d95dfe74
+      internalID: 1844140779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00044
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 5672
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4093531ba6bf354c895f5c77082adf6
+      internalID: 831531955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00045
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0483b6d542f2c6c458963a89db8ef2be
+      internalID: -1797802400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00046
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e3d0584aff7114c903976827c3103f
+      internalID: -1886923134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00047
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79a416d716b7184aa0f561746f9eab3
+      internalID: -252339490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00048
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4c723a93dffd76429ccb6926ad78f2a
+      internalID: 1875868859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00049
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44522ae38757b3241ae95c9d9a7b9dcb
+      internalID: -885175760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00050
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101eb721dd71cde4994924d199f10fe7
+      internalID: -2141840660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00051
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4457197a1ab613f4794d3a51f8529e97
+      internalID: -785739903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00052
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e2d5a9a6086884f9a7b0a795fe5939
+      internalID: -477299109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00053
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 5168
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a89e73f898bb64c863c8d1bb47a0f6
+      internalID: -811544620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00054
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2cb8ad105c463341a46d5a48b03f7c0
+      internalID: 1762347820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00055
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfa3950f9e1c7c4181dcfd9bfbe34f3
+      internalID: 1415292901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00056
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca248a57add1ee4482aff30c4193e8f
+      internalID: 1068533816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00057
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11178f700e7bfe346884aa69732b0fa6
+      internalID: -624661084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00058
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a064f819b396fe4e8af6466783afba3
+      internalID: -134000561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00059
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f545ad497e0b5142bfd6db498f8a339
+      internalID: -434290234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00060
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7726179b68ffaf84daaf3b90cde6d981
+      internalID: -1363523224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00061
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683719900614644488602f746d769bd5
+      internalID: -890937328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00062
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 4664
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bfa98dc7643724cb36e7063bbed12c
+      internalID: 1696465109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00063
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26148535c1e21c4386e38cef2db771c
+      internalID: -80298714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00064
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83625890eb6263540a744d24b7ea3df2
+      internalID: -1421672115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00065
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de8462974a344743bbe0fa5800fc6bc
+      internalID: 93235677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00066
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342b58ca20a2f414ba113d62073bade8
+      internalID: -1524531598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00067
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd939d5baf1faa149a491173f206b08b
+      internalID: 1824059865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00068
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37903969656afd49bddccdcb46f984a
+      internalID: -1309175067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00069
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee94e96caa491349b388a496eda7266
+      internalID: 451870518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00070
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3386102f1bb723844bf12667eb4ab249
+      internalID: -1466144596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00071
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 4160
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905adce0d0c30b94fb9b91a39bd15090
+      internalID: -1286132030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00072
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632fa9c5cf65b8c44b52405417e6a985
+      internalID: 32321383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00073
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b6b30dd2a78ff44aeeb33144f3b81b
+      internalID: 1269191420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00074
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfff840c21f572547baa131c873b899b
+      internalID: 1696732702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00075
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c0a7d66a3d5ed4aa0b7e1402b2882e
+      internalID: 782949965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00076
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c2e4f4f4015384188c4f6cf7b210af
+      internalID: 479716289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00077
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87b075dba8e3c8e43a66d50124cd57b1
+      internalID: -958981385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00078
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0017f0e23efcaf149a432f0a0ef45f6d
+      internalID: -1491772362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00079
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635273f52675ba04aa887c6b68826e56
+      internalID: 1167506248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00080
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 3656
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee1d87ba6477e44a9c1e51aa45e8451
+      internalID: 2032969557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00081
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fcd5b4fa01ddb4a9f1732152bd8d14
+      internalID: -1467633964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00082
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49f3f3586a2e744a80816a34e10be6d
+      internalID: 606431538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00083
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cacfe570b5924e4db9f429997aa38d3
+      internalID: 1032510544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00084
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d833f0219ccb76b4a92115f8b45472c7
+      internalID: -1426119303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00085
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd8d1a3f2b81094dabbcdc2ef168208
+      internalID: 457248145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00086
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49615c063f750d4dab3adeff270752f
+      internalID: -2082159293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00087
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fac2228d044374398eeb78444936d9
+      internalID: -551939711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00088
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342dd73a1fd05884ab6fb16421707fd3
+      internalID: -1499590330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00089
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 3152
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8e315105ff4cfd40a5f562fbee03230
+      internalID: 614283546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00090
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f84e29b61c7b0d4ca980b9a30b2fe13
+      internalID: 1486624036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00091
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4249945d4afb704fb91065ad970968d
+      internalID: 118971857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00092
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f95b9a6d0c560e4a9cf7a066314ff4a
+      internalID: -1039970724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00093
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94196a1b1e842594e824026afdd5e37a
+      internalID: 128871197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00094
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9d1c8bd94fe2546908af325855f8e0
+      internalID: -41574245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00095
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9d99d15dae12c40bcb96898ab67fdc
+      internalID: -1233085942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00096
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463fed4df75d8e648aab5495a342620a
+      internalID: -596515807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00097
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 020eddd7ad07c7c4f9f0e376eb065817
+      internalID: 752520695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00098
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 2648
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3955729a38a0574a87463332b9fa00f
+      internalID: -1630393464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00099
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 187245bf90958754f894e5ab5a9f27ce
+      internalID: -706705574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00100
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebb96fc144bc1742be07d3a475433a3
+      internalID: 719626735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00101
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537fcea45ad55f742b2824986ab2d166
+      internalID: 228140312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00102
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf13aa6faa19de488c6c163e0b8c76b
+      internalID: -1674877585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00104
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d767630253c294aa4d13c47d3b94e9
+      internalID: 2087635158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00106
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8baf2d3a5a86c94b8cdcd6e855364b0
+      internalID: 62189898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00108
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcdc068b230370f4d87020c78b252070
+      internalID: 1590145660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00110
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387521cbafc31d94393a1e37649968ee
+      internalID: 790960484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00111
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 2144
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed7bb7addcdccd4b8a34684a427e3fc
+      internalID: 39435922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97628e13705bd7447a7f79641237df50
+      internalID: 1130115160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00113
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc6a8df60e0cf0438c0bff8038c6153
+      internalID: -1014313643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00114
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cabeb022bcdbe84c82ddbb2a44e7fc2
+      internalID: -2010723760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00115
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5f835ff3dc3ba4cb03871d49355478
+      internalID: 650457914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00116
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fde4d0ec04ed74eb0c937db8330de5
+      internalID: -1981563583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00117
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d33b6a25992333478ad2a3355b4d3bb
+      internalID: -408446388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00118
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679e551c8f1e8f643b1e7e27e76b7d94
+      internalID: -384254937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00119
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ecad2c3211db943966754f262ccd25
+      internalID: -871128493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00120
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 1640
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28766efa9f3a48c438ff66bd621b5b28
+      internalID: 1686422546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00121
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 341bb61016068b64fa46d63d13ce2b46
+      internalID: 696991068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00122
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a39b89310e35da4a941bfbc13ad8039
+      internalID: -2118228769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00123
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f242c07936690e439ebc89035e162f7
+      internalID: -1268018904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00124
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa2ad228b87de74ebe3fdab5fef3d6d
+      internalID: 887047415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00125
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68c5eeaaeb08fc4b8197be53ccde0b2
+      internalID: 1760885249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00126
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc67e9ab0e1035419f9713a0145816d
+      internalID: -1517230183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00127
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24804904e86c334ebf7518cb4c86e94
+      internalID: -932983877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00128
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca9ec457f45dee47b75a0aae98dd73e
+      internalID: 366564084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00129
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 1136
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f835e066fae78df46ac961a2a3c07325
+      internalID: 1752100648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a833e4ab873d54c9fedb3f9caaa6bb
+      internalID: 455017969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00131
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382d3f0fd7d94064bbd2ddc425fb1f27
+      internalID: -838722873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00132
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8815d218a1cc60448ea610d67f7ba3b
+      internalID: -1696403048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00133
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252d1c7fdad03354a92038f79ef86e19
+      internalID: -62543452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00134
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092ebaec0b3c19e4bbb4ec2c6389a440
+      internalID: -608036439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00135
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2632d4a5f70c4c44f9c61e77ed176b0e
+      internalID: -66240104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00136
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3e272f00974a548857337dd5021607
+      internalID: -329283002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00137
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f29732490367964d85de0872ec429c2
+      internalID: 333067123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00138
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 632
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a0790402cfb7f4dba247173daa959d
+      internalID: 1727828108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00139
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cf7ec1c64a3ef4da8a5feafbcb31f8
+      internalID: 918093226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00140
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c222c239e174b4bb18884472d5baa1
+      internalID: 980418483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00141
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff190de9e572e948a36dd59070b72f3
+      internalID: 2009375575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00142
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b308c960b3664494a804c03483115430
+      internalID: -2083228962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00143
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4441958c12c8b824d856d96190d35cd1
+      internalID: -207674715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00144
+      rect:
+        serializedVersion: 2
+        x: 4480
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff375a8931045714e98f60c49b9dcc54
+      internalID: -1566156577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00145
+      rect:
+        serializedVersion: 2
+        x: 5376
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2543ead69b02a7d4d94985c684ee225c
+      internalID: 1367327786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00146
+      rect:
+        serializedVersion: 2
+        x: 6272
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841900e23218a86498e161e4c93581f2
+      internalID: -288416558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullRock_00147
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 128
+        width: 896
+        height: 504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961774d563e99ac4c957660ba38e86c0
+      internalID: 1014005861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 24c40970ba0b29a43a283b21de5bf39d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SkullRock_00000: -1735857719
+      SkullRock_00001: 299469520
+      SkullRock_00002: 1038287591
+      SkullRock_00003: -1858946043
+      SkullRock_00004: -398619218
+      SkullRock_00005: 1126675383
+      SkullRock_00006: -303592348
+      SkullRock_00007: -1630652591
+      SkullRock_00008: -1232542749
+      SkullRock_00009: -1814427053
+      SkullRock_00010: 528461329
+      SkullRock_00011: 2018568468
+      SkullRock_00012: 1074503266
+      SkullRock_00013: -605675957
+      SkullRock_00014: -196515027
+      SkullRock_00015: 714089799
+      SkullRock_00016: -325960349
+      SkullRock_00017: -1668297979
+      SkullRock_00018: -997289640
+      SkullRock_00019: -278767486
+      SkullRock_00020: -1374104958
+      SkullRock_00021: -1706531018
+      SkullRock_00022: 1928846325
+      SkullRock_00023: 1878847470
+      SkullRock_00024: 1918552145
+      SkullRock_00025: -408533293
+      SkullRock_00026: 403722415
+      SkullRock_00027: -681313426
+      SkullRock_00028: 422222546
+      SkullRock_00029: -499954334
+      SkullRock_00030: -952576875
+      SkullRock_00031: -879220542
+      SkullRock_00032: 1296626774
+      SkullRock_00033: 1669455163
+      SkullRock_00034: 174240312
+      SkullRock_00035: 2131563593
+      SkullRock_00036: 745659409
+      SkullRock_00037: -800229078
+      SkullRock_00038: -598983550
+      SkullRock_00039: -1388726311
+      SkullRock_00040: -90692907
+      SkullRock_00041: -2097409110
+      SkullRock_00042: -1932481488
+      SkullRock_00043: 1844140779
+      SkullRock_00044: 831531955
+      SkullRock_00045: -1797802400
+      SkullRock_00046: -1886923134
+      SkullRock_00047: -252339490
+      SkullRock_00048: 1875868859
+      SkullRock_00049: -885175760
+      SkullRock_00050: -2141840660
+      SkullRock_00051: -785739903
+      SkullRock_00052: -477299109
+      SkullRock_00053: -811544620
+      SkullRock_00054: 1762347820
+      SkullRock_00055: 1415292901
+      SkullRock_00056: 1068533816
+      SkullRock_00057: -624661084
+      SkullRock_00058: -134000561
+      SkullRock_00059: -434290234
+      SkullRock_00060: -1363523224
+      SkullRock_00061: -890937328
+      SkullRock_00062: 1696465109
+      SkullRock_00063: -80298714
+      SkullRock_00064: -1421672115
+      SkullRock_00065: 93235677
+      SkullRock_00066: -1524531598
+      SkullRock_00067: 1824059865
+      SkullRock_00068: -1309175067
+      SkullRock_00069: 451870518
+      SkullRock_00070: -1466144596
+      SkullRock_00071: -1286132030
+      SkullRock_00072: 32321383
+      SkullRock_00073: 1269191420
+      SkullRock_00074: 1696732702
+      SkullRock_00075: 782949965
+      SkullRock_00076: 479716289
+      SkullRock_00077: -958981385
+      SkullRock_00078: -1491772362
+      SkullRock_00079: 1167506248
+      SkullRock_00080: 2032969557
+      SkullRock_00081: -1467633964
+      SkullRock_00082: 606431538
+      SkullRock_00083: 1032510544
+      SkullRock_00084: -1426119303
+      SkullRock_00085: 457248145
+      SkullRock_00086: -2082159293
+      SkullRock_00087: -551939711
+      SkullRock_00088: -1499590330
+      SkullRock_00089: 614283546
+      SkullRock_00090: 1486624036
+      SkullRock_00091: 118971857
+      SkullRock_00092: -1039970724
+      SkullRock_00093: 128871197
+      SkullRock_00094: -41574245
+      SkullRock_00095: -1233085942
+      SkullRock_00096: -596515807
+      SkullRock_00097: 752520695
+      SkullRock_00098: -1630393464
+      SkullRock_00099: -706705574
+      SkullRock_00100: 719626735
+      SkullRock_00101: 228140312
+      SkullRock_00102: -1674877585
+      SkullRock_00104: 2087635158
+      SkullRock_00106: 62189898
+      SkullRock_00108: 1590145660
+      SkullRock_00110: 790960484
+      SkullRock_00111: 39435922
+      SkullRock_00112: 1130115160
+      SkullRock_00113: -1014313643
+      SkullRock_00114: -2010723760
+      SkullRock_00115: 650457914
+      SkullRock_00116: -1981563583
+      SkullRock_00117: -408446388
+      SkullRock_00118: -384254937
+      SkullRock_00119: -871128493
+      SkullRock_00120: 1686422546
+      SkullRock_00121: 696991068
+      SkullRock_00122: -2118228769
+      SkullRock_00123: -1268018904
+      SkullRock_00124: 887047415
+      SkullRock_00125: 1760885249
+      SkullRock_00126: -1517230183
+      SkullRock_00127: -932983877
+      SkullRock_00128: 366564084
+      SkullRock_00129: 1752100648
+      SkullRock_00130: 455017969
+      SkullRock_00131: -838722873
+      SkullRock_00132: -1696403048
+      SkullRock_00133: -62543452
+      SkullRock_00134: -608036439
+      SkullRock_00135: -66240104
+      SkullRock_00136: -329283002
+      SkullRock_00137: 333067123
+      SkullRock_00138: 1727828108
+      SkullRock_00139: 918093226
+      SkullRock_00140: 980418483
+      SkullRock_00141: 2009375575
+      SkullRock_00142: -2083228962
+      SkullRock_00143: -207674715
+      SkullRock_00144: -1566156577
+      SkullRock_00145: 1367327786
+      SkullRock_00146: -288416558
+      SkullRock_00147: 1014005861
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

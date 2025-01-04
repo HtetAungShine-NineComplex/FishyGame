@@ -355,7 +355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &40586750
 Transform:
   m_ObjectHideFlags: 0
@@ -1132,7 +1132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &331056163
 Transform:
   m_ObjectHideFlags: 0
@@ -1684,7 +1684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &411240226
 Transform:
   m_ObjectHideFlags: 0
@@ -2252,7 +2252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &500201055
 Transform:
   m_ObjectHideFlags: 0
@@ -4025,7 +4025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &770786904
 Transform:
   m_ObjectHideFlags: 0
@@ -5015,7 +5015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1110004751
 Transform:
   m_ObjectHideFlags: 0
@@ -5494,7 +5494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1229034680
 Transform:
   m_ObjectHideFlags: 0
@@ -6729,7 +6729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1539238890
 Transform:
   m_ObjectHideFlags: 0
@@ -7531,7 +7531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1698275118
 Transform:
   m_ObjectHideFlags: 0
@@ -7583,7 +7583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1699575055
 Transform:
   m_ObjectHideFlags: 0
@@ -8901,7 +8901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2044255415
 Transform:
   m_ObjectHideFlags: 0
@@ -9083,7 +9083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2108362130
 Transform:
   m_ObjectHideFlags: 0
@@ -10364,6 +10364,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2038842535}
     m_Modifications:
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossFightDuration
       value: 0.5
       objectReference: {fileID: 0}
@@ -10377,7 +10381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossTitles.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1310377525679068058, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: _bossTitles.Array.data[0]
@@ -10398,6 +10402,10 @@ PrefabInstance:
     - target: {fileID: 4768874116111111062, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: m_Name
       value: WaveManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4768874116111111062, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7639095033743625017, guid: 3ca6fa6a5ce70b84f9249b132ffc7167, type: 3}
       propertyPath: m_LocalPosition.x

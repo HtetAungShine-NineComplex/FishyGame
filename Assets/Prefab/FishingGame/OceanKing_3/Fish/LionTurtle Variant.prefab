@@ -94,6 +94,8 @@ MonoBehaviour:
   _coll: {fileID: 6945424343159101116}
   fish_2D: {fileID: 868471069498690768}
   _fishGlow: {fileID: 5868215391562945969}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
   shellImg: {fileID: 3104368702944771705}
   shellRotateImg: {fileID: 923105043101868089}
   fireEffectImg: {fileID: 2639184543769611914}
@@ -367,6 +369,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 2827162573890961158}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &3678221960453868107
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +591,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 516652008731878112}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &4359032125367410172
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +687,8 @@ MonoBehaviour:
   _coll: {fileID: 6945424343159101116}
   fish_2D: {fileID: 868471069498690768}
   _fishGlow: {fileID: 5868215391562945969}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
   shellImg: {fileID: 3104368702944771705}
   shellRotateImg: {fileID: 923105043101868089}
   fireEffectImg: {fileID: 2639184543769611914}
@@ -782,6 +790,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 2866204131139476035}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1001 &1583806286396964750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -813,6 +823,10 @@ PrefabInstance:
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: _canDieInstantly
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      propertyPath: canShootWithLaser
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fishSO

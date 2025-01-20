@@ -48,16 +48,25 @@ public class LaserCannonController : MonoBehaviour
             // Check if any results were returned
             if (results.Count > 0)
             {
-                Debug.Log("Raycast hit: " + results[0].gameObject.name);
-                
 
-               if(TryGetComponent<FishHealth>(out FishHealth health))
+                FishHealth fish = results[0].gameObject.GetComponentInParent<FishHealth>();
+
+               if (fish != null)
                 {
-                    _targetFish = health;
+                    Debug.Log("Raycast hit: " + fish.gameObject.name);
+                    if (fish.canShootWithLaser)
+                    {
+                        _targetFish = fish;
+                    }
+                    else
+                    {
+                        _targetFish = GeneratedFishManager.Instance.GetRandomFishForLaser();
+                    }
+
                 }
                 else
                 {
-                    _targetFish = results[0].gameObject.GetComponentInParent<FishHealth>();
+                    _targetFish = GeneratedFishManager.Instance.GetRandomFishForLaser();
                 }
             }
             else
@@ -86,7 +95,7 @@ public class LaserCannonController : MonoBehaviour
             {
                 if(!GeneratedFishManager.Instance.HasFish(_targetFish))
                 {
-                    _targetFish = GeneratedFishManager.Instance.GetRandomFish();
+                    _targetFish = GeneratedFishManager.Instance.GetRandomFishForLaser();
                     
                 }
 

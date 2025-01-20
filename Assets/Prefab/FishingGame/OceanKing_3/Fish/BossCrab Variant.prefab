@@ -94,6 +94,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 1984706734816677763}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &1832617488599662935
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +190,8 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 8989362638077558335}
   _fishGlow: {fileID: 3911901930627076554}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
   _deadFrames:
   - {fileID: 1902825170, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
   - {fileID: 360818638, guid: eaf4a5acfb117e8428baf564cfb7f804, type: 3}
@@ -297,6 +301,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 3637458527144102634}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &2276682810217716308
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +359,8 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 9144624296486926296}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!222 &4161584747425042233
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -485,6 +493,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 305303464275361609}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &6842869302716589149
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +577,10 @@ PrefabInstance:
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: _canDieInstantly
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      propertyPath: canShootWithLaser
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fishSO
@@ -752,6 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishSO: {fileID: 11400000, guid: 544258d66dfd0fc45acf611f484351bf, type: 2}
   spawnPosition: 0
+  _curveDist: 500
   _coinFX: {fileID: 3969616937594883578, guid: 665c20dd21c183a4d9cdff9f7d36f3c2, type: 3}
   _coinSpawnPlaces:
   - {fileID: 1727778828302337936}

@@ -94,6 +94,8 @@ MonoBehaviour:
   _coll: {fileID: 3747382885047463910}
   fish_2D: {fileID: 236331010560205432}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &278244303618573482
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +190,8 @@ MonoBehaviour:
   _coll: {fileID: 3747382885047463910}
   fish_2D: {fileID: 3913345600811129482}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &2299108523058706253
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +372,8 @@ MonoBehaviour:
   _coll: {fileID: 3747382885047463910}
   fish_2D: {fileID: 1815792232353113874}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &4202242628731982092
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +503,8 @@ MonoBehaviour:
   _coll: {fileID: 3747382885047463910}
   fish_2D: {fileID: 7019096113255863268}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &6022531419761381296
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +634,8 @@ MonoBehaviour:
   _coll: {fileID: 3747382885047463910}
   fish_2D: {fileID: 8269686608447720682}
   _fishGlow: {fileID: 4920327745308660305}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8756321361636621347
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +698,10 @@ PrefabInstance:
     - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: _canDieInstantly
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514663280800129051, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
+      propertyPath: canShootWithLaser
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5284785134040080776, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fishSO
@@ -889,6 +903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishSO: {fileID: 11400000, guid: 238d950cd0b3ed64b904ae793e50ab11, type: 2}
   spawnPosition: 0
+  _curveDist: 500
   _coinFX: {fileID: 3969616937594883578, guid: 665c20dd21c183a4d9cdff9f7d36f3c2, type: 3}
   _coinSpawnPlaces:
   - {fileID: 9039075187716097448}

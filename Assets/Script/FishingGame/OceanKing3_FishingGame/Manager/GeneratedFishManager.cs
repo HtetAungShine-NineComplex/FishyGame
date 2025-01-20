@@ -73,6 +73,22 @@ public class GeneratedFishManager : MonoBehaviour
         return selectedFish;
     }
 
+    public FishHealth GetRandomFishForLaser()
+    {
+        if (_generatedFishList.Count == 0)
+            return null;
+
+        foreach (FishHealth fish in _generatedFishList)
+        {
+            if (fish.canShootWithLaser)
+            {
+                return fish;
+            }
+        }
+
+        return GetRandomFish();
+    }
+
     public void AddFish(FishHealth fish)
     {
         _generatedFishList.Add(fish);

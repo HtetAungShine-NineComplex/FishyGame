@@ -17,6 +17,7 @@ public class FishHealth : MonoBehaviour,IDamageable
 
     private int _currentHealth;
     public bool _isDead = false;
+    public bool canShootWithLaser = false;
 
     public Sprite FishIcon { get { return _fish.FishIcon; } }
 

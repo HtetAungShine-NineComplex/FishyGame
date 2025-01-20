@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SpecialFishMove : Move
 {
-    [SerializeField] private GameObject _coinFX;
+    [SerializeField] private BigBossCoinFX _coinFX;
     [SerializeField] private Transform[] _coinSpawnPlaces;
+    [SerializeField] private int _amount; //tenp
 
     public override void OnDead()
     {
@@ -37,7 +38,8 @@ public class SpecialFishMove : Move
     {
         for (int i = 0; i < _coinSpawnPlaces.Length; i++)
         {
-            Instantiate(_coinFX, _coinSpawnPlaces[i].position, Quaternion.identity, CanvasInstance.Instance.GetMidGroundSpawn());
+            BigBossCoinFX fx = Instantiate(_coinFX, _coinSpawnPlaces[i].position, Quaternion.identity, CanvasInstance.Instance.GetMidGroundSpawn());
+            fx.SetScore(_amount);
         }
     }
 }

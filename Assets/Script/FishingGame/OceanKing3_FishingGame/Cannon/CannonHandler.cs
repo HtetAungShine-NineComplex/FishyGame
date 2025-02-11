@@ -34,6 +34,8 @@ public class CannonHandler : MonoBehaviour
 
     private bool _isPowerUpActive = false;
 
+    public CannonController cannonController => _cannonController;
+
     private int Amount
     {
         get { return _amount; }
@@ -126,6 +128,12 @@ public class CannonHandler : MonoBehaviour
             _audioSource.Stop();
             _audioSource.Play();
         }
+    }
+
+    public void OnNetworkShoot(float rotation)
+    {
+        cannonController.SetRotationManually(rotation);
+        cannonController.ShootNetwork();
     }
 
     private void OnAmountChange()

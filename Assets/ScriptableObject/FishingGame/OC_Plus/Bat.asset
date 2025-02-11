@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194037a51f83a64bb2c7916bdb49d70, type: 3}
+  m_Name: Bat
+  m_EditorClassIdentifier: 
+  fishType: 0
+  FishIcon: {fileID: 1105742124, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  MaxHealth: 7703
+  Score: 0
+  CoinSpawnAmount: 0
+  FishFrames:
+  - {fileID: -2138333540, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: 207481093, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: -80560732, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: 584707650, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: -2001289784, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: -115741177, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: -777825451, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: 1170253151, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: -167294345, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: 1040244770, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: 1497908464, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: -436403327, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: 1769422180, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: -1509187000, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  - {fileID: 1105742124, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  FishDefaultFrame: {fileID: -2138333540, guid: d2955c8f592877642be0adc1cff9869e, type: 3}
+  FishFrameRate: 0.113
+  speed: 1
+  SpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

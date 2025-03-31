@@ -87,7 +87,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 24.3016, y: 25.2018}
-  m_SizeDelta: {x: 380.0125, y: 380.0128}
+  m_SizeDelta: {x: 629.8428, y: 629.8436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2329732920324032941
 MonoBehaviour:
@@ -107,6 +107,8 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 4622641538158837172}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!222 &8854325961656204709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -181,7 +183,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 24.3016, y: 25.2018}
-  m_SizeDelta: {x: 380.0125, y: 380.0128}
+  m_SizeDelta: {x: 629.8428, y: 629.8436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2590913990554874743
 MonoBehaviour:
@@ -201,6 +203,8 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 8989362638077558335}
   _fishGlow: {fileID: 7588234765876943162}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!222 &4357725250056774512
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -274,8 +278,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: -41}
-  m_SizeDelta: {x: 380.0125, y: 380.0128}
+  m_AnchoredPosition: {x: -59.0696, y: -84.5228}
+  m_SizeDelta: {x: 629.8428, y: 629.8436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &663561306332437366
 MonoBehaviour:
@@ -295,6 +299,8 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 9144624296486926296}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!222 &4161584747425042233
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -369,7 +375,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 24.3016, y: 25.2018}
-  m_SizeDelta: {x: 380.0125, y: 380.0128}
+  m_SizeDelta: {x: 629.8428, y: 629.8436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4070307739160813639
 MonoBehaviour:
@@ -389,6 +395,8 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 8560694435600237245}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!222 &8616496225265836596
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -463,7 +471,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 24.3016, y: 25.2018}
-  m_SizeDelta: {x: 380.0125, y: 380.0128}
+  m_SizeDelta: {x: 629.8428, y: 629.8436}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2910443340793067876
 MonoBehaviour:
@@ -483,6 +491,8 @@ MonoBehaviour:
   _coll: {fileID: 3142231024501570689}
   fish_2D: {fileID: 1933712185211675355}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!222 &2447439088060978176
 CanvasRenderer:
   m_ObjectHideFlags: 0

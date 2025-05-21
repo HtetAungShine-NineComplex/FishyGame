@@ -30,6 +30,10 @@ public class PlayerUIHandler : MonoBehaviour
 
     public void ResetData()
     {
+        if(_nameTxt == null)
+        {
+            return;
+        }
         _nameTxt.text = string.Empty;   
         _coinAmountTxt.text = string.Empty;
     }

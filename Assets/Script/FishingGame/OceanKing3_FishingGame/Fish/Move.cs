@@ -6,7 +6,7 @@ using System.Net;
 public class Move : MonoBehaviour
 {
     [SerializeField] private FishSO fishSO;
-    protected float speed;
+    public float speed;
     protected AnimationCurve curve;
     protected float elapsedTime;
     protected float desiredDuration = 7f;
@@ -20,6 +20,8 @@ public class Move : MonoBehaviour
 
     public SpawnPosition spawnPosition;
     [SerializeField]private float _curveDist = 500f;
+
+    public bool isPatternFish;
 
     public float CurveDistance
     {
@@ -36,14 +38,17 @@ public class Move : MonoBehaviour
     {
         _points = new Transform[0];
         _curveDist *= Screen.height / 1080f;
+        speed = fishSO.speed;
     }
 
     protected virtual void Start()
     {
-        speed = fishSO.speed;
+        
         curve = fishSO.SpeedCurve;
 
         WaveManager.Instance.EnterBonusStage += OnEnterBonusStage;
+        WaveManager.Instance.EnterNormalStage += OnEnterNormalStage;
+        _health = GetComponent<FishHealth>();
     }
 
     protected virtual void Update()
@@ -72,12 +77,19 @@ public class Move : MonoBehaviour
     private void OnDestroy()
     {
         WaveManager.Instance.EnterBonusStage -= OnEnterBonusStage;
+        WaveManager.Instance.EnterNormalStage -= OnEnterNormalStage;
+    }
+
+    public void MakeSpeedZero()
+    {
+        speed = 0;
     }
 
     public virtual void OnDead()
     {
         _isDead = true;
         WaveManager.Instance.EnterBonusStage -= OnEnterBonusStage;
+        WaveManager.Instance.EnterNormalStage -= OnEnterNormalStage;
     }
 
     public virtual void SetPoints(Vector3 startPoint_T, Vector3 destroyPoint_T)
@@ -173,7 +185,7 @@ public class Move : MonoBehaviour
         Vector3 direction = new Vector3(-Mathf.Sin(angle), Mathf.Cos(angle), 0);
         transform.up = direction;
 
-        StartCoroutine(SwitchTargetPosition(transform.position, endPoint));
+        //StartCoroutine(SwitchTargetPosition(transform.position, endPoint));
     }
 
     private void MoveFishInTriangleShape()
@@ -235,6 +247,11 @@ public class Move : MonoBehaviour
     private void OnEnterBonusStage(int index)
     {
         StartCoroutine(ChangeSpeedSmoothly(1f)); // Change speed smoothly
+    }
+
+    private void OnEnterNormalStage(int index)
+    {
+        Destroy(gameObject);
     }
 
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public enum SpawnPosition
@@ -38,6 +39,50 @@ public class SpawnpointManager : MonoBehaviour
     {
         _offsetX = (screenX * 0.7f);
         _offsetY = (screenY * 0.3f);
+    }
+
+    public Vector3 GetSpawnPointOnline(float normX, float normY, string spawnSide)
+    {
+        float screenX = Screen.width;
+        float screenY = Screen.height;
+
+        // Convert normalized to screen coordinates
+        float randomX = normX * screenX;
+        float randomY = normY * screenY;
+
+        // Apply offset logic
+        float _offsetX = screenX * 0.7f;
+        float _offsetY = screenY * 0.3f;
+
+        switch (spawnSide)
+        {
+            case "Top":
+                randomY = screenY + _offsetY;
+                break;
+            case "Bottom":
+                randomY = 0f - _offsetY;
+                break;
+            case "Left":
+                randomX = 0f - _offsetX;
+                break;
+            case "Right":
+                randomX = screenX + _offsetX;
+                break;
+        }
+
+        Vector3 spawnPoint = new Vector3(randomX, randomY, 0);
+        Debug.Log("online spawn Point : " + spawnPoint);
+        return spawnPoint;
+    }
+
+    public Vector3 GetEndPointOnline(float endX, float endY)
+    {
+        float screenEndX = endX * screenX;
+        float screenEndY = endY * screenY;
+
+        Vector3 endPoint = new Vector3(screenEndX, screenEndY, 0f);
+        Debug.Log("online end Point : " + endPoint);
+        return endPoint;
     }
 
     public Vector3 GetRandomSpawnPoint()

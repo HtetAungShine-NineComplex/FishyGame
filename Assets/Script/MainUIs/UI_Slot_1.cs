@@ -24,7 +24,8 @@ public class UI_Slot_1 : UIBase
 
     private void BackToMenu()
     {
-        UIManager.Instance.ShowUI(GLOBALCONST.UI_MAIN_MENU);
         UIManager.Instance.CloseUI(GLOBALCONST.UI_SLOT_1);
+        UIManager.Instance.ShowUI(GLOBALCONST.UI_MAIN_MENU);
+       
     }
 }

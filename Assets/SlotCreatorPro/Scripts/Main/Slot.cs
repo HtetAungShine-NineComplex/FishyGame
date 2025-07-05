@@ -363,6 +363,9 @@ public class Slot : MonoBehaviour {
 
         UIManager.Instance.CloseUI(GLOBALCONST.UI_LOADING);
         UIManager.Instance.CloseUI(GLOBALCONST.UI_SLOT_1);
+        UIManager.Instance.CloseUI(GLOBALCONST.UI_SLOT_2);
+        UIManager.Instance.CloseUI(GLOBALCONST.UI_SLOT_3);
+        UIManager.Instance.CloseUI(GLOBALCONST.UI_SLOT_4);
     }
 
 	void createReelGameObjects()
@@ -643,7 +646,13 @@ public class Slot : MonoBehaviour {
 	/// </summary>
 	public void resetFrozenPositions()
 	{
-		frozenPositions = new int[,] { { -1, -1, -1, -1 }, { -1, -1, -1, -1 }, { -1, -1, -1, -1 }, { -1, -1, -1, -1 }, { -1, -1, -1, -1 } };
+		frozenPositions = new int[,] { { -1, -1, -1, -1 }, 
+			{ -1, -1, -1, -1 }, 
+			{ -1, -1, -1, -1 }, 
+			{ -1, -1, -1, -1 }, 
+			{ -1, -1, -1, -1 },
+            { -1, -1, -1, -1 }
+        };
 	}
 
 	/// <summary>

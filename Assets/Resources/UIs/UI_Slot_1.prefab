@@ -1047,6 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _btn: {fileID: 3153475260543934657}
+  sceneIndex: 14
 --- !u!1 &1089224205064430376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _btn: {fileID: 4899894509106833084}
+  sceneIndex: 14
 --- !u!1 &2308316958124695173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,6 +2698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _btn: {fileID: 5550864472186922262}
+  sceneIndex: 14
 --- !u!1 &8227127367411134791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,7 +2758,6 @@ GameObject:
   - component: {fileID: 1038323726449304106}
   - component: {fileID: 9151717412738306411}
   - component: {fileID: 1323763053493046933}
-  - component: {fileID: 8370386089840661156}
   - component: {fileID: 3285463627437607136}
   m_Layer: 5
   m_Name: UI_Slot_1
@@ -2831,20 +2833,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8370386089840661156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8238689649165744373}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 831dfa20f00f77741a392edc87dfaf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsCamUI: 0
-  _backBtn: {fileID: 8123727515355149572}
 --- !u!114 &3285463627437607136
 MonoBehaviour:
   m_ObjectHideFlags: 0

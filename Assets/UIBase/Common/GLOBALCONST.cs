@@ -21,6 +21,9 @@ public class GLOBALCONST
     public const string UI_FISHING_GAME_SPONGEBOB = "UI_FishingGame_SpongeBob";
     public const string UI_FISHING_GAME_OCEANKING2EX = "UI_FishingGame_OceanKing_2_EX";
     public const string UI_SLOT_1 = "UI_Slot_1";
+    public const string UI_SLOT_2 = "UI_Slot_2";
+    public const string UI_SLOT_3 = "UI_Slot_3";
+    public const string UI_SLOT_4 = "UI_Slot_4";
 
     public const string UI_LOADING = "UI_Loading";
 	public const string UI_ROOM_SELECT = "UI_RoomSelection";

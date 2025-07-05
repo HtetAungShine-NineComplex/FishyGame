@@ -220,6 +220,7 @@ public class SlotReel : MonoBehaviour {
 			{
 				if (slot.frozenPositions[reelIndex-1,symbolsSpinRemaining - slot.reelIndent] > -1)
 				{
+					Debug.Log("slot reel test : " + slot.frozenPositions[reelIndex - 1, symbolsSpinRemaining - slot.reelIndent]);
 					symbolIndex = slot.frozenPositions[reelIndex-1,symbolsSpinRemaining - slot.reelIndent];
 				} else {
 					symbolIndex = getSymbol();

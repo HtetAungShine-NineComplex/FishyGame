@@ -10,6 +10,7 @@ public class SlotUIButton : MonoBehaviour
     [SerializeField] private Image m_SplashScreen;
     [SerializeField] private Sprite m_SplashScreenArt;
     [SerializeField] private float fadeDuration = 0.75f;
+    [SerializeField] private string UIName = "";
 
     private void OnEnable()
     {
@@ -33,6 +34,6 @@ public class SlotUIButton : MonoBehaviour
         yield return new WaitForSeconds(fadeDuration);
         m_SplashScreen.gameObject.SetActive(false);
         UIManager.Instance.CloseUI(GLOBALCONST.UI_MAIN_MENU);
-        UIManager.Instance.ShowUI(GLOBALCONST.UI_SLOT_1);
+        UIManager.Instance.ShowUI(UIName);
     }
 }

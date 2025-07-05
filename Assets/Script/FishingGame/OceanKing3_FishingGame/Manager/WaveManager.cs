@@ -30,6 +30,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _maxMap = 3; //3 
 
     [SerializeField] private GameObject[] _bossTitles;
+    [SerializeField] private GameObject[] _patterns;
+
+    private int patternIndex;
 
     private int mapIndex = 0;
 
@@ -54,7 +57,7 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        _counter += Time.deltaTime;
+        /*_counter += Time.deltaTime;
 
         if (_currentStage == WaveStage.Normal && _counter >= _normalStageDuration)
         {
@@ -67,20 +70,34 @@ public class WaveManager : MonoBehaviour
         else if (_currentStage == WaveStage.Bonus && _counter >= _bonusStageDuration)
         {
             NormalStage();
-        }
+        }*/
 
         
     }
 
-    private void NormalStage()
+    [ContextMenu("NormalStage")]
+    public void NormalStage()
     {
+        patternIndex++;
+        if (patternIndex >= _patterns.Length)
+        {
+            patternIndex = 0;
+        }
+
+        foreach (var pattern in _patterns)
+        {
+            pattern.SetActive(false);
+        }
+
+        _patterns[patternIndex].SetActive(true);
+
         _currentStage = WaveStage.Normal;
         _counter = 0;
         EnterNormalStage?.Invoke(mapIndex);
         Debug.Log("Normal Stage");
     }
 
-    private void BossStage()
+    public void BossStage()
     {
         _currentStage = WaveStage.BossFight;
         _counter = 0;
@@ -109,7 +126,8 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void BonusStage()
+    [ContextMenu("BonusStage")]
+    public void BonusStage()
     {
         ExitBossStage?.Invoke(mapIndex - 1);
         _currentStage = WaveStage.Bonus;

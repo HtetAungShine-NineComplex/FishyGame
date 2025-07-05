@@ -97,7 +97,10 @@ namespace TinAungKhant.UIManagement
 			if (m_OpeningUI.Contains(m_UIMap[UIName]))
 				m_OpeningUI.Remove(m_UIMap[UIName]);
 
-			m_UIMap[UIName].Close();
+			if (m_UIMap[UIName].gameObject.activeSelf)
+			{
+                m_UIMap[UIName].Close();
+            }
 
 			SortUI();
 		}

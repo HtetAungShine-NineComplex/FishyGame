@@ -24,6 +24,8 @@ public class FishManager : MonoBehaviour
     protected bool _isBonusRound = false;
     private Coroutine _currentCoroutine;
 
+    public bool isOnline = false;
+
     protected virtual void Start()
     {
         _currentCoroutine = null;
@@ -33,8 +35,11 @@ public class FishManager : MonoBehaviour
             SpawnFishFromStart();
         }*/
 
-        WaveManager.Instance.EnterBonusStage += OnEnterBonusStage;
-        WaveManager.Instance.EnterNormalStage += OnEnterNormalStage;
+        if (!isOnline)
+        {
+            WaveManager.Instance.EnterBonusStage += OnEnterBonusStage;
+            WaveManager.Instance.EnterNormalStage += OnEnterNormalStage;
+        }
     }
     private void Awake()
     {
@@ -105,6 +110,19 @@ public class FishManager : MonoBehaviour
                 yield return new WaitForSeconds(spawnInterval);
             }
         }
+    }
+
+    public void SpawnFish(Vector3 spwn, Vector3 end)
+    {
+        GameObject fish = Instantiate(fishPrefab, spawnPoint, Quaternion.identity, parentTF);
+        Move move = fish.GetComponent<Move>();
+        move.SetPoints(spwn, end);
+        move.spawnPosition = SpawnpointManager.Instance.GetSpawnPosition();
+
+        //GeneratedFishManager.Instance.AddFish(fish.GetComponent<FishHealth>());
+
+        fishSpawned++;
+        fishAlive++;
     }
 
     protected virtual void OnEnterBonusStage(int index)

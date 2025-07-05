@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Sfs2X.Entities.Data;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -192,6 +193,11 @@ public class CannonController : MonoBehaviour
         }
     }
 
+    public void SetRotationManually(float z)
+    {
+        _transform.rotation = Quaternion.Euler(0, 0, z);
+    }
+
     void CheckCursorOverButton()
     {
         for (int i = 0; i < _buttonRects.Length; i++)
@@ -210,13 +216,21 @@ public class CannonController : MonoBehaviour
     }
 
 
-    private void Shoot()
+    public void Shoot()
     {
         if ((_canShoot && !_isCursorOverButton) || (_isCursorOverButton && _autoShoot && _canShoot))
         {
             Debug.Log("CanShoot " + _canShoot);
+            SFSObject obj = new SFSObject();
+            obj.PutFloat("zRotation", _transform.eulerAngles.z);
+            GlobalManager.Instance.SendToCurrentRoom("shoot", obj);
             _shootCoroutine = StartCoroutine(ShootHandle());
         }
+    }
+
+    public void ShootNetwork()
+    {
+        StartCoroutine(ShootHandle());
     }
 
     IEnumerator ShootHandle()
@@ -261,6 +275,8 @@ public class CannonController : MonoBehaviour
         }
         _canShoot = false;
         CannonShoot?.Invoke();
+
+        
 
         yield return new WaitForSeconds(1/_shootSpeed);
         _canShoot = true;

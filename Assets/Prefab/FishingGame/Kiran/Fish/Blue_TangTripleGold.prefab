@@ -208,6 +208,7 @@ RectTransform:
   m_Children:
   - {fileID: 8805757125378401695}
   - {fileID: 5773617000822035525}
+  - {fileID: 96020853942103332}
   - {fileID: 9142697077805724949}
   m_Father: {fileID: 7579746613646110880}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,7 +253,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.9538088, y: -2.9218016}
-  m_SizeDelta: {x: 239.5934, y: 139.2053}
+  m_SizeDelta: {x: 239.5934, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8365551205628975899
 CanvasRenderer:
@@ -282,7 +283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
+  m_Sprite: {fileID: -1784760008, guid: 4d73fa413548aa643bdd8ac4fc04825c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -305,11 +306,109 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 5e9927dccf026f944ba17b3214ef6c9c, type: 2}
+  fishSO: {fileID: 11400000, guid: ffb6bd42356ea874c833975f783cbce1, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 7033600752458950831}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
+--- !u!1 &2755991096165794070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96020853942103332}
+  - component: {fileID: 7324313628305563491}
+  - component: {fileID: 5681958653616950584}
+  - component: {fileID: 4981274555741690513}
+  m_Layer: 5
+  m_Name: Fish (1)
+  m_TagString: Fish
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &96020853942103332
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755991096165794070}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2929071161196605727}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.8461304, y: 2.2781982}
+  m_SizeDelta: {x: 241.8088, y: 167}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7324313628305563491
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755991096165794070}
+  m_CullTransparentMesh: 1
+--- !u!114 &5681958653616950584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755991096165794070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1784760008, guid: 4d73fa413548aa643bdd8ac4fc04825c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4981274555741690513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755991096165794070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75cc7bc659334fb4794498a5e4d94910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 0}
+  fishSO: {fileID: 11400000, guid: ffb6bd42356ea874c833975f783cbce1, type: 2}
+  _move: {fileID: 0}
+  _coll: {fileID: 0}
+  fish_2D: {fileID: 5681958653616950584}
+  _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &2763732480263870601
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +554,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 4958462075104648752}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &3481032506211725880
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +650,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 3781008024367669116}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &4417510309036578303
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +746,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 7336688292879779506}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &4949944447042590453
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +931,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 4142111575607959309}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &6661364252906726986
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +969,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.8461304, y: 2.2781982}
-  m_SizeDelta: {x: 241.8088, y: 140.4924}
+  m_SizeDelta: {x: 241.8088, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5351457545179042492
 CanvasRenderer:
@@ -892,7 +999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
+  m_Sprite: {fileID: -1784760008, guid: 4d73fa413548aa643bdd8ac4fc04825c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -915,11 +1022,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 5e9927dccf026f944ba17b3214ef6c9c, type: 2}
+  fishSO: {fileID: 11400000, guid: ffb6bd42356ea874c833975f783cbce1, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 4335585273315818906}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &6663960311153288241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1123,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 7060481268694731408}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &7112426218399084798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,6 +1219,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 5955172488964599638}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &7953326553166203472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1232,7 @@ GameObject:
   - component: {fileID: 5773617000822035525}
   - component: {fileID: 6473241218471681766}
   - component: {fileID: 8617037578619109663}
+  - component: {fileID: 2311530434707643415}
   m_Layer: 5
   m_Name: Fish
   m_TagString: Fish
@@ -1143,7 +1257,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.8461304, y: 2.2781982}
-  m_SizeDelta: {x: 241.8088, y: 140.4924}
+  m_SizeDelta: {x: 241.8088, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6473241218471681766
 CanvasRenderer:
@@ -1173,7 +1287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
+  m_Sprite: {fileID: -1784760008, guid: 4d73fa413548aa643bdd8ac4fc04825c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1183,6 +1297,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2311530434707643415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953326553166203472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75cc7bc659334fb4794498a5e4d94910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 0}
+  fishSO: {fileID: 11400000, guid: ffb6bd42356ea874c833975f783cbce1, type: 2}
+  _move: {fileID: 0}
+  _coll: {fileID: 0}
+  fish_2D: {fileID: 8617037578619109663}
+  _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8148632235996489152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1411,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 4863246317374221530}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8157515145976684475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1507,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 7737753994210195021}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8247082061607428743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1545,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.9538088, y: -2.9218016}
-  m_SizeDelta: {x: 239.5934, y: 139.2053}
+  m_SizeDelta: {x: 239.5934, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3496772467210902469
 CanvasRenderer:
@@ -1437,7 +1575,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
+  m_Sprite: {fileID: -1784760008, guid: 4d73fa413548aa643bdd8ac4fc04825c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1460,11 +1598,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 5e9927dccf026f944ba17b3214ef6c9c, type: 2}
+  fishSO: {fileID: 11400000, guid: ffb6bd42356ea874c833975f783cbce1, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 1279254446908408753}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8395436358268871022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,6 +1699,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 4653266409456444075}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8497476265598753246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1737,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2.8461304, y: 2.2781982}
-  m_SizeDelta: {x: 241.8088, y: 140.4924}
+  m_SizeDelta: {x: 241.8088, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3602448341010842917
 CanvasRenderer:
@@ -1625,7 +1767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
+  m_Sprite: {fileID: -1784760008, guid: 4d73fa413548aa643bdd8ac4fc04825c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1648,11 +1790,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 5e9927dccf026f944ba17b3214ef6c9c, type: 2}
+  fishSO: {fileID: 11400000, guid: ffb6bd42356ea874c833975f783cbce1, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 751646492888352462}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &8686708460856792169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1833,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.9538088, y: -2.9218016}
-  m_SizeDelta: {x: 239.5934, y: 139.2053}
+  m_SizeDelta: {x: 239.5934, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1029268396979921691
 CanvasRenderer:
@@ -1719,7 +1863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 734627006, guid: 95fb139c0eaaef24c8b3d482b1c8593d, type: 3}
+  m_Sprite: {fileID: -1784760008, guid: 4d73fa413548aa643bdd8ac4fc04825c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1742,11 +1886,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 0}
-  fishSO: {fileID: 11400000, guid: 5e9927dccf026f944ba17b3214ef6c9c, type: 2}
+  fishSO: {fileID: 11400000, guid: ffb6bd42356ea874c833975f783cbce1, type: 2}
   _move: {fileID: 0}
   _coll: {fileID: 0}
   fish_2D: {fileID: 753532723140480840}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &9138400656729669364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,7 +2121,7 @@ PrefabInstance:
     - target: {fileID: 8555422473807289894, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: fish_2D
       value: 
-      objectReference: {fileID: 8617037578619109663}
+      objectReference: {fileID: 5681958653616950584}
     - target: {fileID: 8555422473807289894, guid: 02ac1ce1f1791464ea63dda2ad704e73, type: 3}
       propertyPath: _fishGlow
       value: 

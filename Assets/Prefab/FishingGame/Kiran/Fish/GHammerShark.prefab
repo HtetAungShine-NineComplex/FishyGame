@@ -86,8 +86,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37, y: -44}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: -30.82952, y: -36.662178}
+  m_SizeDelta: {x: 833.2303, y: 833.2307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8365551205628975899
 CanvasRenderer:
@@ -145,6 +145,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 7033600752458950831}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &3481032506211725880
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +183,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 833.2303, y: 833.2307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4279718751337770849
 CanvasRenderer:
@@ -239,6 +241,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 3781008024367669116}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &7112426218399084798
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +279,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 833.2303, y: 833.2307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &998797670523792821
 CanvasRenderer:
@@ -333,6 +337,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 5955172488964599638}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1 &7953326553166203472
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +374,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 833.2303, y: 833.2307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6473241218471681766
 CanvasRenderer:
@@ -444,7 +450,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_SizeDelta: {x: 833.2303, y: 833.2307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8934263224174058258
 CanvasRenderer:
@@ -502,6 +508,8 @@ MonoBehaviour:
   _coll: {fileID: 0}
   fish_2D: {fileID: 7737753994210195021}
   _fishGlow: {fileID: 0}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
 --- !u!1001 &2362209940006707843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -737,6 +745,8 @@ MonoBehaviour:
   _coll: {fileID: 6147858405263330225}
   fish_2D: {fileID: 8617037578619109663}
   _fishGlow: {fileID: 8560313482517084784}
+  isSushiFish: 0
+  sushiPrefab: {fileID: 0}
   _deadFrames: []
   _hasDeadAnimations: 0
 --- !u!224 &7579746613646110880 stripped

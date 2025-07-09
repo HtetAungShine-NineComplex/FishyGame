@@ -2,9 +2,7 @@ using UnityEngine;
 using Sfs2X;
 using Sfs2X.Core;
 using Sfs2X.Util;
-using UnityEngine.SceneManagement;
 using UnityEngine.Events;
-using System;
 using Sfs2X.Requests;
 using Sfs2X.Entities.Data;
 
@@ -24,6 +22,11 @@ public class GlobalManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         Instance = this;
         DontDestroyOnLoad(this);
     }
@@ -213,10 +216,12 @@ public class GlobalManager : MonoBehaviour
         JoinedRoom?.Invoke();
     }
 
-    public void RequestJoinRoom()
+    public void RequestJoinRoom(string gameRoom)
     {
+        Debug.Log($"RequestJoinRoom called with: {gameRoom}");
+        Debug.Log($"Stack trace: {System.Environment.StackTrace}");
         SFSObject data = new SFSObject();
-        data.PutUtfString("requestRoomType", "fish");
+        data.PutUtfString("requestRoomType", gameRoom);
         SendToExtension("joinRoom", data);
     }
 

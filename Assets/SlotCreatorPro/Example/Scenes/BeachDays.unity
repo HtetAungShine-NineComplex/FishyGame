@@ -307,6 +307,125 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &469405751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 469405753}
+  - component: {fileID: 469405752}
+  m_Layer: 0
+  m_Name: NetworkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &469405752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469405751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1085dc658d2fd242b9957b8d44edb8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameRoom: fish
+  _playerMangers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fishSpawnDatas:
+  - fishName: clownFish
+    manager: {fileID: 0}
+  - fishName: yellowFish1
+    manager: {fileID: 0}
+  - fishName: yellowFish2
+    manager: {fileID: 0}
+  - fishName: clownFishSameType
+    manager: {fileID: 0}
+  - fishName: clownFishTriple
+    manager: {fileID: 0}
+  - fishName: clownFishTripleGold
+    manager: {fileID: 0}
+  - fishName: clownFishQuadrupleGold
+    manager: {fileID: 0}
+  - fishName: fireSword
+    manager: {fileID: 0}
+  - fishName: clockBomb
+    manager: {fileID: 0}
+  - fishName: dolphin
+    manager: {fileID: 0}
+  - fishName: unicornFish
+    manager: {fileID: 0}
+  - fishName: stingray
+    manager: {fileID: 0}
+  - fishName: turtle
+    manager: {fileID: 0}
+  - fishName: kirin
+    manager: {fileID: 0}
+  - fishName: flyFish
+    manager: {fileID: 0}
+  - fishName: gWhale
+    manager: {fileID: 0}
+  - fishName: blueTang
+    manager: {fileID: 0}
+  - fishName: pufferFish
+    manager: {fileID: 0}
+  - fishName: bubbleFish
+    manager: {fileID: 0}
+  - fishName: blueTangSameType
+    manager: {fileID: 0}
+  - fishName: blueTangTriple
+    manager: {fileID: 0}
+  - fishName: blueTangTripleGold
+    manager: {fileID: 0}
+  - fishName: blueTangQuadrupleGold
+    manager: {fileID: 0}
+  - fishName: colorfulDragon
+    manager: {fileID: 0}
+  - fishName: triple1
+    manager: {fileID: 0}
+  - fishName: triple2
+    manager: {fileID: 0}
+  - fishName: turtleQuadrupleGold
+    manager: {fileID: 0}
+  - fishName: bubbleFishTripleGold
+    manager: {fileID: 0}
+  - fishName: pufferFishTripleGold
+    manager: {fileID: 0}
+  - fishName: pufferFishSameType
+    manager: {fileID: 0}
+  - fishName: yellowFish2SameType
+    manager: {fileID: 0}
+  - fishName: bubbleFishSameType
+    manager: {fileID: 0}
+  currentSlot: {fileID: 1694834693}
+  isSlotGameActive: 0
+--- !u!4 &469405753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469405751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &822634065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,3 +3581,4 @@ SceneRoots:
   - {fileID: 399463337}
   - {fileID: 1273173480}
   - {fileID: 1705809249}
+  - {fileID: 469405753}

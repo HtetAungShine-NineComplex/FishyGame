@@ -6,7 +6,8 @@ using UnityEngine;
 using System.Collections;
 using DG.Tweening;
 using System.Collections.Generic;
-public class BeachDaysCallbacks : MonoBehaviour {
+public class BeachDaysCallbacks : MonoBehaviour
+{
 
 	[HideInInspector]
 	public Slot slot;
@@ -16,25 +17,32 @@ public class BeachDaysCallbacks : MonoBehaviour {
 
 	void Awake()
 	{
-		// Example of setting the board result on startup
-		//
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Example of setting board result on startup
+		// This would now come from server instead of being set locally
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Example of setting the board result on startup locally
 		//slot = GetComponent<Slot>();
 		//slot.suppliedResult = new int[5,4] { { 1,1,1,1 }, { 1,1,1,1 }, { 1,1,1,1 }, { 1,1,1,1 }, { 1,1,1,1 }};
 		//slot.useSuppliedResult = true;
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 	}
 
-	void Start() 
+	void Start()
 	{
 	}
 
 	#region Enable/Disable
-	void OnEnable() { 
+	void OnEnable()
+	{
 
 		slot = GetComponent<Slot>();
 
-
-		Slot.OnSlotStateChangeTo += OnSlotStateChangeTo;	
-		Slot.OnSlotStateChangeFrom += OnSlotStateChangeFrom;	
+		//--- SHARED CODE (BOTH MODES) ---
+		// Event subscriptions used by both multiplayer and single-player modes
+		Slot.OnSlotStateChangeTo += OnSlotStateChangeTo;
+		Slot.OnSlotStateChangeFrom += OnSlotStateChangeFrom;
 
 		Slot.OnSpinBegin += OnSpinBegin;
 		Slot.OnSpinInsufficentCredits += OnSpinInsufficentCredits;
@@ -45,7 +53,7 @@ public class BeachDaysCallbacks : MonoBehaviour {
 
 		Slot.OnLineWinComputed += OnLineWinComputed;
 		Slot.OnLineWinDisplayed += OnLineWinDisplayed;
-		Slot.OnAllWinsComputed	+= OnAllWinsComputed;
+		Slot.OnAllWinsComputed += OnAllWinsComputed;
 		Slot.OnScatterSymbolHit += OnScatterSymbolHit;
 		Slot.OnAnticipationScatterBegin += OnAnticipationScatterBegin;
 
@@ -61,9 +69,12 @@ public class BeachDaysCallbacks : MonoBehaviour {
 
 	#endregion
 
-	void OnDisable() {
+	void OnDisable()
+	{
 
-		Slot.OnSlotStateChangeTo -= OnSlotStateChangeTo;	
+		//--- SHARED CODE (BOTH MODES) ---
+		// Event unsubscriptions used by both modes
+		Slot.OnSlotStateChangeTo -= OnSlotStateChangeTo;
 		Slot.OnSlotStateChangeFrom -= OnSlotStateChangeFrom;
 
 		Slot.OnSpinBegin -= OnSpinBegin;
@@ -93,6 +104,12 @@ public class BeachDaysCallbacks : MonoBehaviour {
 
 	private void OnSlotUpdate()
 	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Any update logic would be presentation-only
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Local update logic
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 	}
 	#endregion
 
@@ -101,32 +118,52 @@ public class BeachDaysCallbacks : MonoBehaviour {
 
 	private void OnSlotStateChangeFrom(SlotState state)
 	{
-		slot.log ("onSlotStateChangeFrom " + state);
+		slot.log("onSlotStateChangeFrom " + state);
 		switch (state)
 		{
-		case SlotState.playingwins:
-			break;
-		case SlotState.ready:
-			break;
-		case SlotState.snapping:
-			break;
-		case SlotState.spinning:
-			break;
+			case SlotState.playingwins:
+				//--- MULTIPLAYER SERVER CODE START ---
+				// MULTIPLAYER: Visual state changes only
+				//--- MULTIPLAYER SERVER CODE END ---
+				//--- SINGLE-PLAYER LOCAL CODE START ---
+				// SINGLE-PLAYER: Visual state changes only
+				//--- SINGLE-PLAYER LOCAL CODE END ---
+				break;
+			case SlotState.ready:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.snapping:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.spinning:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
 		}
 	}
 	public void OnSlotStateChangeTo(SlotState state)
 	{
-		slot.log ("OnSlotStateChangeTo " + state);
+		slot.log("OnSlotStateChangeTo " + state);
 		switch (state)
 		{
-		case SlotState.playingwins:
-			break;
-		case SlotState.ready:
-			break;
-		case SlotState.snapping:
-			break;
-		case SlotState.spinning:
-			break;
+			case SlotState.playingwins:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.ready:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.snapping:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.spinning:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
 		}
 	}
 	#endregion
@@ -134,32 +171,46 @@ public class BeachDaysCallbacks : MonoBehaviour {
 	#region Spin Callbacks
 	private void OnSpinBegin(SlotWinData data)
 	{
-		slot.refs.lines.hideLines ();
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects only - hide lines and award XP for bet used by both modes
+		slot.refs.lines.hideLines();
 		leveling.AwardXp(slot.refs.credits.totalBet());
-		slot.log ("OnSpinBegin Callback");
+		slot.log("OnSpinBegin Callback");
 	}
 
 	private void OnSpinInsufficentCredits()
 	{
-		slot.log ("OnSpinInsufficentCredits Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual feedback for insufficient credits (server validated)
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual feedback for insufficient credits (locally validated)
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnSpinInsufficentCredits Callback");
 	}
 
-	void OnReelLand (int obj)
+	void OnReelLand(int obj)
 	{
-
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for reel landing used by both modes
 	}
 
 	private void OnSpinSnap()
 	{
-		slot.log ("OnSpinSnap Callback");
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for spin snap used by both modes
+		slot.log("OnSpinSnap Callback");
 	}
 
 	int freespins = 0;
 	private void OnSpinDone(int totalWon, int timesWin)
 	{
-		// Demonstrates frozen positions functionality
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Frozen positions demo (local feature only)
+		// This would be server-controlled in multiplayer mode
 		/*
-		if (freespins < 10)
+		if (!slot.IsMultiplayer && freespins < 10)
 		{
 			DOTween.Sequence().AppendInterval(1).AppendCallback(()=> {
 
@@ -181,13 +232,22 @@ public class BeachDaysCallbacks : MonoBehaviour {
 			slot.resetFrozenPositions();
 		}
 		*/
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 
-		slot.log ("OnSpinDone Callback");
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnSpinDone Callback");
 	}
 
 	private void OnSpinDoneNoWins()
 	{
-		slot.log ("OnSpinDoneNoWins Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual feedback for no wins (server determined)
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual feedback for no wins (locally determined)
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnSpinDoneNoWins Callback");
 	}
 
 	#endregion
@@ -195,65 +255,103 @@ public class BeachDaysCallbacks : MonoBehaviour {
 	#region Win Callbacks
 	private void OnLineWinComputed(SlotWinData win)
 	{
-		slot.log ("OnLineWinComputed Callback");
-	
-	// Illustrates an example of parsing a specifically ordered win
-	/*
-		int extraWin = 10;
-		
-		SlotWinData winLine = slot.refs.compute.lineResultData.Find(item => item.setName == "Any Sevens");
-		if (winLine != null)
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Process server-provided win data for display
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Process locally calculated win data for display
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnLineWinComputed Callback");
+
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Example of parsing server win data for special bonuses
+		// This logic would now be handled by server in multiplayer, but visual effects can still be triggered
+		/*
+		if (!slot.IsMultiplayer)
 		{
-			List<SlotSymbol> symbols = new List<SlotSymbol>();
-			winLine.symbols.ForEach(item => symbols.Add(item.GetComponent<SlotSymbol>()));
+			int extraWin = 10;
+			
+			SlotWinData winLine = slot.refs.compute.lineResultData.Find(item => item.setName == "Any Sevens");
+			if (winLine != null)
+			{
+				List<SlotSymbol> symbols = new List<SlotSymbol>();
+				winLine.symbols.ForEach(item => symbols.Add(item.GetComponent<SlotSymbol>()));
 
-			if (symbols.Find(item => item.reelIndex == 0 && item.symbolIndex == INDEX_OF_RED_SEVEN_SYMBOL) &&
-				symbols.Find(item => item.reelIndex == 1 && item.symbolIndex == INDEX_OF_WHITE_SEVEN_SYMBOL) &&
-				symbols.Find(item => item.reelIndex == 2 && item.symbolIndex == INDEX_OF_BLUE_SEVEN_SYMBOL))
-				{
-					slot.refs.credits.awardWin(extraWin);
-				}
-		}
-	*/
-
-		
-		int matches = 5;
-		while (matches < 8) {
-			// search line results for the set name and the matches
-			int jackPot = slot.refs.compute.lineResultData.FindIndex(item => item.setName == "Jackpot" && item.matches == matches);
-
-			if (jackPot > -1) {
-				win.setPaid(scatters.GetScatter(matches-5));
-				slot.refs.compute.lineResultData[jackPot] = win;
-				scatters.ResetScatter(matches-5);
-				matches=8;
+				if (symbols.Find(item => item.reelIndex == 0 && item.symbolIndex == INDEX_OF_RED_SEVEN_SYMBOL) &&
+					symbols.Find(item => item.reelIndex == 1 && item.symbolIndex == INDEX_OF_WHITE_SEVEN_SYMBOL) &&
+					symbols.Find(item => item.reelIndex == 2 && item.symbolIndex == INDEX_OF_BLUE_SEVEN_SYMBOL))
+					{
+						slot.refs.credits.awardWin(extraWin);
+					}
 			}
-			matches++;
 		}
+		*/
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 
-		slot.log ("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Jackpot logic (server handles jackpot calculations in multiplayer)
+		/*
+		if (!slot.IsMultiplayer)
+		{
+			int matches = 5;
+			while (matches < 8) {
+				// search line results for the set name and the matches
+				int jackPot = slot.refs.compute.lineResultData.FindIndex(item => item.setName == "Jackpot" && item.matches == matches);
+
+				if (jackPot > -1) {
+					win.setPaid(scatters.GetScatter(matches-5));
+					slot.refs.compute.lineResultData[jackPot] = win;
+					scatters.ResetScatter(matches-5);
+					matches=8;
+				}
+				matches++;
+			}
+		}
+		*/
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
 	}
 
 	private void OnLineWinDisplayed(SlotWinData win, bool isFirstLoop)
 	{
-		// Itterate through symbols that make up the win
-		foreach(GameObject symbol in win.symbols)
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual animations for win data used by both modes
+		// Iterate through symbols that make up the win
+		foreach (GameObject symbol in win.symbols)
 		{
 			// if there is an animator component, play the win animation
 			if (symbol.GetComponent<Animator>())
 				symbol.GetComponent<Animator>().SetTrigger("playwin");
 		}
-		slot.log ("OnLineWinDisplayed Callback");
-		slot.log ("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
+		slot.log("OnLineWinDisplayed Callback");
+		slot.log("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
 	}
 
 	private void OnAllWinsComputed(SlotWinSpin win, int timesBet)
 	{
-		slot.log ("OnAllWinsComputed Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Display all server-computed wins
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Display all locally computed wins
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnAllWinsComputed Callback");
 	}
 
-	private void OnScatterSymbolLanded(GameObject symbol, int count) {
+	private void OnScatterSymbolLanded(GameObject symbol, int count)
+	{
 
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual effects for server-determined scatter symbols
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual effects for locally determined scatter symbols
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
 		// we don't want to play the scatter animations if the reels are snapping
 		if (slot.state == SlotState.snapping) return;
 
@@ -268,37 +366,64 @@ public class BeachDaysCallbacks : MonoBehaviour {
 
 	private void OnScatterSymbolHit(SlotScatterHitData hit)
 	{
-		slot.log ("OnScatterSymbolHit Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual effects for server-determined scatter hits
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual effects for locally determined scatter hits
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnScatterSymbolHit Callback");
 	}
 
 	private void OnAnticipationScatterBegin(SlotScatterHitData hit)
 	{
-		slot.log ("OnAnticipationScatterBegin Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual effects for server-determined scatter anticipation
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual effects for locally determined scatter anticipation
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnAnticipationScatterBegin Callback");
 	}
 
-	public void OnLinkedSymbolLanded(int reel, string linkName) {
-		slot.log ("OnLinkedSymbolLanded:" + reel + " : " + linkName);
-		Debug.Log ("OnLinkedSymbolLanded:" + reel + " : " + linkName);
-	}
-
-	void OnWinDisplayedCycle (int count)
+	public void OnLinkedSymbolLanded(int reel, string linkName)
 	{
-		slot.log ("OnWinDisplayedCycle Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual effects for server-determined linked symbols
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual effects for locally determined linked symbols
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnLinkedSymbolLanded:" + reel + " : " + linkName);
+		Debug.Log("OnLinkedSymbolLanded:" + reel + " : " + linkName);
 	}
 
-	void OnBeginCreditWinCountOff (int obj)
+	void OnWinDisplayedCycle(int count)
 	{
-
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for win display cycling used by both modes
+		slot.log("OnWinDisplayedCycle Callback");
 	}
 
-	void OnCompletedCreditCountOff (int obj)
+	void OnBeginCreditWinCountOff(int obj)
 	{
-
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for credit count-off start used by both modes
 	}
-	
-	void OnSymbolReturningToPool (GameObject obj)
-	{
 
+	void OnCompletedCreditCountOff(int obj)
+	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for credit count-off completion used by both modes
+	}
+
+	void OnSymbolReturningToPool(GameObject obj)
+	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual cleanup when symbols return to pool used by both modes
 	}
 
 	#endregion

@@ -3,27 +3,30 @@ using System.Collections;
 using System.Security.Cryptography;
 using System;
 
-public class RNCrypto : MonoBehaviour {
+public class RNCrypto : MonoBehaviour
+{
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start()
+	{
+
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-	
+	void Update()
+	{
+
 	}
 
 	public static int GetRandomIntBetween(int minValue, int maxValue)
 	{
 		// Make maxValue inclusive.
 		//maxValue++;
-		
+
 		var rng = new RNGCryptoServiceProvider();
 		var uint32Buffer = new byte[4];
 		long diff = maxValue - minValue;
-		
+
 		while (true)
 		{
 			rng.GetBytes(uint32Buffer);

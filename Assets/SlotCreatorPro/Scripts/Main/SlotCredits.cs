@@ -1,12 +1,11 @@
 ﻿// Brad Lima - 11/2019
 //
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using aSlot;
 
-public class SlotCredits : MonoBehaviour {
+public class SlotCredits : MonoBehaviour
+{
 
 	[HideInInspector]
 	public bool persistant = true;
@@ -28,6 +27,10 @@ public class SlotCredits : MonoBehaviour {
 	[HideInInspector]
 	public int linesPlayed = 1;
 
+	//--- MULTIPLAYER SERVER CODE START ---
+	// These are display-only values from server in multiplayer mode
+	// In single-player mode, these are calculated locally
+	//--- MULTIPLAYER SERVER CODE END ---
 	public int totalIn;
 	public int totalOut;
 
@@ -36,27 +39,43 @@ public class SlotCredits : MonoBehaviour {
 	private Slot slot;
 
 
-	void Awake () {
-		restore ();
+	void Awake()
+	{
+		restore();
 	}
-	void Start () {
+	void Start()
+	{
 	}
 
 	// Update is called once per frame
-	void Update () {
-	
+	void Update()
+	{
+
 	}
 
 	#region Save/Restore machine
-	public void restore() 
+	public void restore()
 	{
 		slot = GetComponent<Slot>();
 		if (persistant)
 		{
-			slot.log ("restoring slot settings");
-			credits = PlayerPrefs.GetInt(slot.name + "_credits", credits);
+			slot.log("restoring slot settings");
+
+			//--- MULTIPLAYER SERVER CODE START ---
+			// MULTIPLAYER: Don't restore credits from local storage - server manages credits
+			//--- MULTIPLAYER SERVER CODE END ---
+			//--- SINGLE-PLAYER LOCAL CODE START ---
+			if (!slot.IsMultiplayer)
+			{
+				// SINGLE-PLAYER: Restore credits from local storage
+				credits = PlayerPrefs.GetInt(slot.name + "_credits", credits);
+			}
+			//--- SINGLE-PLAYER LOCAL CODE END ---
+
+			//--- SHARED CODE (BOTH MODES) ---
+			// User preferences saved locally in both modes
 			betPerLineIndex = PlayerPrefs.GetInt(slot.name + "_betPerLineIndex", betPerLineIndex);
-			betPerLine = slot.betsPerLine[betPerLineIndex].value; //PlayerPrefs.GetInt(slot.name + "_betPerLine", betPerLine);
+			betPerLine = slot.betsPerLine[betPerLineIndex].value;
 			linesPlayed = PlayerPrefs.GetInt(slot.name + "_linesPlayed", linesPlayed);
 
 			for (int index = 0; index < slot.betsPerLine.Count; index++)
@@ -64,8 +83,9 @@ public class SlotCredits : MonoBehaviour {
 				slot.betsPerLine[index].canBet = PlayerPrefsX.GetBool(slot.name + "_betsPerLine" + index, slot.betsPerLine[index].canBet);
 			}
 			if (linesPlayed > slot.lines.Count) linesPlayed = slot.lines.Count;
-			//if (betPerLine > maxBetPerLine) betPerLine = maxBetPerLine;
-		} else {
+		}
+		else
+		{
 			if (betPerLineDefaultIndex > slot.betsPerLine.Count) { slot.logConfigError("Your machine default bet per line index is greater than the actual bets per line"); return; }
 			betPerLine = slot.betsPerLine[betPerLineDefaultIndex].value;
 			betPerLineIndex = betPerLineDefaultIndex;
@@ -74,7 +94,19 @@ public class SlotCredits : MonoBehaviour {
 
 	void save()
 	{
-		PlayerPrefs.SetInt(slot.name + "_credits", credits);
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Don't save credits locally - server manages credits
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		if (!slot.IsMultiplayer)
+		{
+			// SINGLE-PLAYER: Save credits locally
+			PlayerPrefs.SetInt(slot.name + "_credits", credits);
+		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+
+		//--- SHARED CODE (BOTH MODES) ---
+		// User preferences saved locally in both modes
 		PlayerPrefs.SetInt(slot.name + "_betPerLineIndex", betPerLineIndex);
 		PlayerPrefs.SetInt(slot.name + "_betPerLine", betPerLine);
 		PlayerPrefs.SetInt(slot.name + "_linesPlayed", linesPlayed);
@@ -85,23 +117,34 @@ public class SlotCredits : MonoBehaviour {
 	}
 	#endregion
 
-	#region Deposit and Withdraw Credits
+	#region Credit Management
 	public void setCredits(int creds)
-	{ 
-		slot.log ("setting credits = " + creds);
+	{
+		slot.log("setting credits = " + creds);
 		credits = creds;
 	}
 	public void depositCredits(int deposit)
 	{
-		slot.log ("setting slot credits = " + deposit);
+		slot.log("setting slot credits = " + deposit);
 		credits += deposit;
 		//HOTween.To (this, 2.0f, new TweenParms().Prop ("credits", credits + deposit).Ease(EaseType.EaseOutBack));
 	}
-	
+
 	public int withdrawCredits()
 	{
 		return credits;
 	}
+
+	//--- MULTIPLAYER SERVER CODE START ---
+	/// <summary>
+	/// MULTIPLAYER: Updates credits from server response
+	/// Called when server sends updated credit balance
+	/// </summary>
+	public void updateCreditsFromServer(int newCredits)
+	{
+		credits = newCredits;
+	}
+	//--- MULTIPLAYER SERVER CODE END ---
 	#endregion
 
 	#region Betting functions
@@ -131,29 +174,39 @@ public class SlotCredits : MonoBehaviour {
 		}
 		betPerLineIndex = max;
 		betPerLine = slot.betsPerLine[max].value;
+
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Send bet change to server
+		// TODO: Implement server communication for bet changes
+		//--- MULTIPLAYER SERVER CODE END ---
 	}
 	public void incBetPerLine()
 	{
 		slot = GetComponent<Slot>();
-		switch (slot.state) 
+		switch (slot.state)
 		{
-		case SlotState.ready:
+			case SlotState.ready:
 
-			betPerLineIndex++;
-			if (betPerLineIndex > slot.betsPerLine.Count-1) betPerLineIndex = 0;
-			while (!slot.betsPerLine[betPerLineIndex].canBet)
-			{
 				betPerLineIndex++;
-				if (betPerLineIndex > slot.betsPerLine.Count-1) betPerLineIndex = 0;
-			}
-			betPerLine = slot.betsPerLine[betPerLineIndex].value;
-			slot.incrementedBet(betPerLine);
+				if (betPerLineIndex > slot.betsPerLine.Count - 1) betPerLineIndex = 0;
+				while (!slot.betsPerLine[betPerLineIndex].canBet)
+				{
+					betPerLineIndex++;
+					if (betPerLineIndex > slot.betsPerLine.Count - 1) betPerLineIndex = 0;
+				}
+				betPerLine = slot.betsPerLine[betPerLineIndex].value;
+				slot.incrementedBet(betPerLine);
 
-			break;
-		case SlotState.playingwins:
-			slot.setState(SlotState.ready);
-			incBetPerLine();
-			break;
+				//--- MULTIPLAYER SERVER CODE START ---
+				// MULTIPLAYER: Send bet change to server
+				// TODO: Implement server communication for bet changes
+				//--- MULTIPLAYER SERVER CODE END ---
+
+				break;
+			case SlotState.playingwins:
+				slot.setState(SlotState.ready);
+				incBetPerLine();
+				break;
 		}
 
 		save();
@@ -162,44 +215,54 @@ public class SlotCredits : MonoBehaviour {
 	public void decBetPerLine()
 	{
 		slot = GetComponent<Slot>();
-		switch (slot.state) 
+		switch (slot.state)
 		{
-		case SlotState.ready:
-			
-			betPerLineIndex--;
-			if (betPerLineIndex < 0) betPerLineIndex = slot.betsPerLine.Count-1;
-			while (!slot.betsPerLine[betPerLineIndex].canBet)
-			{
+			case SlotState.ready:
+
 				betPerLineIndex--;
-				if (betPerLineIndex < 0) betPerLineIndex = slot.betsPerLine.Count-1;
-			}
-			betPerLine = slot.betsPerLine[betPerLineIndex].value;
-			slot.decrementedBet(betPerLine);
-			
-			break;
-		case SlotState.playingwins:
-			slot.setState(SlotState.ready);
-			decBetPerLine();
-			break;
+				if (betPerLineIndex < 0) betPerLineIndex = slot.betsPerLine.Count - 1;
+				while (!slot.betsPerLine[betPerLineIndex].canBet)
+				{
+					betPerLineIndex--;
+					if (betPerLineIndex < 0) betPerLineIndex = slot.betsPerLine.Count - 1;
+				}
+				betPerLine = slot.betsPerLine[betPerLineIndex].value;
+				slot.decrementedBet(betPerLine);
+
+				//--- MULTIPLAYER SERVER CODE START ---
+				// MULTIPLAYER: Send bet change to server
+				// TODO: Implement server communication for bet changes
+				//--- MULTIPLAYER SERVER CODE END ---
+
+				break;
+			case SlotState.playingwins:
+				slot.setState(SlotState.ready);
+				decBetPerLine();
+				break;
 		}
-		
+
 		save();
 	}
 	public void incLinesPlayed()
 	{
-		switch (slot.state) 
+		switch (slot.state)
 		{
-		case SlotState.ready:
-			linesPlayed++;
-			if (linesPlayed > slot.lines.Count) { linesPlayed = 1; }
-			slot.incrementedLinesPlayed(linesPlayed);
-			slot.refs.lines.displayLines(linesPlayed);
-			break;
-		case SlotState.playingwins:
-			slot.setState(SlotState.ready);
-			slot.refs.wins.reset();
-			incLinesPlayed();
-			break;
+			case SlotState.ready:
+				linesPlayed++;
+				if (linesPlayed > slot.lines.Count) { linesPlayed = 1; }
+				slot.incrementedLinesPlayed(linesPlayed);
+				slot.refs.lines.displayLines(linesPlayed);
+
+				//--- MULTIPLAYER SERVER CODE START ---
+				// MULTIPLAYER: Send lines change to server
+				// TODO: Implement server communication for lines changes
+				//--- MULTIPLAYER SERVER CODE END ---
+				break;
+			case SlotState.playingwins:
+				slot.setState(SlotState.ready);
+				slot.refs.wins.reset();
+				incLinesPlayed();
+				break;
 		}
 
 		save();
@@ -207,77 +270,132 @@ public class SlotCredits : MonoBehaviour {
 
 	public void decLinesPlayed()
 	{
-		switch (slot.state) 
+		switch (slot.state)
 		{
-		case SlotState.ready:
-			linesPlayed--;
-			if (linesPlayed < 1) { linesPlayed = slot.lines.Count-1; }
-			slot.decrementedLinesPlayed(linesPlayed);
-			slot.refs.lines.displayLines(linesPlayed);
-			break;
-		case SlotState.playingwins:
-			slot.setState(SlotState.ready);
-			slot.refs.wins.reset();
-			decLinesPlayed();
-			break;
+			case SlotState.ready:
+				linesPlayed--;
+				if (linesPlayed < 1) { linesPlayed = slot.lines.Count - 1; }
+				slot.decrementedLinesPlayed(linesPlayed);
+				slot.refs.lines.displayLines(linesPlayed);
+
+				//--- MULTIPLAYER SERVER CODE START ---
+				// MULTIPLAYER: Send lines change to server
+				// TODO: Implement server communication for lines changes
+				//--- MULTIPLAYER SERVER CODE END ---
+				break;
+			case SlotState.playingwins:
+				slot.setState(SlotState.ready);
+				slot.refs.wins.reset();
+				decLinesPlayed();
+				break;
 		}
-		
+
 		save();
 	}
 
 	public bool placeBet()
 	{
-		if (!canPlaceBet()) return false;
-
-		finishCreditCount();
-		credits -= totalBet ();
-		totalIn += totalBet ();
-		save();
-		return true;
-	}
-
-	public bool canPlaceBet() 
-	{
-		if (totalCredits() < totalBet()) 
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (slot.IsMultiplayer)
 		{
-			return false;
+			// MULTIPLAYER: Always return true, let server handle validation
+			// Server will reject spin if insufficient credits
+			finishCreditCount();
+			return true;
 		}
-		return true;
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		else
+		{
+			// SINGLE-PLAYER: Local bet validation and processing
+			if (!canPlaceBet()) return false;
+
+			finishCreditCount();
+			credits -= totalBet();
+			totalIn += totalBet();
+			save();
+			return true;
+		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 	}
 
+	public bool canPlaceBet()
+	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (slot.IsMultiplayer)
+		{
+			// MULTIPLAYER: Always return true, let server handle validation
+			return true;
+		}
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		else
+		{
+			// SINGLE-PLAYER: Local credit validation
+			if (totalCredits() < totalBet())
+			{
+				return false;
+			}
+			return true;
+		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+	}
+	#endregion
+
+	#region Win Display
 	public void awardWin(int amount)
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for credit count-off used by both modes
 		if (creditsTween != null)
 			if (creditsTween.IsActive()) creditsTween.Complete();
 
 		lastWin = amount;
-		//DebugX.log (DebugMessageType.Critical, "Awarding credits:" + lastWin);
-		//credits += lastWin;
 		queue = amount;
-		float countOffTime = Mathf.Clamp(amount * 0.05f, 2.0f,3.0f);
+		float countOffTime = Mathf.Clamp(amount * 0.05f, 2.0f, 3.0f);
 
-		creditsTween = DOTween.To(()=> this.countingQueue, x => this.countingQueue = x, amount, countOffTime).OnComplete(completedCreditTween);
-		//creditsTween = HOTween.To (this,countOffTime,new TweenParms().Prop ("countingQueue", amount).OnComplete(completedCreditTween));
+		creditsTween = DOTween.To(() => this.countingQueue, x => this.countingQueue = x, amount, countOffTime).OnComplete(completedCreditTween);
 		slot.beginCreditWinCountOff(lastWin);
-		//queue += amount;
-		//credits += queue;
-		//queue = 0;
-		totalOut += amount;
+
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Don't update totalOut locally - server manages this
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		if (!slot.IsMultiplayer)
+		{
+			// SINGLE-PLAYER: Update totalOut locally
+			totalOut += amount;
+		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+
+		//--- SHARED CODE (BOTH MODES) ---
 		save();
 	}
-	public void awardBonus(int amount, bool addToTotalIn=true)
+
+	public void awardBonus(int amount, bool addToTotalIn = true)
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for bonus credit count-off used by both modes
 		if (creditsTween != null)
 			creditsTween.Complete();
 
 		queue = amount;
-		float countOffTime = Mathf.Clamp(amount * 0.0005f, 2.0f,3.0f);
-		creditsTween = DOTween.To(()=> this.countingQueue, x => this.countingQueue = x, amount, countOffTime).OnComplete(completedBonusCreditTween);
-		//creditsTween = DOTween.To (this,countOffTime,new TweenParms().Prop ("countingQueue", amount).OnComplete(completedBonusCreditTween));
+		float countOffTime = Mathf.Clamp(amount * 0.0005f, 2.0f, 3.0f);
+		creditsTween = DOTween.To(() => this.countingQueue, x => this.countingQueue = x, amount, countOffTime).OnComplete(completedBonusCreditTween);
 		slot.beginCreditBonusCountOff(amount);
 
-		if (addToTotalIn)
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Don't update totalOut locally - server manages this
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		if (!slot.IsMultiplayer && addToTotalIn)
+		{
+			// SINGLE-PLAYER: Update totalOut locally
 			totalOut += amount;
+		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+
+		//--- SHARED CODE (BOTH MODES) ---
 		save();
 	}
 
@@ -310,6 +428,5 @@ public class SlotCredits : MonoBehaviour {
 		slot.betsPerLine[index].canBet = false;
 		save();
 	}
-
 	#endregion
 }

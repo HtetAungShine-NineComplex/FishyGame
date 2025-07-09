@@ -8,7 +8,6 @@ public class CannonHandler : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private bool _withLevel = false;
-    [SerializeField] private bool _defaultRocket = false;
     [SerializeField] private int _increaseStep = 50; //adjust based on match type
     [SerializeField] private int _maxAmount = 600; //adjust based on match type
 
@@ -75,11 +74,6 @@ public class CannonHandler : MonoBehaviour
         if(_laserCannonController != null)
         {
             _laserCannonController.LaserShoot += OnShoot;
-        }
-
-        if (_defaultRocket)
-        {
-            SwapWeapon();
         }
     }
 

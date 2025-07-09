@@ -1,21 +1,23 @@
 ﻿// Brad Lima - 11/2019
 //
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using System;
-using System.Linq;
 
-public class SlotReel : MonoBehaviour {
+public class SlotReel : MonoBehaviour
+{
 
 	public static event Action<int> OnReelDoneSpinning;
 
 	public int reelIndex;
 	public float speed;
 
+	//--- SINGLE-PLAYER LOCAL CODE START ---
+	// SINGLE-PLAYER: Local reel strips used when IsMultiplayer = false
 	public List<int> ReelStrip = new List<int>();
 	private int reelStripIndex;
+	//--- SINGLE-PLAYER LOCAL CODE END ---
 
 	[HideInInspector]
 	public List<GameObject> symbols = new List<GameObject>();
@@ -24,9 +26,6 @@ public class SlotReel : MonoBehaviour {
 
 	private bool snapped = false;
 	private bool stopped = false;
-
-	private List<int> cumulativeFrequencyList = new List<int>();
-	private int totalFrequency;
 
 	public float symbolHeight;
 	public float symbolWidth;
@@ -40,11 +39,18 @@ public class SlotReel : MonoBehaviour {
 	private bool anticipation;
 
 	private int symbolsSpinRemaining;
+
+	//--- MULTIPLAYER SERVER CODE START ---
+	// MULTIPLAYER: Server-provided symbol data for this reel
+	private List<int> serverSymbolData = new List<int>();
+	private int serverSymbolIndex = 0;
+	//--- MULTIPLAYER SERVER CODE END ---
+
 	#region Config
-	void Awake ()
+	void Awake()
 	{
 	}
-	void Start () 
+	void Start()
 	{
 
 	}
@@ -60,25 +66,26 @@ public class SlotReel : MonoBehaviour {
 			return;
 		}
 
-
-		cacheSymbolFrequency();
-
+		//--- SHARED CODE (BOTH MODES) ---
+		// Symbol size calculation used by both modes
 		if (slot.symbolPrefabs[0] == null) return;
 		GameObject symb = (GameObject)Instantiate(slot.symbolPrefabs[0]);
 
-		symb.transform.localScale = Vector3.Scale(symb.transform.localScale, transform.parent.transform.localScale );
-		//symb.transform.localRotation = transform.parent.transform.rotation;
+		symb.transform.localScale = Vector3.Scale(symb.transform.localScale, transform.parent.transform.localScale);
 		if (symb.GetComponent<SpriteRenderer>())
 		{
 			Vector3 size = symb.GetComponent<SpriteRenderer>().sprite.bounds.size;
 			symbolHeight = size.y * symb.transform.localScale.y;
 			symbolWidth = size.x * symb.transform.localScale.x;
-		} else
+		}
+		else
 		if (symb.GetComponent<MeshFilter>())
 		{
 			symbolHeight = symb.GetComponent<MeshFilter>().mesh.bounds.size.y * slot.transform.localScale.y;
 			symbolWidth = symb.GetComponent<MeshFilter>().mesh.bounds.size.x * slot.transform.localScale.y;
-		} else {
+		}
+		else
+		{
 			slot.logConfigError(SlotErrors.MISSING_RENDERER);
 			return;
 		}
@@ -88,15 +95,15 @@ public class SlotReel : MonoBehaviour {
 
 		heightOffset = -transform.parent.transform.localPosition.y + (symbolHeight * (slot.reelHeight / 2) + (symbolPadding * (slot.reelHeight / 2)));
 		widthOffset = -transform.parent.transform.localPosition.x + (symbolWidth * (slot.numberOfReels / 2) + (reelPadding * (slot.numberOfReels / 2)));
-		Destroy (symb);
-		
-		transform.localPosition = new Vector3((-widthOffset + (symbolWidth * (reelIndex - 1)) + (reelPadding * (reelIndex - 1))),transform.localPosition.x, transform.localPosition.z);
-		
+		Destroy(symb);
+
+		transform.localPosition = new Vector3((-widthOffset + (symbolWidth * (reelIndex - 1)) + (reelPadding * (reelIndex - 1))), transform.localPosition.x, transform.localPosition.z);
+
 		if (!slot.useSuppliedResult)
 		{
 			createReelSymbols();
 		}
-		else 
+		else
 		{
 			for (int i = 0; i < slot.reelHeight; i++)
 			{
@@ -106,43 +113,27 @@ public class SlotReel : MonoBehaviour {
 	}
 	#endregion
 
+	#region MULTIPLAYER SERVER CODE
+	/// <summary>
+	/// MULTIPLAYER: Sets server-provided symbol data for this reel
+	/// Called when server sends symbol results for display
+	/// </summary>
+	public void setServerSymbolData(List<int> symbolData)
+	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		serverSymbolData = symbolData;
+		serverSymbolIndex = 0;
+		//--- MULTIPLAYER SERVER CODE END ---
+	}
+	#endregion
+
 	#region Create Reel
 	public void createReelSymbols()
 	{
 		for (int i = 0; i < slot.reelHeight; i++)
 		{
 			createSymbol(i);
-		}	
-	}
-
-	void cacheSymbolFrequency()
-	{
-		cumulativeFrequencyList.Clear();
-		totalFrequency = 0;
-		for (int index = 0; index < slot.symbolFrequencies.Count; index++)
-		{
-			if (slot.symbolPrefabs[index] == null) continue;
-			while (slot.symbolInfo.Count <= index) slot.symbolInfo.Add (new SlotSymbolInfo());
-			SlotSymbolInfo symbol = slot.symbolInfo[index];
-			if (symbol.perReelFrequency)
-			{
-				totalFrequency += slot.reelFrequencies[index].freq[reelIndex-1];
-			} else {
-				totalFrequency += slot.symbolFrequencies[index];
-			}
-			cumulativeFrequencyList.Add ( totalFrequency ); 
 		}
-
-	}
-	int getSymbolCountCurrentlyOnReel(int index)
-	{
-		int count = 0;
-		foreach(GameObject symbol in symbols)
-		{
-			if (symbol.GetComponent<SlotSymbol>().symbolIndex == index)
-				count++;
-		}
-		return count;
 	}
 
 
@@ -150,53 +141,40 @@ public class SlotReel : MonoBehaviour {
 
 	public int getSymbol()
 	{
-		// Linked symbol
-		int chosen = -1;
-		// if the symbol is linked to another, and not the bottom, automatically draw the next link
-		if ((slot.symbolInfo[lastSelected].linked) && (slot.symbolInfo[lastSelected].linkPosition != LinkPosition.Top))
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (slot.IsMultiplayer)
 		{
-			if (slot.symbolInfo[lastSelected].link > 0)
-			chosen = slot.symbolInfo[lastSelected].link;
-			lastSelected = chosen;
-			return chosen;
-		}
-
-		while (chosen == -1)
-		{
-			if (ReelStrip.Count > 0)
+			// MULTIPLAYER: Use server-provided symbol data
+			if (serverSymbolData.Count > 0 && serverSymbolIndex < serverSymbolData.Count)
 			{
-				chosen = ReelStrip[reelStripIndex];
-				reelStripIndex++;
-				if (reelStripIndex > ReelStrip.Count - 1)
-					reelStripIndex = 0;
-			} else {
-				uint selectedFrequency = RNGManager.getRandomRange(slot.activeRNG, 1, totalFrequency+1);
-				for (int index = 0; index < cumulativeFrequencyList.Count; index++)
-				{
-					if (selectedFrequency <= cumulativeFrequencyList[index]) { chosen = index; break; }
-				}
-				if (!slot.symbolInfo[chosen].active) { chosen = -1; continue; }
-
-				int maxPerReel = slot.symbolInfo[chosen].clampPerReel;
-				if (maxPerReel > 0)
-				{
-					if (getSymbolCountCurrentlyOnReel(chosen) >= maxPerReel) { chosen = -1; continue; }
-					int maxTotal = slot.symbolInfo[chosen].clampTotal;
-					if (maxTotal > 0)
-						if (slot.getSymbolCountCurrentlyTotal(chosen) >= maxTotal) chosen = -1;
-				}
-				// Linked symbols cannot be organically drawn
-				if (slot.symbolInfo[chosen].linked)
-				{
-					if (slot.symbolInfo[chosen].linkPosition != LinkPosition.Bottom)
-						chosen = -1;
-				}
+				int serverSymbol = serverSymbolData[serverSymbolIndex];
+				serverSymbolIndex++;
+				lastSelected = serverSymbol;
+				return serverSymbol;
 			}
 		}
-		
+		//--- MULTIPLAYER SERVER CODE END ---
+
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Use local RNG and reel strips
+		int chosen = -1;
+
+		if (ReelStrip.Count > 0)
+		{
+			chosen = ReelStrip[reelStripIndex];
+			reelStripIndex++;
+			if (reelStripIndex > ReelStrip.Count - 1)
+				reelStripIndex = 0;
+		}
+		else
+		{
+			chosen = 0;
+		}
 
 		lastSelected = chosen;
 		return chosen;
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+
 	}
 
 	void createSymbol(int slotIndex)
@@ -206,49 +184,75 @@ public class SlotReel : MonoBehaviour {
 		{
 			if ((symbolsSpinRemaining >= slot.reelIndent) && (symbolsSpinRemaining < (slot.reelHeight - slot.reelIndent)))
 			{
-				if (slot.suppliedResult[reelIndex-1,symbolsSpinRemaining - slot.reelIndent] > -1)
+				if (slot.suppliedResult[reelIndex - 1, symbolsSpinRemaining - slot.reelIndent] > -1)
 				{
-					symbolIndex = slot.suppliedResult[reelIndex-1,symbolsSpinRemaining - slot.reelIndent];
-				} else {
+					symbolIndex = slot.suppliedResult[reelIndex - 1, symbolsSpinRemaining - slot.reelIndent];
+				}
+				else
+				{
 					symbolIndex = getSymbol();
 				}
-			} else {
-				symbolIndex = getSymbol();
 			}
-		} else {
-			if ((symbolsSpinRemaining >= slot.reelIndent) && (symbolsSpinRemaining < (slot.reelHeight - slot.reelIndent)))
+			else
 			{
-				if (slot.frozenPositions[reelIndex-1,symbolsSpinRemaining - slot.reelIndent] > -1)
-				{
-					Debug.Log("slot reel test : " + slot.frozenPositions[reelIndex - 1, symbolsSpinRemaining - slot.reelIndent]);
-					symbolIndex = slot.frozenPositions[reelIndex-1,symbolsSpinRemaining - slot.reelIndent];
-				} else {
-					symbolIndex = getSymbol();
-				}
-			} else {
 				symbolIndex = getSymbol();
 			}
 		}
+		else
+		{
+			//--- SINGLE-PLAYER LOCAL CODE START ---
+			if (!slot.IsMultiplayer)
+			{
+				// SINGLE-PLAYER: Check frozen positions for local gameplay features
+				if ((symbolsSpinRemaining >= slot.reelIndent) && (symbolsSpinRemaining < (slot.reelHeight - slot.reelIndent)))
+				{
+					if (slot.frozenPositions[reelIndex - 1, symbolsSpinRemaining - slot.reelIndent] > -1)
+					{
+						Debug.Log("slot reel test : " + slot.frozenPositions[reelIndex - 1, symbolsSpinRemaining - slot.reelIndent]);
+						symbolIndex = slot.frozenPositions[reelIndex - 1, symbolsSpinRemaining - slot.reelIndent];
+					}
+					else
+					{
+						symbolIndex = getSymbol();
+					}
+				}
+				else
+				{
+					symbolIndex = getSymbol();
+				}
+			}
+			//--- SINGLE-PLAYER LOCAL CODE END ---
+			//--- MULTIPLAYER SERVER CODE START ---
+			else
+			{
+				// MULTIPLAYER: Always use server-provided symbols
+				symbolIndex = getSymbol();
+			}
+			//--- MULTIPLAYER SERVER CODE END ---
+		}
 
+		//--- SHARED CODE (BOTH MODES) ---
+		// Symbol instantiation used by both modes
 		GameObject symb;
-		if (slot.usePool) 
+		if (slot.usePool)
 		{
 			symb = getFromPool(symbolIndex);
-		} else {
+		}
+		else
+		{
 			symb = (GameObject)Instantiate(slot.symbolPrefabs[symbolIndex]);
 			symb.GetComponent<SlotSymbol>().symbolIndex = symbolIndex;
 			symb.transform.localScale = Vector3.Scale(symb.transform.localScale, transform.parent.transform.localScale);
-			//symb.transform.localRotation = transform.parent.transform.rotation;
 		}
 
 
 		symb.transform.parent = transform;
 		if (symb.GetComponent<SpriteRenderer>())
-			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0,slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
+			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0, slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
 		if (symb.GetComponent<MeshFilter>())
-			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0,slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
+			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0, slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
 
-		symbols.Insert(0,symb);
+		symbols.Insert(0, symb);
 	}
 
 	void createReelSymbolStartup(int slotIndex)
@@ -256,15 +260,22 @@ public class SlotReel : MonoBehaviour {
 		int symbolIndex = -1;
 		if ((slotIndex >= slot.reelIndent) && (slotIndex < (slot.reelHeight - slot.reelIndent)))
 		{
-			symbolIndex = slot.suppliedResult[reelIndex-1,slotIndex-slot.reelIndent];
-		} else {
+			symbolIndex = slot.suppliedResult[reelIndex - 1, slotIndex - slot.reelIndent];
+		}
+		else
+		{
 			symbolIndex = getSymbol();
 		}
+
+		//--- SHARED CODE (BOTH MODES) ---
+		// Symbol instantiation used by both modes
 		GameObject symb;
-		if (slot.usePool) 
+		if (slot.usePool)
 		{
 			symb = getFromPool(symbolIndex);
-		} else {
+		}
+		else
+		{
 			symb = (GameObject)Instantiate(slot.symbolPrefabs[symbolIndex]);
 			symb.GetComponent<SlotSymbol>().symbolIndex = symbolIndex;
 			symb.transform.localScale = Vector3.Scale(symb.transform.localScale, transform.parent.transform.localScale);
@@ -272,30 +283,27 @@ public class SlotReel : MonoBehaviour {
 
 		symb.transform.parent = transform;
 		if (symb.GetComponent<SpriteRenderer>())
-			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0,slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
+			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0, slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
 		if (symb.GetComponent<MeshFilter>())
-			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0,slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
+			symb.transform.localPosition = new Vector3(slot.reelCenter.position.x + 0, slot.reelCenter.position.y + (-heightOffset + (slotIndex * symbolHeight - transform.localPosition.y)) + (symbolPadding * slotIndex), 0);
 
-		symbols.Insert(0,symb);
+		symbols.Insert(0, symb);
 	}
 	#endregion
 
 	#region Actions
 	public void spinReel(float spinTime)
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Reel spinning mechanics used by both modes
 		retatchBackgrounds();
-		cacheSymbolFrequency();
 
 		snapped = false;
 		stopped = false;
 		speed = slot.spinningSpeed;
 
 		symbolsSpinRemaining = (int)(spinTime / speed);
-		//Debug.Log(symbolsSpinRemaining);
-		//spinTween = HOTween.To (this,spinTime,new TweenParms().Prop("speed", speed).OnComplete(finishSpinning));
 		transform.DOLocalMoveY(-symbolHeight, speed).OnComplete(OnNextSymbol).SetRelative(true).SetEase(Ease.InOutBounce);
-		//DOTween.To (()=> transform,x => transform = x, new Vector3(0,-symbolHeight,0), speed).OnComplete(OnNextSymbol).SetEase(Ease.Linear);
-		//HOTween.To (transform,speed,new TweenParms().Prop ("position", new Vector3(0,-symbolHeight,0), true).OnComplete(OnNextSymbol).Ease (EaseType.Linear));
 	}
 
 	public void snapReel()
@@ -322,18 +330,19 @@ public class SlotReel : MonoBehaviour {
 			slot.logConfigError(SlotErrors.NO_SYMBOLS);
 			return;
 		}
-		GameObject symb = symbols[symbols.Count-1];
+		GameObject symb = symbols[symbols.Count - 1];
 
 		slot.returnSymbolToPool(symb);
 	}
 
 	void detatchBackgrounds()
 	{
-		foreach(GameObject symbol in symbols)
+		foreach (GameObject symbol in symbols)
 		{
-			
-			foreach(Transform child in symbol.transform) {
-				symbolsParents.Add (child.parent);
+
+			foreach (Transform child in symbol.transform)
+			{
+				symbolsParents.Add(child.parent);
 				child.parent = child.parent.transform.parent;
 				symbolsChildren.Add(child);
 			}
@@ -342,9 +351,9 @@ public class SlotReel : MonoBehaviour {
 
 	void retatchBackgrounds()
 	{
-		for(int i = 0; i < symbolsChildren.Count; i++) symbolsChildren[i].parent = symbolsParents[i];
+		for (int i = 0; i < symbolsChildren.Count; i++) symbolsChildren[i].parent = symbolsParents[i];
 		symbolsChildren.Clear();
-		symbolsParents.Clear() ;
+		symbolsParents.Clear();
 	}
 
 	#endregion
@@ -358,43 +367,42 @@ public class SlotReel : MonoBehaviour {
 			return;
 		}
 
+		//--- SHARED CODE (BOTH MODES) ---
+		// Symbol cycling logic used by both modes
 		if (slot.usePool) returnToPool();
-		else 
-			Destroy (symbols[symbols.Count-1]);
-		symbols.RemoveAt(symbols.Count-1);
+		else
+			Destroy(symbols[symbols.Count - 1]);
+		symbols.RemoveAt(symbols.Count - 1);
 
-		createSymbol(slot.reelHeight-1);
+		createSymbol(slot.reelHeight - 1);
 
 		symbolsSpinRemaining--;
-		if (symbolsSpinRemaining == 0) {
+		if (symbolsSpinRemaining == 0)
+		{
 			stopped = true;
 		}
 
-		if (slot.waitingForResult) {
+		if (slot.waitingForResult)
+		{
 			symbolsSpinRemaining = slot.reelHeight;
 			stopped = false;
 		}
-
-		//if (reelIndex == 3)
-		//	Debug.Log("remaining=" + symbolsSpinRemaining);
-
 		if (stopped)
 		{
 			transform.DOLocalMoveY(-symbolHeight - symbolPadding, slot.easeOutTime).SetRelative(true).OnComplete(OnReelStopped).SetEase(slot.reelEase);
-			//HOTween.To (transform,slot.easeOutTime,new TweenParms().Prop ("position", new Vector3(0,-symbolHeight,0), true).OnComplete(OnReelStopped).Ease (slot.reelEase));
 			Invoke("checkScatterLanded", slot.easeOutTime / 2.0f);
 			slot.reelLanded(reelIndex);
 
-		} else {
+		}
+		else
+		{
 			if (anticipation)
 			{
-				transform.DOLocalMoveY(-symbolHeight - symbolPadding, speed/2.0f).SetRelative(true).OnComplete(OnNextSymbol).SetEase(Ease.Linear);
-				//HOTween.To (transform,speed/2.0f,new TweenParms().Prop ("position", new Vector3(0,-symbolHeight,0), true).OnComplete(OnNextSymbol).Ease (EaseType.Linear));
-			} else {
+				transform.DOLocalMoveY(-symbolHeight - symbolPadding, speed / 2.0f).SetRelative(true).OnComplete(OnNextSymbol).SetEase(Ease.Linear);
+			}
+			else
+			{
 				transform.DOLocalMoveY(-symbolHeight - symbolPadding, speed).SetRelative(true).OnComplete(OnNextSymbol).SetEase(Ease.Linear);
-				//if ((symbolsSpinRemaining % 10) == 0)
-				//	Debug.Log(":: " + reelIndex + " :: " + symbolsSpinRemaining);
-				//HOTween.To (transform,speed,new TweenParms().Prop ("position", new Vector3(0,-symbolHeight,0), true).OnComplete(OnNextSymbol).Ease (EaseType.Linear));
 			}
 		}
 	}
@@ -406,33 +414,44 @@ public class SlotReel : MonoBehaviour {
 
 	void OnReelStopped()
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Reel stop processing used by both modes
 		if (slot.usePool) returnToPool();
-		else 
-			Destroy (symbols[symbols.Count-1]);
-		symbols.RemoveAt(symbols.Count-1);
+		else
+			Destroy(symbols[symbols.Count - 1]);
+		symbols.RemoveAt(symbols.Count - 1);
 
-		createSymbol(slot.reelHeight-1);
+		createSymbol(slot.reelHeight - 1);
 
 		if (OnReelDoneSpinning != null)
 			OnReelDoneSpinning(reelIndex);
 
 		detatchBackgrounds();
 
-		inlineScatterCalc();
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		if (!slot.IsMultiplayer)
+		{
+			// SINGLE-PLAYER: Local scatter calculation and anticipation
+			inlineScatterCalc();
+		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 
-		slot.reels[reelIndex-1].anticipation = false;
-		
+		slot.reels[reelIndex - 1].anticipation = false;
+
 	}
-	
+
 	void checkScatterLanded()
 	{
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Local scatter detection during reel stop
+		if (slot.IsMultiplayer) return; // Server handles scatter detection in multiplayer
 
-		for(int currentSymbolSetIndex = 0; currentSymbolSetIndex < slot.symbolSets.Count; currentSymbolSetIndex++)
+		for (int currentSymbolSetIndex = 0; currentSymbolSetIndex < slot.symbolSets.Count; currentSymbolSetIndex++)
 		{
-			
+
 			SetsWrapper currentSet = slot.symbolSets[currentSymbolSetIndex];
 			if (currentSet.typeofSet != SetsType.scatter) continue;
-			foreach(int symbol in currentSet.symbols)
+			foreach (int symbol in currentSet.symbols)
 			{
 				for (int i = slot.reelIndent - 1; i < (slot.reelHeight - slot.reelIndent) - 1; i++)
 				{
@@ -444,19 +463,22 @@ public class SlotReel : MonoBehaviour {
 				}
 			}
 		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 	}
 
 	void inlineScatterCalc()
 	{
-		for(int currentSymbolSetIndex = 0; currentSymbolSetIndex < slot.symbolSets.Count; currentSymbolSetIndex++)
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Local scatter calculation and anticipation logic
+		for (int currentSymbolSetIndex = 0; currentSymbolSetIndex < slot.symbolSets.Count; currentSymbolSetIndex++)
 		{
-			
+
 			SetsWrapper currentSet = slot.symbolSets[currentSymbolSetIndex];
 			if (currentSet.typeofSet != SetsType.scatter) continue;
 			int matches = 0;
 			SlotScatterHitData hit = new SlotScatterHitData(reelIndex);
 
-			foreach(int symbol in currentSet.symbols)
+			foreach (int symbol in currentSet.symbols)
 			{
 				for (int i = slot.reelIndent; i < (slot.reelHeight - slot.reelIndent); i++)
 				{
@@ -480,7 +502,7 @@ public class SlotReel : MonoBehaviour {
 
 				if ((currentSet.scatterCount < slot.numberOfReels) && (reelIndex < slot.numberOfReels))
 				{
-					if ((slot.setPays[currentSymbolSetIndex].anticipate[currentSet.scatterCount-1]) == true)
+					if ((slot.setPays[currentSymbolSetIndex].anticipate[currentSet.scatterCount - 1]) == true)
 					{
 						slot.reels[reelIndex].anticipation = true;
 						for (int i = reelIndex; i < slot.numberOfReels; i++)
@@ -494,6 +516,7 @@ public class SlotReel : MonoBehaviour {
 				}
 			}
 		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 	}
 	#endregion
 

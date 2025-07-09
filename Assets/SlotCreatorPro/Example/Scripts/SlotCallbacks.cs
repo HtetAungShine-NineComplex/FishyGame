@@ -8,18 +8,22 @@
 using UnityEngine;
 using System.Collections;
 
-public class SlotCallbacks : MonoBehaviour {
+public class SlotCallbacks : MonoBehaviour
+{
 
 	[HideInInspector]
 	public Slot slot;
 
 	#region Enable/Disable
-	void OnEnable() {
+	void OnEnable()
+	{
 
 		slot = GetComponent<Slot>();
 
-		Slot.OnSlotStateChangeTo += OnSlotStateChangeTo;	
-		Slot.OnSlotStateChangeFrom += OnSlotStateChangeFrom;	
+		//--- SHARED CODE (BOTH MODES) ---
+		// Event subscriptions used by both multiplayer and single-player modes
+		Slot.OnSlotStateChangeTo += OnSlotStateChangeTo;
+		Slot.OnSlotStateChangeFrom += OnSlotStateChangeFrom;
 		Slot.OnSpinBegin += OnSpinBegin;
 		Slot.OnSpinInsufficentCredits += OnSpinInsufficentCredits;
 		Slot.OnSpinSnap += OnSpinSnap;
@@ -28,7 +32,7 @@ public class SlotCallbacks : MonoBehaviour {
 
 		Slot.OnLineWinComputed += OnLineWinComputed;
 		Slot.OnLineWinDisplayed += OnLineWinDisplayed;
-		Slot.OnAllWinsComputed	+= OnAllWinsComputed;
+		Slot.OnAllWinsComputed += OnAllWinsComputed;
 		Slot.OnScatterSymbolHit += OnScatterSymbolHit;
 		Slot.OnAnticipationScatterBegin += OnAnticipationScatterBegin;
 
@@ -38,9 +42,12 @@ public class SlotCallbacks : MonoBehaviour {
 
 	#endregion
 
-	void OnDisable() {
+	void OnDisable()
+	{
 
-		Slot.OnSlotStateChangeTo -= OnSlotStateChangeTo;	
+		//--- SHARED CODE (BOTH MODES) ---
+		// Event unsubscriptions used by both modes
+		Slot.OnSlotStateChangeTo -= OnSlotStateChangeTo;
 		Slot.OnSlotStateChangeFrom -= OnSlotStateChangeFrom;
 
 		Slot.OnSpinBegin -= OnSpinBegin;
@@ -63,6 +70,12 @@ public class SlotCallbacks : MonoBehaviour {
 
 	private void OnSlotUpdate()
 	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Any slot update logic would be presentation-only
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Local slot update logic
+		//--- SINGLE-PLAYER LOCAL CODE END ---
 	}
 	#endregion
 
@@ -71,32 +84,52 @@ public class SlotCallbacks : MonoBehaviour {
 
 	private void OnSlotStateChangeFrom(SlotState state)
 	{
-		slot.log ("onSlotStateChangeFrom " + state);
+		slot.log("onSlotStateChangeFrom " + state);
 		switch (state)
 		{
-		case SlotState.playingwins:
-			break;
-		case SlotState.ready:
-			break;
-		case SlotState.snapping:
-			break;
-		case SlotState.spinning:
-			break;
+			case SlotState.playingwins:
+				//--- MULTIPLAYER SERVER CODE START ---
+				// MULTIPLAYER: Visual state changes only
+				//--- MULTIPLAYER SERVER CODE END ---
+				//--- SINGLE-PLAYER LOCAL CODE START ---
+				// SINGLE-PLAYER: Visual state changes only
+				//--- SINGLE-PLAYER LOCAL CODE END ---
+				break;
+			case SlotState.ready:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.snapping:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.spinning:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
 		}
 	}
 	private void OnSlotStateChangeTo(SlotState state)
 	{
-		slot.log ("OnSlotStateChangeTo " + state);
+		slot.log("OnSlotStateChangeTo " + state);
 		switch (state)
 		{
-		case SlotState.playingwins:
-			break;
-		case SlotState.ready:
-			break;
-		case SlotState.snapping:
-			break;
-		case SlotState.spinning:
-			break;
+			case SlotState.playingwins:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.ready:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.snapping:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
+			case SlotState.spinning:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Visual state changes used by both modes
+				break;
 		}
 	}
 	#endregion
@@ -104,68 +137,138 @@ public class SlotCallbacks : MonoBehaviour {
 	#region Spin Callbacks
 	private void OnSpinBegin(SlotWinData data)
 	{
-		slot.refs.lines.hideLines ();
-		slot.log ("OnSpinBegin Callback");
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects only - hide lines for spin start used by both modes
+		slot.refs.lines.hideLines();
+		slot.log("OnSpinBegin Callback");
 	}
 
 	private void OnSpinInsufficentCredits()
 	{
-		slot.log ("OnSpinInsufficentCredits Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Display insufficient credits message - server validated this
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Display insufficient credits message - locally validated this
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnSpinInsufficentCredits Callback");
 	}
 
 	private void OnSpinSnap()
 	{
-		slot.log ("OnSpinSnap Callback");
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual feedback for spin snap used by both modes
+		slot.log("OnSpinSnap Callback");
 	}
 
 	private void OnSpinDone(int totalWon, int timesWin)
 	{
-		slot.log ("OnSpinDone Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Display server-calculated results
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Display locally calculated results
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnSpinDone Callback");
 	}
 
 	private void OnSpinDoneNoWins()
 	{
-		slot.log ("OnSpinDoneNoWins Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual feedback for no wins (server determined)
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual feedback for no wins (locally determined)
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnSpinDoneNoWins Callback");
 	}
 	#endregion
 
 	#region Win Callbacks
 	private void OnLineWinComputed(SlotWinData win)
 	{
-		slot.log ("OnLineWinComputed Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Display server-computed win data
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Display locally computed win data
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnLineWinComputed Callback");
 
-		slot.log ("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
+		slot.log("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
 	}
 
 	private void OnLineWinDisplayed(SlotWinData win, bool isFirstLoop)
 	{
-		slot.log ("OnLineWinDisplayed Callback");
-		slot.log ("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual display of server-provided win data
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual display of locally computed win data
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnLineWinDisplayed Callback");
+		slot.log("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);
 	}
 
 	private void OnAllWinsComputed(SlotWinSpin win, int timesBet)
 	{
-		slot.log ("OnAllWinsComputed Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Display all server-computed wins
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Display all locally computed wins
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnAllWinsComputed Callback");
 	}
 
 	private void OnScatterSymbolHit(SlotScatterHitData hit)
 	{
-		slot.log ("OnScatterSymbolHit Callback");
-		hit.symbol.transform.eulerAngles = new Vector2(0,0);
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual effects for server-determined scatter hits
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual effects for locally determined scatter hits
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnScatterSymbolHit Callback");
+		hit.symbol.transform.eulerAngles = new Vector2(0, 0);
 	}
 
 	private void OnAnticipationScatterBegin(SlotScatterHitData hit)
 	{
-		slot.log ("OnAnticipationScatterBegin Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual effects for server-determined scatter anticipation
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual effects for locally determined scatter anticipation
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnAnticipationScatterBegin Callback");
 	}
 
-	public void OnLinkedSymbolLanded(int reel, string linkName) {
-		slot.log ("OnLinkedSymbolLanded:" + reel + " : " + linkName);
-		Debug.Log ("OnLinkedSymbolLanded:" + reel + " : " + linkName);
-	}
-	void OnWinDisplayedCycle (int count)
+	public void OnLinkedSymbolLanded(int reel, string linkName)
 	{
-		slot.log ("OnWinDisplayedCycle Callback");
+		//--- MULTIPLAYER SERVER CODE START ---
+		// MULTIPLAYER: Visual effects for server-determined linked symbols
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		// SINGLE-PLAYER: Visual effects for locally determined linked symbols
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+		//--- SHARED CODE (BOTH MODES) ---
+		slot.log("OnLinkedSymbolLanded:" + reel + " : " + linkName);
+		Debug.Log("OnLinkedSymbolLanded:" + reel + " : " + linkName);
+	}
+	void OnWinDisplayedCycle(int count)
+	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Visual effects for win display cycling used by both modes
+		slot.log("OnWinDisplayedCycle Callback");
 	}
 
 	#endregion

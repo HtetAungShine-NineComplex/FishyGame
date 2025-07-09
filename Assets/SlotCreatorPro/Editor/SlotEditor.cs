@@ -12,13 +12,13 @@ using System.IO;
 using DG.Tweening;
 using aSlot;
 
-[CustomEditor ( typeof(Slot))]
+[CustomEditor(typeof(Slot))]
 [Serializable]
-public class SlotEditor : Editor 
+public class SlotEditor : Editor
 {
 
 	List<bool> setFoldouts = new List<bool>();
-	List<string>configIssues = new List<string>();
+	List<string> configIssues = new List<string>();
 
 	Slot slot;
 
@@ -33,7 +33,8 @@ public class SlotEditor : Editor
 	}
 
 	#region Main GUI
-	public override void OnInspectorGUI() { 
+	public override void OnInspectorGUI()
+	{
 
 		if (configIssues.Count > 0)
 		{
@@ -47,21 +48,27 @@ public class SlotEditor : Editor
 		Undo.RecordObject(slot.GetComponent<SlotWins>(), "Slots Creator Change");
 		Undo.RecordObject(slot.GetComponent<SlotCredits>(), "Slots Creator Change");
 
-		for (int i=0; i < slot.symbolSetNames.Count; i++)
+		for (int i = 0; i < slot.symbolSetNames.Count; i++)
 		{
-			setFoldouts.Add (false);
+			setFoldouts.Add(false);
 		}
 
 		EditorGUILayout.BeginVertical("Box");
 		//GUI.color = Color.blue;
 		EditorGUILayout.LabelField("Reels:" + (slot.reelHeight - (slot.reelIndent * 2)).ToString() + "x" + slot.numberOfReels + " " +
-		                           "Symbols:" + slot.symbolPrefabs.Count + " " +
-		                           "Pays:" + slot.symbolSets.Count + " " +
-		                           "Lines:" + slot.lines.Count + " " +
-		                           "(" + (slot.edsave.returnPercent * 100) + "%)"
-		                           , EditorStyles.miniLabel);
+								   "Symbols:" + slot.symbolPrefabs.Count + " " +
+								   "Pays:" + slot.symbolSets.Count + " " +
+								   "Lines:" + slot.lines.Count + " " +
+								   "(" + (slot.edsave.returnPercent * 100) + "%)"
+								   , EditorStyles.miniLabel);
 		//GUI.color = Color.white;
 		EditorGUILayout.EndVertical();
+
+		slot.edsave.IsMultiplayer = EditorGUILayout.Toggle(
+			new GUIContent("Enable Multiplayer Mode", "Use SmartFoxServer for multiplayer gameplay"),
+			slot.edsave.IsMultiplayer
+		);
+
 		slot.edsave.showBasicSettingsPanel = EditorGUILayout.Foldout(slot.edsave.showBasicSettingsPanel, new GUIContent("Basic Settings", "The core settings for the slot."), EditorStyles.foldout);
 		if (slot.edsave.showBasicSettingsPanel)
 		{
@@ -131,23 +138,23 @@ public class SlotEditor : Editor
 	}
 	void dumpToFile()
 	{
-		string fileName = SlotGlobals.MATH_PATH + "slot." + DateTime.Now.ToLongTimeString().Replace(":",".") + ".csv";
+		string fileName = SlotGlobals.MATH_PATH + "slot." + DateTime.Now.ToLongTimeString().Replace(":", ".") + ".csv";
 		if (File.Exists(fileName)) return;
 
 		var sr = File.CreateText(fileName);
-		sr.WriteLine (slot.edsave.returnData);
+		sr.WriteLine(slot.edsave.returnData);
 		sr.Close();
 	}
 	void displayResultItem(ResultCount item)
 	{
-		float[] colWidth = {75,50,75,50,50,50};
+		float[] colWidth = { 75, 50, 75, 50, 50, 50 };
 		EditorGUILayout.BeginHorizontal();
 		EditorGUILayout.LabelField(item.matches.ToString() + " " + item.name, EditorStyles.miniTextField, GUILayout.Width(colWidth[0]));
 		EditorGUILayout.LabelField(item.occurenceCount.ToString(), EditorStyles.miniTextField, GUILayout.Width(colWidth[1]));
 		EditorGUILayout.LabelField(item.winTotal.ToString(), EditorStyles.miniTextField, GUILayout.Width(colWidth[2]));
-		EditorGUILayout.LabelField(((float)item.winTotal / (float)slot.edsave.returnTotalWon).ToString ("F4"), EditorStyles.miniTextField, GUILayout.Width(colWidth[3]));
+		EditorGUILayout.LabelField(((float)item.winTotal / (float)slot.edsave.returnTotalWon).ToString("F4"), EditorStyles.miniTextField, GUILayout.Width(colWidth[3]));
 		EditorGUILayout.LabelField(((float)item.occurenceCount / slot.GetComponent<SlotComputeEditor>().itterations).ToString("F4"), EditorStyles.miniTextField, GUILayout.Width(colWidth[4]));
-		EditorGUILayout.LabelField(((float)item.winTotal / (float)slot.edsave.returnTotalBet).ToString ("F4"), EditorStyles.miniTextField, GUILayout.Width(colWidth[5]));
+		EditorGUILayout.LabelField(((float)item.winTotal / (float)slot.edsave.returnTotalBet).ToString("F4"), EditorStyles.miniTextField, GUILayout.Width(colWidth[5]));
 		EditorGUILayout.EndHorizontal();
 	}
 
@@ -158,13 +165,13 @@ public class SlotEditor : Editor
 		string est = "";
 		if (compute.timeToComputeIterations > 0)
 			est = "(est. " + ((slot.edsave.returnPercentItterations / (float)compute.timeToComputeIterations) * compute.estimatedTimeToCompute).ToString("F1") + "s)";
-		slot.edsave.returnPercentItterations = EditorGUILayout.IntSlider(new GUIContent("Iterations " + est,SlotHelp.ITERATIONS), slot.edsave.returnPercentItterations,10,1000000);
+		slot.edsave.returnPercentItterations = EditorGUILayout.IntSlider(new GUIContent("Iterations " + est, SlotHelp.ITERATIONS), slot.edsave.returnPercentItterations, 10, 1000000);
 
 		List<string> options = new List<string>();
-		for (int i = 0; i < slot.betsPerLine.Count; i++) options.Add (slot.betsPerLine[i].value.ToString ());
+		for (int i = 0; i < slot.betsPerLine.Count; i++) options.Add(slot.betsPerLine[i].value.ToString());
 		EditorGUILayout.BeginHorizontal();
 		EditorGUILayout.LabelField(new GUIContent("Bet Per Line", ""), GUILayout.MaxWidth(120));
-		slot.GetComponent<SlotComputeEditor>().betPerLineEditor = EditorGUILayout.Popup(slot.GetComponent<SlotComputeEditor>().betPerLineEditor,options.ToArray(), GUILayout.MaxWidth(75));
+		slot.GetComponent<SlotComputeEditor>().betPerLineEditor = EditorGUILayout.Popup(slot.GetComponent<SlotComputeEditor>().betPerLineEditor, options.ToArray(), GUILayout.MaxWidth(75));
 		EditorGUILayout.EndHorizontal();
 		slot.GetComponent<SlotComputeEditor>().linesPlayedEditor = EditorGUILayout.IntSlider(new GUIContent("Lines Played ", ""), slot.GetComponent<SlotComputeEditor>().linesPlayedEditor, 1, slot.lines.Count);
 
@@ -172,26 +179,28 @@ public class SlotEditor : Editor
 
 		EditorGUILayout.BeginHorizontal();
 
-		if (GUILayout.Button(new GUIContent("Compute",SlotHelp.COMPUTE), GUILayout.MaxWidth(100))) {
+		if (GUILayout.Button(new GUIContent("Compute", SlotHelp.COMPUTE), GUILayout.MaxWidth(100)))
+		{
 
-			calcReturn ();
+			calcReturn();
 
 			slot.edsave.returnData = "";
-			foreach(KeyValuePair<string, ResultCount>result in compute.resultCounts)
+			foreach (KeyValuePair<string, ResultCount> result in compute.resultCounts)
 			{
 				ResultCount item = result.Value;
-				slot.edsave.returnData += item.matches + "," + 
-					item.name + "," + 
-					item.occurenceCount + "," + 
-					item.winTotal + "," + 
-						((float)item.winTotal / (float)slot.edsave.returnTotalWon).ToString ("F4") + "," + 
+				slot.edsave.returnData += item.matches + "," +
+					item.name + "," +
+					item.occurenceCount + "," +
+					item.winTotal + "," +
+						((float)item.winTotal / (float)slot.edsave.returnTotalWon).ToString("F4") + "," +
 						((float)item.occurenceCount / (float)slot.edsave.returnPercentItterations).ToString("F4") + "," +
-						((float)item.winTotal / (float)slot.edsave.returnTotalBet).ToString ("F4") + "\r\n";
+						((float)item.winTotal / (float)slot.edsave.returnTotalBet).ToString("F4") + "\r\n";
 			}
 		}
 		if (slot.GetComponent<SlotComputeEditor>().resultCounts.Count > 0)
 		{
-			if (GUILayout.Button(new GUIContent("Save CSV", SlotHelp.CSV), GUILayout.MaxWidth(100))) {
+			if (GUILayout.Button(new GUIContent("Save CSV", SlotHelp.CSV), GUILayout.MaxWidth(100)))
+			{
 				dumpToFile();
 			}
 		}
@@ -201,16 +210,18 @@ public class SlotEditor : Editor
 		{
 			EditorGUILayout.BeginVertical("Box");
 			EditorGUILayout.LabelField("Return Percentage", EditorStyles.boldLabel);
-			EditorGUILayout.LabelField("This slot sits at " + (slot.edsave.returnPercent * 100).ToString ("F2") + "% based on " + slot.GetComponent<SlotComputeEditor>().itterations + " spins.");
+			EditorGUILayout.LabelField("This slot sits at " + (slot.edsave.returnPercent * 100).ToString("F2") + "% based on " + slot.GetComponent<SlotComputeEditor>().itterations + " spins.");
 			if (slot.edsave.returnPercent <= 1)
 			{
 				EditorGUILayout.LabelField("This means on average, the house will take approximately " + (100 - Mathf.RoundToInt(slot.edsave.returnPercent * 100)) + " credits for every 100 credits bet.", EditorStyles.wordWrappedLabel);
-			} else {
+			}
+			else
+			{
 				EditorGUILayout.LabelField("This means on average, the house will pay out approximately " + Mathf.Abs(Mathf.RoundToInt(slot.edsave.returnPercent * 100)) + " credits for every 100 credits bet.", EditorStyles.wordWrappedLabel);
 			}
 			EditorGUILayout.EndVertical();
 
-			float[] colWidth = {75,50,75,50,50,50};
+			float[] colWidth = { 75, 50, 75, 50, 50, 50 };
 			EditorGUILayout.BeginVertical("Box");
 			EditorGUILayout.LabelField("Return Table based on " + slot.GetComponent<SlotComputeEditor>().itterations + " spins.", EditorStyles.boldLabel);
 			EditorGUILayout.BeginHorizontal();
@@ -223,7 +234,7 @@ public class SlotEditor : Editor
 			EditorGUILayout.EndHorizontal();
 
 			//EditorGUILayout.BeginVertical();
-			foreach(KeyValuePair<string, ResultCount>item in compute.resultCounts)
+			foreach (KeyValuePair<string, ResultCount> item in compute.resultCounts)
 			{
 				ResultCount res = (ResultCount)item.Value;
 				displayResultItem(res);
@@ -237,7 +248,7 @@ public class SlotEditor : Editor
 			EditorGUILayout.BeginVertical("Box");
 			EditorGUILayout.LabelField("Theoretical Volatility Breakdown based on " + slot.GetComponent<SlotComputeEditor>().itterations + " spins.", EditorStyles.boldLabel);
 			EditorGUILayout.LabelField("The volatility index of this slot sits at " +
-			                           compute.volitility.ToString() + " with a standard deviation of " + compute.standardDeviation + ".", EditorStyles.wordWrappedLabel);
+									   compute.volitility.ToString() + " with a standard deviation of " + compute.standardDeviation + ".", EditorStyles.wordWrappedLabel);
 			EditorGUILayout.LabelField("Below is a list of lower and upper limit return percentages for a given number of spins:", EditorStyles.wordWrappedLabel);
 
 			EditorGUI.indentLevel++;
@@ -254,8 +265,8 @@ public class SlotEditor : Editor
 				if (low < 0) low = 0;
 				float high = (slot.edsave.returnPercent + compute.volitility / (Mathf.Sqrt(hands))) * 100;
 				EditorGUILayout.LabelField(hands.ToString(), GUILayout.Width(100));
-				EditorGUILayout.LabelField(low.ToString("F2") + " %", GUILayout.Width(100)); 
-				EditorGUILayout.LabelField(high.ToString("F2") + " %", GUILayout.Width(100)); 
+				EditorGUILayout.LabelField(low.ToString("F2") + " %", GUILayout.Width(100));
+				EditorGUILayout.LabelField(high.ToString("F2") + " %", GUILayout.Width(100));
 				hands = hands * 10;
 				EditorGUILayout.EndHorizontal();
 			}
@@ -279,33 +290,35 @@ public class SlotEditor : Editor
 		GUILayout.FlexibleSpace();
 
 		if (slot.numberOfReels > 1)
-			if (GUILayout.Button("-",EditorStyles.miniButton, GUILayout.Width(30))) {
-			
-			for (int i = 0; i < slot.symbolSetNames.Count; i++)
+			if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30)))
 			{
-				slot.setPays[i].pays.RemoveAt (slot.setPays[i].pays.Count - 1);
-				slot.setPays[i].anticipate.RemoveAt (slot.setPays[i].anticipate.Count - 1);
+
+				for (int i = 0; i < slot.symbolSetNames.Count; i++)
+				{
+					slot.setPays[i].pays.RemoveAt(slot.setPays[i].pays.Count - 1);
+					slot.setPays[i].anticipate.RemoveAt(slot.setPays[i].anticipate.Count - 1);
+				}
+				for (int i = 0; i < slot.lines.Count; i++)
+				{
+					slot.lines[i].positions.RemoveAt(slot.lines[i].positions.Count - 1);
+				}
+
+				slot.numberOfReels--;
 			}
-			for (int i = 0; i < slot.lines.Count; i++)
-			{
-				slot.lines[i].positions.RemoveAt (slot.lines[i].positions.Count - 1);
-			}
-			
-			slot.numberOfReels--;
-		}
 
 		EditorGUILayout.LabelField(new GUIContent(slot.numberOfReels.ToString(), ""), EditorStyles.boldLabel, GUILayout.Width(50));
 
-		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30))) {
+		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
 			slot.numberOfReels++;
 			for (int i = 0; i < slot.symbolSetNames.Count; i++)
 			{
-				slot.setPays[i].pays.Add (0);
-				slot.setPays[i].anticipate.Add (false);
+				slot.setPays[i].pays.Add(0);
+				slot.setPays[i].anticipate.Add(false);
 			}
 			for (int i = 0; i < slot.lines.Count; i++)
 			{
-				slot.lines[i].positions.Add (0);
+				slot.lines[i].positions.Add(0);
 			}
 		}
 
@@ -317,28 +330,28 @@ public class SlotEditor : Editor
 		EditorGUILayout.LabelField(new GUIContent("Reel"), EditorStyles.boldLabel);
 		EditorGUI.indentLevel++;
 		EditorGUILayout.BeginVertical("Box");
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		showAddRemoveReelCount();
-		slot.reelHeight = EditorGUILayout.IntSlider(new GUIContent("Symbol Height", SlotHelp.SYMBOL_HEIGHT), slot.reelHeight,3,20);
-		slot.reelIndent = EditorGUILayout.IntSlider(new GUIContent("Vertical Indent", SlotHelp.VERTICAL_INDENT), slot.reelIndent,0,Mathf.RoundToInt((slot.reelHeight-1)/2));
+		slot.reelHeight = EditorGUILayout.IntSlider(new GUIContent("Symbol Height", SlotHelp.SYMBOL_HEIGHT), slot.reelHeight, 3, 20);
+		slot.reelIndent = EditorGUILayout.IntSlider(new GUIContent("Vertical Indent", SlotHelp.VERTICAL_INDENT), slot.reelIndent, 0, Mathf.RoundToInt((slot.reelHeight - 1) / 2));
 		slot.horizontalReelPaddingPercent = EditorGUILayout.FloatField(new GUIContent("Reel Padding %", SlotHelp.REEL_PADDING), slot.horizontalReelPaddingPercent);
 		slot.verticalSymbolPaddingPercent = EditorGUILayout.FloatField(new GUIContent("Symbol Padding %", SlotHelp.SYMBOL_PADDING), slot.verticalSymbolPaddingPercent);
 		EditorGUI.indentLevel--;
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		EditorGUILayout.EndVertical();
 
-		EditorGUILayout.LabelField(new GUIContent("Bet"), EditorStyles.boldLabel); 
+		EditorGUILayout.LabelField(new GUIContent("Bet"), EditorStyles.boldLabel);
 		EditorGUI.indentLevel++;
 		EditorGUILayout.BeginVertical("Box");
-		GUILayout.Space (5);
-//		slot.GetComponent<SlotCredits>().maxBetPerLine = EditorGUILayout.IntSlider(new GUIContent("Max Bet Per Line", SlotHelp.MAX_BET_PER_LINE), slot.GetComponent<SlotCredits>().maxBetPerLine,1,20);
+		GUILayout.Space(5);
+		//		slot.GetComponent<SlotCredits>().maxBetPerLine = EditorGUILayout.IntSlider(new GUIContent("Max Bet Per Line", SlotHelp.MAX_BET_PER_LINE), slot.GetComponent<SlotCredits>().maxBetPerLine,1,20);
 
 		EditorGUILayout.BeginHorizontal();
-		
+
 		List<string> options = new List<string>();
-		for (int i = 0; i < slot.betsPerLine.Count; i++) options.Add (slot.betsPerLine[i].value.ToString ());
+		for (int i = 0; i < slot.betsPerLine.Count; i++) options.Add(slot.betsPerLine[i].value.ToString());
 		EditorGUILayout.LabelField(new GUIContent("Initial Bet Per Line", SlotHelp.INITIAL_BET_PER_LINE), GUILayout.MaxWidth(100));
-		slot.GetComponent<SlotCredits>().betPerLineDefaultIndex = EditorGUILayout.Popup(slot.GetComponent<SlotCredits>().betPerLineDefaultIndex,options.ToArray(), GUILayout.MaxWidth(75));
+		slot.GetComponent<SlotCredits>().betPerLineDefaultIndex = EditorGUILayout.Popup(slot.GetComponent<SlotCredits>().betPerLineDefaultIndex, options.ToArray(), GUILayout.MaxWidth(75));
 		//		slot.GetComponent<SlotCredits>().betPerLineIndex = EditorGUILayout.IntSlider(new GUIContent("Initial Bet Per Line", SlotHelp.INITIAL_BET_PER_LINE), slot.GetComponent<SlotCredits>().betPerLine,1,slot.GetComponent<SlotCredits>().maxBetPerLine);
 		EditorGUILayout.EndHorizontal();
 
@@ -348,15 +361,15 @@ public class SlotEditor : Editor
 		//EditorGUI.indentLevel++;
 		EditorGUILayout.LabelField(new GUIContent("Valid Bets", SlotHelp.VALID_BETS), GUILayout.MaxWidth(100));
 		//EditorGUI.indentLevel--;
-		
+
 		for (int c = 0; c < slot.betsPerLine.Count; c++)
 		{
 			EditorGUI.indentLevel--;
 			EditorGUILayout.LabelField(new GUIContent((c + 1).ToString()), EditorStyles.miniLabel, GUILayout.MaxWidth(20));
-			
+
 			slot.betsPerLine[c].value = EditorGUILayout.IntField(slot.betsPerLine[c].value, GUILayout.Width(25));
 			slot.betsPerLine[c].canBet = EditorGUILayout.Toggle(slot.betsPerLine[c].canBet, GUILayout.Width(25));
-			if (((c+1) % 3) == 0)
+			if (((c + 1) % 3) == 0)
 			{
 				EditorGUILayout.EndHorizontal();
 				EditorGUI.indentLevel++;
@@ -365,72 +378,74 @@ public class SlotEditor : Editor
 				EditorGUI.indentLevel--;
 			}
 			EditorGUI.indentLevel++;
-			
+
 		}
 
-		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30))) {
-			
-			slot.betsPerLine.RemoveAt(slot.betsPerLine.Count-1);
+		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
+
+			slot.betsPerLine.RemoveAt(slot.betsPerLine.Count - 1);
 			slot.betsPerLine.Capacity = slot.betsPerLine.Capacity - 1;
 
 		}
 
-		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30))) {
+		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
 			slot.betsPerLine.Capacity = slot.betsPerLine.Capacity + 1;
-			slot.betsPerLine.Add(new BetsWrapper()); 
+			slot.betsPerLine.Add(new BetsWrapper());
 		}
 		EditorGUILayout.EndHorizontal();
 
-		slot.GetComponent<SlotCredits>().linesPlayed = EditorGUILayout.IntSlider(new GUIContent("Initial Lines Played", SlotHelp.INITIAL_LINES_PLAYED), slot.GetComponent<SlotCredits>().linesPlayed,1,slot.lines.Count);
-		slot.GetComponent<SlotCredits>().persistant = EditorGUILayout.Toggle(new GUIContent("Persist",SlotHelp.PERSIST), slot.GetComponent<SlotCredits>().persistant);
+		slot.GetComponent<SlotCredits>().linesPlayed = EditorGUILayout.IntSlider(new GUIContent("Initial Lines Played", SlotHelp.INITIAL_LINES_PLAYED), slot.GetComponent<SlotCredits>().linesPlayed, 1, slot.lines.Count);
+		slot.GetComponent<SlotCredits>().persistant = EditorGUILayout.Toggle(new GUIContent("Persist", SlotHelp.PERSIST), slot.GetComponent<SlotCredits>().persistant);
 		EditorGUI.indentLevel--;
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		EditorGUILayout.EndVertical();
 
 
 		EditorGUILayout.LabelField(new GUIContent("Reel Timings", SlotHelp.REEL_TIMING), EditorStyles.boldLabel);
 		EditorGUI.indentLevel++;
 		EditorGUILayout.BeginVertical("Box");
-		GUILayout.Space (5);
-		slot.spinTime = EditorGUILayout.Slider (new GUIContent("Initial Reel Stop", SlotHelp.INITIAL_REEL_STOP_TIME), slot.spinTime, 0.1f, 5.0f);
-		slot.spinTimeIncPerReel = EditorGUILayout.Slider (new GUIContent("Additional Stops", SlotHelp.STOP_TIME_EACH_REEL), slot.spinTimeIncPerReel, 0.1f, 5.0f);
-		slot.spinningSpeed = EditorGUILayout.Slider(new GUIContent("Spin Speed", SlotHelp.SPIN_SPEED), slot.spinningSpeed * 10,0.033f,2.0f) / 10.0f;
-		slot.easeOutTime = EditorGUILayout.Slider(new GUIContent("Ease Time To Stop", SlotHelp.EASE_TIME), slot.easeOutTime,0.0f,slot.spinTimeIncPerReel * 0.8f);
+		GUILayout.Space(5);
+		slot.spinTime = EditorGUILayout.Slider(new GUIContent("Initial Reel Stop", SlotHelp.INITIAL_REEL_STOP_TIME), slot.spinTime, 0.1f, 5.0f);
+		slot.spinTimeIncPerReel = EditorGUILayout.Slider(new GUIContent("Additional Stops", SlotHelp.STOP_TIME_EACH_REEL), slot.spinTimeIncPerReel, 0.1f, 5.0f);
+		slot.spinningSpeed = EditorGUILayout.Slider(new GUIContent("Spin Speed", SlotHelp.SPIN_SPEED), slot.spinningSpeed * 10, 0.033f, 2.0f) / 10.0f;
+		slot.easeOutTime = EditorGUILayout.Slider(new GUIContent("Ease Time To Stop", SlotHelp.EASE_TIME), slot.easeOutTime, 0.0f, slot.spinTimeIncPerReel * 0.8f);
 		slot.reelEase = (Ease)EditorGUILayout.EnumPopup(new GUIContent("Ease Type", SlotHelp.EASE_TYPE), slot.reelEase);
-		slot.GetComponent<SlotWins>().showWinTime = EditorGUILayout.Slider(new GUIContent("Win Display Time", SlotHelp.WIN_DISPLAY_TIME), slot.GetComponent<SlotWins>().showWinTime,0.25f,5.0f);
-		slot.GetComponent<SlotWins>().delayBetweenShowingWins = EditorGUILayout.Slider(new GUIContent("Delay Between Wins", SlotHelp.TIMEOUT_BETWEEN_WINS), slot.GetComponent<SlotWins>().delayBetweenShowingWins,0.0f,2.0f);
+		slot.GetComponent<SlotWins>().showWinTime = EditorGUILayout.Slider(new GUIContent("Win Display Time", SlotHelp.WIN_DISPLAY_TIME), slot.GetComponent<SlotWins>().showWinTime, 0.25f, 5.0f);
+		slot.GetComponent<SlotWins>().delayBetweenShowingWins = EditorGUILayout.Slider(new GUIContent("Delay Between Wins", SlotHelp.TIMEOUT_BETWEEN_WINS), slot.GetComponent<SlotWins>().delayBetweenShowingWins, 0.0f, 2.0f);
 		EditorGUI.indentLevel--;
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		EditorGUILayout.EndVertical();
 
 		EditorGUILayout.LabelField(new GUIContent("Pay Lines", SlotHelp.REEL_TIMING), EditorStyles.boldLabel);
 		EditorGUILayout.BeginVertical("Box");
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		EditorGUI.indentLevel++;
 		slot.GetComponent<SlotLines>().linesEnabled = EditorGUILayout.Toggle(new GUIContent("Line Drawing", SlotHelp.LINE_DRAWING), slot.GetComponent<SlotLines>().linesEnabled);
-		slot.GetComponent<SlotLines>().linesZorder = EditorGUILayout.Slider(new GUIContent("Z-Order", SlotHelp.LINE_ZORDER), slot.GetComponent<SlotLines>().linesZorder,-100.0f,100.0f);
+		slot.GetComponent<SlotLines>().linesZorder = EditorGUILayout.Slider(new GUIContent("Z-Order", SlotHelp.LINE_ZORDER), slot.GetComponent<SlotLines>().linesZorder, -100.0f, 100.0f);
 		if (slot.GetComponent<SlotLines>().linesShader == null)
 		{
-			slot.GetComponent<SlotLines>().linesShader = Shader.Find ("Mobile/Particles/Alpha Blended");
+			slot.GetComponent<SlotLines>().linesShader = Shader.Find("Mobile/Particles/Alpha Blended");
 		}
 		slot.GetComponent<SlotLines>().linesShader = (Shader)EditorGUILayout.ObjectField(new GUIContent("Shader", SlotHelp.LINE_ZORDER), slot.GetComponent<SlotLines>().linesShader, typeof(Shader), false);
-		slot.GetComponent<SlotLines>().payLineWidth = EditorGUILayout.Slider(new GUIContent("Line Width", SlotHelp.PAYLINE_WIDTH), slot.GetComponent<SlotLines>().payLineWidth,0.01f,100.0f);
+		slot.GetComponent<SlotLines>().payLineWidth = EditorGUILayout.Slider(new GUIContent("Line Width", SlotHelp.PAYLINE_WIDTH), slot.GetComponent<SlotLines>().payLineWidth, 0.01f, 100.0f);
 		slot.GetComponent<SlotLines>().payLineColor1 = EditorGUILayout.ColorField(new GUIContent("Payline Color 1", SlotHelp.PAYLINE_COLOR), slot.GetComponent<SlotLines>().payLineColor1);
 		slot.GetComponent<SlotLines>().payLineColor2 = EditorGUILayout.ColorField(new GUIContent("Payline Color 2", SlotHelp.PAYLINE_COLOR), slot.GetComponent<SlotLines>().payLineColor2);
-		slot.GetComponent<SlotLines>().strokeWidth = EditorGUILayout.Slider(new GUIContent("Stroke Width", SlotHelp.PAYLINE_STROKE_WIDTH), slot.GetComponent<SlotLines>().strokeWidth,0.0f,100.0f);
+		slot.GetComponent<SlotLines>().strokeWidth = EditorGUILayout.Slider(new GUIContent("Stroke Width", SlotHelp.PAYLINE_STROKE_WIDTH), slot.GetComponent<SlotLines>().strokeWidth, 0.0f, 100.0f);
 		slot.GetComponent<SlotLines>().strokeColor = EditorGUILayout.ColorField(new GUIContent("Stroke Color", SlotHelp.PAYLINE_STROKE_COLOR), slot.GetComponent<SlotLines>().strokeColor);
 		EditorGUI.indentLevel--;
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		EditorGUILayout.EndVertical();
 
 		EditorGUILayout.LabelField(new GUIContent("Misc"), EditorStyles.boldLabel);
 		EditorGUILayout.BeginVertical("Box");
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		EditorGUI.indentLevel++;
 		slot.reelCenter = EditorGUILayout.ObjectField("Center of Reel Basket", slot.reelCenter, typeof(Transform), true) as Transform;
 		slot.lineboxPrefab = EditorGUILayout.ObjectField("Linebox Prefab", slot.lineboxPrefab, typeof(GameObject), true) as GameObject;
 
-		slot.displayLineBoxes = EditorGUILayout.IntSlider(new GUIContent("Clamp lineboxes", SlotHelp.REEL_LINEBOX_DRAWING), slot.displayLineBoxes,1,slot.numberOfReels);
+		slot.displayLineBoxes = EditorGUILayout.IntSlider(new GUIContent("Clamp lineboxes", SlotHelp.REEL_LINEBOX_DRAWING), slot.displayLineBoxes, 1, slot.numberOfReels);
 
 		/*
 		EditorGUILayout.BeginHorizontal();
@@ -472,7 +487,7 @@ public class SlotEditor : Editor
 		slot.debugMode = EditorGUILayout.Toggle(new GUIContent("Debug Mode", "Enable or disable all Slot related debugging messages"), slot.debugMode);
 		slot.usePool = EditorGUILayout.Toggle(new GUIContent("Use Prefab Pool", SlotHelp.USE_PREFAB_POOL), slot.usePool);
 		EditorGUI.indentLevel--;
-		GUILayout.Space (5);
+		GUILayout.Space(5);
 		EditorGUILayout.EndVertical();
 
 	}
@@ -482,117 +497,123 @@ public class SlotEditor : Editor
 	void showUpDownSymbol(int index)
 	{
 		if (index > 0)
-		if (GUILayout.Button("", EditorStyles.miniButton, GUILayout.Width(30))) {
+			if (GUILayout.Button("", EditorStyles.miniButton, GUILayout.Width(30)))
+			{
 
-			GameObject temp = slot.symbolPrefabs[index];
-			slot.symbolPrefabs[index] = slot.symbolPrefabs[index-1];
-			slot.symbolPrefabs[index-1] = temp;
+				GameObject temp = slot.symbolPrefabs[index];
+				slot.symbolPrefabs[index] = slot.symbolPrefabs[index - 1];
+				slot.symbolPrefabs[index - 1] = temp;
 
-			GameObject go = slot.symbolBgPrefabs[index];
-			slot.symbolBgPrefabs[index] = slot.symbolBgPrefabs[index-1];
-			slot.symbolBgPrefabs[index-1] = go;
+				GameObject go = slot.symbolBgPrefabs[index];
+				slot.symbolBgPrefabs[index] = slot.symbolBgPrefabs[index - 1];
+				slot.symbolBgPrefabs[index - 1] = go;
 
-			temp = slot.winboxPrefabs[index];
-			slot.winboxPrefabs[index] = slot.winboxPrefabs[index-1];
-			slot.winboxPrefabs[index-1] = temp;
+				temp = slot.winboxPrefabs[index];
+				slot.winboxPrefabs[index] = slot.winboxPrefabs[index - 1];
+				slot.winboxPrefabs[index - 1] = temp;
 
-			FrequencyWrapper temp2 = slot.reelFrequencies[index];
-			slot.reelFrequencies[index] = slot.reelFrequencies[index-1];
-			slot.reelFrequencies[index-1] = temp2;
+				FrequencyWrapper temp2 = slot.reelFrequencies[index];
+				slot.reelFrequencies[index] = slot.reelFrequencies[index - 1];
+				slot.reelFrequencies[index - 1] = temp2;
 
-			int temp3 = slot.symbolFrequencies[index];
-			slot.symbolFrequencies[index] = slot.symbolFrequencies[index-1];
-			slot.symbolFrequencies[index-1] = temp3;
+				int temp3 = slot.symbolFrequencies[index];
+				slot.symbolFrequencies[index] = slot.symbolFrequencies[index - 1];
+				slot.symbolFrequencies[index - 1] = temp3;
 
-			SlotSymbolInfo temp4 = slot.symbolInfo[index];
-			slot.symbolInfo[index] = slot.symbolInfo[index-1];
-			slot.symbolInfo[index-1] = temp4;
-		}
+				SlotSymbolInfo temp4 = slot.symbolInfo[index];
+				slot.symbolInfo[index] = slot.symbolInfo[index - 1];
+				slot.symbolInfo[index - 1] = temp4;
+			}
 		if (index < slot.symbolPrefabs.Capacity - 1)
-		if (GUILayout.Button("v", EditorStyles.miniButton, GUILayout.Width(30))) {
+			if (GUILayout.Button("v", EditorStyles.miniButton, GUILayout.Width(30)))
+			{
 
-			GameObject temp = slot.symbolPrefabs[index];
-			slot.symbolPrefabs[index] = slot.symbolPrefabs[index+1];
-			slot.symbolPrefabs[index+1] = temp;
+				GameObject temp = slot.symbolPrefabs[index];
+				slot.symbolPrefabs[index] = slot.symbolPrefabs[index + 1];
+				slot.symbolPrefabs[index + 1] = temp;
 
-			GameObject go = slot.symbolBgPrefabs[index];
-			slot.symbolBgPrefabs[index] = slot.symbolBgPrefabs[index+1];
-			slot.symbolBgPrefabs[index+1] = go;
+				GameObject go = slot.symbolBgPrefabs[index];
+				slot.symbolBgPrefabs[index] = slot.symbolBgPrefabs[index + 1];
+				slot.symbolBgPrefabs[index + 1] = go;
 
-			temp = slot.winboxPrefabs[index];
-			slot.winboxPrefabs[index] = slot.winboxPrefabs[index+1];
-			slot.winboxPrefabs[index+1] = temp;
-			
-			FrequencyWrapper temp2 = slot.reelFrequencies[index];
-			slot.reelFrequencies[index] = slot.reelFrequencies[index+1];
-			slot.reelFrequencies[index+1] = temp2;
-			
-			int temp3 = slot.symbolFrequencies[index];
-			slot.symbolFrequencies[index] = slot.symbolFrequencies[index+1];
-			slot.symbolFrequencies[index+1] = temp3;
+				temp = slot.winboxPrefabs[index];
+				slot.winboxPrefabs[index] = slot.winboxPrefabs[index + 1];
+				slot.winboxPrefabs[index + 1] = temp;
 
-			SlotSymbolInfo temp4 = slot.symbolInfo[index];
-			slot.symbolInfo[index] = slot.symbolInfo[index+1];
-			slot.symbolInfo[index+1] = temp4;
-		}
+				FrequencyWrapper temp2 = slot.reelFrequencies[index];
+				slot.reelFrequencies[index] = slot.reelFrequencies[index + 1];
+				slot.reelFrequencies[index + 1] = temp2;
+
+				int temp3 = slot.symbolFrequencies[index];
+				slot.symbolFrequencies[index] = slot.symbolFrequencies[index + 1];
+				slot.symbolFrequencies[index + 1] = temp3;
+
+				SlotSymbolInfo temp4 = slot.symbolInfo[index];
+				slot.symbolInfo[index] = slot.symbolInfo[index + 1];
+				slot.symbolInfo[index + 1] = temp4;
+			}
 	}
 	void showAddRemoveSymbol()
 	{
 		EditorGUILayout.BeginHorizontal();
 		if (slot.symbolPrefabs.Count > 0)
-		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30))) {
-			
-			slot.symbolPrefabs.RemoveAt(slot.symbolPrefabs.Count-1);
-			slot.symbolPrefabs.Capacity = slot.symbolPrefabs.Capacity - 1;
-			slot.winboxPrefabs.RemoveAt(slot.winboxPrefabs.Count-1);
-			slot.winboxPrefabs.Capacity = slot.winboxPrefabs.Capacity - 1;
-
-			while (slot.symbolBgPrefabs.Count > slot.symbolPrefabs.Count)
+			if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30)))
 			{
-				slot.symbolBgPrefabs.RemoveAt(slot.symbolBgPrefabs.Count-1);
-				slot.symbolBgPrefabs.Capacity = slot.symbolBgPrefabs.Capacity - 1;
-			}
 
-			while (slot.reelFrequencies.Count > slot.symbolPrefabs.Count)
-			{
-				slot.reelFrequencies.RemoveAt(slot.reelFrequencies.Count-1);
-				slot.reelFrequencies.Capacity = slot.reelFrequencies.Capacity - 1;
-			}
+				slot.symbolPrefabs.RemoveAt(slot.symbolPrefabs.Count - 1);
+				slot.symbolPrefabs.Capacity = slot.symbolPrefabs.Capacity - 1;
+				slot.winboxPrefabs.RemoveAt(slot.winboxPrefabs.Count - 1);
+				slot.winboxPrefabs.Capacity = slot.winboxPrefabs.Capacity - 1;
 
-			while (slot.symbolFrequencies.Count > slot.symbolPrefabs.Count)
-			{
-				slot.symbolFrequencies.RemoveAt(slot.symbolFrequencies.Count-1);
-				slot.symbolFrequencies.Capacity = slot.symbolFrequencies.Capacity - 1;
-			}
+				while (slot.symbolBgPrefabs.Count > slot.symbolPrefabs.Count)
+				{
+					slot.symbolBgPrefabs.RemoveAt(slot.symbolBgPrefabs.Count - 1);
+					slot.symbolBgPrefabs.Capacity = slot.symbolBgPrefabs.Capacity - 1;
+				}
 
-			while (slot.symbolInfo.Count > slot.symbolPrefabs.Count)
-			{
-				slot.symbolInfo.RemoveAt(slot.symbolInfo.Count-1);
-				slot.symbolInfo.Capacity = slot.symbolInfo.Capacity - 1;
+				while (slot.reelFrequencies.Count > slot.symbolPrefabs.Count)
+				{
+					slot.reelFrequencies.RemoveAt(slot.reelFrequencies.Count - 1);
+					slot.reelFrequencies.Capacity = slot.reelFrequencies.Capacity - 1;
+				}
+
+				while (slot.symbolFrequencies.Count > slot.symbolPrefabs.Count)
+				{
+					slot.symbolFrequencies.RemoveAt(slot.symbolFrequencies.Count - 1);
+					slot.symbolFrequencies.Capacity = slot.symbolFrequencies.Capacity - 1;
+				}
+
+				while (slot.symbolInfo.Count > slot.symbolPrefabs.Count)
+				{
+					slot.symbolInfo.RemoveAt(slot.symbolInfo.Count - 1);
+					slot.symbolInfo.Capacity = slot.symbolInfo.Capacity - 1;
+				}
 			}
-		}
-		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30))) {
+		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
 			slot.symbolPrefabs.Capacity = slot.symbolPrefabs.Capacity + 1;
-			slot.symbolPrefabs.Add(null); 
+			slot.symbolPrefabs.Add(null);
 			slot.winboxPrefabs.Capacity = slot.winboxPrefabs.Capacity + 1;
 			if (slot.winboxPrefabs.Count > 0)
 			{
-				slot.winboxPrefabs.Add(slot.winboxPrefabs[slot.winboxPrefabs.Count-1]); 
-			} else {
-				slot.winboxPrefabs.Add(null); 
+				slot.winboxPrefabs.Add(slot.winboxPrefabs[slot.winboxPrefabs.Count - 1]);
+			}
+			else
+			{
+				slot.winboxPrefabs.Add(null);
 			}
 
 			slot.symbolBgPrefabs.Capacity = slot.symbolBgPrefabs.Capacity + 1;
-			slot.symbolBgPrefabs.Add (null);
+			slot.symbolBgPrefabs.Add(null);
 
 			slot.reelFrequencies.Capacity = slot.reelFrequencies.Capacity + 1;
-			slot.reelFrequencies.Add (new FrequencyWrapper(slot.numberOfReels));
+			slot.reelFrequencies.Add(new FrequencyWrapper(slot.numberOfReels));
 
 			slot.symbolFrequencies.Capacity = slot.symbolFrequencies.Capacity + 1;
-			slot.symbolFrequencies.Add (1);
+			slot.symbolFrequencies.Add(1);
 
 			slot.symbolInfo.Capacity = slot.symbolInfo.Capacity + 1;
-			slot.symbolInfo.Add (new SlotSymbolInfo());
+			slot.symbolInfo.Add(new SlotSymbolInfo());
 		}
 		EditorGUILayout.EndHorizontal();
 	}
@@ -604,19 +625,19 @@ public class SlotEditor : Editor
 			// TODO
 			//slot.fillBoardAtStartup = EditorGUILayout.ToggleLeft(new GUIContent("Wild"),currentSymbol.isWild, EditorStyles.miniLabel, GUILayout.Width(75));
 		}
-		 
+
 		while (slot.symbolBgPrefabs.Count < slot.symbolPrefabs.Count)
 		{
 			slot.symbolBgPrefabs.Capacity += 1;
-			slot.symbolBgPrefabs.Add (null);
+			slot.symbolBgPrefabs.Add(null);
 		}
 
 		for (int i = 0; i < slot.symbolPrefabs.Count; i++)
 		{
 			EditorGUILayout.BeginVertical("Box");
-			string lname = (slot.symbolPrefabs[i] != null)?(i+1).ToString () + " - " + slot.symbolPrefabs[i].name:(i+1).ToString() + " - None";
+			string lname = (slot.symbolPrefabs[i] != null) ? (i + 1).ToString() + " - " + slot.symbolPrefabs[i].name : (i + 1).ToString() + " - None";
 			EditorGUILayout.LabelField(new GUIContent(lname, SlotHelp.SYMBOL_PROPERTIES), EditorStyles.boldLabel, GUILayout.MaxWidth(100));
-			 
+
 			EditorGUI.indentLevel++;
 			slot.symbolPrefabs[i] = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Prefab"), slot.symbolPrefabs[i], typeof(GameObject), false);
 			slot.symbolBgPrefabs[i] = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Bkg Prefab", SlotHelp.BACKGROUND_PREFAB), slot.symbolBgPrefabs[i], typeof(GameObject), false);
@@ -624,40 +645,40 @@ public class SlotEditor : Editor
 			if (slot.symbolPrefabs[i] != null)
 			{
 				//EditorGUI.DrawPreviewTexture(new Rect(0,0,25,25),slot.symbolPrefabs[i].GetComponent<SpriteRenderer>().sprite.texture.);
-				while (i >= slot.symbolInfo.Count) slot.symbolInfo.Add (new SlotSymbolInfo());
-				 
+				while (i >= slot.symbolInfo.Count) slot.symbolInfo.Add(new SlotSymbolInfo());
+
 				SlotSymbolInfo currentSymbol = slot.symbolInfo[i];// slot.symbolPrefabs[i].GetComponent<SlotSymbol>();
-				currentSymbol.active = EditorGUILayout.ToggleLeft(new GUIContent("Activated"),currentSymbol.active);
+				currentSymbol.active = EditorGUILayout.ToggleLeft(new GUIContent("Activated"), currentSymbol.active);
 				EditorGUILayout.BeginHorizontal();
 				slot.winboxPrefabs[i] = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Winbox"), slot.winboxPrefabs[i], typeof(GameObject), false);
-				currentSymbol.isWild = EditorGUILayout.ToggleLeft(new GUIContent("Wild"),currentSymbol.isWild, EditorStyles.miniLabel, GUILayout.Width(75));
+				currentSymbol.isWild = EditorGUILayout.ToggleLeft(new GUIContent("Wild"), currentSymbol.isWild, EditorStyles.miniLabel, GUILayout.Width(75));
 				EditorGUILayout.EndHorizontal();
 
 				//Clamping
 				if ((slot.symbolPrefabs[i] != null) && (slot.symbolPrefabs[i].GetComponent<SlotSymbol>() != null))
 				{
 					List<string> optionsCap = new List<string>();
-					
-					optionsCap.Add ("off");
-					for (int c = 1; c <= (slot.reelHeight - (slot.reelIndent * 2)); c++) optionsCap.Add (c.ToString ());
-					
+
+					optionsCap.Add("off");
+					for (int c = 1; c <= (slot.reelHeight - (slot.reelIndent * 2)); c++) optionsCap.Add(c.ToString());
+
 					EditorGUILayout.BeginHorizontal();
 					//EditorGUI.indentLevel++;
-					EditorGUILayout.LabelField(new GUIContent("Clamping",SlotHelp.SYMBOL_CLAMP), GUILayout.MaxWidth(115));
-					
-					
+					EditorGUILayout.LabelField(new GUIContent("Clamping", SlotHelp.SYMBOL_CLAMP), GUILayout.MaxWidth(115));
+
+
 					EditorGUI.indentLevel--;
 					//EditorGUI.indentLevel--;
 					GUILayout.FlexibleSpace();
 					currentSymbol.clampPerReel = EditorGUILayout.Popup(currentSymbol.clampPerReel, optionsCap.ToArray(), GUILayout.Width(30));
 					EditorGUILayout.LabelField("max per reel", EditorStyles.miniLabel, GUILayout.Width(70));
-					
+
 					if (currentSymbol.clampPerReel > 0)
 					{
-						optionsCap.Clear ();
-						optionsCap.Add ("off");
-						
-						for (int c = 1; c <= (currentSymbol.clampPerReel * slot.numberOfReels); c++) optionsCap.Add (c.ToString ());
+						optionsCap.Clear();
+						optionsCap.Add("off");
+
+						for (int c = 1; c <= (currentSymbol.clampPerReel * slot.numberOfReels); c++) optionsCap.Add(c.ToString());
 						//EditorGUIUtility.labelWidth = 50;
 						//EditorGUILayout.LabelField(new GUIContent("total",""), GUILayout.MaxWidth(50));
 						currentSymbol.clampTotal = EditorGUILayout.Popup(currentSymbol.clampTotal, optionsCap.ToArray(), GUILayout.Width(30));
@@ -668,23 +689,23 @@ public class SlotEditor : Editor
 					//EditorGUI.indentLevel++;
 					EditorGUILayout.EndHorizontal();
 
-				} 
-				 
+				}
+
 
 				while (slot.symbolBgPrefabs.Count < slot.symbolBgPrefabs.Count)
 				{
 					slot.symbolBgPrefabs.Capacity += 1;
-					slot.symbolBgPrefabs.Add (null);
+					slot.symbolBgPrefabs.Add(null);
 				}
 				while (slot.reelFrequencies.Count < slot.symbolPrefabs.Count)
 				{
 					slot.reelFrequencies.Capacity += 1;
-					slot.reelFrequencies.Add (new FrequencyWrapper(slot.numberOfReels));
+					slot.reelFrequencies.Add(new FrequencyWrapper(slot.numberOfReels));
 				}
 				while (slot.reelFrequencies[i].freq.Count < slot.numberOfReels)
 				{
 					slot.reelFrequencies[i].freq.Capacity += 1;
-					slot.reelFrequencies[i].freq.Add (0);
+					slot.reelFrequencies[i].freq.Add(0);
 				}
 
 				if (!currentSymbol.perReelFrequency)
@@ -692,11 +713,13 @@ public class SlotEditor : Editor
 					slot.symbolFrequencies[i] = EditorGUILayout.IntSlider(new GUIContent("Frequency", SlotHelp.SYMBOL_OCCURENCE), slot.symbolFrequencies[i], 0, slot.percision);
 					EditorGUILayout.BeginHorizontal();
 					EditorGUI.indentLevel++;
-					currentSymbol.perReelFrequency = EditorGUILayout.ToggleLeft(new GUIContent("Enable Frequency Per Reel"),currentSymbol.perReelFrequency);
+					currentSymbol.perReelFrequency = EditorGUILayout.ToggleLeft(new GUIContent("Enable Frequency Per Reel"), currentSymbol.perReelFrequency);
 					EditorGUI.indentLevel--;
-				} else {
+				}
+				else
+				{
 					EditorGUILayout.BeginHorizontal();
-					currentSymbol.perReelFrequency = EditorGUILayout.ToggleLeft(new GUIContent("Frequency Per Reel"),currentSymbol.perReelFrequency);
+					currentSymbol.perReelFrequency = EditorGUILayout.ToggleLeft(new GUIContent("Frequency Per Reel"), currentSymbol.perReelFrequency);
 				}
 
 				EditorGUILayout.EndHorizontal();
@@ -714,20 +737,20 @@ public class SlotEditor : Editor
 				// is linked functionality WIP
 				List<string> link = new List<string>();
 				List<int> linkIndexes = new List<int>();
-				link.Clear ();
+				link.Clear();
 				linkIndexes.Clear();
 				int selIndex = -1;
-				for (int c = 0; c <= slot.symbolPrefabs.Count-1; c++) 
+				for (int c = 0; c <= slot.symbolPrefabs.Count - 1; c++)
 				{
 					if (slot.symbolPrefabs[c] == null) continue;
 					if (!slot.symbolInfo[c].linked) continue;
 
 					if (slot.symbolInfo[c].linkName == currentSymbol.linkName)
 					{
-						link.Add ((c+1).ToString () + " - " + slot.symbolPrefabs[c].name);
-						linkIndexes.Add (c);
-						if (currentSymbol.link == c) 
-							selIndex = link.Count-1;
+						link.Add((c + 1).ToString() + " - " + slot.symbolPrefabs[c].name);
+						linkIndexes.Add(c);
+						if (currentSymbol.link == c)
+							selIndex = link.Count - 1;
 					}
 				}
 
@@ -735,7 +758,7 @@ public class SlotEditor : Editor
 				//EditorGUI.indentLevel--;
 				//EditorGUI.indentLevel++;
 
-				currentSymbol.linked = EditorGUILayout.ToggleLeft(new GUIContent("Link", SlotHelp.LINK_SYMBOL),currentSymbol.linked, EditorStyles.miniLabel, GUILayout.Width(75));
+				currentSymbol.linked = EditorGUILayout.ToggleLeft(new GUIContent("Link", SlotHelp.LINK_SYMBOL), currentSymbol.linked, EditorStyles.miniLabel, GUILayout.Width(75));
 				if (currentSymbol.linked)
 				{
 					currentSymbol.linkName = EditorGUILayout.TextField(new GUIContent("Identifier:", SlotHelp.LINK_IDENTIFIER), currentSymbol.linkName);
@@ -751,7 +774,9 @@ public class SlotEditor : Editor
 						int index = EditorGUILayout.Popup(selIndex, link.ToArray(), GUILayout.Width(150));
 						currentSymbol.link = linkIndexes[index];
 					}
-				} else {
+				}
+				else
+				{
 					//currentSymbol.linkPosition = LinkPosition.None;
 				}
 
@@ -778,7 +803,7 @@ public class SlotEditor : Editor
 		for (int i = 0; i < slot.symbolPrefabs.Count; i++)
 		{
 			if (slot.symbolPrefabs[i] != null)
-			list.Add (slot.symbolPrefabs[i].name);
+				list.Add(slot.symbolPrefabs[i].name);
 		}
 		return list;
 	}
@@ -792,7 +817,7 @@ public class SlotEditor : Editor
 		slot.symbolSetNames[index] = EditorGUILayout.TextField(slot.symbolSetNames[index], GUILayout.MinWidth(50));
 		EditorGUILayout.EndHorizontal();
 
-		if (slot.symbolSetNames[index] == "") return; 
+		if (slot.symbolSetNames[index] == "") return;
 		EditorGUILayout.BeginHorizontal();
 		EditorGUI.indentLevel++;
 		EditorGUILayout.LabelField(new GUIContent("Set Type:", SlotHelp.SET_TYPE), GUILayout.MaxWidth(100));
@@ -804,7 +829,9 @@ public class SlotEditor : Editor
 			EditorGUI.BeginDisabledGroup(true);
 			slot.symbolSets[index].typeofSet = (SetsType)EditorGUILayout.EnumPopup(slot.symbolSets[index].typeofSet, GUILayout.MaxWidth(75));
 			EditorGUI.EndDisabledGroup();
-		} else {
+		}
+		else
+		{
 			slot.symbolSets[index].typeofSet = (SetsType)EditorGUILayout.EnumPopup(slot.symbolSets[index].typeofSet, GUILayout.MaxWidth(75));
 		}
 		slot.symbolSets[index].allowWilds = EditorGUILayout.ToggleLeft("Allow Wilds", slot.symbolSets[index].allowWilds, GUILayout.MaxWidth(100));
@@ -815,7 +842,7 @@ public class SlotEditor : Editor
 		{
 			while (slot.symbolSets[index].symbols.Count > 1)
 			{
-				slot.symbolSets[index].symbols.RemoveAt (slot.symbolSets[index].symbols.Count-1);
+				slot.symbolSets[index].symbols.RemoveAt(slot.symbolSets[index].symbols.Count - 1);
 			}
 			int max = slot.symbolInfo[slot.symbolSets[index].symbols[0]].clampPerReel * slot.numberOfReels;
 			int maxtotal = slot.symbolInfo[slot.symbolSets[index].symbols[0]].clampTotal;
@@ -823,39 +850,41 @@ public class SlotEditor : Editor
 			//int maxtotal = slot.symbolPrefabs[slot.symbolSets[index].symbols[0]].GetComponent<SlotSymbol>().clampTotal;
 			if (maxtotal > 0)
 				if (maxtotal < max) max = maxtotal;
-				
+
 			while (slot.setPays[index].anticipate.Count > (max))
 			{
-				slot.setPays[index].anticipate.RemoveAt (slot.setPays[index].anticipate.Count-1);
+				slot.setPays[index].anticipate.RemoveAt(slot.setPays[index].anticipate.Count - 1);
 			}
 			while (slot.setPays[index].anticipate.Count < (max))
 			{
-				slot.setPays[index].anticipate.Add (false);
+				slot.setPays[index].anticipate.Add(false);
 			}
 			while (slot.setPays[index].pays.Count > (max))
 			{
-				slot.setPays[index].pays.RemoveAt (slot.setPays[index].pays.Count-1);
+				slot.setPays[index].pays.RemoveAt(slot.setPays[index].pays.Count - 1);
 			}
 			while (slot.setPays[index].pays.Count < (max))
 			{
-				slot.setPays[index].pays.Add (0);
+				slot.setPays[index].pays.Add(0);
 			}
-		} else {
+		}
+		else
+		{
 			while (slot.setPays[index].anticipate.Count > (slot.numberOfReels))
 			{
-				slot.setPays[index].anticipate.RemoveAt (slot.setPays[index].anticipate.Count-1);
+				slot.setPays[index].anticipate.RemoveAt(slot.setPays[index].anticipate.Count - 1);
 			}
 			while (slot.setPays[index].anticipate.Count < (slot.numberOfReels))
 			{
-				slot.setPays[index].anticipate.Add (false);
+				slot.setPays[index].anticipate.Add(false);
 			}
 			while (slot.setPays[index].pays.Count > (slot.numberOfReels))
 			{
-				slot.setPays[index].pays.RemoveAt (slot.setPays[index].pays.Count-1);
+				slot.setPays[index].pays.RemoveAt(slot.setPays[index].pays.Count - 1);
 			}
 			while (slot.setPays[index].pays.Count < (slot.numberOfReels))
 			{
-				slot.setPays[index].pays.Add (0);
+				slot.setPays[index].pays.Add(0);
 			}
 		}
 
@@ -866,23 +895,25 @@ public class SlotEditor : Editor
 		EditorGUI.indentLevel--;
 		for (int c = 0; c < slot.symbolSets[index].symbols.Count; c++)
 		{
-			slot.symbolSets[index].symbols[c] =  EditorGUILayout.Popup(slot.symbolSets[index].symbols[c],getSymbolList().ToArray(), GUILayout.MaxWidth(75));
+			slot.symbolSets[index].symbols[c] = EditorGUILayout.Popup(slot.symbolSets[index].symbols[c], getSymbolList().ToArray(), GUILayout.MaxWidth(75));
 			//EditorGUILayout.IntField(slot.winningSymbolSets[index].symbols[c], GUILayout.MaxWidth(30));
 		}
-		
+
 		if (slot.symbolSets[index].symbols.Count > 1)
-		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30))) {
-			slot.symbolSets[index].symbols.RemoveAt(slot.symbolSets[index].symbols.Count-1);
-			slot.symbolSets[index].symbols.Capacity = slot.symbolSets[index].symbols.Capacity - 1;
-		}
+			if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30)))
+			{
+				slot.symbolSets[index].symbols.RemoveAt(slot.symbolSets[index].symbols.Count - 1);
+				slot.symbolSets[index].symbols.Capacity = slot.symbolSets[index].symbols.Capacity - 1;
+			}
 		if (slot.symbolSets[index].typeofSet != SetsType.scatter)
-		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30))) {
-			slot.symbolSets[index].symbols.Add (0);
-			//				slot.winningSymbolSets[index].symbols.Capacity = slot.winningSymbolSets.Capacity - 1;
-		}
+			if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30)))
+			{
+				slot.symbolSets[index].symbols.Add(0);
+				//				slot.winningSymbolSets[index].symbols.Capacity = slot.winningSymbolSets.Capacity - 1;
+			}
 		EditorGUILayout.EndHorizontal();
 
-		GUILayout.Space (10);
+		GUILayout.Space(10);
 
 		EditorGUILayout.BeginHorizontal();
 		EditorGUI.indentLevel++;
@@ -906,7 +937,8 @@ public class SlotEditor : Editor
 			if (mark)
 			{
 				slot.setPays[index].anticipate[c] = true;
-			} else
+			}
+			else
 			if (slot.setPays[index].anticipate[c] == true)
 			{
 				mark = true;
@@ -917,17 +949,17 @@ public class SlotEditor : Editor
 		{
 			EditorGUI.indentLevel--;
 
-			GUI.color = new Color(0.4f,0.4f,0.4f,1.0f);
+			GUI.color = new Color(0.4f, 0.4f, 0.4f, 1.0f);
 			EditorGUILayout.LabelField(new GUIContent((c + 1).ToString()), EditorStyles.whiteMiniLabel, GUILayout.MaxWidth(20));
 			GUI.color = Color.white;
 			slot.setPays[index].pays[c] = EditorGUILayout.IntField(slot.setPays[index].pays[c], GUILayout.Width(50));
 			//EditorGUILayout.LabelField(new GUIContent("Ant"), EditorStyles.miniLabel, GUILayout.MaxWidth(30));
-			if ((c < slot.setPays[index].anticipate.Count-1) && (slot.symbolSets[index].typeofSet == SetsType.scatter))
+			if ((c < slot.setPays[index].anticipate.Count - 1) && (slot.symbolSets[index].typeofSet == SetsType.scatter))
 			{
 				slot.setPays[index].anticipate[c] = EditorGUILayout.ToggleLeft(new GUIContent("Ant", SlotHelp.SET_ANTICIPATION), slot.setPays[index].anticipate[c], GUILayout.Width(40));
 			}
 
-			if (((c+1) % ((slot.symbolSets[index].typeofSet == SetsType.scatter)?2:4)) == 0)
+			if (((c + 1) % ((slot.symbolSets[index].typeofSet == SetsType.scatter) ? 2 : 4)) == 0)
 			{
 				EditorGUILayout.EndHorizontal();
 				EditorGUI.indentLevel++;
@@ -948,7 +980,7 @@ public class SlotEditor : Editor
 			slot.setPays[index].anticipationSound = (AudioClip)EditorGUILayout.ObjectField(new GUIContent("Anticipation Sound", SlotHelp.SET_ANTICIPATION), slot.setPays[index].anticipationSound, typeof(AudioClip), false);
 		EditorGUI.indentLevel--;
 		*/
-		GUILayout.Space (10);
+		GUILayout.Space(10);
 
 	}
 
@@ -958,71 +990,75 @@ public class SlotEditor : Editor
 		GUILayout.FlexibleSpace();
 
 		if (index > 0)
-		if (GUILayout.Button("up", EditorStyles.miniButton, GUILayout.Width(50))) {
-			
-			string temp = slot.symbolSetNames[index];
-			slot.symbolSetNames[index] = slot.symbolSetNames[index-1];
-			slot.symbolSetNames[index-1] = temp;
-			
-			SetsWrapper temp2 = slot.symbolSets[index];
-			slot.symbolSets[index] = slot.symbolSets[index-1];
-			slot.symbolSets[index-1] = temp2;
-			
-			PaysWrapper temp3 = slot.setPays[index];
-			slot.setPays[index] = slot.setPays[index-1];
-			slot.setPays[index-1] = temp3;
-		}
-		if (index < slot.symbolSetNames.Capacity - 1)
-		if (GUILayout.Button("down", EditorStyles.miniButton, GUILayout.Width(50))) {
-			
-			string temp = slot.symbolSetNames[index];
-			slot.symbolSetNames[index] = slot.symbolSetNames[index+1];
-			slot.symbolSetNames[index+1] = temp;
-			
-			SetsWrapper temp2 = slot.symbolSets[index];
-			slot.symbolSets[index] = slot.symbolSets[index+1];
-			slot.symbolSets[index+1] = temp2;
+			if (GUILayout.Button("up", EditorStyles.miniButton, GUILayout.Width(50)))
+			{
 
-			PaysWrapper temp3 = slot.setPays[index];
-			slot.setPays[index] = slot.setPays[index+1];
-			slot.setPays[index+1] = temp3;
-		}
+				string temp = slot.symbolSetNames[index];
+				slot.symbolSetNames[index] = slot.symbolSetNames[index - 1];
+				slot.symbolSetNames[index - 1] = temp;
+
+				SetsWrapper temp2 = slot.symbolSets[index];
+				slot.symbolSets[index] = slot.symbolSets[index - 1];
+				slot.symbolSets[index - 1] = temp2;
+
+				PaysWrapper temp3 = slot.setPays[index];
+				slot.setPays[index] = slot.setPays[index - 1];
+				slot.setPays[index - 1] = temp3;
+			}
+		if (index < slot.symbolSetNames.Capacity - 1)
+			if (GUILayout.Button("down", EditorStyles.miniButton, GUILayout.Width(50)))
+			{
+
+				string temp = slot.symbolSetNames[index];
+				slot.symbolSetNames[index] = slot.symbolSetNames[index + 1];
+				slot.symbolSetNames[index + 1] = temp;
+
+				SetsWrapper temp2 = slot.symbolSets[index];
+				slot.symbolSets[index] = slot.symbolSets[index + 1];
+				slot.symbolSets[index + 1] = temp2;
+
+				PaysWrapper temp3 = slot.setPays[index];
+				slot.setPays[index] = slot.setPays[index + 1];
+				slot.setPays[index + 1] = temp3;
+			}
 		EditorGUILayout.EndHorizontal();
 	}
 	void showAddRemoveSymbolSet()
 	{
 		EditorGUILayout.BeginHorizontal();
 		if (slot.symbolSetNames.Count > 0)
-		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30))) {
-			slot.symbolSetNames.RemoveAt(slot.symbolSetNames.Count-1);
-			slot.symbolSetNames.Capacity = slot.symbolSetNames.Capacity - 1;
-			
-			slot.symbolSets.RemoveAt(slot.symbolSets.Count-1);
-			slot.symbolSets.Capacity = slot.symbolSets.Capacity - 1;
-			
-			slot.setPays.RemoveAt(slot.setPays.Count-1);
-			slot.setPays.Capacity = slot.setPays.Capacity - 1;
+			if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30)))
+			{
+				slot.symbolSetNames.RemoveAt(slot.symbolSetNames.Count - 1);
+				slot.symbolSetNames.Capacity = slot.symbolSetNames.Capacity - 1;
 
-			setFoldouts.RemoveAt(setFoldouts.Count-1);
-		}
-		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30))) {
-			
+				slot.symbolSets.RemoveAt(slot.symbolSets.Count - 1);
+				slot.symbolSets.Capacity = slot.symbolSets.Capacity - 1;
+
+				slot.setPays.RemoveAt(slot.setPays.Count - 1);
+				slot.setPays.Capacity = slot.setPays.Capacity - 1;
+
+				setFoldouts.RemoveAt(setFoldouts.Count - 1);
+			}
+		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
+
 			slot.symbolSetNames.Capacity = slot.symbolSetNames.Capacity + 1;
-			slot.symbolSetNames.Add(""); 
-			
+			slot.symbolSetNames.Add("");
+
 			//slot.winningSymbolSets.Capacity = slot.winningSymbolSets.Capacity + 1;
 			//slot.winningSymbolSets.Add(null); 
-			
+
 			slot.symbolSets.Capacity = slot.symbolSets.Capacity + 1;
-			slot.symbolSets.Add (new SetsWrapper());
-			
+			slot.symbolSets.Add(new SetsWrapper());
+
 			SetsWrapper setsets = slot.symbolSets[slot.symbolSets.Capacity - 1];
 			setsets.symbols = new List<int>();
-			setsets.symbols.Add (0);
-			
+			setsets.symbols.Add(0);
+
 			slot.setPays.Capacity = slot.setPays.Capacity + 1;
-			slot.setPays.Add (new PaysWrapper());
-			
+			slot.setPays.Add(new PaysWrapper());
+
 			PaysWrapper setpays = slot.setPays[slot.setPays.Capacity - 1];
 			setpays.pays = new List<int>();
 			setpays.pays.Capacity = slot.numberOfReels;
@@ -1030,10 +1066,10 @@ public class SlotEditor : Editor
 			setpays.anticipate.Capacity = slot.numberOfReels;
 			for (int c = 0; c < slot.numberOfReels; c++)
 			{
-				slot.setPays[slot.setPays.Capacity-1].pays.Add (0);
-				slot.setPays[slot.setPays.Capacity-1].anticipate.Add (false);
+				slot.setPays[slot.setPays.Capacity - 1].pays.Add(0);
+				slot.setPays[slot.setPays.Capacity - 1].anticipate.Add(false);
 			}
-			setFoldouts.Add (true);
+			setFoldouts.Add(true);
 		}
 		EditorGUILayout.EndHorizontal();
 	}
@@ -1044,8 +1080,8 @@ public class SlotEditor : Editor
 		{
 			EditorGUILayout.BeginVertical("Box");
 			EditorGUI.indentLevel++;
-			string setName = (slot.symbolSetNames[i] == "")?"undefined":slot.symbolSetNames[i];
-			setFoldouts[i] = EditorGUILayout.Foldout(setFoldouts[i], new GUIContent((i+1).ToString() + " - " + setName, ""), EditorStyles.foldout);
+			string setName = (slot.symbolSetNames[i] == "") ? "undefined" : slot.symbolSetNames[i];
+			setFoldouts[i] = EditorGUILayout.Foldout(setFoldouts[i], new GUIContent((i + 1).ToString() + " - " + setName, ""), EditorStyles.foldout);
 			EditorGUI.indentLevel--;
 			EditorGUI.indentLevel++;
 			if (setFoldouts[i])
@@ -1066,21 +1102,23 @@ public class SlotEditor : Editor
 	{
 		EditorGUILayout.BeginHorizontal();
 		if (slot.lines.Count > 0)
-		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30))) {
-			slot.lines.RemoveAt(slot.lines.Count-1);
-			slot.lines.Capacity = slot.lines.Capacity - 1;
-			
-		}
-		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30))) {
-			
+			if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30)))
+			{
+				slot.lines.RemoveAt(slot.lines.Count - 1);
+				slot.lines.Capacity = slot.lines.Capacity - 1;
+
+			}
+		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
+
 			slot.lines.Capacity = slot.lines.Capacity + 1;
-			slot.lines.Add (new LinesWrapper());
-			
+			slot.lines.Add(new LinesWrapper());
+
 			LinesWrapper setlines = slot.lines[slot.lines.Capacity - 1];
 			setlines.positions = new List<int>();
 			for (int c = 0; c < slot.numberOfReels; c++)
 			{
-				slot.lines[slot.lines.Capacity-1].positions.Add (0);
+				slot.lines[slot.lines.Capacity - 1].positions.Add(0);
 			}
 		}
 		EditorGUILayout.EndHorizontal();
@@ -1088,15 +1126,17 @@ public class SlotEditor : Editor
 
 	void showIncAllButtons(int line)
 	{
-		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30))) {
+		if (GUILayout.Button("-", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
 
 			for (int c = 0; c < slot.lines[line].positions.Count; c++)
 			{
 				slot.lines[line].positions[c]--;
 			}
 		}
-		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30))) {
-			
+		if (GUILayout.Button("+", EditorStyles.miniButton, GUILayout.Width(30)))
+		{
+
 			for (int c = 0; c < slot.lines[line].positions.Count; c++)
 			{
 				slot.lines[line].positions[c]++;
@@ -1107,7 +1147,7 @@ public class SlotEditor : Editor
 	{
 		List<string> options = new List<string>();
 
-		for (int i = slot.reelIndent; i < (slot.reelHeight - slot.reelIndent); i++) options.Add (i.ToString ());
+		for (int i = slot.reelIndent; i < (slot.reelHeight - slot.reelIndent); i++) options.Add(i.ToString());
 
 		for (int i = 0; i < slot.lines.Count; i++)
 		{
@@ -1116,12 +1156,13 @@ public class SlotEditor : Editor
 
 			for (int c = 0; c < slot.lines[i].positions.Count; c++)
 			{
-				if (slot.lines[i].positions[c] < slot.reelIndent) slot.lines[i].positions[c] = slot.reelIndent; else
+				if (slot.lines[i].positions[c] < slot.reelIndent) slot.lines[i].positions[c] = slot.reelIndent;
+				else
 					if (slot.lines[i].positions[c] > ((slot.reelHeight - 1) - slot.reelIndent)) slot.lines[i].positions[c] = ((slot.reelHeight - 1) - slot.reelIndent);
-				int result =  EditorGUILayout.Popup(slot.lines[i].positions[c] - slot.reelIndent,options.ToArray(), GUILayout.MaxWidth(30));
+				int result = EditorGUILayout.Popup(slot.lines[i].positions[c] - slot.reelIndent, options.ToArray(), GUILayout.MaxWidth(30));
 				slot.lines[i].positions[c] = int.Parse(options[result]);
 				//EditorGUILayout.IntField(slot.winningSymbolSets[i].symbols[c], GUILayout.MaxWidth(30));
-				if (((c+1) % 8) == 0)
+				if (((c + 1) % 8) == 0)
 				{
 					EditorGUILayout.EndHorizontal();
 					EditorGUILayout.BeginHorizontal();
@@ -1135,28 +1176,28 @@ public class SlotEditor : Editor
 		showAddRemoveLine();
 	}
 	#endregion
-	
-	[MenuItem ("GameObject/Slots Creator/Create Slot Machine")]
+
+	[MenuItem("GameObject/Slots Creator/Create Slot Machine")]
 	static void MakeSlot()
 	{
 		GameObject go = new GameObject("Slot");
 		go.AddComponent(typeof(Slot));
 	}
-	[MenuItem ("GameObject/Slots Creator/Create Slot With Simple GUI")]
+	[MenuItem("GameObject/Slots Creator/Create Slot With Simple GUI")]
 	static void MakeSlotGUI()
 	{
 		GameObject go = new GameObject("Slot");
 		go.AddComponent(typeof(Slot));
 		go.AddComponent(typeof(SlotSimpleGUI));
 	}
-	[MenuItem ("GameObject/Slots Creator/Create 2D Sprite Symbol")]
+	[MenuItem("GameObject/Slots Creator/Create 2D Sprite Symbol")]
 	static void Make2DSymbol()
 	{
 		GameObject go = new GameObject("Symbol");
 		go.AddComponent(typeof(SlotSymbol));
 		go.AddComponent(typeof(SpriteRenderer));
 	}
-	[MenuItem ("GameObject/Slots Creator/Create 3D Mesh Symbol")]
+	[MenuItem("GameObject/Slots Creator/Create 3D Mesh Symbol")]
 	static void Make3DSymbol()
 	{
 		GameObject go = new GameObject("Symbol");
@@ -1170,10 +1211,12 @@ public class SlotEditor : Editor
 		if (configIssues.Count == 0)
 		{
 			EditorGUILayout.HelpBox("\n\rNo errors found in setup.\n\r", MessageType.Info);
-		} else {
-			
+		}
+		else
+		{
+
 			string errorMsgs = "\n\r";
-			foreach(string issue in configIssues)
+			foreach (string issue in configIssues)
 			{
 				errorMsgs += issue + "\n\r";
 			}
@@ -1182,9 +1225,9 @@ public class SlotEditor : Editor
 	}
 	void checkErrors()
 	{
-		if (slot.betsPerLine.Count == 0)  
+		if (slot.betsPerLine.Count == 0)
 		{
-			slot.betsPerLine.Add (new BetsWrapper());
+			slot.betsPerLine.Add(new BetsWrapper());
 			slot.betsPerLine[0].value = 1;
 			slot.betsPerLine[0].canBet = true;
 		}
@@ -1193,40 +1236,42 @@ public class SlotEditor : Editor
 
 		if (slot.symbolPrefabs.Count == 0)
 		{
-			configIssues.Add ("Add a Symbol under Symbol Setup.");
+			configIssues.Add("Add a Symbol under Symbol Setup.");
 		}
 		if (slot.symbolSets.Count == 0)
 		{
-			configIssues.Add ("Add a Symbol Set under Symbol Sets Setup.");
+			configIssues.Add("Add a Symbol Set under Symbol Sets Setup.");
 		}
 		if (slot.lines.Count == 0)
 		{
-			configIssues.Add ("Add a Line under Payline Setup.");
+			configIssues.Add("Add a Line under Payline Setup.");
 		}
 
 		List<string> checkedLinkIdentifiers = new List<string>();
 		for (int symbolIndex = 0; symbolIndex < slot.symbolPrefabs.Count; symbolIndex++)
 		{
 
-			if (slot.symbolPrefabs[symbolIndex] == null) { configIssues.Add ("Assign a prefab Game Object to symbol #" + (symbolIndex + 1) + "."); continue; }
-			if (slot.symbolPrefabs[symbolIndex].GetComponent<SlotSymbol>() == null) { configIssues.Add ("Symbol #" + (symbolIndex + 1) + " is invalid (missing the SlotSymbol component)"); continue; }
+			if (slot.symbolPrefabs[symbolIndex] == null) { configIssues.Add("Assign a prefab Game Object to symbol #" + (symbolIndex + 1) + "."); continue; }
+			if (slot.symbolPrefabs[symbolIndex].GetComponent<SlotSymbol>() == null) { configIssues.Add("Symbol #" + (symbolIndex + 1) + " is invalid (missing the SlotSymbol component)"); continue; }
 			if ((slot.symbolPrefabs[symbolIndex].GetComponent<SpriteRenderer>() == null) &&
-			    (slot.symbolPrefabs[symbolIndex].GetComponent<MeshFilter>() == null)) { configIssues.Add ("Symbol #" + (symbolIndex + 1) + " is an invalid (missing SpriteRenderer or MeshFilter)"); continue; }
+				(slot.symbolPrefabs[symbolIndex].GetComponent<MeshFilter>() == null)) { configIssues.Add("Symbol #" + (symbolIndex + 1) + " is an invalid (missing SpriteRenderer or MeshFilter)"); continue; }
 
 			SlotSymbol symbol = slot.symbolPrefabs[symbolIndex].GetComponent<SlotSymbol>();
 
 			if (symbol.perReelFrequency)
 			{
 				int totalOccurenceReel = 0;
-				foreach(int freq in slot.reelFrequencies[symbolIndex].freq)
+				foreach (int freq in slot.reelFrequencies[symbolIndex].freq)
 				{
 					//totalOccurence += freq;
 					totalOccurenceReel += freq;
 				}
-				if (totalOccurenceReel == 0) { configIssues.Add ("The total occurence rate of symbol #" + (symbolIndex + 1).ToString() + " is 0."); }
-			} else {
+				if (totalOccurenceReel == 0) { configIssues.Add("The total occurence rate of symbol #" + (symbolIndex + 1).ToString() + " is 0."); }
+			}
+			else
+			{
 				int totalOccurence = slot.symbolFrequencies[symbolIndex];
-				if (totalOccurence == 0) { configIssues.Add ("The total occurence rate of symbol #" + (symbolIndex + 1).ToString() + " is 0."); }
+				if (totalOccurence == 0) { configIssues.Add("The total occurence rate of symbol #" + (symbolIndex + 1).ToString() + " is 0."); }
 				//if (totalOccurence == 0) { configIssues.Add ("The total occurence rate of the slot is 0. It must be at least 1."); }
 			}
 
@@ -1239,9 +1284,11 @@ public class SlotEditor : Editor
 				{
 					if (s1.sprite != null)
 					{
-						if (size != s1.sprite.bounds.size) { configIssues.Add ("Symbol #" + (symbolIndex + 1) + " does not match the size of the other symbols."); continue; }
-					} else {
-						configIssues.Add ("Symbol #" + (symbolIndex + 1) + " has no sprite assigned.");
+						if (size != s1.sprite.bounds.size) { configIssues.Add("Symbol #" + (symbolIndex + 1) + " does not match the size of the other symbols."); continue; }
+					}
+					else
+					{
+						configIssues.Add("Symbol #" + (symbolIndex + 1) + " has no sprite assigned.");
 					}
 				}
 				if (s1.sprite != null)
@@ -1251,7 +1298,7 @@ public class SlotEditor : Editor
 			{
 				if (!size.Equals(Vector3.zero))
 				{
-					if (size != s2.sharedMesh.bounds.size) { configIssues.Add ("Symbol #" + (symbolIndex + 1) + " does not match the size of the other symbols."); continue; }
+					if (size != s2.sharedMesh.bounds.size) { configIssues.Add("Symbol #" + (symbolIndex + 1) + " does not match the size of the other symbols."); continue; }
 				}
 				size = s2.sharedMesh.bounds.size;
 
@@ -1260,7 +1307,8 @@ public class SlotEditor : Editor
 			// Error checking for Linked Symbols
 			SlotSymbolInfo symbolInfo = slot.symbolInfo[symbolIndex];
 
-			if (symbolInfo.linked == true) {
+			if (symbolInfo.linked == true)
+			{
 				bool hasTop = false;
 				bool hasMid = false;
 				bool hasBottom = false;
@@ -1268,7 +1316,7 @@ public class SlotEditor : Editor
 				bool dupeSymbol = false;
 				string linkName = symbolInfo.linkName;
 				if (checkedLinkIdentifiers.Contains(linkName)) continue;
-				checkedLinkIdentifiers.Add (linkName);
+				checkedLinkIdentifiers.Add(linkName);
 				List<int> symbolsInChain = new List<int>();
 				for (int si = 0; si < slot.symbolPrefabs.Count; si++)
 				{
@@ -1277,32 +1325,35 @@ public class SlotEditor : Editor
 					if (!symbolInfoCompare.linked) continue;
 					if (linkName == symbolInfoCompare.linkName)
 					{
-						
-						if (symbolsInChain.Contains(symbolInfoCompare.link) && symbolInfoCompare.linkPosition != LinkPosition.Top) dupeSymbol = true; else symbolsInChain.Add (symbolInfoCompare.link);
+
+						if (symbolsInChain.Contains(symbolInfoCompare.link) && symbolInfoCompare.linkPosition != LinkPosition.Top) dupeSymbol = true; else symbolsInChain.Add(symbolInfoCompare.link);
 						switch (symbolInfoCompare.linkPosition)
 						{
-						case LinkPosition.Top:
-							if (!hasTop) hasTop = true; else dupe = true;
-							break;
-						case LinkPosition.Mid:
-							hasMid = true;
-							break;
-						case LinkPosition.Bottom:
-							if (!hasBottom) hasBottom = true; else dupe = true;
-							break;
+							case LinkPosition.Top:
+								if (!hasTop) hasTop = true; else dupe = true;
+								break;
+							case LinkPosition.Mid:
+								hasMid = true;
+								break;
+							case LinkPosition.Bottom:
+								if (!hasBottom) hasBottom = true; else dupe = true;
+								break;
 						}
 					}
 				}
-				if (dupe) { configIssues.Add ("Link identifier " + linkName + " has a duplicate Top or Bottom link."); };
-				if (dupeSymbol) { configIssues.Add ("Two or more links in the " + linkName + " chain have the same Next Link."); };
-				if (!hasTop) configIssues.Add ("Link identifier " + linkName + " is missing a Top link.");
-				if (!hasBottom) configIssues.Add ("Link identifier " + linkName + " is missing a Bottom link.");
-				if (hasMid && (!hasTop && !hasBottom)) { configIssues.Add ("Link identifier " + linkName + " has only a Mid link."); };
+				if (dupe) { configIssues.Add("Link identifier " + linkName + " has a duplicate Top or Bottom link."); }
+				;
+				if (dupeSymbol) { configIssues.Add("Two or more links in the " + linkName + " chain have the same Next Link."); }
+				;
+				if (!hasTop) configIssues.Add("Link identifier " + linkName + " is missing a Top link.");
+				if (!hasBottom) configIssues.Add("Link identifier " + linkName + " is missing a Bottom link.");
+				if (hasMid && (!hasTop && !hasBottom)) { configIssues.Add("Link identifier " + linkName + " has only a Mid link."); }
+				;
 			}
 		}
 		for (int i = 0; i < slot.symbolSetNames.Count; i++)
 		{
-			if (slot.symbolSetNames[i] == "") configIssues.Add ("Specify a name for Symbol Set #" + (i + 1) + ".");
+			if (slot.symbolSetNames[i] == "") configIssues.Add("Specify a name for Symbol Set #" + (i + 1) + ".");
 			//if (slot.symbolSets[i].symbols.Count == 0) configIssues.Add ("Specify at least one symbol for Symbol Set #" + (i+1).ToString());
 		}
 		int totalPossibleDraws = 0;
@@ -1312,24 +1363,26 @@ public class SlotEditor : Editor
 			{
 				if (slot.setPays[index].pays.Count == 0)
 				{
-					configIssues.Add ("Symbol Set #" + (index + 1).ToString () + " is a scatter set, and it's symbols must be clamped in Symbol Setup.");
+					configIssues.Add("Symbol Set #" + (index + 1).ToString() + " is a scatter set, and it's symbols must be clamped in Symbol Setup.");
 				}
 				totalPossibleDraws += slot.setPays[index].pays.Count;
-			} else {
+			}
+			else
+			{
 				totalPossibleDraws += slot.numberOfReels * slot.reelHeight;
 			}
 		}
 		if (totalPossibleDraws < slot.numberOfReels * slot.reelHeight)
 		{
-			configIssues.Add ("WARNING: Symbol draw requirement exceeds possible symbols, playing this slot will result in an infinite loop.");
+			configIssues.Add("WARNING: Symbol draw requirement exceeds possible symbols, playing this slot will result in an infinite loop.");
 		}
 
 		bool canbet = false;
-		foreach(BetsWrapper bet in slot.betsPerLine)
+		foreach (BetsWrapper bet in slot.betsPerLine)
 		{
 			if (bet.canBet) canbet = true;
 		}
-		if (!canbet) configIssues.Add ("WARNING: you have no bets enabled, trying to increment the bet on this slot will result in an infinite loop.");
+		if (!canbet) configIssues.Add("WARNING: you have no bets enabled, trying to increment the bet on this slot will result in an infinite loop.");
 
 		//EditorUtility.DisplayCancelableProgressBar("test", "test", 0.9f);
 		// PRINT OUT RESULT

@@ -4,7 +4,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SlotLines : MonoBehaviour {
+public class SlotLines : MonoBehaviour
+{
 
 	public bool linesEnabled = true;
 	public float linesZorder = -0.001f;
@@ -21,7 +22,8 @@ public class SlotLines : MonoBehaviour {
 	private GameObject lineContainer;
 
 	// Use this for initialization
-	void Start () {
+	void Start()
+	{
 		slot = GetComponent<Slot>();
 
 		if (linesEnabled)
@@ -36,37 +38,46 @@ public class SlotLines : MonoBehaviour {
 	#region Show Line
 	public void displayLines(int upTo)
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Line display management used by both multiplayer and single-player modes
 		if (!linesEnabled) return;
 		for (int i = 0; i < lineRenderers.Count; i++)
 		{
 			if (i < upTo)
 			{
 				lineRenderers[i].SetActive(true);
-			} else {
+			}
+			else
+			{
 				lineRenderers[i].SetActive(false);
 			}
 		}
 	}
 	public void hideLines()
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Line hiding used by both modes
 		if (!linesEnabled) return;
 		for (int i = 0; i < lineRenderers.Count; i++)
 		{
 			lineRenderers[i].SetActive(false);
 		}
 	}
-	
+
 	#endregion
-	
+
 	#region Create Lines
 	void createLineRenderer(int lineNumber, List<Vector3> points, float width, Color c1, Color c2)
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Line configuration comes from local config for both modes
+		// Only win evaluation differs between multiplayer (server-side) and single-player (local)
 		List<int> pos = GetComponent<Slot>().lines[lineNumber].positions;
-		
+
 		GameObject go = new GameObject();
 		go.transform.parent = lineRenderers[lineNumber].transform;
 		go.name = "Line_" + lineNumber;
-		
+
 		LineRenderer lineRenderer = go.AddComponent<LineRenderer>();
 
 		if (linesShader != null)
@@ -82,16 +93,17 @@ public class SlotLines : MonoBehaviour {
 			lineRenderer.SetPosition(i, points[i]);
 		}
 		//if (reverse) points.Reverse();
-		
+
 		//lineRenderer.enabled = false;
-		
+
 	}
 	List<Vector3> createPoints(int lineNumber)
 	{
-		
+		//--- SHARED CODE (BOTH MODES) ---
+		// Line positioning is pure visual, uses local line configuration for both modes
 		List<int> pos = GetComponent<Slot>().lines[lineNumber].positions;
 		List<Vector3> points = new List<Vector3>();
-		
+
 		Vector3 sp = Vector3.zero;
 		float z = linesZorder + ((-0.0001f) * lineRenderers.Count);
 		for (int ii = 0; ii < pos.Count; ii++)
@@ -101,34 +113,36 @@ public class SlotLines : MonoBehaviour {
 			if (ii == 0)
 			{
 				Vector3 startVec = new Vector3(GetComponent<Slot>().reels[0].transform.position.x - slot.reels[ii].GetComponent<SlotReel>().symbolWidth, sp.y, z);
-				points.Add (startVec);
+				points.Add(startVec);
 			}
 			Vector3 vec = new Vector3(GetComponent<Slot>().reels[ii].transform.position.x, sp.y, z);
-			points.Add (vec);
+			points.Add(vec);
 		}
-		Vector3 endVec = new Vector3(GetComponent<Slot>().reels[pos.Count-1].transform.position.x + slot.reels[pos.Count-1].GetComponent<SlotReel>().symbolWidth, sp.y, z);
-		points.Add (endVec);
-		
+		Vector3 endVec = new Vector3(GetComponent<Slot>().reels[pos.Count - 1].transform.position.x + slot.reels[pos.Count - 1].GetComponent<SlotReel>().symbolWidth, sp.y, z);
+		points.Add(endVec);
+
 		return points;
 	}
-	
+
 	public void createPaylines()
 	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Payline creation is pure visual based on local line configuration for both modes
 		lineContainer = new GameObject();
 		lineContainer.name = "Lines";
 		lineContainer.transform.parent = transform;
-		
+
 		List<Vector3> points;
-		
+
 		for (int lineNumber = 0; lineNumber < GetComponent<Slot>().lines.Count; lineNumber++)
 		{
-			points = createPoints (lineNumber);
-			
+			points = createPoints(lineNumber);
+
 			GameObject lineC = new GameObject("Line" + lineNumber);
 			lineC.transform.parent = lineContainer.transform;
-			lineRenderers.Add (lineC);
+			lineRenderers.Add(lineC);
 			lineC.SetActive(false);
-			
+
 			createLineRenderer(lineNumber, points, payLineWidth, payLineColor1, payLineColor2);
 			if (strokeWidth > 0)
 				createLineRenderer(lineNumber, points, payLineWidth + strokeWidth, strokeColor, strokeColor);

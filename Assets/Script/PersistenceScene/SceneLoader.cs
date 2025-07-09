@@ -12,7 +12,7 @@ public class SceneLoader : Singleton<SceneLoader>
 
     private float _progress;
 
-    public float Progress 
+    public float Progress
     {
         get
         {
@@ -23,7 +23,7 @@ public class SceneLoader : Singleton<SceneLoader>
         {
             ProgressChanged?.Invoke(value);
             _progress = value;
-            
+
         }
     }
 
@@ -34,9 +34,20 @@ public class SceneLoader : Singleton<SceneLoader>
         //SceneManager.LoadScene((int)SceneIndex.LOADING_SCENE);
     }
 
+    private bool isLoading = false;
+
     public void LoadSceneAsync(int sceneIndex, bool isAdditive)
     {
-        if(isAdditive)
+        if (isLoading)
+        {
+            Debug.Log("Scene already loading, ignoring request");
+            return;
+        }
+
+        isLoading = true;
+        _sceneLoadingOperation.Clear(); // Clear any previous operations
+
+        if (isAdditive)
         {
             _sceneLoadingOperation.Add(SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive));
         }
@@ -44,7 +55,6 @@ public class SceneLoader : Singleton<SceneLoader>
         {
             _sceneLoadingOperation.Add(SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Single));
         }
-        
 
         StartCoroutine(LoadSceneAsyncCoroutine());
     }
@@ -74,8 +84,9 @@ public class SceneLoader : Singleton<SceneLoader>
                 yield return null;
             }
         }
+        isLoading = false;
+        _sceneLoadingOperation.Clear();
 
-        
     }
 
 }

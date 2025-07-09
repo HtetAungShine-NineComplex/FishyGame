@@ -1,8 +1,8 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
-public class SpinButton : MonoBehaviour {
+public class SpinButton : MonoBehaviour
+{
 
 	public Sprite enabledSprite;
 	public Sprite disabledSprite;
@@ -14,38 +14,72 @@ public class SpinButton : MonoBehaviour {
 
 	private Button button;
 
-	void Start() {
+	void Start()
+	{
 		button = GetComponent<Button>();
-		slot = GameObject.Find ("BeachDays").GetComponent<Slot>();
+		slot = GameObject.Find("BeachDays").GetComponent<Slot>();
 	}
 
-	void Update() {
-
+	void Update()
+	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Button state visual management used by both multiplayer and single-player modes
 		switch (slot.state)
 		{
-		case SlotState.playingwins:
-			
-			button.image.sprite = enabledSprite;
-			if(slot.refs.credits.canPlaceBet())
-				button.interactable = true;
-			else
+			case SlotState.playingwins:
+				button.image.sprite = enabledSprite;
+
+				//--- MULTIPLAYER SERVER CODE START ---
+				if (slot.IsMultiplayer)
+				{
+					// MULTIPLAYER: Always enable button, server will validate spin requests
+					button.interactable = true;
+				}
+				//--- MULTIPLAYER SERVER CODE END ---
+				//--- SINGLE-PLAYER LOCAL CODE START ---
+				else
+				{
+					// SINGLE-PLAYER: Check local credit validation
+					if (slot.refs.credits.canPlaceBet())
+						button.interactable = true;
+					else
+						button.interactable = false;
+				}
+				//--- SINGLE-PLAYER LOCAL CODE END ---
+				break;
+			case SlotState.ready:
+				button.image.sprite = enabledSprite;
+
+				//--- MULTIPLAYER SERVER CODE START ---
+				if (slot.IsMultiplayer)
+				{
+					// MULTIPLAYER: Always enable button, server will validate spin requests
+					button.interactable = true;
+				}
+				//--- MULTIPLAYER SERVER CODE END ---
+				//--- SINGLE-PLAYER LOCAL CODE START ---
+				else
+				{
+					// SINGLE-PLAYER: Check local credit validation
+					if (slot.refs.credits.canPlaceBet())
+						button.interactable = true;
+					else
+						button.interactable = false;
+				}
+				//--- SINGLE-PLAYER LOCAL CODE END ---
+				break;
+			case SlotState.snapping:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Disable button during snapping for both modes
+				button.image.sprite = disabledSprite;
 				button.interactable = false;
-			break;
-		case SlotState.ready:
-			button.image.sprite = enabledSprite;
-			if(slot.refs.credits.canPlaceBet())
-				button.interactable = true;
-			else
-				button.interactable = false;
-			break;
-		case SlotState.snapping:
-			button.image.sprite = disabledSprite;
-			button.interactable = false;
-			break;
-		case SlotState.spinning:
-			button.image.sprite = stopSprite;
-			break;
+				break;
+			case SlotState.spinning:
+				//--- SHARED CODE (BOTH MODES) ---
+				// Show stop sprite during spinning for both modes
+				button.image.sprite = stopSprite;
+				button.interactable = true; // Allow stopping spin in both modes
+				break;
 		}
 	}
 }
-

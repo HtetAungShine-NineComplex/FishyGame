@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &128516568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3723,14 +3723,14 @@ MonoBehaviour:
 '
     returnPercentItterations: 75475
     showBasicSettingsPanel: 0
-    showSymbolSetupPanel: 1
+    showSymbolSetupPanel: 0
     symbolDeclarations: 0
     showOccurences: 0
     showSymbolSetsPanel: 0
     showLinesSetupPanel: 0
     showReturnPanel: 0
     showNotificationsPanel: 1
-    IsMultiplayer: 0
+    IsMultiplayer: 1
   betsPerLine:
   - value: 1
     canBet: 1

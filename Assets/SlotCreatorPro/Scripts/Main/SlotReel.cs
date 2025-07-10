@@ -111,16 +111,50 @@ public class SlotReel : MonoBehaviour
 
 		transform.localPosition = new Vector3((-widthOffset + (symbolWidth * (reelIndex - 1)) + (reelPadding * (reelIndex - 1))), transform.localPosition.x, transform.localPosition.z);
 
-		if (!slot.useSuppliedResult)
+		// ✅ MODIFIED: Only create reels immediately in single-player mode or when server data is ready
+		if (!slot.IsMultiplayer)
 		{
-			createReelSymbols();
+			// Single-player mode: create reels normally
+			if (!slot.useSuppliedResult)
+			{
+				createReelSymbols();
+			}
+			else
+			{
+				for (int i = 0; i < slot.reelHeight; i++)
+				{
+					createReelSymbolStartup(i);
+				}
+			}
 		}
 		else
 		{
-			for (int i = 0; i < slot.reelHeight; i++)
+			// Multiplayer mode: wait for server data
+			Debug.Log($"Multiplayer mode: Reel {reelIndex} waiting for server symbol data");
+		}
+	}
+
+	// ✅ NEW METHOD: Create reels after server data is received
+	public void createReelSymbolsFromServer()
+	{
+		if (slot.IsMultiplayer && serverSymbolData.Count > 0)
+		{
+			Debug.Log($"Creating reel symbols from server data for reel {reelIndex}");
+			if (!slot.useSuppliedResult)
 			{
-				createReelSymbolStartup(i);
+				createReelSymbols();
 			}
+			else
+			{
+				for (int i = 0; i < slot.reelHeight; i++)
+				{
+					createReelSymbolStartup(i);
+				}
+			}
+		}
+		else
+		{
+			Debug.LogError($"Cannot create reel symbols from server - IsMultiplayer: {slot.IsMultiplayer}, serverSymbolData.Count: {serverSymbolData.Count}");
 		}
 	}
 	#endregion
@@ -133,8 +167,17 @@ public class SlotReel : MonoBehaviour
 	public void setServerSymbolData(List<int> symbolData)
 	{
 		//--- MULTIPLAYER SERVER CODE START ---
-		serverSymbolData = symbolData;
-		serverSymbolIndex = 0;
+		if (slot.IsMultiplayer)
+		{
+			slot.log("Setting server symbol data for reel " + reelIndex + ": " + symbolData.Count + " symbols");
+			serverSymbolData.Clear();
+			serverSymbolData.AddRange(symbolData);
+			serverSymbolIndex = 0;
+		}
+		else
+		{
+			slot.log("Ignoring server symbol data in single-player mode for reel " + reelIndex);
+		}
 		//--- MULTIPLAYER SERVER CODE END ---
 	}
 	#endregion
@@ -192,16 +235,23 @@ public class SlotReel : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			// MULTIPLAYER: Use server-provided symbol data
+			Debug.Log($"getSymbol XXXX Count {serverSymbolData.Count}");
 			if (serverSymbolData.Count > 0 && serverSymbolIndex < serverSymbolData.Count)
 			{
 				int serverSymbol = serverSymbolData[serverSymbolIndex];
 				serverSymbolIndex++;
 				lastSelected = serverSymbol;
+				Debug.Log($"getSymbol XXXX {serverSymbol}");
 				return serverSymbol;
+			}
+			else
+			{
+				// MULTIPLAYER: No server data available yet, use fallback symbol
+				// This happens during initial reel creation before server response
+				return 0; // Return default symbol (index 0) as fallback
 			}
 		}
 		//--- MULTIPLAYER SERVER CODE END ---
-
 		//--- SINGLE-PLAYER LOCAL CODE START ---
 		// SINGLE-PLAYER: Use local RNG and frequency-based selection
 		int chosen = -1;
@@ -316,10 +366,13 @@ public class SlotReel : MonoBehaviour
 
 		//--- SHARED CODE (BOTH MODES) ---
 		// Symbol instantiation used by both modes
+
+
 		GameObject symb;
 		if (slot.usePool)
 		{
 			symb = getFromPool(symbolIndex);
+			Debug.Log($"Name ======> {symb.name} SymbolIndeqx =======> {symbolIndex}");
 		}
 		else
 		{

@@ -7,6 +7,7 @@ using DG.Tweening;
 using System;
 using aSlot;
 using TinAungKhant.UIManagement;
+using System.Linq;
 
 
 [RequireComponent(typeof(SlotCredits))]
@@ -28,11 +29,7 @@ public class Slot : MonoBehaviour
 	/// MULTIPLAYER CONTROL: If true, uses SmartFoxServer for multiplayer mode.
 	/// If false, runs locally without server for single-player mode.
 	/// </summary>
-	public bool IsMultiplayer
-	{
-		get { return edsave.IsMultiplayer; }
-		set { edsave.IsMultiplayer = value; }
-	}
+	public bool IsMultiplayer;
 
 	#region Actions
 	/// <summary>
@@ -472,24 +469,38 @@ public class Slot : MonoBehaviour
 	/// </summary>
 	public void ProcessServerSpinResponse(int[,] reelResults, List<SlotWinData> winData, int totalWon, int newCredits)
 	{
-		log("Processing server spin response");
-
-		// Update credits from server
-		refs.credits.updateCreditsFromServer(newCredits);
-
-		// Set reel results for display
-		suppliedResult = reelResults;
-		useSuppliedResult = true;
-		waitingForResult = false;
-
-		// Process wins for display
-		if (winData.Count > 0)
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (IsMultiplayer)
 		{
-			refs.wins.setServerWinData(winData);
-			refs.compute.processServerWinData(winData, totalWon);
-		}
+			log("Processing server spin response - totalWon: " + totalWon + ", newCredits: " + newCredits + ", wins: " + winData.Count);
 
-		log("Server response processed successfully");
+			// Update credits from server
+			refs.credits.updateCreditsFromServer(newCredits);
+
+			// Set reel results for display
+			suppliedResult = reelResults;
+			useSuppliedResult = true;
+			waitingForResult = false;
+
+			// Process wins for display
+			if (winData.Count > 0)
+			{
+				refs.wins.setServerWinData(winData);
+				refs.compute.processServerWinData(winData, totalWon);
+			}
+			else
+			{
+				// No wins - clear any existing win data
+				refs.wins.setServerWinData(new List<SlotWinData>());
+			}
+
+			log("Server response processed successfully");
+		}
+		else
+		{
+			logError("ProcessServerSpinResponse called in single-player mode - this should not happen");
+		}
+		//--- MULTIPLAYER SERVER CODE END ---
 	}
 
 	/// <summary>
@@ -497,7 +508,9 @@ public class Slot : MonoBehaviour
 	/// </summary>
 	public bool IsConnectedToServer()
 	{
+		//--- MULTIPLAYER SERVER CODE START ---
 		return IsMultiplayer && networkManager != null && networkManager.IsSlotGameReady();
+		//--- MULTIPLAYER SERVER CODE END ---
 	}
 	#endregion
 

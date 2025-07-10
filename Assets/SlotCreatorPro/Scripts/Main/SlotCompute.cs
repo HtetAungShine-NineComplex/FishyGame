@@ -27,25 +27,36 @@ public class SlotCompute : MonoBehaviour
 	public SlotWinSpin processServerWinData(List<SlotWinData> serverWinData, int totalWon)
 	{
 		//--- MULTIPLAYER SERVER CODE START ---
-		// MULTIPLAYER: Process server-provided win data for display
-		lineResultData.Clear();
-		slotWinSpin.totalWon = 0;
-		slotWinSpin.totalWonAdjusted = 0;
-
-		// Copy server win data to local display data
-		foreach (SlotWinData winData in serverWinData)
+		if (slot.IsMultiplayer)
 		{
-			lineResultData.Add(winData);
-			slotWinSpin.totalWon += winData.paid;
-			slot.computedWinLine(winData);
-			slotWinSpin.totalWonAdjusted += winData.paid;
+			// MULTIPLAYER: Process server-provided win data for display
+			slot.log("Processing server win data: " + serverWinData.Count + " wins, total: " + totalWon);
+
+			lineResultData.Clear();
+			slotWinSpin.totalWon = 0;
+			slotWinSpin.totalWonAdjusted = 0;
+
+			// Copy server win data to local display data
+			foreach (SlotWinData winData in serverWinData)
+			{
+				lineResultData.Add(winData);
+				slotWinSpin.totalWon += winData.paid;
+				slot.computedWinLine(winData);
+				slotWinSpin.totalWonAdjusted += winData.paid;
+			}
+
+			// Set total from server
+			slotWinSpin.totalWon = totalWon;
+			slotWinSpin.totalWonAdjusted = totalWon;
+
+			return slotWinSpin;
 		}
-
-		// Set total from server
-		slotWinSpin.totalWon = totalWon;
-		slotWinSpin.totalWonAdjusted = totalWon;
-
-		return slotWinSpin;
+		else
+		{
+			// SINGLE-PLAYER: Fallback to local calculation
+			slot.log("Server win data ignored in single-player mode, using local calculation");
+			return calculateAllLinesWins();
+		}
 		//--- MULTIPLAYER SERVER CODE END ---
 	}
 	#endregion

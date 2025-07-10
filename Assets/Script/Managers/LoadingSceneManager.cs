@@ -54,14 +54,14 @@ public class LoadingSceneManager : GameSceneManager
             loadingTxt.text = (int)(progress * 100) + "%";*/
 
             _progress = progress * 100 * 0.7f;
-            
+
 
             yield return null;
         }
 
         // Loading completed, do any necessary actions here
         Debug.Log("Loading completed!");
-        
+
         StartLoadScene();
     }
 
@@ -74,7 +74,7 @@ public class LoadingSceneManager : GameSceneManager
     private void OnProgressChanged(float progress)
     {
         _progress += progress * 0.3f;
-        Debug.Log($"Progress: {progress * 0.3f} and {_progress}. ");
+        // Debug.Log($"Progress: {progress * 0.3f} and {_progress}. ");
 
         _loadingBar.SetLoadingValue(_progress);
     }

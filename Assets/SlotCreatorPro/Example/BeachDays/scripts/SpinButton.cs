@@ -40,10 +40,7 @@ public class SpinButton : MonoBehaviour
 				else
 				{
 					// SINGLE-PLAYER: Check local credit validation
-					if (slot.refs.credits.canPlaceBet())
-						button.interactable = true;
-					else
-						button.interactable = false;
+					button.interactable = slot.refs.credits.canPlaceBet();
 				}
 				//--- SINGLE-PLAYER LOCAL CODE END ---
 				break;
@@ -61,10 +58,7 @@ public class SpinButton : MonoBehaviour
 				else
 				{
 					// SINGLE-PLAYER: Check local credit validation
-					if (slot.refs.credits.canPlaceBet())
-						button.interactable = true;
-					else
-						button.interactable = false;
+					button.interactable = slot.refs.credits.canPlaceBet();
 				}
 				//--- SINGLE-PLAYER LOCAL CODE END ---
 				break;

@@ -211,9 +211,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 128516569}
+  - component: {fileID: 128516570}
   - component: {fileID: 128516568}
   m_Layer: 0
-  m_Name: NetworkManager
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,6 +322,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128516570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128516567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59140b123f971f46ad7b746ef0660a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useMultiplayer: 0
+  gameplayNetworkManagerObject: {fileID: 128516567}
+  slot: {fileID: 1694834693}
 --- !u!1 &138619514
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,6 +3501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b106581ffc16954ea516e841078f675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMultiplayer: 0
   debugMode: 1
   activeRNG: 0
   reelHeight: 8
@@ -3730,7 +3747,6 @@ MonoBehaviour:
     showLinesSetupPanel: 0
     showReturnPanel: 0
     showNotificationsPanel: 1
-    IsMultiplayer: 1
   betsPerLine:
   - value: 1
     canBet: 1

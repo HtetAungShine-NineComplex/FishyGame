@@ -22,8 +22,6 @@ namespace aSlot
 		public bool showLinesSetupPanel;
 		public bool showReturnPanel;
 		public bool showNotificationsPanel = true;
-		public bool IsMultiplayer = false;
-
 	}
 
 }

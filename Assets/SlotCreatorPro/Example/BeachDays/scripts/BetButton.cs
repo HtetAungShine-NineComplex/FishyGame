@@ -26,29 +26,39 @@ public class BetButton : MonoBehaviour
 		{
 			case SlotState.playingwins:
 				//--- MULTIPLAYER SERVER CODE START ---
-				// MULTIPLAYER: Visual state - bet changes allowed during win display
-				// Server will handle bet validation when spin is requested
+				if (slot.IsMultiplayer)
+				{
+					// MULTIPLAYER: Allow bet changes during win display, server will handle validation
+					button.image.sprite = enabledSprite;
+					button.interactable = true;
+				}
 				//--- MULTIPLAYER SERVER CODE END ---
 				//--- SINGLE-PLAYER LOCAL CODE START ---
-				// SINGLE-PLAYER: Visual state - bet changes allowed during win display
-				// Local validation happens when spin is triggered
+				else
+				{
+					// SINGLE-PLAYER: Allow bet changes during win display
+					button.image.sprite = enabledSprite;
+					button.interactable = true;
+				}
 				//--- SINGLE-PLAYER LOCAL CODE END ---
-				//--- SHARED CODE (BOTH MODES) ---
-				button.image.sprite = enabledSprite;
-				button.interactable = true;
 				break;
 			case SlotState.ready:
 				//--- MULTIPLAYER SERVER CODE START ---
-				// MULTIPLAYER: Visual state - bet changes allowed when ready
-				// Server will handle bet validation when spin is requested
+				if (slot.IsMultiplayer)
+				{
+					// MULTIPLAYER: Allow bet changes when ready, server will handle validation
+					button.image.sprite = enabledSprite;
+					button.interactable = true;
+				}
 				//--- MULTIPLAYER SERVER CODE END ---
 				//--- SINGLE-PLAYER LOCAL CODE START ---
-				// SINGLE-PLAYER: Visual state - bet changes allowed when ready
-				// Local validation happens when spin is triggered
+				else
+				{
+					// SINGLE-PLAYER: Allow bet changes when ready
+					button.image.sprite = enabledSprite;
+					button.interactable = true;
+				}
 				//--- SINGLE-PLAYER LOCAL CODE END ---
-				//--- SHARED CODE (BOTH MODES) ---
-				button.image.sprite = enabledSprite;
-				button.interactable = true;
 				break;
 			case SlotState.snapping:
 				//--- SHARED CODE (BOTH MODES) ---
@@ -63,6 +73,5 @@ public class BetButton : MonoBehaviour
 				button.interactable = false;
 				break;
 		}
-
 	}
 }

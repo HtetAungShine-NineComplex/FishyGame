@@ -104,7 +104,16 @@ public class SlotWins : MonoBehaviour
 	public void setServerWinData(List<SlotWinData> winData)
 	{
 		//--- MULTIPLAYER SERVER CODE START ---
-		serverWinData = winData;
+		if (slot.IsMultiplayer)
+		{
+			slot.log("Setting server win data: " + winData.Count + " wins");
+			serverWinData.Clear();
+			serverWinData.AddRange(winData);
+		}
+		else
+		{
+			slot.log("Ignoring server win data in single-player mode");
+		}
 		//--- MULTIPLAYER SERVER CODE END ---
 	}
 
@@ -114,7 +123,15 @@ public class SlotWins : MonoBehaviour
 	public List<SlotWinData> GetSlotWinData()
 	{
 		//--- MULTIPLAYER SERVER CODE START ---
-		return serverWinData;
+		if (slot.IsMultiplayer)
+		{
+			return serverWinData;
+		}
+		else
+		{
+			// Single-player mode: return local computation results
+			return slot.refs.compute.lineResultData;
+		}
 		//--- MULTIPLAYER SERVER CODE END ---
 	}
 	#endregion

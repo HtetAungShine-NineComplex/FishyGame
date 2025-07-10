@@ -62,12 +62,6 @@ public class SlotEditor : Editor
 								   "(" + (slot.edsave.returnPercent * 100) + "%)"
 								   , EditorStyles.miniLabel);
 		//GUI.color = Color.white;
-		EditorGUILayout.EndVertical();
-
-		slot.edsave.IsMultiplayer = EditorGUILayout.Toggle(
-			new GUIContent("Enable Multiplayer Mode", "Use SmartFoxServer for multiplayer gameplay"),
-			slot.edsave.IsMultiplayer
-		);
 
 		slot.edsave.showBasicSettingsPanel = EditorGUILayout.Foldout(slot.edsave.showBasicSettingsPanel, new GUIContent("Basic Settings", "The core settings for the slot."), EditorStyles.foldout);
 		if (slot.edsave.showBasicSettingsPanel)

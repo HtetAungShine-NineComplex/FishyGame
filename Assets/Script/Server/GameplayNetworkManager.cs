@@ -22,7 +22,10 @@ public class GameplayNetworkManager : MonoBehaviour
     private void Awake()
     {
         fishManagerDic = new Dictionary<string, FishManager>();
-        GlobalManager.Instance.ExtensionResponse += OnExtensionResponse;
+        if (GlobalManager.Instance != null)
+        {
+            GlobalManager.Instance.ExtensionResponse += OnExtensionResponse;
+        }
 
         foreach (FishSpawnData data in fishSpawnDatas)
         {
@@ -54,13 +57,6 @@ public class GameplayNetworkManager : MonoBehaviour
     {
         string cmd = (string)evt.Params["cmd"];
         ISFSObject sfsobject = (SFSObject)evt.Params["params"];
-
-        Debug.Log("=== RECEIVED RESPONSE ===");
-        Debug.Log("Command: " + cmd);
-        Debug.Log("Full Response: " + sfsobject.GetDump());
-        Debug.Log("========================");
-
-        Debug.Log("Event Received : " + cmd);
 
         switch (cmd)
         {
@@ -309,7 +305,6 @@ public class GameplayNetworkManager : MonoBehaviour
                 Debug.Log("Session token received and stored: " + currentSessionToken);
             }
 
-
             string roomName = data.GetUtfString("roomName");
             int roomId = data.GetInt("roomId");
             int credits = data.GetInt("credits");
@@ -319,10 +314,41 @@ public class GameplayNetworkManager : MonoBehaviour
             int maxUsers = data.GetInt("maxUsers");
             string message = data.GetUtfString("message");
 
-
+            // Update slot credits and bet settings
             currentSlot.refs.credits.updateCreditsFromServer(credits);
             currentSlot.refs.credits.betPerLine = betPerLine;
             currentSlot.refs.credits.linesPlayed = linesPlayed;
+
+            // Handle initial board from server (multiplayer mode)
+            if (currentSlot.IsMultiplayer && data.ContainsKey("initialBoard"))
+            {
+                try
+                {
+                    ISFSArray initialBoardArray = data.GetSFSArray("initialBoard");
+                    int[,] initialBoard = ParseReelResults(initialBoardArray);
+
+                    DistributeInitialBoardToReels(initialBoard);
+
+                    // Set initial symbols on slot for display
+                    currentSlot.suppliedResult = initialBoard;
+                    currentSlot.useSuppliedResult = true;
+
+                    Debug.Log("Received and distributed initial board from server for multiplayer mode");
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError("Error processing initial board: " + e.Message);
+                    // Fallback: let slot use local random generation
+                    currentSlot.useSuppliedResult = false;
+                }
+            }
+            else if (!currentSlot.IsMultiplayer)
+            {
+                // Single-player mode: use local random generation
+                currentSlot.useSuppliedResult = false;
+                Debug.Log("Single-player mode: using local random symbol generation");
+            }
+
             isSlotGameActive = true;
             Debug.Log($"isSlotGameActive: {isSlotGameActive}");
             Debug.Log($"currentSessionToken: {currentSessionToken}");
@@ -337,6 +363,37 @@ public class GameplayNetworkManager : MonoBehaviour
             Debug.LogError($"Failed to join room {roomName}: {error}");
             isSlotGameActive = false;
             currentSessionToken = null;
+        }
+    }
+
+    // ✅ In GameplayNetworkManager.cs - DistributeInitialBoardToReels method
+    private void DistributeInitialBoardToReels(int[,] initialBoard)
+    {
+        if (initialBoard == null || currentSlot == null) return;
+
+        int reelCount = initialBoard.GetLength(0);
+        int symbolCount = initialBoard.GetLength(1);
+
+        Debug.Log($"Distributing initial board: {reelCount} reels x {symbolCount} symbols | numberof reel {currentSlot.numberOfReels}");
+
+        for (int reel = 0; reel < reelCount && reel < currentSlot.numberOfReels; reel++)
+        {
+            List<int> reelSymbols = new List<int>();
+
+            for (int row = 0; row < symbolCount; row++)
+            {
+                reelSymbols.Add(initialBoard[reel, row]);
+            }
+
+            // Set the symbols for this specific reel
+            if (currentSlot.reels.ContainsKey(reel))
+            {
+                currentSlot.reels[reel].setServerSymbolData(reelSymbols);
+
+                // ✅ HERE: Call createReelSymbolsFromServer after setting server data
+                currentSlot.reels[reel].createReelSymbolsFromServer();
+
+            }
         }
     }
 
@@ -375,7 +432,151 @@ public class GameplayNetworkManager : MonoBehaviour
 
     private void OnSpinResult(ISFSObject data)
     {
-        Debug.Log("OnSpinResult <<!!>>");
+        if (!isSlotGameActive || currentSlot == null) return;
+
+        if (currentSlot.IsMultiplayer)
+        {
+            try
+            {
+                Debug.Log("OnSpinResult received - processing server spin data");
+                Debug.Log("Full response: " + data.GetDump());
+
+                // Check if data object exists
+                if (!data.ContainsKey("data"))
+                {
+                    Debug.LogError("Server response missing 'data' object");
+                    return;
+                }
+
+                ISFSObject dataObj = data.GetSFSObject("data");
+                if (dataObj == null)
+                {
+                    Debug.LogError("Server 'data' object is null");
+                    return;
+                }
+
+                // Check if gameState exists
+                if (!dataObj.ContainsKey("gameState"))
+                {
+                    Debug.LogError("Server response missing 'gameState' object");
+                    return;
+                }
+
+                ISFSObject gameState = dataObj.GetSFSObject("gameState");
+                if (gameState == null)
+                {
+                    Debug.LogError("Server 'gameState' object is null");
+                    return;
+                }
+
+                // Convert server data to client format
+                int[,] reelResults = ConvertServerReelResults(dataObj);
+                List<SlotWinData> winData = ConvertServerWinData(dataObj);
+                int totalWon = (int)gameState.GetLong("totalWin");
+                int newCredits = (int)gameState.GetLong("newBalance");
+
+                Debug.Log($"Converted spin result: totalWon={totalWon}, newCredits={newCredits}, wins={winData.Count}");
+
+                // Feed converted data to existing slot logic
+                currentSlot.ProcessServerSpinResponse(reelResults, winData, totalWon, newCredits);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Error processing spin result: " + e.Message);
+                Debug.LogError("Stack trace: " + e.StackTrace);
+            }
+        }
+    }
+
+    // Convert server reel results to client format
+    private int[,] ConvertServerReelResults(ISFSObject dataObj)
+    {
+        ISFSArray reelResultsArray = dataObj.GetSFSArray("reelResults");
+        return ParseReelResults(reelResultsArray); // Use existing method
+    }
+
+    // Convert server win data (combine winLines + scatterWins) to client format
+    private List<SlotWinData> ConvertServerWinData(ISFSObject dataObj)
+    {
+        List<SlotWinData> winData = new List<SlotWinData>();
+
+        // Process win lines
+        ISFSArray winLinesArray = dataObj.GetSFSArray("winLines");
+        for (int i = 0; i < winLinesArray.Size(); i++)
+        {
+            ISFSObject winObj = winLinesArray.GetSFSObject(i);
+            SlotWinData win = ConvertWinLineToSlotWinData(winObj);
+            winData.Add(win);
+        }
+
+        // Process scatter wins
+        ISFSArray scatterWinsArray = dataObj.GetSFSArray("scatterWins");
+        for (int i = 0; i < scatterWinsArray.Size(); i++)
+        {
+            ISFSObject scatterObj = scatterWinsArray.GetSFSObject(i);
+            SlotWinData win = ConvertScatterToSlotWinData(scatterObj);
+            winData.Add(win);
+        }
+
+        return winData;
+    }
+
+    // Convert server win line to client SlotWinData format
+    private SlotWinData ConvertWinLineToSlotWinData(ISFSObject winObj)
+    {
+        SlotWinData win = new SlotWinData(winObj.GetInt("lineNumber"));
+        win.paid = winObj.GetInt("winAmount");
+        win.matches = winObj.GetInt("matches");
+        win.setIndex = winObj.GetInt("symbolIndex");
+        win.setName = winObj.GetUtfString("setName");
+        win.readout = $"{win.matches} {win.setName} ON LINE {win.lineNumber + 1} PAYS {win.paid}";
+
+        // Convert positions to symbol GameObjects
+        win.symbols = ConvertPositionsToSymbols(winObj.GetSFSArray("positions"));
+
+        return win;
+    }
+
+    // Convert server scatter win to client SlotWinData format  
+    private SlotWinData ConvertScatterToSlotWinData(ISFSObject scatterObj)
+    {
+        SlotWinData win = new SlotWinData(-1); // -1 for scatter (no line)
+        win.paid = scatterObj.GetInt("winAmount");
+        win.matches = scatterObj.GetInt("scatterCount");
+        win.setIndex = scatterObj.GetInt("symbolIndex");
+        win.setName = scatterObj.GetUtfString("setName");
+        win.readout = $"{win.matches} {win.setName} SCATTER PAYS {win.paid}";
+
+        // Convert positions to symbol GameObjects
+        win.symbols = ConvertPositionsToSymbols(scatterObj.GetSFSArray("positions"));
+
+        return win;
+    }
+
+    // Convert server positions to actual symbol GameObjects for visual display
+    private List<GameObject> ConvertPositionsToSymbols(ISFSArray positionsArray)
+    {
+        List<GameObject> symbols = new List<GameObject>();
+
+        for (int i = 0; i < positionsArray.Size(); i++)
+        {
+            ISFSObject posObj = positionsArray.GetSFSObject(i);
+            int reel = posObj.GetInt("reel");
+            int row = posObj.GetInt("row");
+
+            if (currentSlot != null && currentSlot.reels.ContainsKey(reel))
+            {
+                var slotReel = currentSlot.reels[reel];
+                int symbolIndex = row + currentSlot.reelIndent; // Adjust for reel indent
+
+                if (symbolIndex < slotReel.symbols.Count)
+                {
+                    symbols.Add(slotReel.symbols[symbolIndex]);
+                }
+            }
+        }
+
+        return symbols;
     }
 
     private void OnJackPotUpdate(ISFSObject data)
@@ -631,162 +832,3 @@ public class FishSpawnData
     public string fishName;
     public FishManager manager;
 }
-
-// using Sfs2X.Core;
-// using Sfs2X.Entities.Data;
-// using Sfs2X.WebSocketSharp;
-// using System;
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-
-// public class GameplayNetworkManager : MonoBehaviour
-// {
-//     public List<PlayerManager> _playerMangers;
-
-//     public List<FishSpawnData> fishSpawnDatas;
-//     public Dictionary<string, FishManager> fishManagerDic;
-
-//     private void Awake()
-//     {
-//         fishManagerDic = new Dictionary<string, FishManager>();
-//         GlobalManager.Instance.ExtensionResponse += OnExtensionResponse;
-
-//         foreach (FishSpawnData data in fishSpawnDatas)
-//         {
-//             fishManagerDic.Add(data.fishName, data.manager);
-//         }
-//     }
-
-//     private void Start()
-//     {
-//         GlobalManager.Instance.RequestJoinRoom();
-//     }
-
-//     private void OnDestroy()
-//     {
-//         GlobalManager.Instance.ExtensionResponse -= OnExtensionResponse;
-//     }
-
-
-//     private void OnExtensionResponse(BaseEvent evt)
-//     {
-//         string cmd = (string)evt.Params["cmd"];
-//         ISFSObject sfsobject = (SFSObject)evt.Params["params"];
-
-//         Debug.Log("Event Received : " + cmd);
-
-//         switch (cmd)
-//         {
-//             case "roomPlayerList":
-//                 OnRoomPlayerList(sfsobject); break;
-
-//             case "shoot":
-//                 OnShoot(sfsobject);
-//                 break;
-
-//             case "fishSpawn":
-//                 OnFishSpawn(sfsobject);
-//                 break;
-
-//             case "stageUpdate":
-//                 OnStageUpdate(sfsobject);
-//                 break;
-
-//             default:
-//                 break;
-//         }
-//     }
-
-//     private PlayerManager GetPlayerByName(string name)
-//     {
-//         foreach (PlayerManager player in _playerMangers)
-//         {
-//             if (player.playerName == name)
-//             {
-//                 return player;
-//             }
-//         }
-
-//         return null;
-//     }
-
-//     private void OnRoomPlayerList(ISFSObject obj)
-//     {
-//         ISFSArray sFSArray = obj.GetSFSArray("userArray");
-
-//         for (int i = 0; i < sFSArray.Size(); i++)
-//         {
-//             ISFSObject data = sFSArray.GetSFSObject(i);
-
-//             string userName = data.GetUtfString("userName");
-//             int balance = data.GetInt("balance");
-
-//             _playerMangers[i].SetPlayerData(userName, balance, userName == GlobalManager.Instance.GetSfsClient().MySelf.Name);
-//         }
-//     }
-
-//     private void OnShoot(ISFSObject obj)
-//     {
-
-//         string userName = obj.GetUtfString("userName");
-//         int balance = obj.GetInt("balance");
-//         float z = obj.GetFloat("zRotation");
-
-//         if (userName != GlobalManager.Instance.GetSfsClient().MySelf.Name)
-//         {
-//             GetPlayerByName(userName).OnNetworkShoot(z, balance);
-//         }
-//     }
-
-//     void OnFishSpawn(ISFSObject data)
-//     {
-
-//         string fishType = data.GetUtfString("fishType");
-//         float normalizedX = data.GetFloat("x");
-//         float normalizedY = data.GetFloat("y");
-//         string spawnSide = data.GetUtfString("spawnSide");
-//         float endX = data.GetFloat("endX");
-//         float endY = data.GetFloat("endY");
-
-//         // Convert normalized spawn position to world position
-//         Vector3 spawnPoint = SpawnpointManager.Instance.GetSpawnPointOnline(normalizedX, normalizedY, spawnSide);
-//         Vector3 endPoint = SpawnpointManager.Instance.GetEndPointOnline(endX, endY);
-
-//         // Spawn the fish
-//         //SpawnFish(fishType, spawnPoint, endPoint);
-//         fishManagerDic[fishType].SpawnFish(spawnPoint, endPoint);
-//     }
-
-//     void OnStageUpdate(ISFSObject data)
-//     {
-//         int newStage = data.GetInt("stage");
-
-//         Debug.Log("Stage changed to: " + newStage);
-
-//         switch (newStage)
-//         {
-//             case 1:
-//                 WaveManager.Instance.NormalStage();
-//                 break;
-
-//             case 2:
-//                 WaveManager.Instance.BossStage();
-//                 break;
-
-//             case 3:
-//                 WaveManager.Instance.BonusStage();
-//                 break;
-
-//             default:
-//                 break;
-//         }
-//     }
-// }
-
-// [Serializable]
-// public class FishSpawnData
-// {
-//     public string fishName;
-//     public FishManager manager;
-// }

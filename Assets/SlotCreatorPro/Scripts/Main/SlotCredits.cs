@@ -142,9 +142,31 @@ public class SlotCredits : MonoBehaviour
 	/// </summary>
 	public void updateCreditsFromServer(int newCredits)
 	{
-		credits = newCredits;
+		if (slot == null)
+			slot = GetComponent<Slot>();
+
+		// Only update from server in multiplayer mode
+		if (slot.IsMultiplayer)
+		{
+			slot.log("Updating credits from server: " + newCredits);
+			credits = newCredits;
+
+			// Force completion of any active credit counting animations
+			finishCreditCount();
+
+			// Save the updated credits (visual preferences, not actual balance in multiplayer)
+			if (persistant)
+			{
+				save();
+			}
+		}
+		else
+		{
+			slot.log("Ignoring server credit update in single-player mode");
+		}
 	}
 	//--- MULTIPLAYER SERVER CODE END ---
+
 	#endregion
 
 	#region Betting functions

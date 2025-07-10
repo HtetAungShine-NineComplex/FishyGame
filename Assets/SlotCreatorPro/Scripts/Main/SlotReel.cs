@@ -235,13 +235,11 @@ public class SlotReel : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			// MULTIPLAYER: Use server-provided symbol data
-			Debug.Log($"getSymbol XXXX Count {serverSymbolData.Count}");
 			if (serverSymbolData.Count > 0 && serverSymbolIndex < serverSymbolData.Count)
 			{
 				int serverSymbol = serverSymbolData[serverSymbolIndex];
 				serverSymbolIndex++;
 				lastSelected = serverSymbol;
-				Debug.Log($"getSymbol XXXX {serverSymbol}");
 				return serverSymbol;
 			}
 			else

@@ -309,7 +309,7 @@ MonoBehaviour:
     manager: {fileID: 0}
   - fishName: bubbleFishSameType
     manager: {fileID: 0}
-  currentSlot: {fileID: 0}
+  currentSlot: {fileID: 1694834693}
   isSlotGameActive: 0
 --- !u!114 &391531584
 MonoBehaviour:
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59140b123f971f46ad7b746ef0660a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useMultiplayer: 1
+  useMultiplayer: 0
   gameplayNetworkManagerObject: {fileID: 391531582}
   slot: {fileID: 1694834693}
 --- !u!4 &391531585
@@ -3597,5 +3597,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 399463337}
   - {fileID: 1273173480}
-  - {fileID: 1705809249}
   - {fileID: 391531585}
+  - {fileID: 1705809249}

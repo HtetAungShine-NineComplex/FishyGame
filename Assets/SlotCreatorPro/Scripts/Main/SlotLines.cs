@@ -26,9 +26,20 @@ public class SlotLines : MonoBehaviour
 	{
 		slot = GetComponent<Slot>();
 
-		if (linesEnabled)
+		if (!slot.IsMultiplayer)
+		{
 			createPaylines();
+		}
+		else
+		{
+			Debug.Log("Multiplayer mode: Waiting for all reels to have symbols before creating paylines");
+		}
+	}
 
+	public void createPaylinesAfterServerData()
+	{
+		Debug.Log("Creating paylines after server data is received");
+		createPaylines();
 	}
 
 	void OnEnable()
@@ -106,10 +117,32 @@ public class SlotLines : MonoBehaviour
 
 		Vector3 sp = Vector3.zero;
 		float z = linesZorder + ((-0.0001f) * lineRenderers.Count);
+
+		// Add logging for debugging
+		Debug.Log($"createPoints - lineNumber: {lineNumber}, pos.Count: {pos.Count}");
+
 		for (int ii = 0; ii < pos.Count; ii++)
 		{
+			// Log the current iteration and position value
+			Debug.Log($"createPoints - ii: {ii}, pos[ii]: {pos[ii]}, reels.Count: {GetComponent<Slot>().reels.Count}");
+
+			// Check if reel exists
+			if (ii >= GetComponent<Slot>().reels.Count)
+			{
+				Debug.LogError($"ERROR: Reel index {ii} is out of range. Total reels: {GetComponent<Slot>().reels.Count}");
+				break;
+			}
+
+			// Check if symbol exists
+			if (pos[ii] >= GetComponent<Slot>().reels[ii].symbols.Count)
+			{
+				Debug.LogError($"ERROR: Symbol index {pos[ii]} is out of range for reel {ii}. Total symbols in reel: {GetComponent<Slot>().reels[ii].symbols.Count}");
+				break;
+			}
+
 			GameObject symbol = GetComponent<Slot>().reels[ii].symbols[pos[ii]];
 			sp = symbol.transform.position;
+
 			if (ii == 0)
 			{
 				Vector3 startVec = new Vector3(GetComponent<Slot>().reels[0].transform.position.x - slot.reels[ii].GetComponent<SlotReel>().symbolWidth, sp.y, z);
@@ -118,12 +151,15 @@ public class SlotLines : MonoBehaviour
 			Vector3 vec = new Vector3(GetComponent<Slot>().reels[ii].transform.position.x, sp.y, z);
 			points.Add(vec);
 		}
-		Vector3 endVec = new Vector3(GetComponent<Slot>().reels[pos.Count - 1].transform.position.x + slot.reels[pos.Count - 1].GetComponent<SlotReel>().symbolWidth, sp.y, z);
-		points.Add(endVec);
+
+		if (pos.Count > 0 && pos.Count <= GetComponent<Slot>().reels.Count)
+		{
+			Vector3 endVec = new Vector3(GetComponent<Slot>().reels[pos.Count - 1].transform.position.x + slot.reels[pos.Count - 1].GetComponent<SlotReel>().symbolWidth, sp.y, z);
+			points.Add(endVec);
+		}
 
 		return points;
 	}
-
 	public void createPaylines()
 	{
 		//--- SHARED CODE (BOTH MODES) ---

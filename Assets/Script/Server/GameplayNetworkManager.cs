@@ -325,28 +325,41 @@ public class GameplayNetworkManager : MonoBehaviour
                 try
                 {
                     ISFSArray initialBoardArray = data.GetSFSArray("initialBoard");
+
+                    Debug.Log($"Server sent initialBoard with {initialBoardArray.Size()} reels");
+
+                    for (int r = 0; r < initialBoardArray.Size(); r++)
+                    {
+                        ISFSArray reelData = initialBoardArray.GetSFSArray(r);
+                        Debug.Log($"Reel {r} has {reelData.Size()} symbols: [{string.Join(",", GetReelSymbols(reelData))}]");
+                    }
+
                     int[,] initialBoard = ParseReelResults(initialBoardArray);
 
+                    Debug.Log($"Parsed initialBoard: {initialBoard.GetLength(0)} reels x {initialBoard.GetLength(1)} symbols");
+
+                    for (int reel = 0; reel < initialBoard.GetLength(0); reel++)
+                    {
+                        List<int> reelSymbols = new List<int>();
+                        for (int row = 0; row < initialBoard.GetLength(1); row++)
+                        {
+                            reelSymbols.Add(initialBoard[reel, row]);
+                        }
+                        Debug.Log($"Parsed reel {reel}: [{string.Join(",", reelSymbols)}]");
+                    }
                     DistributeInitialBoardToReels(initialBoard);
 
-                    // Set initial symbols on slot for display
                     currentSlot.suppliedResult = initialBoard;
                     currentSlot.useSuppliedResult = true;
 
                     Debug.Log("Received and distributed initial board from server for multiplayer mode");
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     Debug.LogError("Error processing initial board: " + e.Message);
-                    // Fallback: let slot use local random generation
+                    Debug.LogError("Stack trace: " + e.StackTrace);
                     currentSlot.useSuppliedResult = false;
                 }
-            }
-            else if (!currentSlot.IsMultiplayer)
-            {
-                // Single-player mode: use local random generation
-                currentSlot.useSuppliedResult = false;
-                Debug.Log("Single-player mode: using local random symbol generation");
             }
 
             isSlotGameActive = true;
@@ -366,34 +379,79 @@ public class GameplayNetworkManager : MonoBehaviour
         }
     }
 
-    // ✅ In GameplayNetworkManager.cs - DistributeInitialBoardToReels method
+    private List<int> GetReelSymbols(ISFSArray reelData)
+    {
+        List<int> symbols = new List<int>();
+        for (int i = 0; i < reelData.Size(); i++)
+        {
+            symbols.Add(reelData.GetInt(i));
+        }
+        return symbols;
+    }
+
     private void DistributeInitialBoardToReels(int[,] initialBoard)
     {
-        if (initialBoard == null || currentSlot == null) return;
+        if (initialBoard == null || currentSlot == null)
+        {
+            Debug.LogError("DistributeInitialBoardToReels: initialBoard or currentSlot is null");
+            return;
+        }
 
         int reelCount = initialBoard.GetLength(0);
         int symbolCount = initialBoard.GetLength(1);
 
-        Debug.Log($"Distributing initial board: {reelCount} reels x {symbolCount} symbols | numberof reel {currentSlot.numberOfReels}");
+        Debug.Log($"DistributeInitialBoardToReels: {reelCount} reels x {symbolCount} symbols");
+        Debug.Log($"currentSlot.REEL_COUNT: {currentSlot.numberOfReels}");
+        Debug.Log($"currentSlot.reels.Count: {currentSlot.reels.Count}");
 
         for (int reel = 0; reel < reelCount && reel < currentSlot.numberOfReels; reel++)
         {
+            Debug.Log($"Processing reel {reel}");
+
             List<int> reelSymbols = new List<int>();
 
             for (int row = 0; row < symbolCount; row++)
             {
-                reelSymbols.Add(initialBoard[reel, row]);
+                try
+                {
+                    int symbolIndex = initialBoard[reel, row];
+                    Debug.Log($"Reel {reel}, Row {row}: Symbol {symbolIndex}");
+                    reelSymbols.Add(symbolIndex);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError($"Error accessing initialBoard[{reel}, {row}]: {e.Message}");
+                    break;
+                }
             }
 
             // Set the symbols for this specific reel
             if (currentSlot.reels.ContainsKey(reel))
             {
+                Debug.Log($"Setting {reelSymbols.Count} symbols for reel {reel}");
                 currentSlot.reels[reel].setServerSymbolData(reelSymbols);
 
-                // ✅ HERE: Call createReelSymbolsFromServer after setting server data
+                // ✅ Call createReelSymbolsFromServer after setting server data
                 currentSlot.reels[reel].createReelSymbolsFromServer();
 
+                Debug.Log($"Successfully created symbols for reel {reel}");
             }
+            else
+            {
+                Debug.LogError($"Reel {reel} not found in currentSlot.reels dictionary");
+            }
+        }
+
+        // ✅ After all reels are created, create paylines
+        Debug.Log("All reels processed, now creating paylines");
+        SlotLines slotLines = currentSlot.GetComponent<SlotLines>();
+        if (slotLines != null)
+        {
+            slotLines.createPaylinesAfterServerData();
+        }
+        else
+        {
+            Debug.LogError("SlotLines component not found!");
         }
     }
 
@@ -703,24 +761,54 @@ public class GameplayNetworkManager : MonoBehaviour
     // Parse reel results from server data
     private int[,] ParseReelResults(ISFSArray reelResultsArray)
     {
-        int reelCount = reelResultsArray.Size();
-        if (reelCount == 0) return new int[0, 0];
-
-        ISFSArray firstReel = reelResultsArray.GetSFSArray(0);
-        int symbolCount = firstReel.Size();
-
-        int[,] results = new int[reelCount, symbolCount];
-
-        for (int reel = 0; reel < reelCount; reel++)
+        try
         {
-            ISFSArray reelData = reelResultsArray.GetSFSArray(reel);
-            for (int symbol = 0; symbol < symbolCount; symbol++)
-            {
-                results[reel, symbol] = reelData.GetInt(symbol);
-            }
-        }
+            int reelCount = reelResultsArray.Size();
 
-        return results;
+            if (reelCount == 0)
+            {
+                Debug.LogError("ParseReelResults: No reels in server data!");
+                return new int[0, 0];
+            }
+
+            ISFSArray firstReel = reelResultsArray.GetSFSArray(0);
+            int symbolCount = firstReel.Size();
+
+            if (symbolCount == 0)
+            {
+                Debug.LogError("ParseReelResults: First reel has no symbols!");
+                return new int[0, 0];
+            }
+
+            Debug.Log($"ParseReelResults: Creating {reelCount}x{symbolCount} array");
+
+            int[,] results = new int[reelCount, symbolCount];
+
+            for (int reel = 0; reel < reelCount; reel++)
+            {
+                ISFSArray reelArray = reelResultsArray.GetSFSArray(reel);
+
+                if (reelArray.Size() != symbolCount)
+                {
+                    Debug.LogError($"ParseReelResults: Reel {reel} has {reelArray.Size()} symbols, expected {symbolCount}");
+                    continue;
+                }
+
+                for (int symbol = 0; symbol < symbolCount; symbol++)
+                {
+                    results[reel, symbol] = reelArray.GetInt(symbol);
+                }
+            }
+
+            return results;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"ParseReelResults error: {e.Message}");
+            Debug.LogError($"ParseReelResults stack trace: {e.StackTrace}");
+
+            return new int[0, 0];
+        }
     }
 
     // Parse win data from server data

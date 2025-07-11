@@ -579,63 +579,40 @@ public class GameplayNetworkManager : MonoBehaviour
         return winData;
     }
 
-    // Convert server win line to client SlotWinData format
+    // Convert server win line to client SlotWinData format (simplified)
     private SlotWinData ConvertWinLineToSlotWinData(ISFSObject winObj)
     {
         SlotWinData win = new SlotWinData(winObj.GetInt("lineNumber"));
         win.paid = winObj.GetInt("winAmount");
         win.matches = winObj.GetInt("matches");
         win.setIndex = winObj.GetInt("symbolIndex");
-        win.setName = winObj.GetUtfString("setName");
-        win.readout = $"{win.matches} {win.setName} ON LINE {win.lineNumber + 1} PAYS {win.paid}";
+        
+        // Generate basic readout without symbol name (client has symbol mapping)
+        win.readout = $"LINE {win.lineNumber + 1} PAYS {win.paid}";
 
-        // Convert positions to symbol GameObjects
-        win.symbols = ConvertPositionsToSymbols(winObj.GetSFSArray("positions"));
+        // Client will calculate positions from payline definition
+        win.symbols = new List<GameObject>();
 
         return win;
     }
 
-    // Convert server scatter win to client SlotWinData format  
+    // Convert server scatter win to client SlotWinData format (simplified)
     private SlotWinData ConvertScatterToSlotWinData(ISFSObject scatterObj)
     {
         SlotWinData win = new SlotWinData(-1); // -1 for scatter (no line)
         win.paid = scatterObj.GetInt("winAmount");
         win.matches = scatterObj.GetInt("scatterCount");
         win.setIndex = scatterObj.GetInt("symbolIndex");
-        win.setName = scatterObj.GetUtfString("setName");
-        win.readout = $"{win.matches} {win.setName} SCATTER PAYS {win.paid}";
+        
+        // Generate basic readout without symbol name
+        win.readout = $"{win.matches} SCATTERS PAY {win.paid}";
 
-        // Convert positions to symbol GameObjects
-        win.symbols = ConvertPositionsToSymbols(scatterObj.GetSFSArray("positions"));
+        // Client will find scatter positions from reel results
+        win.symbols = new List<GameObject>();
 
         return win;
     }
 
-    // Convert server positions to actual symbol GameObjects for visual display
-    private List<GameObject> ConvertPositionsToSymbols(ISFSArray positionsArray)
-    {
-        List<GameObject> symbols = new List<GameObject>();
-
-        for (int i = 0; i < positionsArray.Size(); i++)
-        {
-            ISFSObject posObj = positionsArray.GetSFSObject(i);
-            int reel = posObj.GetInt("reel");
-            int row = posObj.GetInt("row");
-
-            if (currentSlot != null && currentSlot.reels.ContainsKey(reel))
-            {
-                var slotReel = currentSlot.reels[reel];
-                int symbolIndex = row + currentSlot.reelIndent; // Adjust for reel indent
-
-                if (symbolIndex < slotReel.symbols.Count)
-                {
-                    symbols.Add(slotReel.symbols[symbolIndex]);
-                }
-            }
-        }
-
-        return symbols;
-    }
 
     private void OnJackPotUpdate(ISFSObject data)
     {

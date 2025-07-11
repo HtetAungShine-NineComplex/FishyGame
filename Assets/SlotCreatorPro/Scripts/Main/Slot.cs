@@ -485,6 +485,9 @@ public class Slot : MonoBehaviour
 			// Process wins for display
 			if (winData.Count > 0)
 			{
+				// Calculate symbol positions for simplified server data
+				CalculateWinSymbolPositions(winData);
+
 				refs.wins.setServerWinData(winData);
 				refs.compute.processServerWinData(winData, totalWon);
 			}
@@ -510,6 +513,91 @@ public class Slot : MonoBehaviour
 	{
 		//--- MULTIPLAYER SERVER CODE START ---
 		return IsMultiplayer && networkManager != null && networkManager.IsSlotGameReady();
+		//--- MULTIPLAYER SERVER CODE END ---
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Calculate symbol positions for win data from simplified server response
+	/// </summary>
+	private void CalculateWinSymbolPositions(List<SlotWinData> winDataList)
+	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (!IsMultiplayer) return;
+
+		foreach (SlotWinData winData in winDataList)
+		{
+			if (winData.lineNumber == -1)
+			{
+				// Scatter win - find symbols by matching symbol index in reel results
+				CalculateScatterPositions(winData);
+			}
+			else
+			{
+				// Line win - use payline definition to find positions
+				CalculateLineWinPositions(winData);
+			}
+		}
+		//--- MULTIPLAYER SERVER CODE END ---
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Calculate symbol positions for line wins using payline definitions
+	/// </summary>
+	private void CalculateLineWinPositions(SlotWinData winData)
+	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (!IsMultiplayer) return;
+
+		winData.symbols.Clear();
+
+		// Get payline definition (assuming lines are stored in lines list)
+		if (winData.lineNumber >= 0 && winData.lineNumber < lines.Count)
+		{
+			LinesWrapper payline = lines[winData.lineNumber];
+			List<int> linePositions = payline.positions;
+
+			// Add symbols for the number of matches
+			for (int i = 0; i < winData.matches && i < numberOfReels && i < linePositions.Count; i++)
+			{
+				int rowPosition = linePositions[i];
+				int symbolIndex = rowPosition + reelIndent; // Adjust for reel indent
+
+				if (reels.ContainsKey(i) && symbolIndex < reels[i].symbols.Count)
+				{
+					winData.symbols.Add(reels[i].symbols[symbolIndex]);
+				}
+			}
+		}
+		//--- MULTIPLAYER SERVER CODE END ---
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Calculate positions for scatter wins by finding matching symbols
+	/// </summary>
+	private void CalculateScatterPositions(SlotWinData winData)
+	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (!IsMultiplayer) return;
+
+		winData.symbols.Clear();
+
+		// Find scatter symbols by matching setIndex across all reels
+		int scattersFound = 0;
+		for (int reel = 0; reel < numberOfReels && scattersFound < winData.matches; reel++)
+		{
+			if (reels.ContainsKey(reel))
+			{
+				for (int pos = reelIndent; pos < reels[reel].symbols.Count - reelIndent && scattersFound < winData.matches; pos++)
+				{
+					GameObject symbol = reels[reel].symbols[pos];
+					if (symbol.GetComponent<SlotSymbol>().symbolIndex == winData.setIndex)
+					{
+						winData.symbols.Add(symbol);
+						scattersFound++;
+					}
+				}
+			}
+		}
 		//--- MULTIPLAYER SERVER CODE END ---
 	}
 	#endregion

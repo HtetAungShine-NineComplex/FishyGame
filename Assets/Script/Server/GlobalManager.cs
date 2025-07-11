@@ -216,12 +216,20 @@ public class GlobalManager : MonoBehaviour
         JoinedRoom?.Invoke();
     }
 
-    public void RequestJoinRoom(string gameRoom)
+    public void RequestJoinRoom(string gameRoom, string reelConfiguration = "FIVE_BY_FOUR")
     {
         Debug.Log($"RequestJoinRoom called with: {gameRoom}");
         Debug.Log($"Stack trace: {System.Environment.StackTrace}");
         SFSObject data = new SFSObject();
         data.PutUtfString("requestRoomType", gameRoom);
+        
+        // Only send reel configuration for slot games
+        if (gameRoom == "slot")
+        {
+            data.PutUtfString("reelConfiguration", reelConfiguration);
+            Debug.Log($"Requesting slot room with reel configuration: {reelConfiguration}");
+        }
+        
         SendToExtension("joinRoom", data);
     }
 

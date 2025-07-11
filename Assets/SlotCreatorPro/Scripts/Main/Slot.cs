@@ -9,6 +9,18 @@ using aSlot;
 using TinAungKhant.UIManagement;
 using System.Linq;
 
+/// <summary>
+/// Enum for different slot reel configurations
+/// </summary>
+public enum SlotConfiguration
+{
+	FIVE_BY_THREE,
+	FIVE_BY_FOUR,
+	FIVE_BY_FIVE,
+	SIX_BY_FIVE,
+	CUSTOM // Allows manual configuration via numberOfReels and reelHeight
+}
+
 
 [RequireComponent(typeof(SlotCredits))]
 [RequireComponent(typeof(SlotCompute))]
@@ -187,6 +199,13 @@ public class Slot : MonoBehaviour
 	/// The number of reels.
 	/// </summary>
 	public int numberOfReels = 3;
+
+	/// <summary>
+	/// Slot reel configuration for server communication
+	/// When set to CUSTOM, uses numberOfReels and reelHeight values above
+	/// </summary>
+	public SlotConfiguration slotConfiguration = SlotConfiguration.FIVE_BY_FOUR;
+
 	/// <summary>
 	/// The horizontal reel padding.
 	/// </summary>
@@ -1145,6 +1164,44 @@ public class Slot : MonoBehaviour
 	{
 		if (OnSpinInsufficentCredits != null)
 			OnSpinInsufficentCredits();
+	}
+
+	/// <summary>
+	/// Gets the reel configuration string for server communication
+	/// </summary>
+	/// <returns>Configuration string (e.g., "SIX_BY_FIVE")</returns>
+	public string GetReelConfigurationString()
+	{
+		if (slotConfiguration == SlotConfiguration.CUSTOM)
+		{
+			// For CUSTOM, calculate based on numberOfReels and reelHeight
+			int visibleRows = reelHeight - (reelIndent * 2);
+			return $"{GetNumberText(numberOfReels)}_BY_{GetNumberText(visibleRows)}";
+		}
+		else
+		{
+			// Return the enum value as string
+			return slotConfiguration.ToString();
+		}
+	}
+
+	/// <summary>
+	/// Converts a number to its text representation for configuration strings
+	/// </summary>
+	/// <param name="number">Number to convert</param>
+	/// <returns>Text representation (e.g., 3="THREE", 4="FOUR", 5="FIVE", 6="SIX")</returns>
+	private string GetNumberText(int number)
+	{
+		switch (number)
+		{
+			case 3: return "THREE";
+			case 4: return "FOUR";
+			case 5: return "FIVE";
+			case 6: return "SIX";
+			case 7: return "SEVEN";
+			case 8: return "EIGHT";
+			default: return number.ToString();
+		}
 	}
 
 	#endregion

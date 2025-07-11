@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameplayNetworkManager : MonoBehaviour
 {
     [SerializeField]
-    private string _gameRoom = "fish";
+    private string _gameRoom = "slot";
 
     [Header("Fishing Game References")]
     public List<PlayerManager> _playerMangers;
@@ -43,7 +43,18 @@ public class GameplayNetworkManager : MonoBehaviour
     {
         Debug.Log($"GameplayNetworkManager Start() called on {gameObject.name} - Instance: {GetInstanceID()}");
         Debug.Log($"Stack trace: {System.Environment.StackTrace}");
-        GlobalManager.Instance.RequestJoinRoom(_gameRoom);
+        
+        // For slot games, send the configured slot layout
+        if (_gameRoom == "slot" && currentSlot != null)
+        {
+            string reelConfig = currentSlot.GetReelConfigurationString();
+            Debug.Log($"Joining slot room with configuration: {reelConfig}");
+            GlobalManager.Instance.RequestJoinRoom(_gameRoom, reelConfig);
+        }
+        else
+        {
+            GlobalManager.Instance.RequestJoinRoom(_gameRoom);
+        }
     }
 
     private void OnDestroy()

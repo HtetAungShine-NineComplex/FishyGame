@@ -17,6 +17,16 @@ public class GameModeManager : MonoBehaviour
         if (slot == null)
             slot = FindObjectOfType<Slot>();
 
+        // Auto-detect mode: if GlobalManager exists, it's multiplayer mode, just for testing
+        if (gameplayNetworkManagerObject != null && GlobalManager.Instance != null)
+        {
+            useMultiplayer = true;
+        }
+        else
+        {
+            useMultiplayer = false;
+        }
+
         ApplyGameMode();
     }
 

@@ -139,14 +139,19 @@ public class SlotReel : MonoBehaviour
 	{
 		if (slot.IsMultiplayer && serverSymbolData.Count > 0)
 		{
-			Debug.Log($"Creating reel symbols from server data for reel {reelIndex}");
+			Debug.Log($"Creating {serverSymbolData.Count} reel symbols from server data for reel {reelIndex}");
 			if (!slot.useSuppliedResult)
 			{
-				createReelSymbols();
+				// Create symbols based on server data count, not client's hardcoded reelHeight
+				for (int i = 0; i < serverSymbolData.Count; i++)
+				{
+					createSymbol(i);
+				}
 			}
 			else
 			{
-				for (int i = 0; i < slot.reelHeight; i++)
+				// Use server data count instead of slot.reelHeight
+				for (int i = 0; i < serverSymbolData.Count; i++)
 				{
 					createReelSymbolStartup(i);
 				}

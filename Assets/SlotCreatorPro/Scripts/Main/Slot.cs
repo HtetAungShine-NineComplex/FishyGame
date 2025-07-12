@@ -10,15 +10,17 @@ using TinAungKhant.UIManagement;
 using System.Linq;
 
 /// <summary>
-/// Enum for different slot reel configurations
+/// Enum for different slot game scenes/themes
+/// Server will calculate layout configuration based on scene name
 /// </summary>
 public enum SlotConfiguration
 {
-	FIVE_BY_THREE,
-	FIVE_BY_FOUR,
-	FIVE_BY_FIVE,
-	SIX_BY_FIVE,
-	CUSTOM // Allows manual configuration via numberOfReels and reelHeight
+	FUSHINGHOA,  // 5x9 configuration
+	OLYMPAS,     // 6x8 configuration  
+	KRAKENQUEEN, // 5x8 configuration
+	BEACHDAYS,   // 5x8 configuration
+	FONGSHENG,   // 5x8 configuration
+	CUSTOM       // Uses numberOfReels and reelHeight values
 }
 
 
@@ -201,10 +203,11 @@ public class Slot : MonoBehaviour
 	public int numberOfReels = 3;
 
 	/// <summary>
-	/// Slot reel configuration for server communication
+	/// Slot game scene/theme for server communication
+	/// Server calculates layout based on scene: FUSHINGHOA=5x9, OLYMPAS=6x8, KRAKENQUEEN=5x8
 	/// When set to CUSTOM, uses numberOfReels and reelHeight values above
 	/// </summary>
-	public SlotConfiguration slotConfiguration = SlotConfiguration.FIVE_BY_FOUR;
+	public SlotConfiguration slotConfiguration = SlotConfiguration.FUSHINGHOA;
 
 	/// <summary>
 	/// The horizontal reel padding.
@@ -1167,9 +1170,10 @@ public class Slot : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Gets the reel configuration string for server communication
+	/// Gets the scene name string for server communication
+	/// Server will calculate layout configuration based on scene name
 	/// </summary>
-	/// <returns>Configuration string (e.g., "SIX_BY_FIVE")</returns>
+	/// <returns>Scene name string (e.g., "FUSHINGHOA", "OLYMPAS")</returns>
 	public string GetReelConfigurationString()
 	{
 		if (slotConfiguration == SlotConfiguration.CUSTOM)
@@ -1180,7 +1184,7 @@ public class Slot : MonoBehaviour
 		}
 		else
 		{
-			// Return the enum value as string
+			// Return the scene name enum value as string
 			return slotConfiguration.ToString();
 		}
 	}

@@ -213,6 +213,7 @@ public class GlobalManager : MonoBehaviour
 
     private void OnRoomJoin(BaseEvent evt)
     {
+        Debug.Log("Successfully joined room");
         JoinedRoom?.Invoke();
     }
 
@@ -220,6 +221,8 @@ public class GlobalManager : MonoBehaviour
     {
         Debug.Log($"RequestJoinRoom called with: {gameRoom}");
         Debug.Log($"Stack trace: {System.Environment.StackTrace}");
+        
+        // Create data object for the joinRoom extension
         SFSObject data = new SFSObject();
         data.PutUtfString("requestRoomType", gameRoom);
         
@@ -230,6 +233,7 @@ public class GlobalManager : MonoBehaviour
             Debug.Log($"Requesting slot room with reel configuration: {reelConfiguration}");
         }
         
+        // Use extension request instead of built-in JoinRoomRequest
         SendToExtension("joinRoom", data);
     }
 

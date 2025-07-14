@@ -15,11 +15,11 @@ using System.Linq;
 /// </summary>
 public enum SlotConfiguration
 {
-	FUSHINGHOA,  // 5x9 configuration
-	OLYMPUS,     // 6x8 configuration  
-	KRAKENQUEEN, // 5x8 configuration
-	BEACHDAYS,   // 5x8 configuration
-	FONGSHENG,   // 5x8 configuration
+	FushinGhoa,  // 5x9 configuration
+	Olympus,     // 6x8 configuration  
+	KrakenQueen, // 5x8 configuration
+	BeachDay,   // 5x8 configuration
+	FongSheng,   // 5x8 configuration
 }
 
 
@@ -206,7 +206,7 @@ public class Slot : MonoBehaviour
 	/// Server calculates layout based on scene: FUSHINGHOA=5x9, OLYMPAS=6x8, KRAKENQUEEN=5x8
 	/// When set to CUSTOM, uses numberOfReels and reelHeight values above
 	/// </summary>
-	public SlotConfiguration slotConfiguration = SlotConfiguration.FUSHINGHOA;
+	public SlotConfiguration slotConfiguration = SlotConfiguration.FushinGhoa;
 
 	/// <summary>
 	/// The horizontal reel padding.

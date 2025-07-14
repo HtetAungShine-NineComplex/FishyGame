@@ -224,7 +224,7 @@ public class GlobalManager : MonoBehaviour
         SendToExtension("joinRoom", data);
     }
 
-    public void RequestJoinRoom(string gameRoom, SlotConfiguration slotConfig = SlotConfiguration.KRAKENQUEEN)
+    public void RequestJoinRoom(string gameRoom, SlotConfiguration slotConfig = SlotConfiguration.KrakenQueen)
     {
         SFSObject data = new SFSObject();
         data.PutUtfString("requestRoomType", gameRoom);

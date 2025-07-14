@@ -42,7 +42,7 @@ public class BeachDaysGUI : MonoBehaviour
 		{
 			case SlotState.playingwins:
 				//--- MULTIPLAYER SERVER CODE START ---
-				// MULTIPLAYER: Display server-provided win data
+				// MULTIPLAYER: Display server-provided win data (don't override multiplayer win display)
 				//--- MULTIPLAYER SERVER CODE END ---
 				//--- SINGLE-PLAYER LOCAL CODE START ---
 				// SINGLE-PLAYER: Display locally calculated win data
@@ -55,14 +55,22 @@ public class BeachDaysGUI : MonoBehaviour
 					winReadout.text = "";
 				else
 					winReadout.text = slot.refs.wins.currentWin.readout.ToString();
-				updateWon();
+				
+				// Only update won display if not showing multiplayer win
+				if (!slot.IsMultiplayer || !isShowingMultiplayerWin)
+				{
+					updateWon();
+				}
 				updateCredits();
 				updateScatters();
 				break;
 			case SlotState.spinning:
 				//--- SHARED CODE (BOTH MODES) ---
 				// Spinning state display used by both modes
-				won.text = "GOOD LUCK!";
+				if (!slot.IsMultiplayer || !isShowingMultiplayerWin)
+				{
+					won.text = "GOOD LUCK!";
+				}
 				winReadout.text = "";
 				updateScatters();
 				break;
@@ -70,7 +78,10 @@ public class BeachDaysGUI : MonoBehaviour
 			default:
 				//--- SHARED CODE (BOTH MODES) ---
 				// Default state display used by both modes
-				won.text = "";
+				if (!slot.IsMultiplayer || !isShowingMultiplayerWin)
+				{
+					won.text = "";
+				}
 				winReadout.text = "";
 				updateScatters();
 				break;
@@ -157,4 +168,49 @@ public class BeachDaysGUI : MonoBehaviour
 		scatter6.text = scatters.GetScatter(1).ToString("C", nfi);
 		scatter7.text = scatters.GetScatter(2).ToString("C", nfi);
 	}
+
+	//--- MULTIPLAYER SERVER CODE START ---
+	/// <summary>
+	/// MULTIPLAYER: Flag to prevent Update method from overriding multiplayer win display
+	/// </summary>
+	private bool isShowingMultiplayerWin = false;
+
+	/// <summary>
+	/// MULTIPLAYER: Show win amount in the won text field
+	/// </summary>
+	public void showWinAmount(int winAmount)
+	{
+		if (winAmount > 0)
+		{
+			won.text = winAmount.ToString();
+			isShowingMultiplayerWin = true;
+			Debug.Log($"[BeachDaysGUI] Showing win amount: {winAmount}");
+		}
+		else
+		{
+			won.text = "";
+			isShowingMultiplayerWin = false;
+		}
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Clear win display (for no-win spins)
+	/// </summary>
+	public void clearWinDisplay()
+	{
+		won.text = "";
+		isShowingMultiplayerWin = false;
+		Debug.Log("[BeachDaysGUI] Cleared win display");
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Show "Good Luck" message during reel animation
+	/// </summary>
+	public void showGoodLuck()
+	{
+		won.text = "GOOD LUCK!";
+		isShowingMultiplayerWin = true; // Prevent Update method from overriding
+		Debug.Log("[BeachDaysGUI] Showing Good Luck message");
+	}
+	//--- MULTIPLAYER SERVER CODE END ---
 }

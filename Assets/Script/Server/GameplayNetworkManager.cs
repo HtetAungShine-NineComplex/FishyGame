@@ -101,6 +101,10 @@ public class GameplayNetworkManager : MonoBehaviour
                 OnSlotGameState(sfsobject);
                 break;
 
+            case "betDeducted":
+                OnBetDeducted(sfsobject);
+                break;
+
             case "spinResult":
                 OnSpinResult(sfsobject);
                 break;
@@ -478,6 +482,32 @@ public class GameplayNetworkManager : MonoBehaviour
         }
     }
 
+    private void OnBetDeducted(ISFSObject data)
+    {
+        if (!isSlotGameActive || currentSlot == null) return;
+
+        try
+        {
+            Debug.Log("OnBetDeducted received - processing bet deduction");
+            Debug.Log("Bet deduction response: " + data.GetDump());
+
+            int betAmount = data.GetInt("betAmount");
+            long newBalance = data.GetLong("newBalance");
+
+            Debug.Log($"Bet deducted: amount={betAmount}, newBalance={newBalance}");
+
+            // Animate balance decrease
+            currentSlot.refs.credits.animateBalanceDecrease((int)newBalance);
+
+            // Note: Reel spinning animation will start when spin results arrive in OnSpinResult
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error processing bet deduction: " + e.Message);
+            Debug.LogError("Stack trace: " + e.StackTrace);
+        }
+    }
+
     private void OnSpinResult(ISFSObject data)
     {
         if (!isSlotGameActive || currentSlot == null) return;
@@ -503,30 +533,18 @@ public class GameplayNetworkManager : MonoBehaviour
                     return;
                 }
 
-                // Check if gameState exists
-                if (!dataObj.ContainsKey("gameState"))
-                {
-                    Debug.LogError("Server response missing 'gameState' object");
-                    return;
-                }
-
-                ISFSObject gameState = dataObj.GetSFSObject("gameState");
-                if (gameState == null)
-                {
-                    Debug.LogError("Server 'gameState' object is null");
-                    return;
-                }
+                // Extract win amount and final balance for animations
+                long winAmount = dataObj.GetLong("winAmount");
+                long finalBalance = dataObj.GetLong("finalBalance");
 
                 // Convert server data to client format
                 int[,] reelResults = ConvertServerReelResults(dataObj);
                 List<SlotWinData> winData = ConvertServerWinData(dataObj);
-                int totalWon = (int)gameState.GetLong("totalWin");
-                int newBalance = (int)gameState.GetLong("newBalance");
 
-                Debug.Log($"Converted spin result: totalWon={totalWon}, newBalance={newBalance}, wins={winData.Count}");
+                Debug.Log($"Converted spin result: winAmount={winAmount}, finalBalance={finalBalance}, wins={winData.Count}");
 
-                // Feed converted data to existing slot logic
-                currentSlot.ProcessServerSpinResponse(reelResults, winData, totalWon, newBalance);
+                // Use existing spin method with server-supplied results
+                currentSlot.spinWithServerResult(reelResults, winData, (int)winAmount, (int)finalBalance);
             }
             catch (System.Exception e)
             {

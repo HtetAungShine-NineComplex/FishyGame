@@ -44,6 +44,21 @@ public class Slot : MonoBehaviour
 	/// </summary>
 	public bool IsMultiplayer;
 
+	/// <summary>
+	/// MULTIPLAYER: Pending win amount to animate after reel animation completes
+	/// </summary>
+	private int pendingWinAmount = 0;
+
+	/// <summary>
+	/// MULTIPLAYER: Pending final balance to animate after reel animation completes
+	/// </summary>
+	private int pendingFinalBalance = 0;
+
+	/// <summary>
+	/// MULTIPLAYER: Server results to apply after minimum animation duration
+	/// </summary>
+	private int[,] pendingServerResults = null;
+
 	#region Actions
 	/// <summary>
 	/// Callback when a state is changed TO
@@ -906,17 +921,22 @@ public class Slot : MonoBehaviour
 				//--- MULTIPLAYER SERVER CODE START ---
 				if (IsMultiplayer)
 				{
-					// MULTIPLAYER MODE: Send spin request to SmartFoxServer
-					if (!IsConnectedToServer())
+					// MULTIPLAYER MODE: Only send spin request if we don't have pending server results
+					if (pendingServerResults == null)
 					{
-						logError("Not connected to SmartFoxServer - multiplayer mode requires server connection");
-						if (OnSpinInsufficentCredits != null)
-							OnSpinInsufficentCredits();
-						return;
-					}
+						if (!IsConnectedToServer())
+						{
+							logError("Not connected to SmartFoxServer - multiplayer mode requires server connection");
+							if (OnSpinInsufficentCredits != null)
+								OnSpinInsufficentCredits();
+							return;
+						}
 
-					// Send spin request through network manager to SmartFoxServer
-					networkManager.HandleSlotSpin(refs.credits.betPerLine, refs.credits.linesPlayed, freeSpin);
+						// Send spin request through network manager to SmartFoxServer
+						networkManager.HandleSlotSpin(refs.credits.betPerLine, refs.credits.linesPlayed, freeSpin);
+						return; // Don't continue with visual animation - wait for server response
+					}
+					// If we have pending results, continue with visual animation below
 				}
 				//--- MULTIPLAYER SERVER CODE END ---
 				//--- SINGLE-PLAYER LOCAL CODE START ---
@@ -1153,7 +1173,32 @@ public class Slot : MonoBehaviour
 	{
 		if (reelIndex == reels.Count)
 		{
-			calculateWins();
+			//--- MULTIPLAYER SERVER CODE START ---
+			if (IsMultiplayer && (pendingWinAmount > 0 || pendingFinalBalance > 0))
+			{
+				// MULTIPLAYER: Show results immediately for testing
+				log($"TESTING: Showing results directly - winAmount: {pendingWinAmount}, finalBalance: {pendingFinalBalance}");
+				
+				// TESTING: Display results immediately without reel animation
+				calculateWins();
+				
+				// Start win text tween animation
+				refs.credits.animateWinAndBalanceIncrease(pendingWinAmount, pendingFinalBalance);
+				
+				// Clear pending values
+				pendingWinAmount = 0;
+				pendingFinalBalance = 0;
+			}
+			else
+			{
+				//--- MULTIPLAYER SERVER CODE END ---
+				//--- SINGLE-PLAYER LOCAL CODE START ---
+				// SINGLE-PLAYER: Process wins normally
+				calculateWins();
+				//--- SINGLE-PLAYER LOCAL CODE END ---
+				//--- MULTIPLAYER SERVER CODE START ---
+			}
+			//--- MULTIPLAYER SERVER CODE END ---
 		}
 
 	}
@@ -1191,6 +1236,197 @@ public class Slot : MonoBehaviour
 			case 8: return "EIGHT";
 			default: return number.ToString();
 		}
+	}
+
+	#endregion
+
+	#region Multiplayer Two-Phase Spin Methods
+
+	/// <summary>
+	/// MULTIPLAYER: Start spinning animation for reels (called when bet is deducted)
+	/// </summary>
+	public void StartSpinningAnimation()
+	{
+		if (!IsMultiplayer)
+		{
+			log("StartSpinningAnimation called in single-player mode - ignoring");
+			return;
+		}
+
+		log("Starting spinning animation after bet deduction");
+
+		// Clear any previous win display and show "Good Luck"
+		BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
+		if (gui != null)
+		{
+			gui.clearWinDisplay();
+		}
+
+		// Trigger spin begin callback
+		if (OnSpinBegin != null)
+			OnSpinBegin(GetComponent<SlotWins>().currentWin);
+
+		// Reset wins for new spin
+		GetComponent<SlotWins>().reset();
+
+		// Start reel spinning with timing (same logic as normal spin)
+		for (int reelIndex = 0; reelIndex < reels.Count; reelIndex++)
+		{
+			reels[reelIndex].GetComponent<SlotReel>().spinReel(spinTime + (spinTimeIncPerReel * reels[reelIndex].reelIndex - 1));
+		}
+
+		setState(SlotState.spinning);
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Use existing spin method with server-supplied results and minimum animation duration
+	/// </summary>
+	public void spinWithServerResult(int[,] reelResults, List<SlotWinData> winData, int winAmount, int finalBalance)
+	{
+		if (!IsMultiplayer)
+		{
+			log("spinWithServerResult called in single-player mode - ignoring");
+			return;
+		}
+
+		log($"Using server results with delayed animation - winAmount: {winAmount}, finalBalance: {finalBalance}, wins: {winData.Count}");
+
+		// Store win data for processing
+		if (winData.Count > 0)
+		{
+			// Calculate symbol positions for simplified server data
+			CalculateWinSymbolPositions(winData);
+			refs.wins.setServerWinData(winData);
+			refs.compute.processServerWinData(winData, winAmount);
+		}
+		else
+		{
+			// No wins - clear any existing win data
+			refs.wins.setServerWinData(new List<SlotWinData>());
+		}
+
+		// Store win animation data for after reel animation completes
+		pendingWinAmount = winAmount;
+		pendingFinalBalance = finalBalance;
+
+		// Store server results but don't apply them immediately - wait for minimum animation time
+		pendingServerResults = reelResults;
+		
+		// Start visual reel spinning animation directly (without server communication)
+		StartVisualReelAnimation();
+		
+		// Schedule the results to be applied after minimum animation time
+		float minAnimationTime = spinTime + (spinTimeIncPerReel * (reels.Count - 1)) + 1.0f; // Add 1 second buffer
+		StartCoroutine(ApplyServerResultsAfterDelay(minAnimationTime));
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Start visual reel animation without server communication
+	/// </summary>
+	private void StartVisualReelAnimation()
+	{
+		log("Starting visual reel animation for constant duration");
+		
+		// Show "Good Luck" in win text during reel animation
+		BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
+		if (gui != null)
+		{
+			gui.showGoodLuck();
+		}
+		
+		// Trigger spin begin callback
+		if (OnSpinBegin != null)
+			OnSpinBegin(GetComponent<SlotWins>().currentWin);
+
+		// Reset wins for new spin
+		GetComponent<SlotWins>().reset();
+
+		// Start reel spinning with normal timing (visual only)
+		for (int reelIndex = 0; reelIndex < reels.Count; reelIndex++)
+		{
+			reels[reelIndex].GetComponent<SlotReel>().spinReel(spinTime + (spinTimeIncPerReel * reels[reelIndex].reelIndex - 1));
+		}
+
+		setState(SlotState.spinning);
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Coroutine to apply server results after minimum animation duration
+	/// </summary>
+	private System.Collections.IEnumerator ApplyServerResultsAfterDelay(float delay)
+	{
+		log($"Waiting {delay} seconds before applying server results...");
+		yield return new WaitForSeconds(delay);
+		
+		if (pendingServerResults != null)
+		{
+			log("Applying server results after minimum animation time");
+			
+			// Clear "Good Luck" text first
+			BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
+			if (gui != null)
+			{
+				gui.clearWinDisplay();
+			}
+			
+			// Now apply the server results
+			suppliedResult = pendingServerResults;
+			useSuppliedResult = true;
+			waitingForResult = false;
+			
+			// Clear pending results
+			pendingServerResults = null;
+			
+			// Force reels to stop and show results
+			snap();
+			
+			// After results are shown, display win amount if player won
+			if (pendingWinAmount > 0)
+			{
+				if (gui != null)
+				{
+					gui.showWinAmount(pendingWinAmount);
+					log($"Displayed win amount after reel animation: {pendingWinAmount}");
+				}
+			}
+		}
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Process server spin response with enhanced win handling and animations
+	/// </summary>
+	public void ProcessServerSpinResponseWithWins(int[,] reelResults, List<SlotWinData> winData, int winAmount, int finalBalance)
+	{
+		if (!IsMultiplayer)
+		{
+			log("ProcessServerSpinResponseWithWins called in single-player mode - ignoring");
+			return;
+		}
+
+		log($"Processing server spin response with wins - winAmount: {winAmount}, finalBalance: {finalBalance}, wins: {winData.Count}");
+
+		// Set reel results for display
+		suppliedResult = reelResults;
+		useSuppliedResult = true;
+		waitingForResult = false;
+
+		// Process wins for display
+		if (winData.Count > 0)
+		{
+			// Calculate symbol positions for simplified server data
+			CalculateWinSymbolPositions(winData);
+
+			refs.wins.setServerWinData(winData);
+			refs.compute.processServerWinData(winData, winAmount);
+		}
+		else
+		{
+			// No wins - clear any existing win data
+			refs.wins.setServerWinData(new List<SlotWinData>());
+		}
+
+		// Animate win amount and final balance through SlotCredits
+		refs.credits.animateWinAndBalanceIncrease(winAmount, finalBalance);
 	}
 
 	#endregion

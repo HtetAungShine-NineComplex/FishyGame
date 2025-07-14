@@ -188,6 +188,98 @@ public class SlotCredits : MonoBehaviour
 			Debug.LogWarning("[SlotCredits] No BeachDaysGUI found, credits UI may not update");
 		}
 	}
+	/// <summary>
+	/// MULTIPLAYER: Immediately update balance after bet deduction (no animation)
+	/// </summary>
+	public void animateBalanceDecrease(int newBalance)
+	{
+		if (slot == null)
+			slot = GetComponent<Slot>();
+
+		// Only update in multiplayer mode
+		if (slot.IsMultiplayer)
+		{
+			Debug.Log($"[SlotCredits] Immediately updating balance from {credits} to {newBalance}");
+			
+			// Stop any existing animation
+			finishCreditCount();
+			
+			// Update balance immediately without animation
+			credits = newBalance;
+			updateUI();
+			
+			Debug.Log($"[SlotCredits] Balance updated immediately: {credits}");
+		}
+		else
+		{
+			slot.log("Ignoring balance decrease in single-player mode");
+		}
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Display win amount and animate balance increase
+	/// </summary>
+	public void animateWinAndBalanceIncrease(int winAmount, int finalBalance)
+	{
+		if (slot == null)
+			slot = GetComponent<Slot>();
+
+		// Only animate in multiplayer mode
+		if (slot.IsMultiplayer)
+		{
+			Debug.Log($"[SlotCredits] Processing win: {winAmount}, final balance: {finalBalance}");
+			
+			if (winAmount > 0)
+			{
+				// Show win amount in BeachDaysGUI.won text field
+				BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
+				if (gui != null)
+				{
+					gui.showWinAmount(winAmount);
+					Debug.Log($"[SlotCredits] Displayed win amount {winAmount} in BeachDaysGUI.won");
+				}
+				else
+				{
+					Debug.LogWarning("[SlotCredits] No BeachDaysGUI found to display win amount");
+				}
+				
+				// Store win amount
+				lastWin = winAmount;
+				
+				// Animate balance increase from current to final
+				float animationTime = Mathf.Clamp(winAmount * 0.0001f, 1.0f, 3.0f);
+				creditsTween = DOTween.To(() => this.credits, x => this.credits = x, finalBalance, animationTime)
+					.OnUpdate(() => {
+						// Update UI during animation to show smooth balance increase
+						updateUI();
+					})
+					.OnComplete(() => {
+						Debug.Log($"[SlotCredits] Win animation completed: {credits}");
+						updateUI();
+					});
+				
+				// Trigger win display UI callbacks
+				slot.beginCreditWinCountOff(winAmount);
+			}
+			else
+			{
+				// No win, just update balance immediately
+				credits = finalBalance;
+				updateUI();
+				
+				// Clear win display
+				BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
+				if (gui != null)
+				{
+					gui.clearWinDisplay();
+				}
+			}
+		}
+		else
+		{
+			slot.log("Ignoring win animation in single-player mode");
+		}
+	}
 	//--- MULTIPLAYER SERVER CODE END ---
 
 	#endregion

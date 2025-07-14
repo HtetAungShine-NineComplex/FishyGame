@@ -110,7 +110,7 @@ public class BeachDaysGUI : MonoBehaviour
 		//--- SHARED CODE (BOTH MODES) ---
 		won.text = slot.refs.credits.lastWin.ToString();
 	}
-	void updateCredits()
+	public void updateCredits()
 	{
 		//--- MULTIPLAYER SERVER CODE START ---
 		// MULTIPLAYER: Display server-managed credits
@@ -120,6 +120,7 @@ public class BeachDaysGUI : MonoBehaviour
 		//--- SINGLE-PLAYER LOCAL CODE END ---
 		//--- SHARED CODE (BOTH MODES) ---
 		credits.text = slot.refs.credits.totalCreditsReadout().ToString();
+		Debug.Log($"[BeachDaysGUI] Updated credits display to: {credits.text}");
 	}
 	void updateLines()
 	{

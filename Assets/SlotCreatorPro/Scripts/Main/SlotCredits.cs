@@ -149,10 +149,15 @@ public class SlotCredits : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			slot.log("Updating credits from server: " + newCredits);
+			Debug.Log($"[SlotCredits] Updating credits from {credits} to {newCredits}");
 			credits = newCredits;
 
 			// Force completion of any active credit counting animations
 			finishCreditCount();
+
+			// Update UI to reflect new credits
+			Debug.Log($"[SlotCredits] Triggering UI update for new credits: {newCredits}");
+			updateUI();
 
 			// Save the updated credits (visual preferences, not actual balance in multiplayer)
 			if (persistant)
@@ -163,6 +168,24 @@ public class SlotCredits : MonoBehaviour
 		else
 		{
 			slot.log("Ignoring server credit update in single-player mode");
+		}
+	}
+
+	/// <summary>
+	/// Trigger UI update - finds and calls updateCredits on GUI components
+	/// </summary>
+	private void updateUI()
+	{
+		// Find the GUI component and update credits display
+		BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
+		if (gui != null)
+		{
+			Debug.Log("[SlotCredits] Found BeachDaysGUI, calling updateCredits()");
+			gui.updateCredits();
+		}
+		else
+		{
+			Debug.LogWarning("[SlotCredits] No BeachDaysGUI found, credits UI may not update");
 		}
 	}
 	//--- MULTIPLAYER SERVER CODE END ---

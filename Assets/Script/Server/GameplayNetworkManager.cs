@@ -317,15 +317,17 @@ public class GameplayNetworkManager : MonoBehaviour
 
             string roomName = data.GetUtfString("roomName");
             int roomId = data.GetInt("roomId");
-            int credits = data.GetInt("credits");
+            long initialBalance = data.GetLong("initialBalance");
             int betPerLine = data.GetInt("betPerLine");
             int linesPlayed = data.GetInt("linesPlayed");
             int userCount = data.GetInt("userCount");
             int maxUsers = data.GetInt("maxUsers");
             string message = data.GetUtfString("message");
 
+            Debug.Log($"Received initial balance from server: {initialBalance}");
+
             // Update slot credits and bet settings
-            currentSlot.refs.credits.updateCreditsFromServer(credits);
+            currentSlot.refs.credits.updateCreditsFromServer((int)initialBalance);
             currentSlot.refs.credits.betPerLine = betPerLine;
             currentSlot.refs.credits.linesPlayed = linesPlayed;
 
@@ -361,8 +363,6 @@ public class GameplayNetworkManager : MonoBehaviour
 
                     currentSlot.suppliedResult = initialBoard;
                     currentSlot.useSuppliedResult = true;
-
-                    Debug.Log("Received and distributed initial board from server for multiplayer mode");
                 }
                 catch (Exception e)
                 {
@@ -373,11 +373,6 @@ public class GameplayNetworkManager : MonoBehaviour
             }
 
             isSlotGameActive = true;
-            Debug.Log($"isSlotGameActive: {isSlotGameActive}");
-            Debug.Log($"currentSessionToken: {currentSessionToken}");
-            Debug.Log($"sessionToken isEmpty: {string.IsNullOrEmpty(currentSessionToken)}");
-
-            InitializeSlotGame();
         }
         else
         {
@@ -410,14 +405,8 @@ public class GameplayNetworkManager : MonoBehaviour
         int reelCount = initialBoard.GetLength(0);
         int symbolCount = initialBoard.GetLength(1);
 
-        Debug.Log($"DistributeInitialBoardToReels: {reelCount} reels x {symbolCount} symbols");
-        Debug.Log($"currentSlot.REEL_COUNT: {currentSlot.numberOfReels}");
-        Debug.Log($"currentSlot.reels.Count: {currentSlot.reels.Count}");
-
         for (int reel = 0; reel < reelCount && reel < currentSlot.numberOfReels; reel++)
         {
-            Debug.Log($"Processing reel {reel}");
-
             List<int> reelSymbols = new List<int>();
 
             for (int row = 0; row < symbolCount; row++)
@@ -425,10 +414,9 @@ public class GameplayNetworkManager : MonoBehaviour
                 try
                 {
                     int symbolIndex = initialBoard[reel, row];
-                    Debug.Log($"Reel {reel}, Row {row}: Symbol {symbolIndex}");
                     reelSymbols.Add(symbolIndex);
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     Debug.LogError($"Error accessing initialBoard[{reel}, {row}]: {e.Message}");
                     break;
@@ -438,13 +426,11 @@ public class GameplayNetworkManager : MonoBehaviour
             // Set the symbols for this specific reel
             if (currentSlot.reels.ContainsKey(reel))
             {
-                Debug.Log($"Setting {reelSymbols.Count} symbols for reel {reel}");
                 currentSlot.reels[reel].setServerSymbolData(reelSymbols);
 
                 // ✅ Call createReelSymbolsFromServer after setting server data
                 currentSlot.reels[reel].createReelSymbolsFromServer();
 
-                Debug.Log($"Successfully created symbols for reel {reel}");
             }
             else
             {
@@ -452,8 +438,6 @@ public class GameplayNetworkManager : MonoBehaviour
             }
         }
 
-        // ✅ After all reels are created, create paylines
-        Debug.Log("All reels processed, now creating paylines");
         SlotLines slotLines = currentSlot.GetComponent<SlotLines>();
         if (slotLines != null)
         {
@@ -470,25 +454,21 @@ public class GameplayNetworkManager : MonoBehaviour
         return currentSessionToken;
     }
 
-    private void InitializeSlotGame()
-    {
-        Debug.Log("Slot game initialized with session token");
-    }
     private void OnSlotGameState(ISFSObject data)
     {
         if (!isSlotGameActive || currentSlot == null) return;
 
         try
         {
-            int credits = data.GetInt("credits");
+            long balance = data.GetLong("balance");
             int betPerLine = data.GetInt("betPerLine");
             int linesPlayed = data.GetInt("linesPlayed");
 
-            Debug.Log($"Received slot game state: credits={credits}, bet={betPerLine}, lines={linesPlayed}");
+            Debug.Log($"Received slot game state: balance={balance}, bet={betPerLine}, lines={linesPlayed}");
 
             Debug.Log("User Offline Credits: " + currentSlot.refs.credits);
             // Update slot with server state
-            currentSlot.refs.credits.updateCreditsFromServer(credits);
+            currentSlot.refs.credits.updateCreditsFromServer((int)balance);
             currentSlot.refs.credits.betPerLine = betPerLine;
             currentSlot.refs.credits.linesPlayed = linesPlayed;
         }
@@ -541,12 +521,12 @@ public class GameplayNetworkManager : MonoBehaviour
                 int[,] reelResults = ConvertServerReelResults(dataObj);
                 List<SlotWinData> winData = ConvertServerWinData(dataObj);
                 int totalWon = (int)gameState.GetLong("totalWin");
-                int newCredits = (int)gameState.GetLong("newBalance");
+                int newBalance = (int)gameState.GetLong("newBalance");
 
-                Debug.Log($"Converted spin result: totalWon={totalWon}, newCredits={newCredits}, wins={winData.Count}");
+                Debug.Log($"Converted spin result: totalWon={totalWon}, newBalance={newBalance}, wins={winData.Count}");
 
                 // Feed converted data to existing slot logic
-                currentSlot.ProcessServerSpinResponse(reelResults, winData, totalWon, newCredits);
+                currentSlot.ProcessServerSpinResponse(reelResults, winData, totalWon, newBalance);
             }
             catch (System.Exception e)
             {
@@ -646,12 +626,12 @@ public class GameplayNetworkManager : MonoBehaviour
 
             // Get totals
             int totalWon = data.GetInt("totalWon");
-            int newCredits = data.GetInt("newCredits");
+            int newBalance = data.GetInt("newBalance");
 
-            Debug.Log($"Received spin response: totalWon={totalWon}, newCredits={newCredits}, wins={winData.Count}");
+            Debug.Log($"Received spin response: totalWon={totalWon}, newBalance={newBalance}, wins={winData.Count}");
 
             // Process the server response
-            ProcessSlotSpinResponse(reelResults, winData, totalWon, newCredits);
+            ProcessSlotSpinResponse(reelResults, winData, totalWon, newBalance);
         }
         catch (Exception e)
         {
@@ -698,12 +678,12 @@ public class GameplayNetworkManager : MonoBehaviour
 
         try
         {
-            int newCredits = data.GetInt("credits");
+            long newBalance = data.GetLong("balance");
             string reason = data.GetUtfString("reason");
 
-            Debug.Log($"Credit update: {newCredits} (reason: {reason})");
+            Debug.Log($"Balance update: {newBalance} (reason: {reason})");
 
-            currentSlot.refs.credits.updateCreditsFromServer(newCredits);
+            currentSlot.refs.credits.updateCreditsFromServer((int)newBalance);
         }
         catch (Exception e)
         {
@@ -842,12 +822,12 @@ public class GameplayNetworkManager : MonoBehaviour
     }
 
     // Process complete spin response
-    private void ProcessSlotSpinResponse(int[,] reelResults, List<SlotWinData> winData, int totalWon, int newCredits)
+    private void ProcessSlotSpinResponse(int[,] reelResults, List<SlotWinData> winData, int totalWon, int newBalance)
     {
         if (currentSlot == null) return;
 
-        // Update credits
-        currentSlot.refs.credits.updateCreditsFromServer(newCredits);
+        // Update balance
+        currentSlot.refs.credits.updateCreditsFromServer(newBalance);
 
         // Set reel results for display
         currentSlot.suppliedResult = reelResults;

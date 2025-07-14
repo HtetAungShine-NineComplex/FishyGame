@@ -19,7 +19,7 @@ public enum SlotConfiguration
 	Olympus,     // 6x8 configuration  
 	KrakenQueen, // 5x8 configuration
 	BeachDay,   // 5x8 configuration
-	FongSheng,   // 5x8 configuration
+	FongSheng,   // 5x3 configuration
 }
 
 
@@ -206,7 +206,7 @@ public class Slot : MonoBehaviour
 	/// Server calculates layout based on scene: FUSHINGHOA=5x9, OLYMPAS=6x8, KRAKENQUEEN=5x8
 	/// When set to CUSTOM, uses numberOfReels and reelHeight values above
 	/// </summary>
-	public SlotConfiguration slotConfiguration = SlotConfiguration.FushinGhoa;
+	public SlotConfiguration slotConfiguration = SlotConfiguration.BeachDay;
 
 	/// <summary>
 	/// The horizontal reel padding.

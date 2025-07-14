@@ -62,7 +62,11 @@ public class SlotReel : MonoBehaviour
 
 	void OnEnable()
 	{
+		Debug.LogWarning($"[REEL {reelIndex}] OnEnable() called - Call stack: {System.Environment.StackTrace}");
+		
 		slot = transform.parent.gameObject.GetComponent<Slot>();
+		Debug.Log($"[REEL {reelIndex}] slot.IsMultiplayer: {slot.IsMultiplayer}");
+		Debug.Log($"[REEL {reelIndex}] Current symbols.Count at OnEnable start: {symbols.Count}");
 
 		if (slot.symbolPrefabs.Count == 0)
 		{
@@ -114,6 +118,7 @@ public class SlotReel : MonoBehaviour
 		// ✅ MODIFIED: Only create reels immediately in single-player mode or when server data is ready
 		if (!slot.IsMultiplayer)
 		{
+			Debug.Log($"[REEL {reelIndex}] Single-player mode: Creating reels normally");
 			// Single-player mode: create reels normally
 			if (!slot.useSuppliedResult)
 			{
@@ -130,8 +135,11 @@ public class SlotReel : MonoBehaviour
 		else
 		{
 			// Multiplayer mode: wait for server data
-			Debug.Log($"Multiplayer mode: Reel {reelIndex} waiting for server symbol data");
+			Debug.Log($"[REEL {reelIndex}] Multiplayer mode: Waiting for server symbol data");
+			Debug.Log($"[REEL {reelIndex}] symbols.Count after multiplayer check: {symbols.Count}");
 		}
+		
+		Debug.Log($"[REEL {reelIndex}] OnEnable() finished - Final symbols.Count: {symbols.Count}");
 	}
 
 	public void createReelSymbolsFromServer()

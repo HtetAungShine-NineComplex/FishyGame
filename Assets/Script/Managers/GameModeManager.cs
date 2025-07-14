@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[DefaultExecutionOrder(-100)]
 public class GameModeManager : MonoBehaviour
 {
     [Header("Game Mode Settings")]
@@ -11,6 +12,8 @@ public class GameModeManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("GameModeManager.Awake() called");
+        
         if (gameplayNetworkManagerObject == null)
             gameplayNetworkManagerObject = FindObjectOfType<GameplayNetworkManager>()?.gameObject;
 
@@ -27,6 +30,7 @@ public class GameModeManager : MonoBehaviour
             useMultiplayer = false;
         }
 
+        Debug.Log($"GameModeManager detected useMultiplayer: {useMultiplayer}");
         ApplyGameMode();
     }
 

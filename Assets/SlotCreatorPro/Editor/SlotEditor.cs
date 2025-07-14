@@ -328,10 +328,10 @@ public class SlotEditor : Editor
 		showAddRemoveReelCount();
 		slot.reelHeight = EditorGUILayout.IntSlider(new GUIContent("Symbol Height", SlotHelp.SYMBOL_HEIGHT), slot.reelHeight, 3, 20);
 		slot.reelIndent = EditorGUILayout.IntSlider(new GUIContent("Vertical Indent", SlotHelp.VERTICAL_INDENT), slot.reelIndent, 0, Mathf.RoundToInt((slot.reelHeight - 1) / 2));
-		
+
 		// Slot Configuration dropdown for server communication
-		slot.slotConfiguration = (SlotConfiguration)EditorGUILayout.EnumPopup(new GUIContent("Slot Scene/Theme", "Scene name sent to server - server calculates layout: FUSHINGHOA=5x9, OLYMPAS=6x8, KRAKENQUEEN=5x8"), slot.slotConfiguration);
-		
+		slot.slotConfiguration = (SlotConfiguration)EditorGUILayout.EnumPopup(new GUIContent("Slot Scene/Theme", "Scene name sent to server - server calculates layout: FushinGhoa=5x9, Olympus=6x8, KrakenQueen=5x8, BeachDay=5x8, FongSheng=5x8"), slot.slotConfiguration);
+
 		slot.horizontalReelPaddingPercent = EditorGUILayout.FloatField(new GUIContent("Reel Padding %", SlotHelp.REEL_PADDING), slot.horizontalReelPaddingPercent);
 		slot.verticalSymbolPaddingPercent = EditorGUILayout.FloatField(new GUIContent("Symbol Padding %", SlotHelp.SYMBOL_PADDING), slot.verticalSymbolPaddingPercent);
 		EditorGUI.indentLevel--;

@@ -134,28 +134,47 @@ public class SlotReel : MonoBehaviour
 		}
 	}
 
-	// ✅ NEW METHOD: Create reels after server data is received
 	public void createReelSymbolsFromServer()
 	{
 		if (slot.IsMultiplayer && serverSymbolData.Count > 0)
 		{
-			Debug.Log($"Creating {serverSymbolData.Count} reel symbols from server data for reel {reelIndex}");
+			Debug.LogWarning($"[REEL {reelIndex}] ================================");
+			Debug.LogWarning($"[REEL {reelIndex}] createReelSymbolsFromServer() CALLED");
+			Debug.LogWarning($"[REEL {reelIndex}] Call stack: {System.Environment.StackTrace}");
+			Debug.LogWarning($"[REEL {reelIndex}] ================================");
+			
+			Debug.Log($"[REEL {reelIndex}] createReelSymbolsFromServer: Creating {serverSymbolData.Count} symbols");
+			Debug.Log($"[REEL {reelIndex}] slot.reelHeight: {slot.reelHeight}, slot.useSuppliedResult: {slot.useSuppliedResult}");
+			Debug.Log($"[REEL {reelIndex}] Current symbols.Count before creation: {symbols.Count}");
+			
+			// Check if reel already has symbols
+			if (symbols.Count > 0)
+			{
+				Debug.LogError($"[REEL {reelIndex}] WARNING: Reel already has {symbols.Count} symbols! This may cause duplication.");
+			}
+			
 			if (!slot.useSuppliedResult)
 			{
+				Debug.Log($"[REEL {reelIndex}] Using createSymbol() path (useSuppliedResult = false)");
 				// Create symbols based on server data count, not client's hardcoded reelHeight
 				for (int i = 0; i < serverSymbolData.Count; i++)
 				{
+					Debug.Log($"[REEL {reelIndex}] Creating symbol {i+1}/{serverSymbolData.Count} using createSymbol()");
 					createSymbol(i);
 				}
 			}
 			else
 			{
+				Debug.Log($"[REEL {reelIndex}] Using createReelSymbolStartup() path (useSuppliedResult = true)");
 				// Use server data count instead of slot.reelHeight
 				for (int i = 0; i < serverSymbolData.Count; i++)
 				{
+					Debug.Log($"[REEL {reelIndex}] Creating symbol {i+1}/{serverSymbolData.Count} using createReelSymbolStartup()");
 					createReelSymbolStartup(i);
 				}
 			}
+			
+			Debug.Log($"[REEL {reelIndex}] Final symbols.Count after creation: {symbols.Count}");
 		}
 		else
 		{
@@ -175,6 +194,18 @@ public class SlotReel : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			slot.log("Setting server symbol data for reel " + reelIndex + ": " + symbolData.Count + " symbols");
+			
+			// Debug: Log the actual symbol data received
+			string symbolDataStr = string.Join(", ", symbolData.Select(x => x.ToString()).ToArray());
+			Debug.Log($"[DEBUG] Reel {reelIndex} received symbol data: [{symbolDataStr}]");
+			Debug.Log($"[DEBUG] Expected symbols per reel: 9, Actual received: {symbolData.Count}");
+			
+			// Check if we're receiving all reel data instead of just this reel's data
+			if (symbolData.Count > 20) // If more than 20 symbols, likely all reels combined
+			{
+				Debug.LogError($"[ERROR] Reel {reelIndex} received {symbolData.Count} symbols - this looks like all reel data combined!");
+			}
+			
 			serverSymbolData.Clear();
 			serverSymbolData.AddRange(symbolData);
 			serverSymbolIndex = 0;
@@ -194,6 +225,31 @@ public class SlotReel : MonoBehaviour
 		{
 			createSymbol(i);
 		}
+		DebugLogReelSymbols();
+	}
+	void DebugLogReelSymbols()
+	{
+		if (slot.IsMultiplayer) return; // Skip in multiplayer mode
+
+		List<int> symbolIndices = new List<int>();
+		foreach (GameObject symbol in symbols)
+		{
+			SlotSymbol slotSymbol = symbol.GetComponent<SlotSymbol>();
+			if (slotSymbol != null)
+			{
+				symbolIndices.Add(slotSymbol.symbolIndex);
+			}
+		}
+
+		// Reverse to show top-to-bottom order
+		symbolIndices.Reverse();
+
+		// Format to match server output style
+		Debug.Log(string.Format("<X> {0} INFO [SlotClient] Extensions - {{SlotClient}}: Reel {1}: [{2}]",
+			System.DateTime.Now.ToString("HH:mm:ss,fff"),
+			reelIndex,
+			string.Join(", ", symbolIndices.Select(x => x.ToString()).ToArray())
+		));
 	}
 
 	//--- SINGLE-PLAYER LOCAL CODE START ---

@@ -16,11 +16,10 @@ using System.Linq;
 public enum SlotConfiguration
 {
 	FUSHINGHOA,  // 5x9 configuration
-	OLYMPAS,     // 6x8 configuration  
+	OLYMPUS,     // 6x8 configuration  
 	KRAKENQUEEN, // 5x8 configuration
 	BEACHDAYS,   // 5x8 configuration
 	FONGSHENG,   // 5x8 configuration
-	CUSTOM       // Uses numberOfReels and reelHeight values
 }
 
 
@@ -1169,24 +1168,10 @@ public class Slot : MonoBehaviour
 			OnSpinInsufficentCredits();
 	}
 
-	/// <summary>
-	/// Gets the scene name string for server communication
-	/// Server will calculate layout configuration based on scene name
-	/// </summary>
-	/// <returns>Scene name string (e.g., "FUSHINGHOA", "OLYMPAS")</returns>
-	public string GetReelConfigurationString()
+
+	public SlotConfiguration GetReelConfigurationString()
 	{
-		if (slotConfiguration == SlotConfiguration.CUSTOM)
-		{
-			// For CUSTOM, calculate based on numberOfReels and reelHeight
-			int visibleRows = reelHeight - (reelIndent * 2);
-			return $"{GetNumberText(numberOfReels)}_BY_{GetNumberText(visibleRows)}";
-		}
-		else
-		{
-			// Return the scene name enum value as string
-			return slotConfiguration.ToString();
-		}
+		return slotConfiguration;
 	}
 
 	/// <summary>

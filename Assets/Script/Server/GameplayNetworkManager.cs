@@ -43,12 +43,11 @@ public class GameplayNetworkManager : MonoBehaviour
     {
         Debug.Log($"GameplayNetworkManager Start() called on {gameObject.name} - Instance: {GetInstanceID()}");
         Debug.Log($"Stack trace: {System.Environment.StackTrace}");
-        
+
         // For slot games, send the configured slot layout
         if (_gameRoom == "slot" && currentSlot != null)
         {
-            string reelConfig = currentSlot.GetReelConfigurationString();
-            Debug.Log($"Joining slot room with configuration: {reelConfig}");
+            SlotConfiguration reelConfig = currentSlot.GetReelConfigurationString();
             GlobalManager.Instance.RequestJoinRoom(_gameRoom, reelConfig);
         }
         else
@@ -597,7 +596,7 @@ public class GameplayNetworkManager : MonoBehaviour
         win.paid = winObj.GetInt("winAmount");
         win.matches = winObj.GetInt("matches");
         win.setIndex = winObj.GetInt("symbolIndex");
-        
+
         // Generate basic readout without symbol name (client has symbol mapping)
         win.readout = $"LINE {win.lineNumber + 1} PAYS {win.paid}";
 
@@ -614,7 +613,7 @@ public class GameplayNetworkManager : MonoBehaviour
         win.paid = scatterObj.GetInt("winAmount");
         win.matches = scatterObj.GetInt("scatterCount");
         win.setIndex = scatterObj.GetInt("symbolIndex");
-        
+
         // Generate basic readout without symbol name
         win.readout = $"{win.matches} SCATTERS PAY {win.paid}";
 

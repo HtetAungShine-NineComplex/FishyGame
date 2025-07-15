@@ -49,6 +49,11 @@ public class SlotReel : MonoBehaviour
 	// MULTIPLAYER: Server-provided symbol data for this reel
 	private List<int> serverSymbolData = new List<int>();
 	private int serverSymbolIndex = 0;
+	
+	// MULTIPLAYER: Symbol buffer for smooth animation
+	private List<int> symbolBuffer = new List<int>();
+	private int bufferSize = 50; // Buffer size for smooth animation
+	private bool isBuffering = false;
 	//--- MULTIPLAYER SERVER CODE END ---
 
 	#region Config
@@ -177,11 +182,42 @@ public class SlotReel : MonoBehaviour
 			serverSymbolData.Clear();
 			serverSymbolData.AddRange(symbolData);
 			serverSymbolIndex = 0;
+			
+			// MULTIPLAYER: Pre-fill symbol buffer for smooth animation
+			fillSymbolBuffer();
 		}
 		else
 		{
 			slot.log("Ignoring server symbol data in single-player mode for reel " + reelIndex);
 		}
+		//--- MULTIPLAYER SERVER CODE END ---
+	}
+	
+	/// <summary>
+	/// MULTIPLAYER: Fills the symbol buffer with server data and fallback symbols
+	/// </summary>
+	private void fillSymbolBuffer()
+	{
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (!slot.IsMultiplayer) return;
+		
+		symbolBuffer.Clear();
+		
+		// Add server symbols to buffer
+		for (int i = 0; i < serverSymbolData.Count; i++)
+		{
+			symbolBuffer.Add(serverSymbolData[i]);
+		}
+		
+		// Fill remaining buffer with fallback symbols to prevent stuttering
+		while (symbolBuffer.Count < bufferSize)
+		{
+			// Use a weighted random selection of available symbols as fallback
+			int fallbackSymbol = UnityEngine.Random.Range(0, Mathf.Min(slot.symbolPrefabs.Count, 5));
+			symbolBuffer.Add(fallbackSymbol);
+		}
+		
+		isBuffering = false;
 		//--- MULTIPLAYER SERVER CODE END ---
 	}
 	#endregion
@@ -238,19 +274,25 @@ public class SlotReel : MonoBehaviour
 		//--- MULTIPLAYER SERVER CODE START ---
 		if (slot.IsMultiplayer)
 		{
-			// MULTIPLAYER: Use server-provided symbol data
-			if (serverSymbolData.Count > 0 && serverSymbolIndex < serverSymbolData.Count)
+			// MULTIPLAYER: Use buffered symbols for smooth animation
+			if (symbolBuffer.Count > 0 && serverSymbolIndex < symbolBuffer.Count)
 			{
-				int serverSymbol = serverSymbolData[serverSymbolIndex];
+				int bufferSymbol = symbolBuffer[serverSymbolIndex];
 				serverSymbolIndex++;
-				lastSelected = serverSymbol;
-				return serverSymbol;
+				lastSelected = bufferSymbol;
+				return bufferSymbol;
 			}
 			else
 			{
-				// MULTIPLAYER: No server data available yet, use fallback symbol
-				// This happens during initial reel creation before server response
-				return 0; // Return default symbol (index 0) as fallback
+				// MULTIPLAYER: Buffer depleted, use weighted fallback
+				if (!isBuffering)
+				{
+					isBuffering = true;
+					fillSymbolBuffer(); // Refill buffer asynchronously
+				}
+				int fallbackSymbol = UnityEngine.Random.Range(0, Mathf.Min(slot.symbolPrefabs.Count, 3));
+				lastSelected = fallbackSymbol;
+				return fallbackSymbol;
 			}
 		}
 		//--- MULTIPLAYER SERVER CODE END ---
@@ -447,7 +489,9 @@ public class SlotReel : MonoBehaviour
 		speed = slot.spinningSpeed;
 
 		symbolsSpinRemaining = (int)(spinTime / speed);
-		transform.DOLocalMoveY(-symbolHeight, speed).OnComplete(OnNextSymbol).SetRelative(true).SetEase(Ease.InOutBounce);
+		// MULTIPLAYER: Use consistent easing for smooth animation
+		Ease spinEase = slot.IsMultiplayer ? Ease.Linear : Ease.InOutBounce;
+		transform.DOLocalMoveY(-symbolHeight, speed).OnComplete(OnNextSymbol).SetRelative(true).SetEase(spinEase);
 	}
 
 	public void snapReel()
@@ -533,20 +577,17 @@ public class SlotReel : MonoBehaviour
 
 		if (stopped)
 		{
-			transform.DOLocalMoveY(-symbolHeight - symbolPadding, slot.easeOutTime).SetRelative(true).OnComplete(OnReelStopped).SetEase(slot.reelEase);
+			// MULTIPLAYER: Use smoother easing for reel stop
+			Ease stopEase = slot.IsMultiplayer ? Ease.OutQuad : slot.reelEase;
+			transform.DOLocalMoveY(-symbolHeight - symbolPadding, slot.easeOutTime).SetRelative(true).OnComplete(OnReelStopped).SetEase(stopEase);
 			Invoke("checkScatterLanded", slot.easeOutTime / 2.0f);
 			slot.reelLanded(reelIndex);
 		}
 		else
 		{
-			if (anticipation)
-			{
-				transform.DOLocalMoveY(-symbolHeight - symbolPadding, speed / 2.0f).SetRelative(true).OnComplete(OnNextSymbol).SetEase(Ease.Linear);
-			}
-			else
-			{
-				transform.DOLocalMoveY(-symbolHeight - symbolPadding, speed).SetRelative(true).OnComplete(OnNextSymbol).SetEase(Ease.Linear);
-			}
+			// MULTIPLAYER: Ensure consistent animation speed
+			float animSpeed = anticipation ? speed / 2.0f : speed;
+			transform.DOLocalMoveY(-symbolHeight - symbolPadding, animSpeed).SetRelative(true).OnComplete(OnNextSymbol).SetEase(Ease.Linear);
 		}
 	}
 

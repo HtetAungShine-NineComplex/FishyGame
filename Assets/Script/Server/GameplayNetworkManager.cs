@@ -497,7 +497,7 @@ public class GameplayNetworkManager : MonoBehaviour
             Debug.Log($"Bet deducted: amount={betAmount}, newBalance={newBalance}");
 
             // Animate balance decrease
-            currentSlot.refs.credits.animateBalanceDecrease((int)newBalance);
+            currentSlot.refs.credits.balanceDecrease((int)newBalance);
 
             // Note: Reel spinning animation will start when spin results arrive in OnSpinResult
         }

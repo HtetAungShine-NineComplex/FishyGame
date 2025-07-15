@@ -191,7 +191,7 @@ public class SlotCredits : MonoBehaviour
 	/// <summary>
 	/// MULTIPLAYER: Immediately update balance after bet deduction (no animation)
 	/// </summary>
-	public void animateBalanceDecrease(int newBalance)
+	public void balanceDecrease(int newBalance)
 	{
 		if (slot == null)
 			slot = GetComponent<Slot>();
@@ -200,14 +200,14 @@ public class SlotCredits : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			Debug.Log($"[SlotCredits] Immediately updating balance from {credits} to {newBalance}");
-			
+
 			// Stop any existing animation
 			finishCreditCount();
-			
+
 			// Update balance immediately without animation
 			credits = newBalance;
 			updateUI();
-			
+
 			Debug.Log($"[SlotCredits] Balance updated immediately: {credits}");
 		}
 		else
@@ -228,7 +228,7 @@ public class SlotCredits : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			Debug.Log($"[SlotCredits] Processing win: {winAmount}, final balance: {finalBalance}");
-			
+
 			if (winAmount > 0)
 			{
 				// Show win amount in BeachDaysGUI.won text field
@@ -242,22 +242,24 @@ public class SlotCredits : MonoBehaviour
 				{
 					Debug.LogWarning("[SlotCredits] No BeachDaysGUI found to display win amount");
 				}
-				
+
 				// Store win amount
 				lastWin = winAmount;
-				
+
 				// Animate balance increase from current to final
 				float animationTime = Mathf.Clamp(winAmount * 0.0001f, 1.0f, 3.0f);
 				creditsTween = DOTween.To(() => this.credits, x => this.credits = x, finalBalance, animationTime)
-					.OnUpdate(() => {
+					.OnUpdate(() =>
+					{
 						// Update UI during animation to show smooth balance increase
 						updateUI();
 					})
-					.OnComplete(() => {
+					.OnComplete(() =>
+					{
 						Debug.Log($"[SlotCredits] Win animation completed: {credits}");
 						updateUI();
 					});
-				
+
 				// Trigger win display UI callbacks
 				slot.beginCreditWinCountOff(winAmount);
 			}
@@ -266,7 +268,7 @@ public class SlotCredits : MonoBehaviour
 				// No win, just update balance immediately
 				credits = finalBalance;
 				updateUI();
-				
+
 				// Clear win display
 				BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
 				if (gui != null)

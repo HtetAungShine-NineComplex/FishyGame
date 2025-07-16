@@ -1178,13 +1178,13 @@ public class Slot : MonoBehaviour
 			{
 				// MULTIPLAYER: Show results immediately for testing
 				log($"TESTING: Showing results directly - winAmount: {pendingWinAmount}, finalBalance: {pendingFinalBalance}");
-				
+
 				// TESTING: Display results immediately without reel animation
 				calculateWins();
-				
+
 				// Start win text tween animation
 				refs.credits.animateWinAndBalanceIncrease(pendingWinAmount, pendingFinalBalance);
-				
+
 				// Clear pending values
 				pendingWinAmount = 0;
 				pendingFinalBalance = 0;
@@ -1311,10 +1311,10 @@ public class Slot : MonoBehaviour
 
 		// Store server results but don't apply them immediately - wait for minimum animation time
 		pendingServerResults = reelResults;
-		
+
 		// Start visual reel spinning animation directly (without server communication)
 		StartVisualReelAnimation();
-		
+
 		// Schedule the results to be applied after minimum animation time
 		float minAnimationTime = spinTime + (spinTimeIncPerReel * (reels.Count - 1)) + 1.0f; // Add 1 second buffer
 		StartCoroutine(ApplyServerResultsAfterDelay(minAnimationTime));
@@ -1326,14 +1326,14 @@ public class Slot : MonoBehaviour
 	private void StartVisualReelAnimation()
 	{
 		log("Starting visual reel animation for constant duration");
-		
+
 		// Show "Good Luck" in win text during reel animation
 		BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
 		if (gui != null)
 		{
 			gui.showGoodLuck();
 		}
-		
+
 		// Trigger spin begin callback
 		if (OnSpinBegin != null)
 			OnSpinBegin(GetComponent<SlotWins>().currentWin);
@@ -1357,29 +1357,29 @@ public class Slot : MonoBehaviour
 	{
 		log($"Waiting {delay} seconds before applying server results...");
 		yield return new WaitForSeconds(delay);
-		
+
 		if (pendingServerResults != null)
 		{
 			log("Applying server results after minimum animation time");
-			
+
 			// Clear "Good Luck" text first
 			BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
 			if (gui != null)
 			{
 				gui.clearWinDisplay();
 			}
-			
+
 			// Now apply the server results
 			suppliedResult = pendingServerResults;
 			useSuppliedResult = true;
 			waitingForResult = false;
-			
+
 			// Clear pending results
 			pendingServerResults = null;
-			
+
 			// Force reels to stop and show results
 			snap();
-			
+
 			// After results are shown, display win amount if player won
 			if (pendingWinAmount > 0)
 			{

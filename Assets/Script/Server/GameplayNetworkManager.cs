@@ -97,10 +97,6 @@ public class GameplayNetworkManager : MonoBehaviour
                 OnJoinRoomResponse(sfsobject);
                 break;
 
-            case "slotGameState":
-                OnSlotGameState(sfsobject);
-                break;
-
             case "betDeducted":
                 OnBetDeducted(sfsobject);
                 break;
@@ -458,30 +454,6 @@ public class GameplayNetworkManager : MonoBehaviour
         return currentSessionToken;
     }
 
-    private void OnSlotGameState(ISFSObject data)
-    {
-        if (!isSlotGameActive || currentSlot == null) return;
-
-        try
-        {
-            long balance = data.GetLong("balance");
-            int betPerLine = data.GetInt("betPerLine");
-            int linesPlayed = data.GetInt("linesPlayed");
-
-            Debug.Log($"Received slot game state: balance={balance}, bet={betPerLine}, lines={linesPlayed}");
-
-            Debug.Log("User Offline Credits: " + currentSlot.refs.credits);
-            // Update slot with server state
-            currentSlot.refs.credits.updateCreditsFromServer((int)balance);
-            currentSlot.refs.credits.betPerLine = betPerLine;
-            currentSlot.refs.credits.linesPlayed = linesPlayed;
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("Error processing slot game state: " + e.Message);
-        }
-    }
-
     private void OnBetDeducted(ISFSObject data)
     {
         if (!isSlotGameActive || currentSlot == null) return;
@@ -536,6 +508,22 @@ public class GameplayNetworkManager : MonoBehaviour
                 // Extract win amount and final balance for animations
                 long winAmount = dataObj.GetLong("winAmount");
                 long finalBalance = dataObj.GetLong("finalBalance");
+
+                // Win/Loss logging for current round
+                int currentBet = currentSlot.GetComponent<SlotCredits>().totalBet();
+                bool isWin = winAmount > 0;
+
+                if (isWin)
+                {
+                    float winMultiplier = (float)winAmount / currentBet;
+                    Debug.Log($"ROUND RESULT: WIN - Bet: {currentBet} | Won: {winAmount} | Multiplier: {winMultiplier:F2}x | " +
+                             $"Profit: +{winAmount - currentBet} | New Balance: {finalBalance}");
+                }
+                else
+                {
+                    Debug.Log($"ROUND RESULT: LOSS - Bet: {currentBet} | Won: 0 | Loss: -{currentBet} | " +
+                             $"New Balance: {finalBalance}");
+                }
 
                 // Convert server data to client format
                 int[,] reelResults = ConvertServerReelResults(dataObj);
@@ -876,6 +864,7 @@ public class GameplayNetworkManager : MonoBehaviour
     {
         if (IsSlotGameReady())
         {
+            Debug.Log($"HANDLE SLOT SPIN:: BetPerLIne:: {betPerLine} LinesPlayed:: {linesPlayed} <<>>");
             SendSlotSpinRequest(betPerLine, linesPlayed, freeSpin);
         }
         else

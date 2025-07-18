@@ -55,7 +55,7 @@ public class BeachDaysGUI : MonoBehaviour
 					winReadout.text = "";
 				else
 					winReadout.text = slot.refs.wins.currentWin.readout.ToString();
-				
+
 				// Only update won display if not showing multiplayer win
 				if (!slot.IsMultiplayer || !isShowingMultiplayerWin)
 				{
@@ -131,7 +131,7 @@ public class BeachDaysGUI : MonoBehaviour
 		//--- SINGLE-PLAYER LOCAL CODE END ---
 		//--- SHARED CODE (BOTH MODES) ---
 		credits.text = slot.refs.credits.totalCreditsReadout().ToString();
-		Debug.Log($"[BeachDaysGUI] Updated credits display to: {credits.text}");
+		// Debug.Log($"[BeachDaysGUI] Updated credits display to: {credits.text}");
 	}
 	void updateLines()
 	{
@@ -210,7 +210,6 @@ public class BeachDaysGUI : MonoBehaviour
 	{
 		won.text = "GOOD LUCK!";
 		isShowingMultiplayerWin = true; // Prevent Update method from overriding
-		Debug.Log("[BeachDaysGUI] Showing Good Luck message");
 	}
 	//--- MULTIPLAYER SERVER CODE END ---
 }

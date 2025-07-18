@@ -180,7 +180,7 @@ public class SlotCredits : MonoBehaviour
 		BeachDaysGUI gui = FindObjectOfType<BeachDaysGUI>();
 		if (gui != null)
 		{
-			Debug.Log("[SlotCredits] Found BeachDaysGUI, calling updateCredits()");
+			// Debug.Log("[SlotCredits] Found BeachDaysGUI, calling updateCredits()");
 			gui.updateCredits();
 		}
 		else
@@ -199,7 +199,7 @@ public class SlotCredits : MonoBehaviour
 		// Only update in multiplayer mode
 		if (slot.IsMultiplayer)
 		{
-			Debug.Log($"[SlotCredits] Immediately updating balance from {credits} to {newBalance}");
+			// Debug.Log($"[SlotCredits] Immediately updating balance from {credits} to {newBalance}");
 
 			// Stop any existing animation
 			finishCreditCount();
@@ -208,7 +208,7 @@ public class SlotCredits : MonoBehaviour
 			credits = newBalance;
 			updateUI();
 
-			Debug.Log($"[SlotCredits] Balance updated immediately: {credits}");
+			// Debug.Log($"[SlotCredits] Balance updated immediately: {credits}");
 		}
 		else
 		{

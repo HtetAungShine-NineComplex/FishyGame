@@ -70,10 +70,6 @@ public class GameplayNetworkManager : MonoBehaviour
 
         switch (cmd)
         {
-            case "errorResponse":
-                Debug.LogError("SPIN ERROR: " + sfsobject.GetDump());
-                break;
-
             // Existing fishing game commands
             case "roomPlayerList":
                 OnRoomPlayerList(sfsobject);
@@ -92,6 +88,10 @@ public class GameplayNetworkManager : MonoBehaviour
                 break;
 
             // New slot game commands
+
+            case "errorResponse":
+                Debug.LogError("SPIN ERROR: " + sfsobject.GetDump());
+                break;
 
             case "joinRoomResponse":
                 OnJoinRoomResponse(sfsobject);
@@ -263,7 +263,7 @@ public class GameplayNetworkManager : MonoBehaviour
 
         // Send request via GlobalManager
         GlobalManager.Instance.SendToExtension("SPIN_REQUEST", requestData);
-        Debug.Log($"Sent slot spin request: bet={betPerLine}, lines={linesPlayed}, freeSpin={freeSpin}");
+        // Debug.Log($"Sent slot spin request: bet={betPerLine}, lines={linesPlayed}, freeSpin={freeSpin}");
     }
 
     // Send bet change request to server
@@ -460,13 +460,13 @@ public class GameplayNetworkManager : MonoBehaviour
 
         try
         {
-            Debug.Log("OnBetDeducted received - processing bet deduction");
-            Debug.Log("Bet deduction response: " + data.GetDump());
+            // Debug.Log("OnBetDeducted received - processing bet deduction");
+            // Debug.Log("Bet deduction response: " + data.GetDump());
 
             int betAmount = data.GetInt("betAmount");
             long newBalance = data.GetLong("newBalance");
 
-            Debug.Log($"Bet deducted: amount={betAmount}, newBalance={newBalance}");
+            // Debug.Log($"Bet deducted: amount={betAmount}, newBalance={newBalance}");
 
             // Animate balance decrease
             currentSlot.refs.credits.balanceDecrease((int)newBalance);
@@ -488,7 +488,7 @@ public class GameplayNetworkManager : MonoBehaviour
         {
             try
             {
-                Debug.Log("OnSpinResult received - processing server spin data");
+                // Debug.Log("OnSpinResult received - processing server spin data");
                 Debug.Log("Full response: " + data.GetDump());
 
                 // Check if data object exists
@@ -529,7 +529,7 @@ public class GameplayNetworkManager : MonoBehaviour
                 int[,] reelResults = ConvertServerReelResults(dataObj);
                 List<SlotWinData> winData = ConvertServerWinData(dataObj);
 
-                Debug.Log($"Converted spin result: winAmount={winAmount}, finalBalance={finalBalance}, wins={winData.Count}");
+                // Debug.Log($"Converted spin result: winAmount={winAmount}, finalBalance={finalBalance}, wins={winData.Count}");
 
                 // Use existing spin method with server-supplied results
                 currentSlot.spinWithServerResult(reelResults, winData, (int)winAmount, (int)finalBalance);

@@ -120,17 +120,177 @@ The `IsMultiplayer` flag is the central mechanism that determines whether the sl
 
 ---
 
-### 4. **GameplayNetworkManager.cs** - Network Communication
+### 4. **GameplayNetworkManager.cs** - Network Communication Hub
 **Location**: `/Assets/Script/Server/GameplayNetworkManager.cs`
 
-#### Functions Using IsMultiplayer:
+**Purpose**: Central network communication manager handling all client-server slot game interactions, message routing, and data processing.
 
-- **`OnJoinRoomResponse()`** (Line 339) - Handles multiplayer room joining:
-  - Processes initial board state from server if `IsMultiplayer` is true
-  - Sets up initial balance and reel positions
-- **`HandleSlotSpin()`** (Line 515) - Sends spin request to server:
-  - Only executes if `IsMultiplayer` is true
-  - Sends bet amount and line count to SmartFoxServer
+#### **Key Slot Game Variables:**
+- **`public Slot currentSlot`** (Line 19) - Reference to active slot machine instance
+- **`public bool isSlotGameActive`** (Line 20) - Flag indicating slot game state
+- **`private string currentSessionToken`** (Line 16) - Server session authentication token
+
+#### **Core Initialization & Setup:**
+
+- **`Awake()`** (Line 22-40) - Component initialization:
+  - Subscribes to `GlobalManager.ExtensionResponse` event for server messages
+  - Auto-finds slot instance if not manually assigned: `FindObjectOfType<Slot>()`
+  - Sets up network event handlers
+
+- **`Start()`** (Line 42-57) - Game session startup:
+  - Sends slot configuration to server on room join
+  - Calls `currentSlot.GetReelConfigurationString()` for server setup
+  - Initiates room join request via `GlobalManager.RequestJoinRoom()`
+
+#### **Message Routing & Command Processing:**
+
+- **`OnExtensionResponse()`** (Line 66-144) - Central message dispatcher:
+  - Routes 10+ slot-specific server commands to appropriate handlers
+  - **Slot Commands Handled**:
+    - `"joinRoomResponse"` → Room joining confirmation
+    - `"betDeducted"` → Balance deduction confirmation  
+    - `"spinResult"` → Main spin results from server
+    - `"slotSpinResponse"` → Alternative spin response format
+    - `"slotBetChangeResponse"` → Bet change confirmations
+    - `"slotCreditUpdate"` → Balance update notifications
+    - `"slotError"` → Server error handling
+    - `"FREE_SPINS_AWARDED"` → Free spins notifications
+    - `"JACKPOT_AWARDED"` → Jackpot win notifications
+    - `"JACKPOT_WON_BROADCAST"` → Multi-player jackpot announcements
+
+#### **Client-to-Server Communication:**
+
+- **`SendSlotSpinRequest()`** (Line 256-281) - Main spin request sender:
+  - Validates game state and session token
+  - Packages bet parameters: `betPerLine`, `linesPlayed`, `freeSpin` flag
+  - Sends `"SPIN_REQUEST"` action to server via `GlobalManager.SendToExtension()`
+  - Includes session authentication for security
+
+- **`SendSlotBetChangeRequest()`** (Line 284-305) - Bet modification requests:
+  - Sends `"SET_BET"` action with new betting parameters
+  - Server validates and confirms changes
+
+- **`HandleSlotSpin()`** (Line 999-1010) - Public interface for slot spinning:
+  - Checks readiness with `IsSlotGameReady()`
+  - Called by slot machine UI buttons
+  - **Used only when `IsMultiplayer = true`**
+
+- **`HandleSlotBetChange()`** (Line 1012-1022) - Public interface for bet changes:
+  - **Used only when `IsMultiplayer = true`**
+
+#### **Server-to-Client Message Handlers:**
+
+- **`OnJoinRoomResponse()`** (Line 318-399) - Room joining and initialization:
+  - Extracts session token for authentication
+  - Updates slot credits with server balance: `currentSlot.refs.credits.updateCreditsFromServer()`
+  - **Processes initial board state when `IsMultiplayer = true`**:
+    - Parses `initialBoard` array from server
+    - Distributes symbols to reels via `DistributeInitialBoardToReels()`
+    - Sets `currentSlot.suppliedResult` and `useSuppliedResult = true`
+
+- **`OnBetDeducted()`** (Line 471-495) - Balance deduction confirmation:
+  - Animates balance decrease: `currentSlot.refs.credits.balanceDecrease()`
+  - Confirms bet was successfully processed on server
+
+- **`OnSpinResult()`** (Line 497-557) - **Primary spin result processor**:
+  - **Only processes when `IsMultiplayer = true`**
+  - Extracts win amount and final balance from server response
+  - Logs detailed win/loss information with multipliers
+  - Converts server data to client format via `ConvertServerReelResults()` and `ConvertServerWinData()`
+  - Triggers slot animation: `currentSlot.spinWithServerResult()`
+
+- **`OnSlotSpinResponse()`** (Line 685-712) - Alternative spin response handler:
+  - Parses reel results and win data
+  - Calls `ProcessSlotSpinResponse()` for final processing
+
+- **`OnSlotBetChangeResponse()`** (Line 715-744) - Bet change confirmations:
+  - Updates local display with confirmed bet values
+  - Handles server rejection with error messages
+
+- **`OnSlotCreditUpdate()`** (Line 747-764) - Balance update notifications:
+  - Processes balance changes from server events
+  - Updates local display via `currentSlot.refs.credits.updateCreditsFromServer()`
+
+- **`OnSlotError()`** (Line 767-798) - Server error handling:
+  - Processes different error types: `"INSUFFICIENT_CREDITS"`, `"INVALID_BET"`
+  - Triggers appropriate client responses via `currentSlot.TriggerInsufficientCreditsEvent()`
+
+#### **New Feature Handlers (2024):**
+
+- **`OnFreeSpinsAwarded()`** (Line 800-821) - Free spins notifications:
+  - Logs free spin awards with spin count information
+  - **Extension point**: Add custom UI celebrations here
+
+- **`OnJackpotAwarded()`** (Line 823-845) - Personal jackpot wins:
+  - Logs jackpot amount and new balance
+  - **Extension point**: Add jackpot celebration UI here
+
+- **`OnJackpotWonBroadcast()`** (Line 847-868) - Multi-player jackpot announcements:
+  - Notifies all players when someone wins jackpot
+  - **Extension point**: Add spectator notification UI here
+
+#### **Data Processing & Conversion:**
+
+- **`ParseReelResults()`** (Line 871-921) - **Core reel data parser**:
+  - Converts server `ISFSArray` to client `int[,]` format
+  - Handles variable reel counts and symbol counts
+  - Comprehensive error handling for malformed server data
+
+- **`ConvertServerReelResults()`** (Line 560-564) - Reel result converter:
+  - Uses `ParseReelResults()` for server spin data
+
+- **`ConvertServerWinData()`** (Line 567-590) - Win data aggregator:
+  - Combines win lines and scatter wins from server
+  - Returns unified `List<SlotWinData>` for client processing
+
+- **`ConvertWinLineToSlotWinData()`** (Line 593-616) - Win line converter:
+  - Maps server win objects to client `SlotWinData` format
+  - Handles payline position mapping for symbol highlighting
+
+- **`GetSymbolsFromPaylinePositions()`** (Line 619-659) - **Symbol highlighting mapper**:
+  - Converts server payline positions to client `GameObject` references
+  - Enables accurate win line animations and symbol highlighting
+  - Validates reel and symbol indices for safety
+
+- **`ConvertScatterToSlotWinData()`** (Line 662-676) - Scatter win converter:
+  - Handles scatter-specific win data from server
+
+#### **Game State Management:**
+
+- **`SetSlotGameActive()`** (Line 239-246) - Activates slot game mode:
+  - Sets current slot reference and active flag
+  - **Extension point**: Request initial game state
+
+- **`SetSlotGameInactive()`** (Line 248-252) - Deactivates slot game mode:
+  - Cleans up slot references and state
+
+- **`IsSlotGameReady()`** (Line 990-997) - **Readiness validator**:
+  - Checks: game active, slot exists, SFS client connected
+  - Used by all public interface methods for safety
+
+- **`GetCurrentSessionToken()`** (Line 466-469) - Session authentication:
+  - Returns current session token for server requests
+
+#### **Initial Board Setup (Multiplayer):**
+
+- **`DistributeInitialBoardToReels()`** (Line 411-464) - **Initial reel setup**:
+  - **Only used when `IsMultiplayer = true`**
+  - Distributes server-provided initial symbols to each reel
+  - Calls `reel.setServerSymbolData()` and `reel.createReelSymbolsFromServer()`
+  - Triggers payline creation: `slotLines.createPaylinesAfterServerData()`
+
+- **`GetReelSymbols()`** (Line 401-409) - Helper for initial board logging:
+  - Converts server symbol arrays to readable format for debugging
+
+#### **Legacy/Alternative Handlers:**
+
+- **`ParseWinData()`** (Line 924-964) - Alternative win data parser:
+  - Used by `OnSlotSpinResponse()` for different server response format
+  - Maps symbol positions to client GameObjects
+
+- **`ProcessSlotSpinResponse()`** (Line 967-984) - Alternative spin processor:
+  - Updates credits, sets reel results, processes win data
+  - Used by alternative spin response pathway
 
 ---
 
@@ -195,6 +355,55 @@ The `IsMultiplayer` flag is the central mechanism that determines whether the sl
 
 ---
 
+---
+
+## Recent Updates & New Features
+
+### **🎯 Payline Animation Fix (2024)**
+**Issue Resolved**: Payline tween animations now work correctly in multiplayer mode
+- **Problem**: Server win data was being cleared before animations could use it
+- **Solution**: Added `resetStateOnly()` method to preserve server data during animations
+- **Files Updated**: `Slot.cs`, `SlotWins.cs`
+- **Impact**: Multiplayer mode now shows proper winning line animations just like single-player mode
+
+### **🎁 Free Spins Feature**
+**New Feature**: Automatic free spins after reaching configured spin count
+- **How it Works**: Players receive 3 free spins after every 2 spins (configurable)
+- **Server Logic**: `SlotGame.java` - `checkAndAwardFreeSpins()` and `awardFreeSpins()`
+- **Client Logic**: `GameplayNetworkManager.cs` - `OnFreeSpinsAwarded()`
+- **Configuration**: Change `freeSpinAwardAfterSpins` in `SlotConfiguration.java`
+- **Multiplayer Safe**: Free spins don't deduct balance, proper session management
+
+### **🏆 Jackpot Feature**
+**New Feature**: First player to reach spin count wins jackpot
+- **How it Works**: First player to reach 3 spins wins 500,000 coins (configurable)
+- **Server Logic**: `SlotGame.java` - `checkAndAwardJackpot()` and `awardJackpot()`
+- **Client Logic**: `GameplayNetworkManager.cs` - `OnJackpotAwarded()` and `OnJackpotWonBroadcast()`
+- **Configuration**: Change `jackpotTriggerAfterSpins` and `jackpotAwardAmount` in `SlotConfiguration.java`
+- **Multiplayer Features**: 
+  - Only first player wins (prevents duplicate awards)
+  - All players in room see jackpot win notifications
+  - Proper balance management and session tracking
+
+### **⚙️ Configuration Made Easy**
+**File**: `/FishServer/FishyGame/src/game/slot/game/SlotConfiguration.java`
+```java
+// Easy to change for testing:
+public int freeSpinAwardAfterSpins = 2;     // Free spins after X spins
+public int freeSpinAwardCount = 3;          // Number of free spins awarded
+public int jackpotTriggerAfterSpins = 3;    // Jackpot after X spins  
+public long jackpotAwardAmount = 500000;    // Jackpot amount
+```
+
+### **🛠️ Technical Improvements**
+- **Spin Counting Fix**: Free spins now properly increment spin counter
+- **Session Management**: Free spin sessions properly end, balance deduction resumes
+- **Debug Logging**: Comprehensive logging for troubleshooting
+- **Error Handling**: Robust error handling for all new features
+- **State Management**: Proper cleanup of completed sessions
+
+---
+
 ## Summary
 
 **Total Scripts Using IsMultiplayer**: 21+ files
@@ -208,5 +417,7 @@ The `IsMultiplayer` flag is the central mechanism that determines whether the sl
 2. **Clear Separation**: Easy to identify single-player vs multiplayer logic
 3. **Security**: Multiplayer mode ensures server-side validation and fairness
 4. **Flexibility**: Can switch between modes by changing a single boolean flag
+5. **New Features**: Free spins and jackpot work seamlessly in both modes
+6. **Visual Polish**: Payline animations work consistently across all modes
 
-This architecture allows the slot machine to function both as a standalone offline game and as a server-connected multiplayer experience with minimal code duplication.
+This architecture allows the slot machine to function both as a standalone offline game and as a server-connected multiplayer experience with minimal code duplication, now enhanced with engaging player retention features.

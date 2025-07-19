@@ -125,6 +125,18 @@ public class GameplayNetworkManager : MonoBehaviour
                 OnSlotError(sfsobject);
                 break;
 
+            case "FREE_SPINS_AWARDED":
+                OnFreeSpinsAwarded(sfsobject);
+                break;
+
+            case "JACKPOT_AWARDED":
+                OnJackpotAwarded(sfsobject);
+                break;
+
+            case "JACKPOT_WON_BROADCAST":
+                OnJackpotWonBroadcast(sfsobject);
+                break;
+
             default:
                 Debug.LogWarning("Unknown command received: " + cmd);
                 break;
@@ -782,6 +794,76 @@ public class GameplayNetworkManager : MonoBehaviour
         catch (Exception e)
         {
             Debug.LogError("Error processing slot error: " + e.Message);
+        }
+    }
+
+    private void OnFreeSpinsAwarded(ISFSObject data)
+    {
+        try
+        {
+            int freeSpins = data.GetInt("freeSpins");
+            int totalSpins = data.GetInt("totalSpins");
+            string message = data.GetUtfString("message");
+
+            Debug.Log($"[FREE SPINS] {message} (Total spins: {totalSpins})");
+            
+            // Optional: Show UI notification or trigger celebration effects
+            if (currentSlot != null)
+            {
+                // You can add custom UI handling here
+                Debug.Log($"Player received {freeSpins} free spins after {totalSpins} spins!");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error processing free spins award: " + e.Message);
+        }
+    }
+
+    private void OnJackpotAwarded(ISFSObject data)
+    {
+        try
+        {
+            long jackpotAmount = data.GetLong("jackpotAmount");
+            long newBalance = data.GetLong("newBalance");
+            int totalSpins = data.GetInt("totalSpins");
+            string message = data.GetUtfString("message");
+
+            Debug.Log($"[JACKPOT] {message} (New balance: {newBalance}, Total spins: {totalSpins})");
+            
+            // Optional: Show jackpot UI notification or trigger celebration effects
+            if (currentSlot != null)
+            {
+                // You can add custom UI handling here
+                Debug.Log($"JACKPOT WON! Player received {jackpotAmount} coins!");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error processing jackpot award: " + e.Message);
+        }
+    }
+
+    private void OnJackpotWonBroadcast(ISFSObject data)
+    {
+        try
+        {
+            string winnerName = data.GetUtfString("winnerName");
+            long jackpotAmount = data.GetLong("jackpotAmount");
+            string message = data.GetUtfString("message");
+
+            Debug.Log($"[JACKPOT BROADCAST] {message}");
+            
+            // Optional: Show notification that another player won jackpot
+            if (currentSlot != null)
+            {
+                // You can add custom UI handling here
+                Debug.Log($"Player {winnerName} won the jackpot of {jackpotAmount} coins!");
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error processing jackpot broadcast: " + e.Message);
         }
     }
 

@@ -244,7 +244,7 @@ public class GameplayNetworkManager : MonoBehaviour
     public void SendSlotSpinRequest(int betPerLine, int linesPlayed, bool freeSpin = false)
     {
         Debug.Log($"[SendSlotSpinRequest] Called - isSlotGameActive: {isSlotGameActive}, sessionToken exists: {!string.IsNullOrEmpty(currentSessionToken)}");
-        
+
         if (!isSlotGameActive || string.IsNullOrEmpty(currentSessionToken))
         {
             Debug.LogError($"Slot game not active ({isSlotGameActive}) or no valid session token ({!string.IsNullOrEmpty(currentSessionToken)})");
@@ -508,8 +508,8 @@ public class GameplayNetworkManager : MonoBehaviour
                 }
 
                 // Extract win amount and final balance for animations
-                long winAmount = dataObj.GetLong("winAmount");
-                long finalBalance = dataObj.GetLong("finalBalance");
+                long winAmount = dataObj.GetLong("totalWin");
+                long finalBalance = dataObj.GetLong("newBalance");
 
                 // Win/Loss logging for current round
                 int currentBet = currentSlot.GetComponent<SlotCredits>().totalBet();
@@ -518,12 +518,12 @@ public class GameplayNetworkManager : MonoBehaviour
                 if (isWin)
                 {
                     float winMultiplier = (float)winAmount / currentBet;
-                    Debug.Log($"ROUND RESULT: WIN - Bet: {currentBet} | Won: {winAmount} | Multiplier: {winMultiplier:F2}x | " +
+                    Debug.Log($"ROUND RESULT=> WIN - Bet: {currentBet} | Won: {winAmount} | Multiplier: {winMultiplier:F2}x | " +
                              $"Profit: +{winAmount - currentBet} | New Balance: {finalBalance}");
                 }
                 else
                 {
-                    Debug.Log($"ROUND RESULT: LOSS - Bet: {currentBet} | Won: 0 | Loss: -{currentBet} | " +
+                    Debug.Log($"ROUND RESULT=> LOSS - Bet: {currentBet} | Won: 0 | Loss: -{currentBet} | " +
                              $"New Balance: {finalBalance}");
                 }
 

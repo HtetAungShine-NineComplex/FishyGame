@@ -34,7 +34,7 @@ public class SpinButton : MonoBehaviour
 					if (!slot.IsReadyForNewSpinRequest())
 					{
 						button.image.sprite = stopSprite;
-						button.interactable = true; // Keep button clickable for stop/snap functionality
+						button.interactable = false; // Disable button during tween animation in multiplayer
 					}
 					else
 					{
@@ -60,7 +60,7 @@ public class SpinButton : MonoBehaviour
 					if (!slot.IsReadyForNewSpinRequest())
 					{
 						button.image.sprite = stopSprite;
-						button.interactable = true; // Keep button clickable for stop/snap functionality
+						button.interactable = false; // Disable button during tween animation in multiplayer
 					}
 					else
 					{

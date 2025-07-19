@@ -243,9 +243,11 @@ public class GameplayNetworkManager : MonoBehaviour
 
     public void SendSlotSpinRequest(int betPerLine, int linesPlayed, bool freeSpin = false)
     {
+        Debug.Log($"[SendSlotSpinRequest] Called - isSlotGameActive: {isSlotGameActive}, sessionToken exists: {!string.IsNullOrEmpty(currentSessionToken)}");
+        
         if (!isSlotGameActive || string.IsNullOrEmpty(currentSessionToken))
         {
-            Debug.LogError("Slot game not active or no valid session token");
+            Debug.LogError($"Slot game not active ({isSlotGameActive}) or no valid session token ({!string.IsNullOrEmpty(currentSessionToken)})");
             return;
         }
 
@@ -263,7 +265,7 @@ public class GameplayNetworkManager : MonoBehaviour
 
         // Send request via GlobalManager
         GlobalManager.Instance.SendToExtension("SPIN_REQUEST", requestData);
-        // Debug.Log($"Sent slot spin request: bet={betPerLine}, lines={linesPlayed}, freeSpin={freeSpin}");
+        Debug.Log($"[SendSlotSpinRequest] Request sent to server - bet={betPerLine}, lines={linesPlayed}, freeSpin={freeSpin}, sessionToken={currentSessionToken}");
     }
 
     // Send bet change request to server

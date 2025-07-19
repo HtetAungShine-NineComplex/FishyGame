@@ -58,6 +58,14 @@ public class Slot : MonoBehaviour
 	/// MULTIPLAYER: Server results to apply after minimum animation duration
 	/// </summary>
 	private int[,] pendingServerResults = null;
+	
+	/// <summary>
+	/// MULTIPLAYER: Check if client is ready to accept new spin requests
+	/// </summary>
+	public bool IsReadyForNewSpinRequest()
+	{
+		return !IsMultiplayer || pendingServerResults == null;
+	}
 
 	#region Actions
 	/// <summary>
@@ -924,6 +932,7 @@ public class Slot : MonoBehaviour
 					// MULTIPLAYER MODE: Only send spin request if we don't have pending server results
 					if (pendingServerResults == null)
 					{
+						log("[SPIN] No pending results - sending new spin request to server");
 						if (!IsConnectedToServer())
 						{
 							logError("Not connected to SmartFoxServer - multiplayer mode requires server connection");
@@ -935,6 +944,10 @@ public class Slot : MonoBehaviour
 						// Send spin request through network manager to SmartFoxServer
 						networkManager.HandleSlotSpin(refs.credits.betPerLine, refs.credits.linesPlayed, freeSpin);
 						return; // Don't continue with visual animation - wait for server response
+					}
+					else
+					{
+						log("[SPIN] WARNING: Spin called but pendingServerResults is not null - skipping server request");
 					}
 					// If we have pending results, continue with visual animation below
 				}
@@ -1311,6 +1324,7 @@ public class Slot : MonoBehaviour
 
 		// Store server results but don't apply them immediately - wait for minimum animation time
 		pendingServerResults = reelResults;
+		log($"[spinWithServerResult] pendingServerResults SET - player cannot spin again until cleared");
 
 		// Start visual reel spinning animation directly (without server communication)
 		StartVisualReelAnimation();
@@ -1376,6 +1390,7 @@ public class Slot : MonoBehaviour
 
 			// Clear pending results
 			pendingServerResults = null;
+			log("[ApplyServerResultsAfterMinimumAnimation] pendingServerResults CLEARED - player can now spin again");
 
 			// Force reels to stop and show results
 			snap();

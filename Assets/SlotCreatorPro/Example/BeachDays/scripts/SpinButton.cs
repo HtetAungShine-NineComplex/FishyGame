@@ -27,37 +27,53 @@ public class SpinButton : MonoBehaviour
 		switch (slot.state)
 		{
 			case SlotState.playingwins:
-				button.image.sprite = enabledSprite;
-
 				//--- MULTIPLAYER SERVER CODE START ---
 				if (slot.IsMultiplayer)
 				{
-					// MULTIPLAYER: Always enable button, server will validate spin requests
-					button.interactable = true;
+					// MULTIPLAYER: Show stop sprite when waiting for server results, otherwise enable normally
+					if (!slot.IsReadyForNewSpinRequest())
+					{
+						button.image.sprite = stopSprite;
+						button.interactable = true; // Keep button clickable for stop/snap functionality
+					}
+					else
+					{
+						button.image.sprite = enabledSprite;
+						button.interactable = true;
+					}
 				}
 				//--- MULTIPLAYER SERVER CODE END ---
 				//--- SINGLE-PLAYER LOCAL CODE START ---
 				else
 				{
 					// SINGLE-PLAYER: Check local credit validation
+					button.image.sprite = enabledSprite;
 					button.interactable = slot.refs.credits.canPlaceBet();
 				}
 				//--- SINGLE-PLAYER LOCAL CODE END ---
 				break;
 			case SlotState.ready:
-				button.image.sprite = enabledSprite;
-
 				//--- MULTIPLAYER SERVER CODE START ---
 				if (slot.IsMultiplayer)
 				{
-					// MULTIPLAYER: Always enable button, server will validate spin requests
-					button.interactable = true;
+					// MULTIPLAYER: Show stop sprite when waiting for server results, otherwise enable normally
+					if (!slot.IsReadyForNewSpinRequest())
+					{
+						button.image.sprite = stopSprite;
+						button.interactable = true; // Keep button clickable for stop/snap functionality
+					}
+					else
+					{
+						button.image.sprite = enabledSprite;
+						button.interactable = true;
+					}
 				}
 				//--- MULTIPLAYER SERVER CODE END ---
 				//--- SINGLE-PLAYER LOCAL CODE START ---
 				else
 				{
 					// SINGLE-PLAYER: Check local credit validation
+					button.image.sprite = enabledSprite;
 					button.interactable = slot.refs.credits.canPlaceBet();
 				}
 				//--- SINGLE-PLAYER LOCAL CODE END ---

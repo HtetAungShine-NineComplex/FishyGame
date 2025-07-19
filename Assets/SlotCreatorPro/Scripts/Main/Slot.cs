@@ -55,6 +55,16 @@ public class Slot : MonoBehaviour
 	private int pendingFinalBalance = 0;
 
 	/// <summary>
+	/// MULTIPLAYER: Saved win amount for delayed calculateWins call
+	/// </summary>
+	private int savedPendingWinAmount = 0;
+
+	/// <summary>
+	/// MULTIPLAYER: Saved final balance for delayed calculateWins call
+	/// </summary>
+	private int savedPendingFinalBalance = 0;
+
+	/// <summary>
 	/// MULTIPLAYER: Server results to apply after minimum animation duration
 	/// </summary>
 	private int[,] pendingServerResults = null;
@@ -1051,6 +1061,8 @@ public class Slot : MonoBehaviour
 	/// </summary>
 	void calculateWins()
 	{
+		log($"[FLOW] === calculateWins() CALLED === IsMultiplayer: {IsMultiplayer}, pendingWinAmount: {pendingWinAmount}, state: {state}");
+		Debug.Log($"[FLOW] calculateWins: serverWinData.Count = {refs.wins.GetSlotWinData()?.Count ?? 0}");
 		useSuppliedResult = false;
 
 		SlotWinSpin slotWinSpin;
@@ -1059,9 +1071,11 @@ public class Slot : MonoBehaviour
 		if (IsMultiplayer)
 		{
 			// MULTIPLAYER MODE: Use server-provided win data instead of local calculation
+			var currentWinData = GetComponent<SlotWins>().GetSlotWinData();
+			Debug.Log($"calculateWins: Getting win data, count = {currentWinData?.Count ?? 0}");
 			slotWinSpin = GetComponent<SlotCompute>().processServerWinData(
-				GetComponent<SlotWins>().GetSlotWinData(),
-				0 // Total will be set by server data
+				currentWinData,
+				pendingWinAmount // Use the actual win amount from server
 			);
 		}
 		//--- MULTIPLAYER SERVER CODE END ---
@@ -1075,15 +1089,20 @@ public class Slot : MonoBehaviour
 
 		//--- SHARED CODE (BOTH MODES) ---
 		// Win processing and state management used by both modes
+		Debug.Log($"calculateWins result: totalWonAdjusted={slotWinSpin.totalWonAdjusted}, pendingWinAmount={pendingWinAmount}");
 		if (OnSpinDone != null)
 			OnSpinDone(slotWinSpin.totalWonAdjusted, GetComponent<SlotCredits>().totalBet());
 		if (slotWinSpin.totalWonAdjusted > 0)
 		{
+			Debug.Log($"[FLOW] calculateWins: Setting state to playingwins - win animation should start. totalWonAdjusted={slotWinSpin.totalWonAdjusted}");
+			// Reset only the state, keep serverWinData intact
+			refs.wins.resetStateOnly();
 			setState(SlotState.playingwins);
 			GetComponent<SlotCredits>().awardWin(slotWinSpin.totalWonAdjusted);
 		}
 		else
 		{
+			Debug.Log($"[FLOW] calculateWins: No wins - setting state to ready. totalWonAdjusted={slotWinSpin.totalWonAdjusted}");
 			setState(SlotState.ready);
 			if (OnSpinDoneNoWins != null)
 				OnSpinDoneNoWins();
@@ -1091,6 +1110,68 @@ public class Slot : MonoBehaviour
 
 		if (OnAllWinsComputed != null)
 			OnAllWinsComputed(slotWinSpin, slotWinSpin.totalWonAdjusted / refs.credits.totalBet());
+	}
+
+	/// <summary>
+	/// MULTIPLAYER: Calculate wins using saved amount values (delayed call version)
+	/// This method uses the saved values instead of pendingWinAmount which gets cleared immediately
+	/// </summary>
+	void calculateWinsWithAmount()
+	{
+		log($"[FLOW] === calculateWinsWithAmount() CALLED === IsMultiplayer: {IsMultiplayer}, savedPendingWinAmount: {savedPendingWinAmount}, state: {state}");
+		Debug.Log($"[FLOW] calculateWinsWithAmount: serverWinData.Count = {refs.wins.GetSlotWinData()?.Count ?? 0}");
+		useSuppliedResult = false;
+
+		SlotWinSpin slotWinSpin;
+
+		//--- MULTIPLAYER SERVER CODE START ---
+		if (IsMultiplayer)
+		{
+			// MULTIPLAYER MODE: Use server-provided win data instead of local calculation
+			var currentWinData = GetComponent<SlotWins>().GetSlotWinData();
+			Debug.Log($"calculateWinsWithAmount: Getting win data, count = {currentWinData?.Count ?? 0}");
+			slotWinSpin = GetComponent<SlotCompute>().processServerWinData(
+				currentWinData,
+				savedPendingWinAmount // Use the saved win amount from server
+			);
+		}
+		//--- MULTIPLAYER SERVER CODE END ---
+		//--- SINGLE-PLAYER LOCAL CODE START ---
+		else
+		{
+			// SINGLE-PLAYER MODE: Calculate wins locally using built-in algorithm
+			slotWinSpin = GetComponent<SlotCompute>().calculateAllLinesWins();
+		}
+		//--- SINGLE-PLAYER LOCAL CODE END ---
+
+		//--- SHARED CODE (BOTH MODES) ---
+		// Win processing and state management used by both modes
+		Debug.Log($"calculateWinsWithAmount result: totalWonAdjusted={slotWinSpin.totalWonAdjusted}, savedPendingWinAmount={savedPendingWinAmount}");
+		if (OnSpinDone != null)
+			OnSpinDone(slotWinSpin.totalWonAdjusted, GetComponent<SlotCredits>().totalBet());
+		if (slotWinSpin.totalWonAdjusted > 0)
+		{
+			Debug.Log($"[FLOW] calculateWinsWithAmount: Setting state to playingwins - win animation should start. totalWonAdjusted={slotWinSpin.totalWonAdjusted}");
+			// Reset only the state, keep serverWinData intact
+			refs.wins.resetStateOnly();
+			setState(SlotState.playingwins);
+			GetComponent<SlotCredits>().awardWin(slotWinSpin.totalWonAdjusted);
+		}
+		else
+		{
+			Debug.Log($"[FLOW] calculateWinsWithAmount: No wins - setting state to ready. totalWonAdjusted={slotWinSpin.totalWonAdjusted}");
+			setState(SlotState.ready);
+			if (OnSpinDoneNoWins != null)
+				OnSpinDoneNoWins();
+		}
+
+		if (OnAllWinsComputed != null)
+			OnAllWinsComputed(slotWinSpin, slotWinSpin.totalWonAdjusted / refs.credits.totalBet());
+		
+		// Clear saved values after use
+		log($"[FLOW] calculateWinsWithAmount: Clearing saved values. Was savedPendingWinAmount={savedPendingWinAmount}, savedPendingFinalBalance={savedPendingFinalBalance}");
+		savedPendingWinAmount = 0;
+		savedPendingFinalBalance = 0;
 	}
 
 	#endregion
@@ -1104,14 +1185,19 @@ public class Slot : MonoBehaviour
 	}
 	internal void displayedWinLine(SlotWinData data, bool isFirstLoop)
 	{
-		Debug.Log($"=== displayedWinLine CALLED ===");
-		Debug.Log($"Line: {data.lineNumber}, Symbols: {data.symbols.Count}, IsMultiplayer: {IsMultiplayer}");
-		Debug.Log($"OnLineWinDisplayed event has subscribers: {OnLineWinDisplayed != null}");
+		Debug.Log($"[FLOW] === displayedWinLine CALLED === line={data.lineNumber}, paid={data.paid}, isFirstLoop={isFirstLoop}");
+		Debug.Log($"[FLOW] displayedWinLine: Line: {data.lineNumber}, Symbols: {data.symbols?.Count ?? 0}, IsMultiplayer: {IsMultiplayer}");
+		Debug.Log($"[FLOW] displayedWinLine: OnLineWinDisplayed event has subscribers: {OnLineWinDisplayed != null}");
 
 		if (OnLineWinDisplayed != null)
+		{
+			Debug.Log($"[FLOW] displayedWinLine: Calling OnLineWinDisplayed event");
 			OnLineWinDisplayed(data, isFirstLoop);
+		}
 		else
-			Debug.LogWarning("OnLineWinDisplayed event has no subscribers!");
+		{
+			Debug.Log($"[FLOW] displayedWinLine: No OnLineWinDisplayed subscribers - paylines may not animate!");
+		}
 	}
 	internal void reelLanded(int reelIndex)
 	{
@@ -1200,20 +1286,17 @@ public class Slot : MonoBehaviour
 		if (reelIndex == reels.Count)
 		{
 			//--- MULTIPLAYER SERVER CODE START ---
-			if (IsMultiplayer && (pendingWinAmount > 0 || pendingFinalBalance > 0))
+			if (IsMultiplayer)
 			{
-				// MULTIPLAYER: Show results immediately for testing
-				log($"TESTING: Showing results directly - winAmount: {pendingWinAmount}, finalBalance: {pendingFinalBalance}");
-
-				// TESTING: Display results immediately without reel animation
-				calculateWins();
-
-				// Start win text tween animation
-				refs.credits.animateWinAndBalanceIncrease(pendingWinAmount, pendingFinalBalance);
-
-				// Clear pending values
-				pendingWinAmount = 0;
-				pendingFinalBalance = 0;
+				// MULTIPLAYER: Skip calculateWins here - it will be called properly in ApplyServerResultsAfterDelay()
+				log($"[FLOW] OnReelDoneSpinning: Multiplayer mode, skipping calculateWins. pendingWinAmount={pendingWinAmount}, pendingFinalBalance={pendingFinalBalance}, waitingForResult={waitingForResult}");
+				
+				// Only animate balance if we have pending data (shouldn't happen since server data arrives after reels stop)
+				if (pendingWinAmount > 0 || pendingFinalBalance > 0) 
+				{
+					log($"[FLOW] Unexpected: Have pending data in reelsStopped - pendingWinAmount: {pendingWinAmount}, finalBalance: {pendingFinalBalance}");
+					refs.credits.animateWinAndBalanceIncrease(pendingWinAmount, pendingFinalBalance);
+				}
 			}
 			else
 			{
@@ -1332,6 +1415,7 @@ public class Slot : MonoBehaviour
 		}
 
 		// Store win animation data for after reel animation completes
+		log($"[FLOW] spinWithServerResult: Setting pendingWinAmount={winAmount}, pendingFinalBalance={finalBalance}");
 		pendingWinAmount = winAmount;
 		pendingFinalBalance = finalBalance;
 
@@ -1365,8 +1449,18 @@ public class Slot : MonoBehaviour
 		if (OnSpinBegin != null)
 			OnSpinBegin(GetComponent<SlotWins>().currentWin);
 
-		// Reset wins for new spin
-		GetComponent<SlotWins>().reset();
+		// Reset wins state but preserve server data for multiplayer
+		if (IsMultiplayer)
+		{
+			log("[FLOW] StartVisualReelAnimation: Using resetStateOnly() to preserve server data");
+			log($"[FLOW] StartVisualReelAnimation: serverWinData.Count BEFORE resetStateOnly: {GetComponent<SlotWins>().GetSlotWinData()?.Count ?? 0}");
+			GetComponent<SlotWins>().resetStateOnly();
+			log($"[FLOW] StartVisualReelAnimation: serverWinData.Count AFTER resetStateOnly: {GetComponent<SlotWins>().GetSlotWinData()?.Count ?? 0}");
+		}
+		else
+		{
+			GetComponent<SlotWins>().reset();
+		}
 
 		// Start reel spinning with normal timing (visual only)
 		for (int reelIndex = 0; reelIndex < reels.Count; reelIndex++)
@@ -1408,22 +1502,54 @@ public class Slot : MonoBehaviour
 			// Force reels to stop and show results
 			snap();
 
-			// MULTIPLAYER: Trigger win calculation to start symbol highlighting and win display
+			// MULTIPLAYER: Ensure paylines are created after symbols are positioned
+			if (refs.lines != null)
+			{
+				refs.lines.createPaylinesAfterServerData();
+				log("Created paylines after server results applied");
+			}
+
+			// MULTIPLAYER: Always trigger win calculation - it will handle both wins and losses properly
+			log($"[FLOW] ApplyServerResultsAfterDelay: About to call calculateWins. pendingWinAmount={pendingWinAmount}, serverWinData.Count={refs.wins.GetSlotWinData()?.Count ?? 0}");
+			Debug.Log($"[FLOW] ApplyServerResultsAfterDelay: Current slot state: {state}");
+			
+			// Store values before clearing them - they'll be used in the delayed calculateWins call
+			int savedWinAmount = pendingWinAmount;
+			int savedFinalBalance = pendingFinalBalance;
+			
+			// Save values for delayed call BEFORE clearing them
+			savedPendingWinAmount = savedWinAmount;
+			savedPendingFinalBalance = savedFinalBalance;
+			
 			if (pendingWinAmount > 0)
 			{
-				log($"Triggering win calculation for multiplayer with win amount: {pendingWinAmount}");
-				calculateWins(); // This will trigger playingwins state and symbol highlighting
+				log($"[FLOW] ApplyServerResultsAfterDelay: Calling calculateWins for WIN with amount: {pendingWinAmount}");
+				// Add delay to ensure reels are completely stopped and symbols are settled
+				Debug.Log("[FLOW] Invoking calculateWins with 0.5f delay for WIN");
+				Invoke("calculateWinsWithAmount", 0.5f); // This will trigger playingwins state and symbol highlighting
+			}
+			else
+			{
+				log($"[FLOW] ApplyServerResultsAfterDelay: Calling calculateWins for LOSS (pendingWinAmount={pendingWinAmount})");
+				// For losses, still call calculateWins to properly set state to ready
+				Debug.Log("[FLOW] Invoking calculateWins with 0.5f delay for LOSS");
+				Invoke("calculateWinsWithAmount", 0.5f); 
 			}
 
 			// After results are shown, display win amount if player won
-			if (pendingWinAmount > 0)
+			if (savedWinAmount > 0)
 			{
 				if (gui != null)
 				{
-					gui.showWinAmount(pendingWinAmount);
-					log($"Displayed win amount after reel animation: {pendingWinAmount}");
+					gui.showWinAmount(savedWinAmount);
+					log($"Displayed win amount after reel animation: {savedWinAmount}");
 				}
 			}
+
+			// Clear pending values immediately - the saved values will be used by calculateWinsWithAmount
+			log($"[FLOW] ApplyServerResultsAfterDelay: Clearing pending values. Was pendingWinAmount={pendingWinAmount}, pendingFinalBalance={pendingFinalBalance}");
+			pendingWinAmount = 0;
+			pendingFinalBalance = 0;
 		}
 	}
 

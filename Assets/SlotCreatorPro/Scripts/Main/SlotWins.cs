@@ -47,12 +47,19 @@ public class SlotWins : MonoBehaviour
 	{
 		//--- SHARED CODE (BOTH MODES) ---
 		// Win display state machine used by both multiplayer and single-player modes
-		switch (GetComponent<Slot>().state)
+		SlotState currentSlotState = GetComponent<Slot>().state;
+		if (currentSlotState == SlotState.playingwins)
+		{
+			Debug.Log($"[FLOW] SlotWins.Update: In playingwins state, playingstate={playingstate}, serverWinData.Count={serverWinData?.Count ?? 0}");
+		}
+		
+		switch (currentSlotState)
 		{
 			case SlotState.playingwins:
 				switch (playingstate)
 				{
 					case PlayingWinsState.starting:
+						Debug.Log($"[FLOW] PlayingWinsState.starting - calling showWin(), serverWinData.Count={serverWinData?.Count ?? 0}");
 						//if (!pause)
 						//{
 						showWin();
@@ -106,9 +113,18 @@ public class SlotWins : MonoBehaviour
 		//--- MULTIPLAYER SERVER CODE START ---
 		if (slot.IsMultiplayer)
 		{
-			slot.log("Setting server win data: " + winData.Count + " wins");
+			Debug.Log($"[FLOW] setServerWinData called with {winData?.Count ?? 0} wins on instance {GetInstanceID()}");
+			slot.log($"[FLOW] Setting server win data: {winData?.Count ?? 0} wins");
 			serverWinData.Clear();
 			serverWinData.AddRange(winData);
+			Debug.Log($"[FLOW] serverWinData now contains {serverWinData.Count} wins on instance {GetInstanceID()}");
+			if (winData != null && winData.Count > 0)
+			{
+				for (int i = 0; i < winData.Count; i++)
+				{
+					Debug.Log($"[FLOW] Win {i}: line={winData[i].lineNumber}, paid={winData[i].paid}, matches={winData[i].matches}, symbols={winData[i].symbols?.Count ?? 0}");
+				}
+			}
 		}
 		else
 		{
@@ -125,6 +141,7 @@ public class SlotWins : MonoBehaviour
 		//--- MULTIPLAYER SERVER CODE START ---
 		if (slot.IsMultiplayer)
 		{
+			Debug.Log($"[FLOW] GetSlotWinData called on instance {GetInstanceID()}, returning {serverWinData?.Count ?? 0} wins");
 			return serverWinData;
 		}
 		else
@@ -137,6 +154,22 @@ public class SlotWins : MonoBehaviour
 	#endregion
 
 	#region SHARED CODE (BOTH MODES)
+	public void resetStateOnly()
+	{
+		//--- SHARED CODE (BOTH MODES) ---
+		// Reset only the playing state, keep win data intact
+		Debug.Log($"[FLOW] resetStateOnly(): NOT clearing serverWinData. Current count: {serverWinData?.Count ?? 0}");
+		playingstate = PlayingWinsState.starting;
+		releaseWinBoxes();
+		releaseLineBoxes();
+		winLineOffset = -1;
+		winTimeout = 0;
+		winDisplayCount = 0;
+		cycled = false;
+		currentWin = null;
+		slot.refs.lines.hideLines();
+	}
+
 	public void reset()
 	{
 		//--- SHARED CODE (BOTH MODES) ---
@@ -157,6 +190,7 @@ public class SlotWins : MonoBehaviour
 		// MULTIPLAYER: Clear server win data
 		if (slot.IsMultiplayer)
 		{
+			Debug.Log($"[FLOW] reset(): Clearing serverWinData which had {serverWinData?.Count ?? 0} wins");
 			serverWinData.Clear();
 		}
 		//--- MULTIPLAYER SERVER CODE END ---
@@ -217,7 +251,19 @@ public class SlotWins : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			// MULTIPLAYER: Use server win data instead of local computation
-			if (serverWinData.Count == 0) return -1;
+				Debug.Log($"[FLOW] findNextWin: serverWinData.Count = {serverWinData?.Count ?? 0}, winLineOffset was {winLineOffset-1}, now {winLineOffset}");
+			if (serverWinData != null && serverWinData.Count > 0)
+			{
+				for (int i = 0; i < serverWinData.Count; i++)
+				{
+					Debug.Log($"[FLOW] findNextWin: serverWinData[{i}]: line={serverWinData[i].lineNumber}, paid={serverWinData[i].paid}, matches={serverWinData[i].matches}");
+				}
+			}
+			if (serverWinData == null || serverWinData.Count == 0) 
+			{
+				Debug.LogError("findNextWin: serverWinData is null or empty, returning -1");
+				return -1;
+			}
 			if (winLineOffset > serverWinData.Count - 1)
 			{
 				winLineOffset = 0;
@@ -253,14 +299,14 @@ public class SlotWins : MonoBehaviour
 
 	void showWin()
 	{
-		Debug.Log($"=== showWin() CALLED === IsMultiplayer: {slot.IsMultiplayer}");
+		Debug.Log($"[FLOW] === showWin() CALLED === IsMultiplayer: {slot.IsMultiplayer}, state: {slot.state}, serverWinData.Count: {serverWinData?.Count ?? 0}");
 
 		winLineOffset = findNextWin();
-		Debug.Log($"findNextWin() returned: {winLineOffset}");
+		Debug.Log($"[FLOW] findNextWin() returned: {winLineOffset}, serverWinData.Count: {serverWinData?.Count ?? 0}");
 
 		if (winLineOffset == -1)
 		{
-			Debug.LogWarning("findNextWin() returned -1, no wins found!");
+			Debug.LogWarning("[FLOW] findNextWin() returned -1, no wins found! serverWinData.Count: " + (serverWinData?.Count ?? 0));
 			return;
 		}
 
@@ -270,8 +316,20 @@ public class SlotWins : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			// MULTIPLAYER: Use server win data instead of local computation
-			Debug.Log($"Using serverWinData[{winLineOffset}], serverWinData.Count: {serverWinData?.Count ?? 0}");
+			Debug.Log($"[FLOW] showWin: Using serverWinData[{winLineOffset}], serverWinData.Count: {serverWinData?.Count ?? 0}");
+			if (serverWinData == null || serverWinData.Count == 0)
+			{
+				Debug.LogError($"[FLOW] showWin ERROR: serverWinData is null or empty! Count: {serverWinData?.Count ?? 0}");
+				Debug.LogError($"[FLOW] showWin ERROR: This should not happen - server data should be preserved!");
+				return;
+			}
+			if (winLineOffset >= serverWinData.Count)
+			{
+				Debug.LogError($"[FLOW] showWin ERROR: winLineOffset {winLineOffset} >= serverWinData.Count {serverWinData.Count}");
+				return;
+			}
 			currentWin = serverWinData[winLineOffset];
+			Debug.Log($"[FLOW] showWin: currentWin set from serverWinData[{winLineOffset}]: lineNumber={currentWin.lineNumber}, paid={currentWin.paid}, symbols={currentWin.symbols?.Count ?? 0}");
 		}
 		//--- MULTIPLAYER SERVER CODE END ---
 		//--- SINGLE-PLAYER LOCAL CODE START ---
@@ -282,10 +340,11 @@ public class SlotWins : MonoBehaviour
 		}
 		//--- SINGLE-PLAYER LOCAL CODE END ---
 
-		Debug.Log($"About to call displayedWinLine with win: Line {currentWin.lineNumber}, Symbols: {currentWin.symbols.Count}");
+		Debug.Log($"[FLOW] showWin: About to call displayedWinLine with win: Line {currentWin.lineNumber}, Symbols: {currentWin.symbols?.Count ?? 0}");
 
 		//--- SHARED CODE (BOTH MODES) ---
 		// Visual win display logic used by both modes
+		Debug.Log($"[FLOW] showWin: Calling displayedWinLine for line {currentWin.lineNumber}");
 		GetComponent<Slot>().displayedWinLine(currentWin, !cycled);
 
 		//for (int i = 0; i < slot.displayLineBoxes; i++)
@@ -302,15 +361,19 @@ public class SlotWins : MonoBehaviour
 				break;
 		}
 
+		Debug.Log($"[FLOW] showWin: Starting win animation loop: winSymbolCount={winSymbolCount}, matches={currentWin.matches}");
 		for (int i = 0; i < winSymbolCount; i++)
 		{
 			//if ((currentWin.setType == SetsType.normal) && (i >= slot.displayLineBoxes)) continue;
+			Debug.Log($"[FLOW] showWin: Processing symbol {i}: i < matches? {i < currentWin.matches}");
 			if (i < currentWin.matches)
 			{
 				//if (slot.displayLineBoxes[currentWin.symbols[i].GetComponent<SlotSymbol>().reelIndex] == false) continue;
 				//Debug.Log ("reel:" + currentWin.symbols[i].GetComponent<SlotSymbol>().reelIndex);
+				Debug.Log($"[FLOW] showWin: Symbol {i}: symbolIndex={currentWin.symbols[i].GetComponent<SlotSymbol>().symbolIndex}");
 				if (slot.winboxPrefabs[currentWin.symbols[i].GetComponent<SlotSymbol>().symbolIndex] != null)
 				{
+					Debug.Log($"[FLOW] showWin: Creating winbox for symbol {i}");
 					GameObject winbox;
 					if (slot.usePool)
 					{
@@ -324,6 +387,11 @@ public class SlotWins : MonoBehaviour
 					winbox.transform.parent = currentWin.symbols[i].transform;//.parent.transform;// GetComponent<Slot>().reels[i].symbols[pos[i]].transform;
 					winbox.transform.position = currentWin.symbols[i].transform.position;
 					winboxes.Add(winbox);
+					Debug.Log($"[FLOW] showWin: Winbox created and positioned at {winbox.transform.position}");
+				}
+				else
+				{
+					Debug.LogWarning($"[FLOW] showWin: No winbox prefab found for symbol index {currentWin.symbols[i].GetComponent<SlotSymbol>().symbolIndex}");
 				}
 			}
 			else
@@ -339,10 +407,24 @@ public class SlotWins : MonoBehaviour
 					// Access line data safely when available
 					if (currentWin.lineNumber >= 0 && currentWin.lineNumber < slot.lines.Count)
 					{
-						linebox.transform.parent = slot.reels[i].symbols[slot.lines[currentWin.lineNumber].positions[i]].transform;
-						linebox.transform.position = slot.reels[i].symbols[slot.lines[currentWin.lineNumber].positions[i]].transform.position;
+						// Validate reel and symbol exist
+						if (i < slot.reels.Count && 
+							slot.lines[currentWin.lineNumber].positions[i] < slot.reels[i].symbols.Count)
+						{
+							linebox.transform.parent = slot.reels[i].symbols[slot.lines[currentWin.lineNumber].positions[i]].transform;
+							linebox.transform.position = slot.reels[i].symbols[slot.lines[currentWin.lineNumber].positions[i]].transform.position;
+							lineboxes.Add(linebox);
+						}
+						else
+						{
+							Debug.LogWarning($"Invalid symbol position for reel {i}, position {slot.lines[currentWin.lineNumber].positions[i]}");
+							Destroy(linebox);
+						}
 					}
-					lineboxes.Add(linebox);
+					else
+					{
+						lineboxes.Add(linebox);
+					}
 				}
 			}
 

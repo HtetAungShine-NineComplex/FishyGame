@@ -319,12 +319,25 @@ public class BeachDaysCallbacks : MonoBehaviour
 	{
 		//--- SHARED CODE (BOTH MODES) ---
 		// Visual animations for win data used by both modes
+		Debug.Log($"=== OnLineWinDisplayed CALLED ===");
+		Debug.Log($"Win Line: {win.lineNumber}, Symbols Count: {win.symbols.Count}, IsMultiplayer: {slot.IsMultiplayer}");
+
 		// Iterate through symbols that make up the win
-		foreach (GameObject symbol in win.symbols)
+		for (int i = 0; i < win.symbols.Count; i++)
 		{
+			GameObject symbol = win.symbols[i];
+			Debug.Log($"Symbol {i}: {symbol.name}, Has Animator: {symbol.GetComponent<Animator>() != null}");
+
 			// if there is an animator component, play the win animation
 			if (symbol.GetComponent<Animator>())
+			{
 				symbol.GetComponent<Animator>().SetTrigger("playwin");
+				Debug.Log($"Triggered 'playwin' animation on symbol {i}: {symbol.name}");
+			}
+			else
+			{
+				Debug.LogWarning($"Symbol {i} ({symbol.name}) has no Animator component!");
+			}
 		}
 		slot.log("OnLineWinDisplayed Callback");
 		slot.log("win line " + win.lineNumber + " :: set: " + win.setName + " (" + win.setIndex + ") paid: " + win.paid + " matches: " + win.matches);

@@ -253,8 +253,16 @@ public class SlotWins : MonoBehaviour
 
 	void showWin()
 	{
+		Debug.Log($"=== showWin() CALLED === IsMultiplayer: {slot.IsMultiplayer}");
+
 		winLineOffset = findNextWin();
-		if (winLineOffset == -1) return;
+		Debug.Log($"findNextWin() returned: {winLineOffset}");
+
+		if (winLineOffset == -1)
+		{
+			Debug.LogWarning("findNextWin() returned -1, no wins found!");
+			return;
+		}
 
 		winTimeout = 0;
 
@@ -262,6 +270,7 @@ public class SlotWins : MonoBehaviour
 		if (slot.IsMultiplayer)
 		{
 			// MULTIPLAYER: Use server win data instead of local computation
+			Debug.Log($"Using serverWinData[{winLineOffset}], serverWinData.Count: {serverWinData?.Count ?? 0}");
 			currentWin = serverWinData[winLineOffset];
 		}
 		//--- MULTIPLAYER SERVER CODE END ---
@@ -272,6 +281,8 @@ public class SlotWins : MonoBehaviour
 			currentWin = slot.refs.compute.lineResultData[winLineOffset];
 		}
 		//--- SINGLE-PLAYER LOCAL CODE END ---
+
+		Debug.Log($"About to call displayedWinLine with win: Line {currentWin.lineNumber}, Symbols: {currentWin.symbols.Count}");
 
 		//--- SHARED CODE (BOTH MODES) ---
 		// Visual win display logic used by both modes

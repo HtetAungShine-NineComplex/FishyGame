@@ -588,10 +588,62 @@ public class GameplayNetworkManager : MonoBehaviour
         // Generate basic readout without symbol name (client has symbol mapping)
         win.readout = $"LINE {win.lineNumber + 1} PAYS {win.paid}";
 
-        // Client will calculate positions from payline definition
-        win.symbols = new List<GameObject>();
+        // Use server-provided payline positions for accurate symbol highlighting
+        if (winObj.ContainsKey("paylinePositions"))
+        {
+            int[] paylinePositions = winObj.GetIntArray("paylinePositions");
+            win.symbols = GetSymbolsFromPaylinePositions(paylinePositions, win.matches);
+        }
+        else
+        {
+            // Fallback: empty list if payline positions not provided
+            win.symbols = new List<GameObject>();
+        }
 
         return win;
+    }
+
+    // Get symbol GameObjects from server-provided payline positions for highlighting
+    private List<GameObject> GetSymbolsFromPaylinePositions(int[] paylinePositions, int matches)
+    {
+        List<GameObject> symbols = new List<GameObject>();
+
+        if (currentSlot == null || paylinePositions == null)
+        {
+            Debug.LogWarning("GetSymbolsFromPaylinePositions: currentSlot or paylinePositions is null");
+            return symbols;
+        }
+
+        // Only highlight symbols up to the number of matches
+        int symbolsToHighlight = Mathf.Min(matches, paylinePositions.Length);
+
+        for (int reel = 0; reel < symbolsToHighlight && reel < currentSlot.numberOfReels; reel++)
+        {
+            if (currentSlot.reels.ContainsKey(reel))
+            {
+                int rowPosition = paylinePositions[reel];
+                var reelComponent = currentSlot.reels[reel];
+
+                // Ensure row position is valid for this reel
+                if (rowPosition >= 0 && rowPosition < reelComponent.symbols.Count)
+                {
+                    GameObject symbolGameObject = reelComponent.symbols[rowPosition];
+                    symbols.Add(symbolGameObject);
+                    Debug.Log($"Added symbol for highlighting: Reel {reel}, Row {rowPosition}");
+                }
+                else
+                {
+                    Debug.LogWarning($"Invalid row position {rowPosition} for reel {reel} (has {reelComponent.symbols.Count} symbols)");
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"Reel {reel} not found in currentSlot.reels dictionary");
+            }
+        }
+
+        Debug.Log($"GetSymbolsFromPaylinePositions: Found {symbols.Count} symbols for highlighting from {symbolsToHighlight} matches");
+        return symbols;
     }
 
     // Convert server scatter win to client SlotWinData format (simplified)

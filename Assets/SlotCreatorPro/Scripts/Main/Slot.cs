@@ -58,7 +58,7 @@ public class Slot : MonoBehaviour
 	/// MULTIPLAYER: Server results to apply after minimum animation duration
 	/// </summary>
 	private int[,] pendingServerResults = null;
-	
+
 	/// <summary>
 	/// MULTIPLAYER: Check if client is ready to accept new spin requests
 	/// </summary>
@@ -592,6 +592,13 @@ public class Slot : MonoBehaviour
 		//--- MULTIPLAYER SERVER CODE START ---
 		if (!IsMultiplayer) return;
 
+		// Skip calculation if symbols already correctly populated by server payline positions
+		if (winData.symbols != null && winData.symbols.Count > 0)
+		{
+			Debug.Log($"CalculateLineWinPositions: Symbols already populated ({winData.symbols.Count}), skipping client-side calculation");
+			return;
+		}
+
 		winData.symbols.Clear();
 
 		// Get payline definition (assuming lines are stored in lines list)
@@ -1097,8 +1104,14 @@ public class Slot : MonoBehaviour
 	}
 	internal void displayedWinLine(SlotWinData data, bool isFirstLoop)
 	{
+		Debug.Log($"=== displayedWinLine CALLED ===");
+		Debug.Log($"Line: {data.lineNumber}, Symbols: {data.symbols.Count}, IsMultiplayer: {IsMultiplayer}");
+		Debug.Log($"OnLineWinDisplayed event has subscribers: {OnLineWinDisplayed != null}");
+
 		if (OnLineWinDisplayed != null)
 			OnLineWinDisplayed(data, isFirstLoop);
+		else
+			Debug.LogWarning("OnLineWinDisplayed event has no subscribers!");
 	}
 	internal void reelLanded(int reelIndex)
 	{
@@ -1394,6 +1407,13 @@ public class Slot : MonoBehaviour
 
 			// Force reels to stop and show results
 			snap();
+
+			// MULTIPLAYER: Trigger win calculation to start symbol highlighting and win display
+			if (pendingWinAmount > 0)
+			{
+				log($"Triggering win calculation for multiplayer with win amount: {pendingWinAmount}");
+				calculateWins(); // This will trigger playingwins state and symbol highlighting
+			}
 
 			// After results are shown, display win amount if player won
 			if (pendingWinAmount > 0)

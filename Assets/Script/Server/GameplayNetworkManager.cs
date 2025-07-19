@@ -304,17 +304,6 @@ public class GameplayNetworkManager : MonoBehaviour
         Debug.Log($"Sent bet change request: bet={newBetPerLine}, lines={newLinesPlayed}");
     }
 
-    // Request initial game state
-    private void RequestSlotGameState()
-    {
-        SFSObject requestData = new SFSObject();
-        requestData.PutUtfString("action", "GET_GAME_STATE");
-
-        // Send request via GlobalManager
-        GlobalManager.Instance.SendToExtension("GET_GAME_STATE", requestData);
-        Debug.Log("Requested slot game state");
-    }
-
     private void OnJoinRoomResponse(ISFSObject data)
     {
         Debug.Log("OnJoinRoomResponse received");
@@ -806,7 +795,7 @@ public class GameplayNetworkManager : MonoBehaviour
             string message = data.GetUtfString("message");
 
             Debug.Log($"[FREE SPINS] {message} (Total spins: {totalSpins})");
-            
+
             // Optional: Show UI notification or trigger celebration effects
             if (currentSlot != null)
             {
@@ -830,7 +819,7 @@ public class GameplayNetworkManager : MonoBehaviour
             string message = data.GetUtfString("message");
 
             Debug.Log($"[JACKPOT] {message} (New balance: {newBalance}, Total spins: {totalSpins})");
-            
+
             // Optional: Show jackpot UI notification or trigger celebration effects
             if (currentSlot != null)
             {
@@ -853,7 +842,7 @@ public class GameplayNetworkManager : MonoBehaviour
             string message = data.GetUtfString("message");
 
             Debug.Log($"[JACKPOT BROADCAST] {message}");
-            
+
             // Optional: Show notification that another player won jackpot
             if (currentSlot != null)
             {
